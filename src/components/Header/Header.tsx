@@ -1,14 +1,16 @@
-import { Link } from 'react-router-dom';
+
 import { Container } from '../Container/Container';
-import { HeaderWrapper } from './Header.styled';
-// import { NavBar } from '../Navigation/NavBar/NavBar';
+import { NavBar } from '../NavBar/NavBar';
+import { HeaderWrapper, StyledLink } from './Header.styled';
+
 
 export const Header = () => {
   return (
     <Container>
       <HeaderWrapper>
-        <Link to="/">sweet paradise</Link>
-        {/* <NavBar /> */}
+        <StyledLink to="/">Sweet Paradise</StyledLink>
+        <NavBar />
+        {/* <Basket/> */}
       </HeaderWrapper>
     </Container>
   );
