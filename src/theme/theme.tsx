@@ -5,9 +5,9 @@ export const theme = Object.freeze({
     accent: `'Sail', cursive`,
   },
   fontSizes: {
-    mainFontSize: '16px',
-    linkFontSize: '12px',
-    menuTitleSize: '28px',
+    mainFontSize: '14x',
+    btnFontSize: '18px',
+    titleSize: '50px',
   },
   fontWeights: {
     regular: 400,

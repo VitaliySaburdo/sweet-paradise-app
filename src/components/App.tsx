@@ -1,12 +1,17 @@
-import React from 'react';
-import { ThemeProvider } from 'styled-components';
-import { theme } from '../theme/theme';
+import { Route, Routes } from "react-router-dom";
+import { ThemeProvider } from "styled-components";
+import { theme } from "../theme/theme";
+import { SharedLayout } from "./SharedLayout/SharedLayout";
 
 function App() {
   return (
     <ThemeProvider theme={theme}>
-      <h2>Test</h2>
-      </ThemeProvider>
+      <Routes>
+        <Route path="/" element={<SharedLayout />}>
+          <h2>Test</h2>
+        </Route>
+      </Routes>
+    </ThemeProvider>
   );
 }
 
