@@ -17,28 +17,9 @@ export const theme = Object.freeze({
   },
   colors: {
     // My styles
-    primaryColor: '#1976d2',
-    secondaryColor: '#455a64',
-    clearWhite: '#FFFFFF',
-    // Buttons
-    btnBorderColor: 'rgba(30, 30, 30, 0.2)',
-    btnSuccessColor: 'green',
-    btnEditColor: 'orange',
-    btnSuccessHoverColor: '#13ba00',
-    btnEditHoverColor: '#FF9966',
-    btnDeleteColor: '#de0000',
-    btnDeleteHoverColor: '#F44336',
+    primaryColor: '#FFD4DD',
+    secondaryColor: '#9C0746'
 
-    // Border color
-    mainBorderColor: 'rgba(0, 0, 0, 0.1)',
-
-    // Scroll bar style
-    ScrollBarColor: '#888',
-    ScrollBarHoverColor: '#888',
-  },
-  shadows: {
-    mainShadow: '0px 4px 4px rgba(0, 0, 0, 0.05)',
-    secondShadow: '0px 10px 10px rgba(0, 0, 0, 0.07);',
   },
   media: {
     sm: '(min-width: 360px)',
