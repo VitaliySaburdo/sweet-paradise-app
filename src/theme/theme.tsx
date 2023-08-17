@@ -40,9 +40,9 @@ export const theme = Object.freeze({
     secondShadow: '0px 10px 10px rgba(0, 0, 0, 0.07);',
   },
   media: {
-    sm: '(min-width: 320px)',
+    sm: '(min-width: 360px)',
     md: '(min-width: 768px)',
-    lg: '(min-width: 1280px)',
+    lg: '(min-width: 1920px)',
 
   },
 });
