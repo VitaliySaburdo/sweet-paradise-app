@@ -1,8 +1,12 @@
 import React from 'react';
+import { ThemeProvider } from 'styled-components';
+import { theme } from '../src/theme/theme';
 
 function App() {
   return (
-    <h2>Test</h2>
+    <ThemeProvider theme={theme}>
+      <h2>Test</h2>
+      </ThemeProvider>
   );
 }
 
