@@ -8,7 +8,6 @@ function App() {
     <ThemeProvider theme={theme}>
       <Routes>
         <Route path="/" element={<SharedLayout />}>
-          <h2>Test</h2>
         </Route>
       </Routes>
     </ThemeProvider>
