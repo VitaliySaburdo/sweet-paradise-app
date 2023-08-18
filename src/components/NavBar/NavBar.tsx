@@ -20,16 +20,15 @@ export const NavBar = () => {
             <p>Contacts</p>
           </li>
         </NavList>
-              <UserNav>
-        <li>
-          <Btn>
-            <Img src={basket} alt="basket" width="40px" />
-          </Btn>
-        </li>
-        {/* <li><button><img src={user} alt="user" width="40px"/></button></li> */}
-      </UserNav>
+        <UserNav>
+          <li>
+            <Btn>
+              <Img src={basket} alt="basket" width="40px" />
+            </Btn>
+          </li>
+          {/* <li><button><img src={user} alt="user" width="40px"/></button></li> */}
+        </UserNav>
       </Nav>
-
     </>
   );
 };
