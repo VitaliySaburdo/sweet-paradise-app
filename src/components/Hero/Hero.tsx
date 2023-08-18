@@ -1,7 +1,7 @@
 import { Container } from "../Container/Container";
 import arr_left from "../../images/Hero/arr_left.png";
 import arr_right from "../../images/Hero/arr_right.png";
-import { Wrapper, Title, Slogan,SliderWrapper, TextWrapper } from "./Hero.styled";
+import { Wrapper, Title, Slogan,SliderWrapper, TextWrapper, BtnWrapper, Btn } from "./Hero.styled";
 import { Button } from "../Button/Button";
 
 export const Hero = () => {
@@ -15,12 +15,14 @@ export const Hero = () => {
         </Wrapper>
         <SliderWrapper></SliderWrapper>
         <TextWrapper>vanilla</TextWrapper>
-        <button type="button">
+        <BtnWrapper>
+        <Btn type="button">
           <img src={arr_left} alt="arrow" />
-        </button>
-        <button type="button">
+        </Btn>
+        <Btn type="button">
           <img src={arr_right} alt="arrow" />
-        </button>
+          </Btn>
+          </BtnWrapper>
       </Container>
     </>
   );

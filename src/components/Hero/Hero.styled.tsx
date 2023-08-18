@@ -38,6 +38,7 @@ export const SliderWrapper = styled.div`
 export const TextWrapper = styled.p`
   margin: 0 auto;
   margin-top: 16px;
+  margin-bottom: 39px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -46,4 +47,19 @@ export const TextWrapper = styled.p`
   border-radius: 40px;
   background: #fff;
   box-shadow: 0px 15px 40px 0px rgba(0, 0, 0, 0.25);
+`;
+
+export const BtnWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+`;
+export const Btn = styled.button`
+  width: 50px;
+  height: 50px;
+  border-radius: 5px;
+  background: #fff;
+  box-shadow: 0px 4px 30px 0px rgba(0, 0, 0, 0.25);
+  border: none;
+  cursor: pointer;
 `;
