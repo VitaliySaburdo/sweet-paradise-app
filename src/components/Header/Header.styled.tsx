@@ -5,12 +5,13 @@ export const HeaderWrapper = styled.header`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  
 `;
 export const StyledLink = styled(Link)`
   font-family: ${(props) => props.theme.fonts.accent};
   color: ${(props) => props.theme.colors.secondaryColor};
   font-size: 12px;
+  margin-top: 7px;
+  margin-bottom: 7px;
   @media screen and (${(props) => props.theme.media.md}) {
     font-size: 20px;
   }
