@@ -1,10 +1,11 @@
-import { NavList } from './NavBar.styled';
-import basketImage from '../../images/Header/basket.png';
+import { Nav, NavList, UserNav, Btn } from "./NavBar.styled";
+import basket from "../../images/Header/basket.png";
+// import user from "../../images/Header/user.png";
 
 export const NavBar = () => {
   return (
     <>
-      <nav>
+      <Nav>
         <NavList>
           <li>
             <p>About us</p>
@@ -19,11 +20,15 @@ export const NavBar = () => {
             <p>Contacts</p>
           </li>
         </NavList>
-        <ul>
-          <li><button><img src={basketImage} alt="basket" /></button></li>
-        </ul>
-      </nav>
+      </Nav>
+      <UserNav>
+        <li>
+          <Btn>
+            <img src={basket} alt="basket" width="40px" />
+          </Btn>
+        </li>
+        {/* <li><button><img src={user} alt="user" width="40px"/></button></li> */}
+      </UserNav>
     </>
   );
 };
-

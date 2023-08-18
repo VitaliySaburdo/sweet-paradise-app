@@ -1,4 +1,3 @@
-
 import { Container } from '../Container/Container';
 import { NavBar } from '../NavBar/NavBar';
 import { HeaderWrapper, StyledLink } from './Header.styled';
