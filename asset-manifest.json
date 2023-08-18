@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/sweet-paradise-app/static/css/main.aac4974b.css",
-    "main.js": "/sweet-paradise-app/static/js/main.e11fba15.js",
+    "main.js": "/sweet-paradise-app/static/js/main.0f6e11e4.js",
     "index.html": "/sweet-paradise-app/index.html",
     "main.aac4974b.css.map": "/sweet-paradise-app/static/css/main.aac4974b.css.map",
-    "main.e11fba15.js.map": "/sweet-paradise-app/static/js/main.e11fba15.js.map"
+    "main.0f6e11e4.js.map": "/sweet-paradise-app/static/js/main.0f6e11e4.js.map"
   },
   "entrypoints": [
     "static/css/main.aac4974b.css",
-    "static/js/main.e11fba15.js"
+    "static/js/main.0f6e11e4.js"
   ]
 }
