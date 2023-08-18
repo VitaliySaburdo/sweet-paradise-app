@@ -10,7 +10,6 @@ export const Header = () => {
       <HeaderWrapper>
         <StyledLink to="/">Sweet Paradise</StyledLink>
         <NavBar />
-        {/* <Basket/> */}
       </HeaderWrapper>
     </Container>
   );

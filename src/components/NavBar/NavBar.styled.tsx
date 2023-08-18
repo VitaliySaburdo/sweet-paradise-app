@@ -8,3 +8,7 @@ export const NavList = styled.ul`
     margin-bottom: 26px;
     margin-right: 465px;
 `
+
+export const UserNav = styled.ul`
+    
+`
