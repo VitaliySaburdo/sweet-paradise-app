@@ -1,4 +1,4 @@
-import { Nav, NavList, UserNav, Btn } from "./NavBar.styled";
+import { Nav, NavList, UserNav, Btn, Img } from "./NavBar.styled";
 import basket from "../../images/Header/basket.png";
 // import user from "../../images/Header/user.png";
 
@@ -20,15 +20,16 @@ export const NavBar = () => {
             <p>Contacts</p>
           </li>
         </NavList>
-      </Nav>
-      <UserNav>
+              <UserNav>
         <li>
           <Btn>
-            <img src={basket} alt="basket" width="40px" />
+            <Img src={basket} alt="basket" width="40px" />
           </Btn>
         </li>
         {/* <li><button><img src={user} alt="user" width="40px"/></button></li> */}
       </UserNav>
+      </Nav>
+
     </>
   );
 };
