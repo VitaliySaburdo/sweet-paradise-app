@@ -21,13 +21,15 @@ export const Slider = () => {
     setCurrentImageIndex(
       (prevIndex) => (prevIndex - 1 + images.length) % images.length
     );
-  };
+    };
+    
+    
 
   return (
       <>
           <MainWrapper>
           <PriceWrapper>{cakesPrice[currentImageIndex]} UAH</PriceWrapper>
-          <SliderWrapper currentImageIndex={currentImageIndex}>    
+          <SliderWrapper image={currentImageIndex}>    
           {images.map((image, index) => (
             <img
               key={index}

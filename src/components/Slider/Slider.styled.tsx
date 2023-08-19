@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 interface SliderWrapperProps {
-  currentImageIndex: number;
+  image: number;
 }
 
 export const SliderWrapper = styled.div<SliderWrapperProps>`
@@ -11,7 +11,7 @@ export const SliderWrapper = styled.div<SliderWrapperProps>`
   height: 225px;
   display: flex;
   transform: ${(props) =>
-    `translate3d(-${props.currentImageIndex * 100}%, 0, 0)`};
+    `translate3d(-${props.image * 100}%, 0, 0)`};
   transition: transform 0.5s ease-in-out;
 `;
 
@@ -64,6 +64,6 @@ export const Btn = styled.button`
 `;
 
 export const MainWrapper = styled.div`
-position: relative;
-width: 100%
-`
+  position: relative;
+  width: 100%;
+`;
