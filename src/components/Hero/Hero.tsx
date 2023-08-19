@@ -1,8 +1,7 @@
 import { Container } from "../Container/Container";
-import arr_left from "../../images/Hero/arr_left.png";
-import arr_right from "../../images/Hero/arr_right.png";
-import { Wrapper, Title, Slogan,SliderWrapper, TextWrapper, BtnWrapper, Btn } from "./Hero.styled";
+import { Wrapper, Title, Slogan } from "./Hero.styled";
 import { Button } from "../Button/Button";
+import { Slider } from "../Slider/Slider";
 
 export const Hero = () => {
   return (
@@ -13,16 +12,7 @@ export const Hero = () => {
           <Slogan>We will make your life is sweeter!</Slogan>
           <Button>Choose a dessert</Button>
         </Wrapper>
-        <SliderWrapper></SliderWrapper>
-        <TextWrapper>vanilla</TextWrapper>
-        <BtnWrapper>
-        <Btn type="button">
-          <img src={arr_left} alt="arrow" />
-        </Btn>
-        <Btn type="button">
-          <img src={arr_right} alt="arrow" />
-          </Btn>
-          </BtnWrapper>
+        <Slider />
       </Container>
     </>
   );

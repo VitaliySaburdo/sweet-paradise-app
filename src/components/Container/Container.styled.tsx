@@ -3,6 +3,7 @@ import styled from 'styled-components';
 export const StyledContainer = styled.div`
   margin: 0 auto;
   padding: 0 53px;
+  overflow: hidden;
 
   @media screen and (${props => props.theme.media.smToMd}) {
     width: 320px;
