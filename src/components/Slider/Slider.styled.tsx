@@ -7,7 +7,7 @@ interface SliderWrapperProps {
 export const SliderWrapper = styled.div<SliderWrapperProps>`
   margin: 0 auto;
   margin-top: 57px;
-  width: 100%;
+  width: 190px;
   height: 225px;
   display: flex;
   transform: ${(props) =>
