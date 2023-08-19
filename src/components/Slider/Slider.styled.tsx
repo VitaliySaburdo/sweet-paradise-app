@@ -17,6 +17,7 @@ export const SliderWrapper = styled.div<SliderWrapperProps>`
 
 export const PriceWrapper = styled.p`
   position: absolute;
+  right: 0;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -63,5 +64,6 @@ export const Btn = styled.button`
 `;
 
 export const MainWrapper = styled.div`
+position: relative;
 width: 100%
 `
