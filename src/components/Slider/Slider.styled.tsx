@@ -2,22 +2,26 @@ import styled from "styled-components";
 
 interface SliderWrapperProps {
   image: number;
+  totalImages: number;
 }
 
 export const SliderWrapper = styled.div<SliderWrapperProps>`
   margin: 0 auto;
-  margin-top: 57px;
   width: 190px;
   height: 225px;
   display: flex;
-  transform: ${(props) =>
-    `translate3d(-${props.image * 100}%, 0, 0)`};
+  transform: ${(props) => `translate3d(-${props.image * 100}%, 0, 0)`};
   transition: transform 0.5s ease-in-out;
+  @media screen and (${(props) => props.theme.media.md}) {
+    width: 356px;
+    height: 420px;
+  }
+
 `;
 
 export const PriceWrapper = styled.p`
   position: absolute;
-  right: 0;
+  right: 65px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -32,6 +36,12 @@ export const PriceWrapper = styled.p`
   font-style: normal;
   font-weight: 500;
   line-height: 105.2%;
+  @media screen and (${(props) => props.theme.media.md}) {
+    right: 185px;
+    width: 100px;
+    height: 100px;
+    font-size: 22px;
+  }
 `;
 
 export const TextWrapper = styled.p`
@@ -64,6 +74,12 @@ export const Btn = styled.button`
 `;
 
 export const MainWrapper = styled.div`
+  margin-top: 57px;
   position: relative;
   width: 100%;
+    /* @media screen and (${(props) => props.theme.media.lg}) {
+      position: absolute;
+      width: 500px;
+      height: 500px;
+  }  */
 `;

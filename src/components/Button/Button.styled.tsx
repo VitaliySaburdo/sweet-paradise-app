@@ -15,4 +15,9 @@ export const StyledButton = styled.button`
   font-weight: 400;
   line-height: 105.2%;
   cursor: pointer;
+  @media screen and (${(props) => props.theme.media.md}) {
+    width: 260px;
+    height: 70px;
+    font-size: 18px;
+  }
 `;

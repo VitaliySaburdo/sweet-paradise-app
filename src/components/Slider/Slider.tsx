@@ -29,7 +29,7 @@ export const Slider = () => {
       <>
           <MainWrapper>
           <PriceWrapper>{cakesPrice[currentImageIndex]} UAH</PriceWrapper>
-          <SliderWrapper image={currentImageIndex}>    
+          <SliderWrapper image={currentImageIndex} totalImages={images.length}>    
           {images.map((image, index) => (
             <img
               key={index}
