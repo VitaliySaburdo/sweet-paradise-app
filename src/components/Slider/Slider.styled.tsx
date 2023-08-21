@@ -1,11 +1,6 @@
 import styled from "styled-components";
 
-interface SliderWrapperProps {
-  image: number;
-  totalImages: number;
-}
-
-export const SliderWrapper = styled.div<SliderWrapperProps>`
+export const SliderWrapper = styled.div<{ image: number; totalImages: number; }>`
   margin: 0 auto;
   width: 190px;
   height: 225px;
@@ -16,7 +11,6 @@ export const SliderWrapper = styled.div<SliderWrapperProps>`
     width: 356px;
     height: 420px;
   }
-
 `;
 
 export const PriceWrapper = styled.p`
@@ -77,11 +71,11 @@ export const MainWrapper = styled.div`
   margin-top: 57px;
   position: relative;
   width: 100%;
-    @media screen and (${(props) => props.theme.media.lg}) {
-      position: absolute;
-      top: 0;
-      right: 0;
-      width: 500px;
-      height: 500px;
-  } 
+  @media screen and (${(props) => props.theme.media.lg}) {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 500px;
+    height: 500px;
+  }
 `;

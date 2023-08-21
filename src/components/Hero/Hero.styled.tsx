@@ -12,6 +12,7 @@ export const Wrapper = styled.div`
   }
   @media screen and (${(props) => props.theme.media.md}){
     margin-top: 228px;
+    width: 620px;
     margin-left: 0;
     margin-right: auto;
   }
@@ -29,6 +30,7 @@ export const Title = styled.h1`
   
   @media screen and (${(props) => props.theme.media.lg}) {
     font-size: 80px;
+    margin-bottom: 41px;
   }
 `;
 
@@ -41,6 +43,19 @@ export const Slogan = styled.h2`
   @media screen and (${(props) => props.theme.media.md}) {
     font-size: 46px;
   }
+  @media screen and (${(props) => props.theme.media.lg}){
+    text-align: start;
+    margin-bottom: 60px;
+  }
 `;
+
+export const VideoContainer = styled.iframe`
+@media screen and (${(props) => props.theme.media.lg}){
+  margin-top: 206px;
+width: 340px;
+height: 220px;
+margin-bottom: 180px;
+}
+`
 
 

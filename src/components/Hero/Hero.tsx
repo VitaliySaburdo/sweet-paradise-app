@@ -1,5 +1,5 @@
 import { Container } from "../Container/Container";
-import { Wrapper, Title, Slogan } from "./Hero.styled";
+import { Wrapper, Title, Slogan, VideoContainer } from "./Hero.styled";
 import { Button } from "../Button/Button";
 import { Slider } from "../Slider/Slider";
 
@@ -13,6 +13,12 @@ export const Hero = () => {
           <Button>Choose a dessert</Button>
         </Wrapper>
         <Slider />
+        <VideoContainer
+          title="confectionery"
+          src="https://www.youtube.com/embed/mHsOfgF84aA"
+          allow="autoplay; encrypted-media"
+          allowFullScreen
+        ></VideoContainer>
       </Container>
     </>
   );
