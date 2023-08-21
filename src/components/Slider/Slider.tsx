@@ -42,9 +42,8 @@ export const Slider = () => {
             />
           ))}
       </SliderWrapper>
-              <TextWrapper>{cakesNames[currentImageIndex]}</TextWrapper>
-              </MainWrapper>
-      <BtnWrapper>
+        <TextWrapper>{cakesNames[currentImageIndex]}</TextWrapper>
+              <BtnWrapper>
         <Btn type="button">
           <img src={arr_left} alt="arrow" onClick={handlePrevImage} />
         </Btn>
@@ -52,6 +51,8 @@ export const Slider = () => {
           <img src={arr_right} alt="arrow" onClick={handleNextImage} />
         </Btn>
       </BtnWrapper>
+              </MainWrapper>
+
     </>
   );
 };

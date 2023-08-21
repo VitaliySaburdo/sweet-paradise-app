@@ -10,6 +10,11 @@ export const Wrapper = styled.div`
     margin-left: auto;
     margin-right: auto;
   }
+  @media screen and (${(props) => props.theme.media.md}){
+    margin-top: 228px;
+    margin-left: 0;
+    margin-right: auto;
+  }
 `;
 
 export const Title = styled.h1`

@@ -77,9 +77,11 @@ export const MainWrapper = styled.div`
   margin-top: 57px;
   position: relative;
   width: 100%;
-    /* @media screen and (${(props) => props.theme.media.lg}) {
+    @media screen and (${(props) => props.theme.media.lg}) {
       position: absolute;
+      top: 0;
+      right: 0;
       width: 500px;
       height: 500px;
-  }  */
+  } 
 `;
