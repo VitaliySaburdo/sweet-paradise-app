@@ -7,6 +7,7 @@ export const Hero = () => {
   return (
     <>
       <Container>
+        <div style={{position: 'relative'}}>
         <Wrapper>
           <Title>Sweet Paradise</Title>
           <Slogan>We will make your life is sweeter!</Slogan>
@@ -19,7 +20,8 @@ export const Hero = () => {
           allow="autoplay; encrypted-media"
           allowFullScreen
         ></VideoContainer>
-        <Slider />
+          <Slider />
+          </div>
       </Container>
     </>
   );

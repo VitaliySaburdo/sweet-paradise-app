@@ -12,6 +12,7 @@ export const SliderWrapper = styled.div<{ image: number }>`
     height: 420px;
   }
   @media screen and (${(props) => props.theme.media.lg}) {
+
     width: 100%;
     height: 100%;
     transform: none;
@@ -41,6 +42,10 @@ export const PriceWrapper = styled.p`
     height: 100px;
     font-size: 22px;
   }
+  @media screen and (${(props) => props.theme.media.md}){
+    top: 300px;
+    right: 20px;
+  }
 `;
 
 export const TextWrapper = styled.p`
@@ -55,6 +60,11 @@ export const TextWrapper = styled.p`
   border-radius: 40px;
   background: #fff;
   box-shadow: 0px 15px 40px 0px rgba(0, 0, 0, 0.25);
+  @media screen and (${(props) => props.theme.media.lg}){
+    position: absolute;
+    top: 800px;
+    right:150px;
+  }
 `;
 
 export const BtnWrapper = styled.div`
@@ -77,6 +87,8 @@ export const MainWrapper = styled.div<{ index: number }>`
   position: relative;
   width: 100%;
   @media screen and (${(props) => props.theme.media.lg}) {
+        position: absolute;
+    top: 0;
     width: 1000px;
     height: 1000px;
     border-radius: 50%;
@@ -114,8 +126,8 @@ export const Slide = styled.img<{ index: number; rotate: string }>`
         left = 432;
         top = -35;
       } else if (props.index === 2) {
-        left = 0;
-        top = 150;
+        left = -40;
+        top = 260;
       } else if (props.index === 0) {
         left = 425;
         top = 500;
