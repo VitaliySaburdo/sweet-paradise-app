@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState, useEffect } from "react";
 import {
   SliderWrapper,
   TextWrapper,
@@ -18,6 +18,7 @@ export const Slider = () => {
   const images = [caramel, vanilla, chocolate];
   const cakesNames = ["caramel", "vanilla", "chocolate"];
   const cakesPrice = ["30", "30", "40"];
+  const [rotation, setRotation] = useState('0deg');
 
 
   const [currentImageIndex, setCurrentImageIndex] = useState<number>(1);
@@ -32,6 +33,16 @@ export const Slider = () => {
     );
   };
 
+    useEffect(() => {
+    if (currentImageIndex === 0) {
+      setRotation('240deg');
+    } else if (currentImageIndex === 1) {
+      setRotation('120deg');
+    } else if (currentImageIndex === 2) {
+      setRotation('0deg');
+    } 
+  }, [currentImageIndex]);
+
   return (
     <>
       <MainWrapper index={currentImageIndex}>
@@ -40,6 +51,7 @@ export const Slider = () => {
             <Slide
               key={index}
               src={image}
+              rotate={rotation}
               alt={`slide-${index}`}
               index={index}
               style={{
