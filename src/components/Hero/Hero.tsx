@@ -7,21 +7,20 @@ export const Hero = () => {
   return (
     <>
       <Container>
-        <div style={{position: 'relative'}}>
-        <Wrapper>
-          <Title>Sweet Paradise</Title>
-          <Slogan>We will make your life is sweeter!</Slogan>
-          <Button>Choose a dessert</Button>
-        </Wrapper>
-        
+        <div style={{ position: "relative" }}>
+          <Wrapper>
+            <Title>Sweet Paradise</Title>
+            <Slogan>We will make your life is sweeter!</Slogan>
+            <Button>Choose a dessert</Button>
+          </Wrapper>
+          <Slider />
+        </div>
         <VideoContainer
           title="confectionery"
           src="https://www.youtube.com/embed/mHsOfgF84aA"
           allow="autoplay; encrypted-media"
           allowFullScreen
         ></VideoContainer>
-          <Slider />
-          </div>
       </Container>
     </>
   );

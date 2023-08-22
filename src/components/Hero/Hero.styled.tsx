@@ -11,7 +11,7 @@ export const Wrapper = styled.div`
     margin-right: auto;
   }
   @media screen and (${(props) => props.theme.media.md}){
-    margin-top: 228px;
+    margin-top: 298px;
     width: 620px;
     margin-left: 0;
     margin-right: auto;
