@@ -20,6 +20,7 @@ export const SliderWrapper = styled.div<{ image: number }>`
 
 export const PriceWrapper = styled.p`
   position: absolute;
+  top: 230px;
   right: 65px;
   display: flex;
   justify-content: center;
@@ -36,12 +37,13 @@ export const PriceWrapper = styled.p`
   font-weight: 500;
   line-height: 105.2%;
   @media screen and (${(props) => props.theme.media.md}) {
-    right: 185px;
+    top: 380px;
+    right: 170px;
     width: 100px;
     height: 100px;
     font-size: 22px;
   }
-  @media screen and (${(props) => props.theme.media.md}) {
+  @media screen and (${(props) => props.theme.media.lg}) {
     top: -50px;
     right: 20px;
   }
