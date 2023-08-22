@@ -42,7 +42,7 @@ export const PriceWrapper = styled.p`
     font-size: 22px;
   }
   @media screen and (${(props) => props.theme.media.md}) {
-    top: 300px;
+    top: 100px;
     right: 20px;
   }
 `;
@@ -61,7 +61,7 @@ export const TextWrapper = styled.p`
   box-shadow: 0px 15px 40px 0px rgba(0, 0, 0, 0.25);
   @media screen and (${(props) => props.theme.media.lg}) {
     position: absolute;
-    top: 800px;
+    top: 600px;
     right: 150px;
   }
 `;
@@ -73,7 +73,7 @@ export const BtnWrapper = styled.div`
 
   @media screen and (${(props) => props.theme.media.lg}) {
     position: absolute;
-        top: 890px;
+        top: 690px;
     right: 160px;
   }
 `;
@@ -93,7 +93,7 @@ export const MainWrapper = styled.div<{ index: number }>`
   width: 100%;
   @media screen and (${(props) => props.theme.media.lg}) {
     position: absolute;
-    top: 0;
+    top: -200px;
     width: 1000px;
     height: 1000px;
     border-radius: 50%;
