@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const SliderWrapper = styled.div<{ image: number; totalImages: number; }>`
+export const SliderWrapper = styled.div<{ image: number }>`
   margin: 0 auto;
   width: 190px;
   height: 225px;
@@ -10,6 +10,11 @@ export const SliderWrapper = styled.div<{ image: number; totalImages: number; }>
   @media screen and (${(props) => props.theme.media.md}) {
     width: 356px;
     height: 420px;
+  }
+  @media screen and (${(props) => props.theme.media.lg}) {
+    width: 100%;
+    height: 100%;
+    transform: none;
   }
 `;
 
@@ -67,15 +72,59 @@ export const Btn = styled.button`
   cursor: pointer;
 `;
 
-export const MainWrapper = styled.div`
+export const MainWrapper = styled.div<{ index: number }>`
   margin-top: 57px;
   position: relative;
   width: 100%;
   @media screen and (${(props) => props.theme.media.lg}) {
+    width: 1000px;
+    height: 1000px;
+    border-radius: 50%;
+    margin-left: 700px;
+    ${(props) => {
+      let rotate;
+      if (props.index === 0) {
+        rotate = 120;
+      } else if (props.index === 1) {
+        rotate = 240;
+      } else if (props.index === 2) {
+        rotate = 360;
+      }
+      return `
+      rotate: ${rotate}deg;
+    `;
+    }}
+  }
+`;
+
+export const Slide = styled.img<{ index: number }>`
+  @media screen and (${(props) => props.theme.media.lg}) {
     position: absolute;
-    top: 0;
-    right: 0;
-    width: 500px;
-    height: 500px;
+    width: 460px;
+    height: 540px;
+    ${(props) => {
+      let left;
+      let top;
+      let rotate = 0;
+
+      if (props.index === 1) {
+        left = 0;
+        top = 150;
+        rotate += 120;
+      } else if (props.index === 2) {
+        left = 600;
+        top = 350;
+        rotate += 120;
+      } else if (props.index === 0) {
+        left = 500;
+        top = -200;
+        rotate += 120;
+      }
+      return `
+      left: ${left}px;
+      top: ${top}px;
+      rotate: ${rotate}deg;
+    `;
+    }}
   }
 `;
