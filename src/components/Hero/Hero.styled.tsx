@@ -2,25 +2,17 @@ import styled, {css} from "styled-components";
 import { Button } from "../Button/Button";
 import ellipse from '../../images/Hero/Ellipse.png';
 import leaf from '../../images/Hero/leaf.png';
+import raspberries from '../../images/Hero/raspberries.png';
 
 
 
 export const MainWrapper = styled.div`
-  background-image: url(${ellipse});
-  background-position: right top, 0px 0px;
-    &::before {
-    content: '';
-    position: absolute;
-    top: 700px;
-    left: 1150px;
-    width: 100%;
-    height: 100%;
-    background-image: url(${leaf});
-    background-repeat: no-repeat;
-    background-position: top left;
-    z-index: 1;
-  }
+
+  background-image: url(${leaf}), url(${ellipse}), url(${raspberries});
+  background-position: 70% 63%, 100% 0, 30.5% 82% ;
   background-repeat: no-repeat;
+
+  
 `;
 
 export const Wrapper = styled.div`
@@ -74,6 +66,8 @@ export const Slogan = styled.h2`
 `;
 
 export const VideoContainer = styled.iframe`
+border-radius: 10px;
+box-shadow: 0px 10px 60px 0px rgba(0, 0, 0, 0.35);
 @media screen and (${(props) => props.theme.media.lg}){
   margin-top: 206px;
 width: 340px;
