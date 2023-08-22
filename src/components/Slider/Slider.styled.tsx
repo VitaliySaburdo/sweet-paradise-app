@@ -93,7 +93,7 @@ export const MainWrapper = styled.div<{ index: number }>`
   width: 100%;
   @media screen and (${(props) => props.theme.media.lg}) {
     position: absolute;
-    top: -200px;
+    top: -300px;
     width: 1000px;
     height: 1000px;
     border-radius: 50%;

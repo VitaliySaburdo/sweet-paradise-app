@@ -26,7 +26,7 @@ export const Title = styled.h1`
   @media screen and (${(props) => props.theme.media.md}) {
     font-size: 60px;
     margin-bottom: 38px;
-  }
+  } 
   
   @media screen and (${(props) => props.theme.media.lg}) {
     font-size: 80px;
