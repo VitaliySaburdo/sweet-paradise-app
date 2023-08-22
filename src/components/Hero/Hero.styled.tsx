@@ -1,5 +1,27 @@
 import styled, {css} from "styled-components";
 import { Button } from "../Button/Button";
+import ellipse from '../../images/Hero/Ellipse.png';
+import leaf from '../../images/Hero/leaf.png';
+
+
+
+export const MainWrapper = styled.div`
+  background-image: url(${ellipse});
+  background-position: right top, 0px 0px;
+    &::before {
+    content: '';
+    position: absolute;
+    top: 700px;
+    left: 1150px;
+    width: 100%;
+    height: 100%;
+    background-image: url(${leaf});
+    background-repeat: no-repeat;
+    background-position: top left;
+    z-index: 1;
+  }
+  background-repeat: no-repeat;
+`;
 
 export const Wrapper = styled.div`
   margin-top: 85px;

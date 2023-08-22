@@ -73,6 +73,7 @@ export const BtnWrapper = styled.div`
 
   @media screen and (${(props) => props.theme.media.lg}) {
     position: absolute;
+    z-index: 20;
         top: 540px;
     right: 160px;
   }
