@@ -93,12 +93,12 @@ export const MainWrapper = styled.div<{ index: number }>`
       return `
       rotate: ${rotate}deg;
     `;
-}}
+    }}
     transition: rotate 0.5s ease-in-out;
   }
 `;
 
-export const Slide = styled.img<{ index: number, rotate: string }>`
+export const Slide = styled.img<{ index: number; rotate: string }>`
   @media screen and (${(props) => props.theme.media.lg}) {
     position: absolute;
     width: 460px;
@@ -111,14 +111,14 @@ export const Slide = styled.img<{ index: number, rotate: string }>`
       let top;
 
       if (props.index === 1) {
-        left = 0;
-        top = 150;
-      } else if (props.index === 2) {
-        left = 425;
-        top = 500;
-      } else if (props.index === 0) {
         left = 432;
         top = -35;
+      } else if (props.index === 2) {
+        left = 0;
+        top = 150;
+      } else if (props.index === 0) {
+        left = 425;
+        top = 500;
       }
       return `
       left: ${left}px;
