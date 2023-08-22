@@ -12,7 +12,6 @@ export const SliderWrapper = styled.div<{ image: number }>`
     height: 420px;
   }
   @media screen and (${(props) => props.theme.media.lg}) {
-
     width: 100%;
     height: 100%;
     transform: none;
@@ -42,7 +41,7 @@ export const PriceWrapper = styled.p`
     height: 100px;
     font-size: 22px;
   }
-  @media screen and (${(props) => props.theme.media.md}){
+  @media screen and (${(props) => props.theme.media.md}) {
     top: 300px;
     right: 20px;
   }
@@ -60,10 +59,10 @@ export const TextWrapper = styled.p`
   border-radius: 40px;
   background: #fff;
   box-shadow: 0px 15px 40px 0px rgba(0, 0, 0, 0.25);
-  @media screen and (${(props) => props.theme.media.lg}){
+  @media screen and (${(props) => props.theme.media.lg}) {
     position: absolute;
     top: 800px;
-    right:150px;
+    right: 150px;
   }
 `;
 
@@ -71,6 +70,12 @@ export const BtnWrapper = styled.div`
   display: flex;
   justify-content: center;
   gap: 10px;
+
+  @media screen and (${(props) => props.theme.media.lg}) {
+    position: absolute;
+        top: 890px;
+    right: 160px;
+  }
 `;
 export const Btn = styled.button`
   width: 50px;
@@ -87,7 +92,7 @@ export const MainWrapper = styled.div<{ index: number }>`
   position: relative;
   width: 100%;
   @media screen and (${(props) => props.theme.media.lg}) {
-        position: absolute;
+    position: absolute;
     top: 0;
     width: 1000px;
     height: 1000px;
