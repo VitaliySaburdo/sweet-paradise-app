@@ -1,6 +1,6 @@
 import { Container } from "../Container/Container";
-import { Wrapper, Title, Slogan, VideoContainer } from "./Hero.styled";
-import { Button } from "../Button/Button";
+import { Wrapper, Title, Slogan, VideoContainer, StyledBtn } from "./Hero.styled";
+
 import { Slider } from "../Slider/Slider";
 
 export const Hero = () => {
@@ -11,7 +11,7 @@ export const Hero = () => {
           <Wrapper>
             <Title>Sweet Paradise</Title>
             <Slogan>We will make your life is sweeter!</Slogan>
-            <Button>Choose a dessert</Button>
+            <StyledBtn>Choose a dessert</StyledBtn>
           </Wrapper>
           <Slider />
         </div>

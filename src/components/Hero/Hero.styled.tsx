@@ -1,4 +1,5 @@
-import styled from "styled-components";
+import styled, {css} from "styled-components";
+import { Button } from "../Button/Button";
 
 export const Wrapper = styled.div`
   margin-top: 85px;
@@ -31,6 +32,7 @@ export const Title = styled.h1`
   @media screen and (${(props) => props.theme.media.lg}) {
     font-size: 80px;
     margin-bottom: 41px;
+    margin-right: auto;
   }
 `;
 
@@ -56,6 +58,13 @@ width: 340px;
 height: 220px;
 margin-bottom: 180px;
 }
+`
+export const StyledBtn = styled(Button)`
+  ${props => css`
+    @media screen and (${props.theme.media.lg}) {
+      margin-right: auto;
+    }
+  `}
 `
 
 

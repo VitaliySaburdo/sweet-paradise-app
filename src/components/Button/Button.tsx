@@ -1,13 +1,20 @@
-import { StyledButton  } from "./Button.styled";
+import { StyledButton } from "./Button.styled";
 
 interface Children {
   children: React.ReactNode;
+  customStyle?: React.CSSProperties;
 }
 
-export const Button: React.FC<Children> = ({children}) => {
-    return (
-        <>
-            <StyledButton type="button">{ children }</StyledButton>
-        </>
-    )
-}
+export const Button: React.FC<Children> = ({
+  children,
+  customStyle,
+  ...props
+}) => {
+  return (
+    <>
+      <StyledButton style={customStyle} {...props} type="button">
+        {children}
+      </StyledButton>
+    </>
+  );
+};
