@@ -24,14 +24,16 @@ export const Header = () => {
   }, []);
 
   return (
-    <Wrapper scrolled={scrolled}>
     <Container>
+    <Wrapper scrolled={scrolled}>
+    
       <HeaderWrapper>
         <BurgerMenu><img src={burgerIcon } alt="menu" /></BurgerMenu>
         <StyledLink to="/">Sweet Paradise</StyledLink>
         <NavBar />
       </HeaderWrapper>
-      </Container>
-   </Wrapper>
+      
+    </Wrapper>
+    </Container>
   );
 };
