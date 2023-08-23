@@ -1,11 +1,10 @@
 import styled from "styled-components";
 
-export const SliderWrapper = styled.div<{ image: number }>`
+export const SliderWrapper = styled.div`
   margin: 0 auto;
   width: 190px;
   height: 225px;
   display: flex;
-  transform: ${(props) => `translate3d(-${props.image * 100}%, 0, 0)`};
   transition: transform 0.5s ease-in-out;
   @media screen and (${(props) => props.theme.media.md}) {
     width: 356px;
@@ -118,7 +117,7 @@ export const MainWrapper = styled.div<{ index: number }>`
   }
 `;
 
-export const Slide = styled.img<{ index: number; rotate: string }>`
+export const Slide = styled.img<{ $index: number; rotate: string }>`
   @media screen and (${(props) => props.theme.media.lg}) {
     position: absolute;
     width: 460px;
@@ -130,13 +129,13 @@ export const Slide = styled.img<{ index: number; rotate: string }>`
       let left;
       let top;
 
-      if (props.index === 1) {
+      if (props.$index === 1) {
         left = 432;
         top = -35;
-      } else if (props.index === 2) {
+      } else if (props.$index === 2) {
         left = -40;
         top = 260;
-      } else if (props.index === 0) {
+      } else if (props.$index === 0) {
         left = 425;
         top = 500;
       }

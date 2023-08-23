@@ -46,14 +46,14 @@ export const Slider = () => {
   return (
     <>
       <MainWrapper index={currentImageIndex}>
-        <SliderWrapper image={currentImageIndex}>
+        <SliderWrapper>
           {images.map((image, index) => (
             <Slide
               key={index}
               src={image}
               rotate={rotation}
               alt={`slide-${index}`}
-              index={index}
+              $index={index}
               style={{
                 flex: "0 0 100%",
                 maxWidth: "100%",
