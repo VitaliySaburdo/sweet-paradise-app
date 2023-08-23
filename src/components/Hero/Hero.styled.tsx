@@ -4,7 +4,15 @@ import ellipse from "../../images/Hero/Ellipse.png";
 import leaf from "../../images/Hero/leaf.png";
 import raspberries from "../../images/Hero/raspberries.png";
 
-export const MainWrapper = styled.div`
+import { Container } from "../Container/Container";
+
+export const MainWrapper = styled(Container)`
+@media screen and (${(props) => props.theme.media.md}){
+  background-image: url(${ellipse});
+  background-repeat: no-repeat;
+
+  
+}
   @media screen and (${(props) => props.theme.media.lg}) {
     background-image: url(${leaf}), url(${ellipse}), url(${raspberries});
     background-position: 70% 63%, 100% 0, 30.5% 82%;
@@ -12,6 +20,42 @@ export const MainWrapper = styled.div`
   }
 `;
 
+export const SweetWrapper = styled.p`
+  display: none;
+  @media screen and (${(props) => props.theme.media.lg}) {
+    display: block;
+    position: absolute;
+    top: -250px;
+    left: -450px;
+    color: #9c0746;
+    font-family: Sail;
+    font-size: 400px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    opacity: 0.03;
+    transform: rotate(-40deg);
+  }
+`;
+
+export const ParadiseWrapper = styled.p`
+  display: none;
+  @media screen and (${(props) => props.theme.media.lg}) {
+    display: block;
+    position: absolute;
+    z-index: -1;
+    top: -160px;
+    left: -220px;
+    color: #9c0746;
+    font-family: Montserrat;
+    font-size: 400px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    opacity: 0.03;
+    transform: rotate(-40deg);
+  }
+`;
 export const Wrapper = styled.div`
   margin-top: 85px;
   display: flex;

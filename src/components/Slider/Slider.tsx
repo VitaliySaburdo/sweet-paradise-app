@@ -53,7 +53,7 @@ export const Slider = () => {
               src={image}
               rotate={rotation}
               alt={`slide-${index}`}
-              index={index}
+              $index={index}
               style={{
                 flex: "0 0 100%",
                 maxWidth: "100%",

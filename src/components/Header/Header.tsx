@@ -24,7 +24,7 @@ export const Header = () => {
   }, []);
 
   return (
-    <Wrapper scrolled={scrolled}>
+    <Wrapper scrolled={scrolled ? 1 : 0}>
     <Container>
       <HeaderWrapper>
         <BurgerMenu><img src={burgerIcon } alt="menu" /></BurgerMenu>

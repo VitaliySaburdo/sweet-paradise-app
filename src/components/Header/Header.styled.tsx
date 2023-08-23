@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 
-export const Wrapper = styled.div<{ scrolled: boolean }>`
+export const Wrapper = styled.div<{ scrolled: number }>`
   background-color: ${(props) => (props.scrolled ? "rgba(255, 255, 255, 0.95)" : "transparent")};
   transition: background-color 0.4s ease, opacity 0.4s ease;
   position: fixed;

@@ -1,6 +1,7 @@
-import { Container } from "../Container/Container";
 import {
   MainWrapper,
+  SweetWrapper,
+  ParadiseWrapper,
   Wrapper,
   Title,
   Slogan,
@@ -14,8 +15,9 @@ export const Hero = () => {
   return (
     <>
       <MainWrapper>
-        <Container>
-          <div style={{ position: "relative" }}>
+        <div style={{ position: "relative" }}>
+          <SweetWrapper>Sweet</SweetWrapper>
+          <ParadiseWrapper>Paradise</ParadiseWrapper>
             <Wrapper>
               <Title>Sweet Paradise</Title>
               <Slogan>We will make your life is sweeter!</Slogan>
@@ -29,7 +31,6 @@ export const Hero = () => {
             allow="autoplay; encrypted-media"
             allowFullScreen
           ></VideoContainer>
-        </Container>
       </MainWrapper>
     </>
   );
