@@ -4,7 +4,7 @@ import ellipse from "../../images/Hero/Ellipse.png";
 import leaf from "../../images/Hero/leaf.png";
 import raspberries from "../../images/Hero/raspberries.png";
 
-import {Container} from '../Container/Container'
+import { Container } from "../Container/Container";
 
 export const MainWrapper = styled(Container)`
   @media screen and (${(props) => props.theme.media.lg}) {
@@ -14,6 +14,36 @@ export const MainWrapper = styled(Container)`
   }
 `;
 
+export const SweetWrapper = styled.p`
+  display: block;
+  position: absolute;
+  top: -250px;
+  left: -450px;
+  color: (${(props)=> props.theme.colors.secondaryColor});
+  font-family: Sail;
+  font-size: 400px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  opacity: 0.03;
+  transform: rotate(-40deg);
+`;
+
+export const ParadiseWrapper = styled.p`
+display: block;
+  position: absolute;
+  z-index: -1;
+    top: -160px;
+  left: -220px;
+  color: #9C0746;
+font-family: Montserrat;
+font-size: 400px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+opacity: 0.03;
+transform: rotate(-40deg);
+`;
 export const Wrapper = styled.div`
   margin-top: 85px;
   display: flex;
