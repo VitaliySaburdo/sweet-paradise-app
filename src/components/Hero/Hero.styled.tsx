@@ -19,7 +19,7 @@ export const SweetWrapper = styled.p`
   position: absolute;
   top: -250px;
   left: -450px;
-  color: (${(props)=> props.theme.colors.secondaryColor});
+  color: #9c0746;
   font-family: Sail;
   font-size: 400px;
   font-style: normal;
@@ -30,19 +30,19 @@ export const SweetWrapper = styled.p`
 `;
 
 export const ParadiseWrapper = styled.p`
-display: block;
+  display: block;
   position: absolute;
   z-index: -1;
-    top: -160px;
+  top: -160px;
   left: -220px;
-  color: #9C0746;
-font-family: Montserrat;
-font-size: 400px;
-font-style: normal;
-font-weight: 400;
-line-height: normal;
-opacity: 0.03;
-transform: rotate(-40deg);
+  color: #9c0746;
+  font-family: Montserrat;
+  font-size: 400px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  opacity: 0.03;
+  transform: rotate(-40deg);
 `;
 export const Wrapper = styled.div`
   margin-top: 85px;

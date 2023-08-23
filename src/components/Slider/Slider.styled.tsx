@@ -1,10 +1,11 @@
 import styled from "styled-components";
 
-export const SliderWrapper = styled.div`
+export const SliderWrapper = styled.div<{ image: number }>`
   margin: 0 auto;
   width: 190px;
   height: 225px;
   display: flex;
+   transform: ${(props) => `translate3d(-${props.image * 100}%, 0, 0)`};
   transition: transform 0.5s ease-in-out;
   @media screen and (${(props) => props.theme.media.md}) {
     width: 356px;

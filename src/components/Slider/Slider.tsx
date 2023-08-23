@@ -46,7 +46,7 @@ export const Slider = () => {
   return (
     <>
       <MainWrapper index={currentImageIndex}>
-        <SliderWrapper>
+        <SliderWrapper image={currentImageIndex}>
           {images.map((image, index) => (
             <Slide
               key={index}
