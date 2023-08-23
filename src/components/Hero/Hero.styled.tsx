@@ -4,7 +4,9 @@ import ellipse from "../../images/Hero/Ellipse.png";
 import leaf from "../../images/Hero/leaf.png";
 import raspberries from "../../images/Hero/raspberries.png";
 
-export const MainWrapper = styled.div`
+import {Container} from '../Container/Container'
+
+export const MainWrapper = styled(Container)`
   @media screen and (${(props) => props.theme.media.lg}) {
     background-image: url(${leaf}), url(${ellipse}), url(${raspberries});
     background-position: 70% 63%, 100% 0, 30.5% 82%;

@@ -14,7 +14,6 @@ export const Hero = () => {
   return (
     <>
       <MainWrapper>
-        <Container>
           <div style={{ position: "relative" }}>
             <Wrapper>
               <Title>Sweet Paradise</Title>
@@ -29,7 +28,6 @@ export const Hero = () => {
             allow="autoplay; encrypted-media"
             allowFullScreen
           ></VideoContainer>
-        </Container>
       </MainWrapper>
     </>
   );
