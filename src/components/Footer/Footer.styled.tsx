@@ -6,7 +6,7 @@ export const FooterWrapper = styled.footer`
   padding-bottom: 40px;
   background-color: #9c0746;
   @media screen and (${(props) => props.theme.media.md}) {
-    padding-top: 109px;
+    padding-top: 110px;
     padding-bottom: 20px;
   }
 `;
