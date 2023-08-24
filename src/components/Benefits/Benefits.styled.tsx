@@ -11,6 +11,7 @@ export const Title = styled.h2`
   margin-bottom: 40px;
   @media screen and (${(props) => props.theme.media.lg}) {
     font-size: 50px;
+    margin-bottom: 90px;
   }
 `;
 
@@ -18,7 +19,6 @@ export const Wrapper = styled.ul`
   display: flex;
   flex-direction: column;
   align-items: center;
-  position: relative;
   @media screen and (${(props) => props.theme.media.md}) {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -44,6 +44,10 @@ export const Text = styled.p`
     margin-bottom: 0;
     max-width: 100px;
     text-align: start;
+  }
+  @media screen and (${(props) => props.theme.media.lg}){
+    font-size: 24px;
+    max-width: 150px;
   }
 `;
 
@@ -91,6 +95,10 @@ export const ImgWrapper = styled.div`
   @media screen and (${(props) => props.theme.media.md}) {
     margin-bottom: 0;
   }
+  @media screen and (${(props) => props.theme.media.lg}) {
+    width: 100px;
+    height: 100px;
+  }
 `;
 
 export const Img = styled.img`
@@ -108,7 +116,7 @@ export const Photo = styled.img`
   }
   @media screen and (${(props) => props.theme.media.lg}) {
     position: absolute;
-    top: 237%;
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
   }

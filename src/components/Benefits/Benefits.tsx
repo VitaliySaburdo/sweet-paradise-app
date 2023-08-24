@@ -23,45 +23,47 @@ export const Benefits = () => {
       <Section>
         <Container>
           <Title>Why are we delicious?</Title>
-          <Wrapper>
-            <ItemWrapper>
-              <ImgWrapper>
-                <Img src={milk} alt="milk" />
-              </ImgWrapper>
-              <Text>Quality products</Text>
-            </ItemWrapper>
-            <ItemWrapper>
-              <ImgWrapper>
-                <Img src={oven} alt="oven" />
-              </ImgWrapper>
-              <Text>Expensive equipment</Text>
-            </ItemWrapper>
-            <ItemWrapper>
-              <ImgWrapper>
-                <Img src={recipe} alt="recipe" />
-              </ImgWrapper>
-              <Text>Unique recipes</Text>
-            </ItemWrapper>
-            <ItemWrapper>
-              <ImgWrapper>
-                <Img src={cook} alt="cook" />
-              </ImgWrapper>
-              <Text>Best confectioners</Text>
-            </ItemWrapper>
-            <ItemWrapper>
-              <ImgWrapper>
-                <Img src={money} alt="money" />
-              </ImgWrapper>
-              <Text>Available prices</Text>
-            </ItemWrapper>
-            <ItemWrapper>
-              <ImgWrapper>
-                <Img src={sale} alt="sale" />
-              </ImgWrapper>
-              <Text>Program loyalty</Text>
-            </ItemWrapper>
-          </Wrapper>
-          <Photo src={cook_photo} alt="cook_photo" />
+          <div style={{ position: "relative" }}>
+            <Wrapper>
+              <ItemWrapper>
+                <ImgWrapper>
+                  <Img src={milk} alt="milk" />
+                </ImgWrapper>
+                <Text>Quality products</Text>
+              </ItemWrapper>
+              <ItemWrapper>
+                <ImgWrapper>
+                  <Img src={oven} alt="oven" />
+                </ImgWrapper>
+                <Text>Expensive equipment</Text>
+              </ItemWrapper>
+              <ItemWrapper>
+                <ImgWrapper>
+                  <Img src={recipe} alt="recipe" />
+                </ImgWrapper>
+                <Text>Unique recipes</Text>
+              </ItemWrapper>
+              <ItemWrapper>
+                <ImgWrapper>
+                  <Img src={cook} alt="cook" />
+                </ImgWrapper>
+                <Text>Best confectioners</Text>
+              </ItemWrapper>
+              <ItemWrapper>
+                <ImgWrapper>
+                  <Img src={money} alt="money" />
+                </ImgWrapper>
+                <Text>Available prices</Text>
+              </ItemWrapper>
+              <ItemWrapper>
+                <ImgWrapper>
+                  <Img src={sale} alt="sale" />
+                </ImgWrapper>
+                <Text>Program loyalty</Text>
+              </ItemWrapper>
+            </Wrapper>
+            <Photo src={cook_photo} alt="cook_photo" />
+          </div>
         </Container>
       </Section>
     </>
