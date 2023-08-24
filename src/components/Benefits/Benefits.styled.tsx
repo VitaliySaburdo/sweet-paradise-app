@@ -18,15 +18,46 @@ export const Wrapper = styled.ul`
   @media screen and (${(props) => props.theme.media.md}) {
     display: grid;
     grid-template-columns: 1fr 1fr;
-
+    row-gap: 20px;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 91px;
+  }
+`;
+export const Text = styled.p`
+  color: #444251;
+  text-align: center;
+  font-family: Open Sans;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 125%;
+  margin-bottom: 40px;
+  @media screen and (${(props) => props.theme.media.md}){
+   margin-bottom: 0; 
+   max-width: 100px;
+   text-align: start;
   }
 `;
 
 export const ItemWrapper = styled.li`
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  @media screen and (${(props) => props.theme.media.md}) {
+    flex-direction: row;
+    justify-content: start;
+    gap: 20px;
+    &:nth-child(2n) {
+      justify-content: end;
+      flex-direction: row-reverse;
+       & ${Text} {
+        text-align: end; 
+      }
+    }
+         
+  }
+`;
 
 export const ImgWrapper = styled.div`
   display: flex;
@@ -40,6 +71,9 @@ export const ImgWrapper = styled.div`
   stroke-width: 1px;
   stroke: #ffd4dd;
   filter: drop-shadow(0px 15px 40px rgba(254, 195, 207, 0.5));
+  @media screen and (${(props) => props.theme.media.md}) {
+      margin-bottom: 0;
+  }
 `;
 
 export const Img = styled.img`
@@ -47,16 +81,7 @@ export const Img = styled.img`
   height: 48px;
 `;
 
-export const Text = styled.p`
-  color: #444251;
-  text-align: center;
-  font-family: Open Sans;
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 125%;
-  margin-bottom: 40px;
-`;
+
 export const Photo = styled.img`
   margin: 0 auto;
   width: 272px;

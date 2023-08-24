@@ -2,7 +2,7 @@ import { Container } from "../Container/Container";
 import { Section } from "../Section/Section";
 import {
   Title,
-    Wrapper,
+  Wrapper,
   ItemWrapper,
   ImgWrapper,
   Img,
@@ -35,24 +35,24 @@ export const Benefits = () => {
                 <Img src={oven} alt="oven" />
               </ImgWrapper>
               <Text>Expensive equipment</Text>
-              <ItemWrapper>
-                <ImgWrapper>
-                  <Img src={recipe} alt="recipe" />
-                </ImgWrapper>
-                <Text>Unique recipes</Text>
-              </ItemWrapper>
-              <ItemWrapper>
-                <ImgWrapper>
-                  <Img src={cook} alt="cook" />
-                </ImgWrapper>
-                <Text>Best confectioners</Text>
-              </ItemWrapper>
-              <ItemWrapper>
-                <ImgWrapper>
-                  <Img src={money} alt="money" />
-                </ImgWrapper>
-                <Text>Available prices</Text>
-              </ItemWrapper>
+            </ItemWrapper>
+            <ItemWrapper>
+              <ImgWrapper>
+                <Img src={recipe} alt="recipe" />
+              </ImgWrapper>
+              <Text>Unique recipes</Text>
+            </ItemWrapper>
+            <ItemWrapper>
+              <ImgWrapper>
+                <Img src={cook} alt="cook" />
+              </ImgWrapper>
+              <Text>Best confectioners</Text>
+            </ItemWrapper>
+            <ItemWrapper>
+              <ImgWrapper>
+                <Img src={money} alt="money" />
+              </ImgWrapper>
+              <Text>Available prices</Text>
             </ItemWrapper>
             <ItemWrapper>
               <ImgWrapper>
