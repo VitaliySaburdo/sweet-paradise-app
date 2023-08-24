@@ -38,3 +38,23 @@ export const BurgerMenu = styled.button`
     display: none;
   }
 `;
+
+export const UserNav = styled.ul`
+  margin-left: auto;
+`;
+export const Btn = styled.button`
+  display: block;
+  padding: 0;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+`;
+export const Img = styled.img`
+  width: 17px;
+  @media screen and (${(props) => props.theme.media.md}){
+    width: 30px;
+  }
+    @media screen and (${(props) => props.theme.media.lg}){
+    width: 40px;
+  }
+`

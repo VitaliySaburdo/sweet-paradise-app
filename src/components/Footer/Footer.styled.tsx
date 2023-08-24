@@ -5,6 +5,10 @@ export const FooterWrapper = styled.footer`
   padding-top: 40px;
   padding-bottom: 40px;
   background-color: #9c0746;
+  @media screen and (${(props) => props.theme.media.md}) {
+    padding-top: 109px;
+    padding-bottom: 20px;
+  }
 `;
 export const StyledLogoLink = styled(Link)`
   display: block;
@@ -17,8 +21,8 @@ export const StyledLogoLink = styled(Link)`
   margin-bottom: 20px;
   text-align: center;
   @media screen and (${(props) => props.theme.media.md}) {
-    display: inline-block;
-
+    margin-bottom: 0;
+    font-size: 26px;
   }
 `;
 export const StyledPhoneLink = styled(Link)`
@@ -32,8 +36,8 @@ export const StyledPhoneLink = styled(Link)`
   margin-bottom: 32px;
   text-align: center;
   @media screen and (${(props) => props.theme.media.md}) {
-    display: inline-block;
-  
+    margin-bottom: 0;
+    font-size: 20px;
   }
 `;
 export const Text = styled.p`
@@ -44,4 +48,16 @@ export const Text = styled.p`
   font-weight: 400;
   line-height: normal;
   text-align: center;
+  @media screen and (${(props) => props.theme.media.md}) {
+    font-size: 14px;
+  }
+`;
+
+export const LinkWrapper = styled.div`
+  @media screen and (${(props) => props.theme.media.md}) {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 71px;
+  }
 `;

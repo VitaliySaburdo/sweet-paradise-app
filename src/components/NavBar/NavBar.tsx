@@ -1,5 +1,5 @@
-import { Nav, NavList, UserNav, Btn, Img } from "./NavBar.styled";
-import basket from "../../images/Header/basket.png";
+import { Nav, NavList} from "./NavBar.styled";
+
 // import user from "../../images/Header/user.png";
 
 export const NavBar = () => {
@@ -20,14 +20,6 @@ export const NavBar = () => {
             <p>Contacts</p>
           </li>
         </NavList>
-        <UserNav>
-          <li>
-            <Btn>
-              <Img src={basket} alt="basket" width="40px" />
-            </Btn>
-          </li>
-          {/* <li><button><img src={user} alt="user" width="40px"/></button></li> */}
-        </UserNav>
       </Nav>
     </>
   );
