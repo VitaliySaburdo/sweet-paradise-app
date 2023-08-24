@@ -25,6 +25,8 @@ export const StyledLogoLink = styled(Link)`
     font-size: 26px;
   }
 `;
+
+
 export const StyledPhoneLink = styled(Link)`
   display: block;
   color: #fff;
@@ -61,3 +63,4 @@ export const LinkWrapper = styled.div`
     margin-bottom: 71px;
   }
 `;
+

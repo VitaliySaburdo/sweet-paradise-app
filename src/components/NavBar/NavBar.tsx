@@ -1,23 +1,28 @@
-import { Nav, NavList} from "./NavBar.styled";
+import { Nav, NavList, Text} from "./NavBar.styled";
 
 // import user from "../../images/Header/user.png";
 
-export const NavBar = () => {
+interface NavBarProps {
+  color?: string;
+  display?: boolean;
+}
+
+export const NavBar: React.FC<NavBarProps> = ({color, display = false}) => {
   return (
     <>
       <Nav>
-        <NavList>
+        <NavList display={display}>
           <li>
-            <p>About us</p>
+            <Text color={color}>About us</Text>
           </li>
           <li>
-            <p>Catalog</p>
+            <Text color={color}>Catalog</Text>
           </li>
           <li>
-            <p>Feedback</p>
+            <Text color={color}>Feedback</Text>
           </li>
           <li>
-            <p>Contacts</p>
+            <Text color={color}>Contacts</Text>
           </li>
         </NavList>
       </Nav>

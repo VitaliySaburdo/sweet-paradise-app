@@ -1,5 +1,6 @@
 import { Container } from "../Container/Container";
 import { NavBar } from "../NavBar/NavBar";
+
 import {
   FooterWrapper,
   LinkWrapper,
@@ -15,7 +16,7 @@ export const Footer = () => {
         <Container>
           <LinkWrapper>
             <StyledLogoLink to="/">Sweet Paradise</StyledLogoLink>
-            <NavBar />
+            <NavBar color='white' display={true}/>
             <StyledPhoneLink to="tel:+380677764273">
               +380677764273
             </StyledPhoneLink>

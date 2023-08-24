@@ -23,9 +23,11 @@ export const StyledLink = styled(Link)`
   margin-bottom: 7px;
   @media screen and (${(props) => props.theme.media.md}) {
     font-size: 20px;
+    margin-right: 68px;
   }
   @media screen and (${(props) => props.theme.media.lg}) {
     font-size: 26px;
+    margin-right: 334px;
   }
 `;
 
