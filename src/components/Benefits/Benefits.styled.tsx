@@ -9,12 +9,16 @@ export const Title = styled.h2`
   font-weight: 900;
   line-height: normal;
   margin-bottom: 40px;
+  @media screen and (${(props) => props.theme.media.lg}) {
+    font-size: 50px;
+  }
 `;
 
 export const Wrapper = styled.ul`
   display: flex;
   flex-direction: column;
   align-items: center;
+  position: relative;
   @media screen and (${(props) => props.theme.media.md}) {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -22,6 +26,9 @@ export const Wrapper = styled.ul`
     align-items: center;
     text-align: center;
     margin-bottom: 91px;
+  }
+  @media screen and (${(props) => props.theme.media.lg}) {
+    row-gap: 180px;
   }
 `;
 export const Text = styled.p`
@@ -33,10 +40,10 @@ export const Text = styled.p`
   font-weight: 400;
   line-height: 125%;
   margin-bottom: 40px;
-  @media screen and (${(props) => props.theme.media.md}){
-   margin-bottom: 0; 
-   max-width: 100px;
-   text-align: start;
+  @media screen and (${(props) => props.theme.media.md}) {
+    margin-bottom: 0;
+    max-width: 100px;
+    text-align: start;
   }
 `;
 
@@ -51,11 +58,21 @@ export const ItemWrapper = styled.li`
     &:nth-child(2n) {
       justify-content: end;
       flex-direction: row-reverse;
-       & ${Text} {
-        text-align: end; 
+      & ${Text} {
+        text-align: end;
       }
     }
-         
+  }
+  @media screen and (${(props) => props.theme.media.lg}) {
+    &:nth-child(1),
+    &:nth-child(5) {
+      margin-left: 170px;
+    }
+
+    &:nth-child(2),
+    &:nth-child(6) {
+      margin-right: 170px;
+    }
   }
 `;
 
@@ -72,7 +89,7 @@ export const ImgWrapper = styled.div`
   stroke: #ffd4dd;
   filter: drop-shadow(0px 15px 40px rgba(254, 195, 207, 0.5));
   @media screen and (${(props) => props.theme.media.md}) {
-      margin-bottom: 0;
+    margin-bottom: 0;
   }
 `;
 
@@ -81,9 +98,18 @@ export const Img = styled.img`
   height: 48px;
 `;
 
-
 export const Photo = styled.img`
   margin: 0 auto;
   width: 272px;
   height: 272px;
+  @media screen and (${(props) => props.theme.media.md}) {
+    width: 500px;
+    height: 500px;
+  }
+  @media screen and (${(props) => props.theme.media.lg}) {
+    position: absolute;
+    top: 237%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
 `;
