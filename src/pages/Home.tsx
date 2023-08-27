@@ -12,7 +12,8 @@ export const Home = () => {
     async function fetchData() {
       try {
         const data = await getProductsByCategories("64dcc4148efcb0f7600c8cd0");
-        setNovelties(data);
+          setNovelties(data);
+          console.log(data);
         setLoading(false);
       } catch (error) {
         console.error("Error fetching data:", error);
