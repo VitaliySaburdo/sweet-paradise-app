@@ -16,7 +16,7 @@ export const Footer = () => {
         <Container>
           <LinkWrapper>
             <StyledLogoLink to="/">Sweet Paradise</StyledLogoLink>
-            <NavBar color='white' display={true}/>
+            <NavBar color='white' display={'true'}/>
             <StyledPhoneLink to="tel:+380677764273">
               +380677764273
             </StyledPhoneLink>

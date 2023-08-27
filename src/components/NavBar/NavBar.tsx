@@ -4,14 +4,14 @@ import { Nav, NavList, Text} from "./NavBar.styled";
 
 interface NavBarProps {
   color?: string;
-  display?: boolean;
+  display?: string;
 }
 
 export const NavBar: React.FC<NavBarProps> = ({color, display = false}) => {
   return (
     <>
       <Nav>
-        <NavList display={display}>
+        <NavList display={display.toString()}>
           <li>
             <Text color={color}>About us</Text>
           </li>

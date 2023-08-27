@@ -4,7 +4,7 @@ export const Nav = styled.nav`
   display: flex;
   align-items: center;
 `;
-export const NavList = styled.ul<{ display: boolean }>`
+export const NavList = styled.ul<{ display: string }>`
   display: none;
 
   @media screen and (${(props) => props.theme.media.md}) {
