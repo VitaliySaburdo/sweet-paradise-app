@@ -8,12 +8,13 @@ font-size: 44px;
 font-style: normal;
 font-weight: 900;
 line-height: normal;
+margin-bottom: 79px;
 `
 
 export const Wrapper = styled.ul`
 
 @media screen and (${(props) => props.theme.media.lg}){
 display: flex;
-
+justify-content: space-between;
 }    
 `

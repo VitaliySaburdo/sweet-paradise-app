@@ -1,5 +1,6 @@
 import React from "react";
-import { Img } from "../Product/Products.styled";
+import { Img, Wrapper, Title, Text, Params } from "../Product/Products.styled";
+import { Button } from "../Button/Button";
 
 
 interface NoveltiesItem {
@@ -19,13 +20,13 @@ interface NoveltiesItem {
 export const Product: React.FC<NoveltiesItem> = ({ product }) => {
   return (
     <>
-      <li key={product._id}>
+      <Wrapper key={product._id}>
               <Img src={"https://sweet-paradise-api.onrender.com/static/" + product.img} alt={product.name}/>
-              <h3>{product.name}</h3>
-              <p>{product.ingredients}</p>
-              <p>{product.price} uah /{product.weight} gr</p>
-              <button type="button">on basket</button>
-      </li>
+              <Title>{product.name}</Title>
+              <Text>{product.ingredients}</Text>
+              <Params>{product.price} uah /{product.weight} gr</Params>
+              <Button widthLg="200px">on basket</Button>
+      </Wrapper>
     </>
   );
 };

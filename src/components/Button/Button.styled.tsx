@@ -1,6 +1,10 @@
 import styled from "styled-components";
 
-export const StyledButton = styled.button`
+interface StyledButtonProps {
+  widthLg?: string;
+}
+
+export const StyledButton = styled.button<StyledButtonProps>`
   width: 145px;
   height: 45px;
   border-radius: 50px;
@@ -16,7 +20,7 @@ export const StyledButton = styled.button`
   line-height: 105.2%;
   cursor: pointer;
   @media screen and (${(props) => props.theme.media.md}) {
-    width: 260px;
+    width: ${(props) => props.widthLg || '260px'};
     height: 70px;
     font-size: 18px;
   }
