@@ -1,5 +1,5 @@
 import React from "react";
-import { Img } from "../Novelties/Novelties.styled";
+import { Img } from "../Product/Products.styled";
 
 
 interface NoveltiesItem {
