@@ -6,7 +6,7 @@ export const Wrapper = styled.div<{ scrolled: number }>`
   transition: background-color 0.4s ease, opacity 0.4s ease;
   position: fixed;
   top: 0;
-  width: 100vw;
+  width: 100%;
   z-index: 1000;
 `;
 
