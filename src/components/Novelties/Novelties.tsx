@@ -1,6 +1,6 @@
 import { Container } from "../Container/Container";
 import { Product } from "../Product/Product";
-import { Title } from "./Novelties.styled";
+import { Title, Wrapper } from "./Novelties.styled";
 
 interface NoveltiesItem {
   _id: string;
@@ -27,11 +27,11 @@ export const Novelties: React.FC<NoveltiesProps> = ({ novelties, loading }) => {
         {loading ? (
           <p>Loading...</p>
         ) : (
-          <ul>
+          <Wrapper>
             {novelties.map((product) => (
                 <Product product={product } />
             ))}
-          </ul>
+          </Wrapper>
         )}
       </Container>
     </>

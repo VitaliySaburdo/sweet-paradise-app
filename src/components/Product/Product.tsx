@@ -1,4 +1,6 @@
 import React from "react";
+import { Img } from "../Novelties/Novelties.styled";
+
 
 interface NoveltiesItem {
   product: {
@@ -18,7 +20,7 @@ export const Product: React.FC<NoveltiesItem> = ({ product }) => {
   return (
     <>
       <li key={product._id}>
-              <img src={product.img} alt={product.name} />
+              <Img src={"https://sweet-paradise-api.onrender.com/static/" + product.img} alt={product.name}/>
               <h3>{product.name}</h3>
               <p>{product.ingredients}</p>
               <p>{product.price} uah /{product.weight} gr</p>

@@ -9,3 +9,17 @@ font-style: normal;
 font-weight: 900;
 line-height: normal;
 `
+
+export const Wrapper = styled.ul`
+
+@media screen and (${(props) => props.theme.media.lg}){
+display: flex;
+
+}    
+`
+export const Img = styled.img`
+@media screen and (${(props) => props.theme.media.lg}){
+width: 394px;
+
+}   
+`
