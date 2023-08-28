@@ -15,5 +15,6 @@ export const Wrapper = styled.ul`
   @media screen and (${(props) => props.theme.media.lg}) {
     display: flex;
     justify-content: space-between;
+    margin-bottom: 90px;
   }
 `;
