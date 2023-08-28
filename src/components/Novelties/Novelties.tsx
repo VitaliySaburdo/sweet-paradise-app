@@ -1,4 +1,5 @@
 import { Container } from "../Container/Container";
+import { Product } from "../Product/Product";
 import { Title } from "./Novelties.styled";
 
 interface NoveltiesItem {
@@ -28,9 +29,7 @@ export const Novelties: React.FC<NoveltiesProps> = ({ novelties, loading }) => {
         ) : (
           <ul>
             {novelties.map((product) => (
-              <li key={product._id}>
-                {product.name} - ${product.price}
-              </li>
+                <Product product={product } />
             ))}
           </ul>
         )}
