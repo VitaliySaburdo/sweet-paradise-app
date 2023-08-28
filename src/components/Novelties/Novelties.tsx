@@ -1,5 +1,6 @@
 import { Container } from "../Container/Container";
 import { Product } from "../Product/Product";
+import { Section } from "../Section/Section";
 import { Title, Wrapper } from "./Novelties.styled";
 
 interface NoveltiesItem {
@@ -22,6 +23,7 @@ interface NoveltiesProps {
 export const Novelties: React.FC<NoveltiesProps> = ({ novelties, loading }) => {
   return (
     <>
+      <Section>
       <Container>
         <Title>Try our new items</Title>
         {loading ? (
@@ -29,11 +31,12 @@ export const Novelties: React.FC<NoveltiesProps> = ({ novelties, loading }) => {
         ) : (
           <Wrapper>
             {novelties.map((product) => (
-                <Product product={product } />
+                <Product product={product } key={product._id}/>
             ))}
           </Wrapper>
         )}
-      </Container>
+        </Container>
+        </Section>
     </>
   );
 };

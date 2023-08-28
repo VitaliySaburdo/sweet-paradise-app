@@ -20,12 +20,12 @@ interface NoveltiesItem {
 export const Product: React.FC<NoveltiesItem> = ({ product }) => {
   return (
     <>
-      <Wrapper key={product._id}>
+      <Wrapper>
               <Img src={"https://sweet-paradise-api.onrender.com/static/" + product.img} alt={product.name}/>
               <Title>{product.name}</Title>
               <Text>{product.ingredients}</Text>
               <Params>{product.price} uah /{product.weight} gr</Params>
-              <Button widthLg="200px">on basket</Button>
+              <Button width="200px">on basket</Button>
       </Wrapper>
     </>
   );

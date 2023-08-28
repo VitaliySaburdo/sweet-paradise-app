@@ -3,7 +3,7 @@ import { StyledButton } from "./Button.styled";
 interface Children {
   children: React.ReactNode;
   customStyle?: React.CSSProperties;
-  widthLg?: string;
+  width?: string;
 }
 
 export const Button: React.FC<Children> = ({

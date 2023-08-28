@@ -10,7 +10,7 @@ export const StyledSection = styled.section`
   }
 
   @media screen and (${props => props.theme.media.lg}) {
-    padding-top: 180px;
-    padding-bottom: 180px;
+    padding-top: 90px;
+    padding-bottom: 90px;
   }
 `;
