@@ -1,5 +1,5 @@
-
-import { Title } from "./Novelties.styled"
+import { Container } from "../Container/Container";
+import { Title } from "./Novelties.styled";
 
 interface NoveltiesItem {
   _id: string;
@@ -14,24 +14,27 @@ interface NoveltiesItem {
 }
 
 interface NoveltiesProps {
-    novelties: NoveltiesItem[]; 
-    loading: boolean
+  novelties: NoveltiesItem[];
+  loading: boolean;
 }
 
 export const Novelties: React.FC<NoveltiesProps> = ({ novelties, loading }) => {
-
-    return (
-        <>
-            <Title>Try our new items</Title>
-            {loading ? (
-                <p>Loading...</p>
-            ) : (
-                <ul>
-                    {novelties.map(product => (
-                        <li key={product._id}>{product.name} - ${product.price}</li>
-                    ))}
-                </ul>
-            )}
-        </>
-    );
+  return (
+    <>
+      <Container>
+        <Title>Try our new items</Title>
+        {loading ? (
+          <p>Loading...</p>
+        ) : (
+          <ul>
+            {novelties.map((product) => (
+              <li key={product._id}>
+                {product.name} - ${product.price}
+              </li>
+            ))}
+          </ul>
+        )}
+      </Container>
+    </>
+  );
 };
