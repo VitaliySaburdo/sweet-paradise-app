@@ -3,6 +3,7 @@ import { getProductsByCategories } from "../components/apiService/apiService";
 import { Benefits } from "../components/Benefits/Benefits";
 import { Hero } from "../components/Hero/Hero";
 import { Novelties } from "../components/Novelties/Novelties";
+import { Work } from "../components/Work/Work";
 
 export const Home = () => {
   const [novelties, setNovelties] = useState([]);
@@ -12,7 +13,7 @@ export const Home = () => {
     async function fetchData() {
       try {
         const data = await getProductsByCategories("64dcc4148efcb0f7600c8cd0");
-          setNovelties(data);
+        setNovelties(data);
         setLoading(false);
       } catch (error) {
         console.error("Error fetching data:", error);
@@ -26,7 +27,8 @@ export const Home = () => {
     <>
       <Hero />
       <Benefits />
-          <Novelties novelties={novelties} loading={loading} />
+      <Novelties novelties={novelties} loading={loading} />
+      <Work/>
     </>
   );
 };
