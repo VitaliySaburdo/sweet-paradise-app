@@ -12,16 +12,17 @@ export const Title = styled.h2`
   font-weight: 900;
   line-height: normal;
   margin-bottom: 60px;
-  @media screen and (${(props) => props.theme.media.lg}) {
+  @media screen and (${(props) => props.theme.media.md}) {
     width: 100%;
     font-size: 44px;
-    margin-bottom: 79px;
+    margin-bottom: 80px;
   }
 `;
 
 export const Wrapper = styled.ul`
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 60px;
   @media screen and (${(props) => props.theme.media.lg}) {
     display: flex;

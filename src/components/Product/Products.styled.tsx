@@ -5,6 +5,9 @@ export const Wrapper = styled.li`
   display: flex;
   flex-direction: column;
   align-items: center;
+    @media screen and (${(props) => props.theme.media.md}) {
+    width: 345px;
+  }
   @media screen and (${(props) => props.theme.media.lg}) {
     width: 394px;
   }
@@ -13,7 +16,7 @@ export const Wrapper = styled.li`
 export const Img = styled.img`
   width: 236px;
   margin-bottom: 13px;
-  @media screen and (${(props) => props.theme.media.lg}) {
+  @media screen and (${(props) => props.theme.media.md}) {
     width: 394px;
   }
 `;
@@ -45,7 +48,7 @@ export const Text = styled.p`
   font-weight: 400;
   line-height: normal;
   margin-bottom: 19px;
-  @media screen and (${(props) => props.theme.media.lg}) {
+  @media screen and (${(props) => props.theme.media.md}) {
     width: 100%;
   }
 `;
