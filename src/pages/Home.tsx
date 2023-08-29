@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { getProductsByCategories } from "../components/apiService/apiServise";
+import { getProductsByCategories } from "../components/apiService/apiService";
 import { Benefits } from "../components/Benefits/Benefits";
 import { Hero } from "../components/Hero/Hero";
 import { Novelties } from "../components/Novelties/Novelties";
