@@ -25,7 +25,7 @@ export const Product: React.FC<NoveltiesItem> = ({ product }) => {
               <Title>{product.name}</Title>
               <Text>{product.ingredients}</Text>
               <Params>{product.price} uah /{product.weight} gr</Params>
-              <Button width="200px">on basket</Button>
+              <Button width="200px">add to cart</Button>
       </Wrapper>
     </>
   );
