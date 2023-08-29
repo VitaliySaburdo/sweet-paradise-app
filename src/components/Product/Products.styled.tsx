@@ -1,16 +1,20 @@
 import styled from "styled-components";
 
 export const Wrapper = styled.li`
-  width: 394px;
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
+  @media screen and (${(props) => props.theme.media.lg}) {
+    width: 394px;
+  }
 `;
 
 export const Img = styled.img`
+  width: 236px;
+  margin-bottom: 13px;
   @media screen and (${(props) => props.theme.media.lg}) {
     width: 394px;
-    margin-bottom: 13px;
   }
 `;
 
