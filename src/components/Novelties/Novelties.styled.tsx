@@ -20,9 +20,14 @@ export const Title = styled.h2`
 `;
 
 export const Wrapper = styled.ul`
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
   @media screen and (${(props) => props.theme.media.lg}) {
     display: flex;
+    flex-direction: row;
     justify-content: space-between;
     margin-bottom: 90px;
+     gap: 0;
   }
 `;
