@@ -26,13 +26,17 @@ export const Title = styled.h3`
   font-style: normal;
   font-weight: 600;
   line-height: normal;
-  margin-bottom: 12px;
+  margin-bottom: 18px;
   &:first-letter {
     text-transform: uppercase;
+  }
+  @media screen and (${(props) => props.theme.media.lg}) {
+    margin-bottom: 12px;
   }
 `;
 
 export const Text = styled.p`
+  width: 220px;
   color: #444251;
   text-align: center;
   font-family: Open Sans;
@@ -41,6 +45,9 @@ export const Text = styled.p`
   font-weight: 400;
   line-height: normal;
   margin-bottom: 19px;
+  @media screen and (${(props) => props.theme.media.lg}) {
+    width: 100%;
+  }
 `;
 
 export const Params = styled.p`
