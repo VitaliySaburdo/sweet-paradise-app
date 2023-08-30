@@ -31,6 +31,7 @@ export const Wrapper = styled.ul`
     row-gap: 180px;
   }
 `;
+
 export const Text = styled.p`
   color: #444251;
   text-align: center;
