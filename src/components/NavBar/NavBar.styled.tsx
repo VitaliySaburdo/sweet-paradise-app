@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 export const Nav = styled.nav`
   display: flex;
@@ -18,7 +19,7 @@ export const NavList = styled.ul<{ display: string }>`
   }
 `;
 
-export const Text = styled.p`
+export const StyledLink = styled(Link)`
   color: ${(props) => props.color || "#444251"};
   font-family: Montserrat;
   font-size: 16px;

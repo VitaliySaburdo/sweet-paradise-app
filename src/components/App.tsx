@@ -4,6 +4,7 @@ import { ThemeProvider } from "styled-components";
 import { theme } from "../theme/theme";
 import { SharedLayout } from "./SharedLayout/SharedLayout";
 import { Home } from "../pages/Home";
+import { Catalog } from "../pages/Catalog";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
         <Routes>
           <Route path="/" element={<SharedLayout />}>
             <Route index element={<Home />} />
+            <Route path="/catalog" element={<Catalog />} />
           </Route>
         </Routes>
       </ThemeProvider>

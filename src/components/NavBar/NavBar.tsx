@@ -1,4 +1,4 @@
-import { Nav, NavList, Text} from "./NavBar.styled";
+import { Nav, NavList, StyledLink} from "./NavBar.styled";
 
 // import user from "../../images/Header/user.png";
 
@@ -13,16 +13,16 @@ export const NavBar: React.FC<NavBarProps> = ({color, display = false}) => {
       <Nav>
         <NavList display={display.toString()}>
           <li>
-            <Text color={color}>About us</Text>
+            <p color={color}>About us</p>
           </li>
           <li>
-            <Text color={color}>Catalog</Text>
+            <StyledLink to={'/catalog'} color={color} >Catalog</StyledLink>
           </li>
           <li>
-            <Text color={color}>Feedback</Text>
+            <p color={color}>Feedback</p>
           </li>
           <li>
-            <Text color={color}>Contacts</Text>
+            <p color={color}>Contacts</p>
           </li>
         </NavList>
       </Nav>
