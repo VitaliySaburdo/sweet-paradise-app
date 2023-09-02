@@ -1,13 +1,11 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { register, logIn, logOut, refreshUser } from './operations';
 
-// Определите тип для объекта пользователя
 type User = {
   name: string | null;
   email: string | null;
 };
 
-// Определите тип для начального состояния
 type AuthState = {
   user: User;
   token: string | null;
