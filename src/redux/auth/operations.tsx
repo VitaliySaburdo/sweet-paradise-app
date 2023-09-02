@@ -1,5 +1,7 @@
 import axios from 'axios';
 import { createAsyncThunk } from '@reduxjs/toolkit';
+import { RootState } from '../../redux/store';
+
 
 axios.defaults.baseURL = 'https://sweet-paradise-api.onrender.com';
 
@@ -28,9 +30,14 @@ export const register = createAsyncThunk(
   }
 );
 
+type LogInPayload = {
+  values: {  email: string;
+  password: string;};
+};
+
 export const logIn = createAsyncThunk(
   'auth/login',
-  async ({ values }, thunkAPI) => {
+  async ({ values }: LogInPayload, thunkAPI) => {
     try {
       const res = await axios.post('/users/login', values);
       setAuthHeader(res.data.token);
@@ -55,7 +62,7 @@ export const logOut = createAsyncThunk('auth/logout', async (_, thunkAPI) => {
 export const refreshUser = createAsyncThunk(
   'auth/refresh',
   async (_, thunkAPI) => {
-    const state = thunkAPI.getState();
+    const state: RootState = thunkAPI.getState();
     const persistedToken = state.auth.token;
     if (persistedToken === null) {
       return thunkAPI.rejectWithValue('Unable to fetch user');

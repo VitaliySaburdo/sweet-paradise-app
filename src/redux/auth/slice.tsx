@@ -1,7 +1,21 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { register, logIn, logOut, refreshUser } from './operations';
 
-const initialState = {
+// Определите тип для объекта пользователя
+type User = {
+  name: string | null;
+  email: string | null;
+};
+
+// Определите тип для начального состояния
+type AuthState = {
+  user: User;
+  token: string | null;
+  isLoggedIn: boolean;
+  isRefreshing: boolean;
+};
+
+const initialState: AuthState = {
   user: { name: null, email: null },
   token: null,
   isLoggedIn: false,
@@ -11,6 +25,7 @@ const initialState = {
 const authSlice = createSlice({
   name: 'auth',
   initialState,
+  reducers: {},
   extraReducers: builder =>
     builder
       .addCase(register.fulfilled, (state, action) => {
