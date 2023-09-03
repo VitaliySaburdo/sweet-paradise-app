@@ -12,6 +12,7 @@ import {
 } from "./Header.styled";
 import burgerIcon from "../../images/Header/burger-btn.png";
 import basket from "../../images/Header/basket.png";
+import user from "../../images/Header/user.png";
 
 export const Header = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -46,7 +47,11 @@ export const Header = () => {
                 <Img src={basket} alt="basket" width="40px" />
               </Btn>
             </li>
-            {/* <li><button><img src={user} alt="user" width="40px"/></button></li> */}
+            <li>
+              <Btn>
+                <img src={user} alt="user" width="40px" />
+              </Btn>
+            </li>
           </UserNav>
         </HeaderWrapper>
       </Container>

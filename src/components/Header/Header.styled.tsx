@@ -43,6 +43,8 @@ export const BurgerMenu = styled.button`
 
 export const UserNav = styled.ul`
   margin-left: auto;
+  display: flex;
+  gap: 10px;
 `;
 export const Btn = styled.button`
   display: block;
