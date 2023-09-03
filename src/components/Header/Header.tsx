@@ -49,7 +49,7 @@ export const Header = () => {
             </li>
             <li>
               <Btn>
-                <img src={user} alt="user" width="40px" />
+                <Img src={user} alt="user" width="40px" />
               </Btn>
             </li>
           </UserNav>
