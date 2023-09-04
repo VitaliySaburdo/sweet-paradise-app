@@ -1,5 +1,5 @@
 import * as yup from "yup";
-import { useFormik } from 'formik';
+import { Formik, Field, ErrorMessage  } from 'formik';
 import { StyledForm } from "./RegisterForm.styled";
 
 
@@ -21,77 +21,41 @@ const validationSchema = yup.object({
 
 export const RegisterForm = () => {
 
-    const formik = useFormik({
-    initialValues: {
-      name: '',
-      email: '',
-      password: '',
-      confirm: '',
-    },
-    validationSchema: validationSchema,
-    onSubmit: ({ name, email, password }, { resetForm }) => {
-      console.log({ name, email, password });
-       resetForm();
-    },
-    });
   
   return (
     <>
-      <StyledForm onSubmit={formik.handleSubmit}>
-        <label htmlFor="name">Name</label>
-        <input
-          type="text"
-          id="name"
-          name="name"
-          value={formik.values.name}
-          onChange={formik.handleChange}
-          onBlur={formik.handleBlur}
-        />
-        {formik.touched.name && formik.errors.name ? (
-          <div>{formik.errors.name}</div>
-        ) : null}
-        
-        <label htmlFor="email">Email</label>
-        <input
-          type="text"
-          id="email"
-          name="email"
-          value={formik.values.email}
-          onChange={formik.handleChange}
-          onBlur={formik.handleBlur}
-        />
-        {formik.touched.email && formik.errors.email ? (
-          <div>{formik.errors.email}</div>
-        ) : null}
-        
-        <label htmlFor="password">Password</label>
-        <input
-          type="password"
-          id="password"
-          name="password"
-          value={formik.values.password}
-          onChange={formik.handleChange}
-          onBlur={formik.handleBlur}
-        />
-        {formik.touched.password && formik.errors.password ? (
-          <div>{formik.errors.password}</div>
-        ) : null}
-        
-        <label htmlFor="confirm">Confirm</label>
-        <input
-          type="password"
-          id="confirm"
-          name="confirm"
-          value={formik.values.confirm}
-          onChange={formik.handleChange}
-          onBlur={formik.handleBlur}
-        />
-        {formik.touched.confirm && formik.errors.confirm ? (
-          <div>{formik.errors.confirm}</div>
-        ) : null}
-        
-        <button type="submit">Register</button>
-      </StyledForm>
+       <Formik
+      initialValues={{
+        name: '',
+        email: '',
+        password: '',
+        confirm: '',
+      }}
+      validationSchema={validationSchema}
+      onSubmit={({ name, email, password }) => {
+        console.log({ name, email, password });
+      }}
+    >
+        <StyledForm>
+          <label htmlFor="name">Name</label>
+          <Field type="text" id="name" name="name" />
+          <ErrorMessage name="name" component="div" />
+          
+          <label htmlFor="email">Email</label>
+          <Field type="text" id="email" name="email" />
+          <ErrorMessage name="email" component="div" />
+          
+          <label htmlFor="password">Password</label>
+          <Field type="password" id="password" name="password" />
+          <ErrorMessage name="password" component="div" />
+          
+          <label htmlFor="confirm">Confirm</label>
+          <Field type="password" id="confirm" name="confirm" />
+          <ErrorMessage name="confirm" component="div" />
+          
+          <button type="submit">Register</button>
+        </StyledForm>
+        </Formik>
     </>
   );
 };
