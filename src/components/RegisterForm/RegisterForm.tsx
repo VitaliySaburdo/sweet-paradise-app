@@ -1,6 +1,7 @@
 import * as yup from "yup";
-import { Formik, Field, ErrorMessage  } from 'formik';
-import { StyledForm } from "./RegisterForm.styled";
+import { Formik, ErrorMessage  } from 'formik';
+import { StyledForm, StyledField, StyledLabel } from "./RegisterForm.styled";
+import { Button } from "../Button/Button";
 
 
 const validationSchema = yup.object({
@@ -18,6 +19,7 @@ const validationSchema = yup.object({
     .oneOf([yup.ref("password")], "Password does not match")
     .required("Confirm Password is Required"),
 });
+
 
 export const RegisterForm = () => {
 
@@ -37,23 +39,23 @@ export const RegisterForm = () => {
       }}
     >
         <StyledForm>
-          <label htmlFor="name">Name</label>
-          <Field type="text" id="name" name="name" />
+          <StyledLabel htmlFor="name">Name</StyledLabel>
+          <StyledField type="text" id="name" name="name" />
           <ErrorMessage name="name" component="div" />
           
-          <label htmlFor="email">Email</label>
-          <Field type="text" id="email" name="email" />
+          <StyledLabel htmlFor="email">Email</StyledLabel>
+          <StyledField type="text" id="email" name="email" />
           <ErrorMessage name="email" component="div" />
           
-          <label htmlFor="password">Password</label>
-          <Field type="password" id="password" name="password" />
+          <StyledLabel htmlFor="password">Password</StyledLabel>
+          <StyledField type="password" id="password" name="password" />
           <ErrorMessage name="password" component="div" />
           
-          <label htmlFor="confirm">Confirm</label>
-          <Field type="password" id="confirm" name="confirm" />
+          <StyledLabel htmlFor="confirm">Confirm</StyledLabel>
+          <StyledField type="password" id="confirm" name="confirm" />
           <ErrorMessage name="confirm" component="div" />
           
-          <button type="submit">Register</button>
+          <Button type="submit">Register</Button>
         </StyledForm>
         </Formik>
     </>
