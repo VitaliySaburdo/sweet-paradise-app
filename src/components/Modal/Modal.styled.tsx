@@ -1,4 +1,13 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
+
+const fadeIn = keyframes`
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+`;
 
 export const Overlay = styled.div`
   position: fixed;
@@ -16,7 +25,7 @@ export const Overlay = styled.div`
 
 export const ModalBody = styled.div`
   position: absolute;
-  top: 30px;
+  top: 20%;
   left: 50%;
   transform: translateX(-50%);
   width: 95vw;
@@ -24,19 +33,20 @@ export const ModalBody = styled.div`
   padding: 44px 20px 16px;
   box-shadow: 3px 8px 14px rgba(136, 198, 253, 0.19);
   border-radius: 20px;
-  background-color: #FFFFFF;
+  background-color: #ffffff;
+  opacity: 0;
+  animation: ${fadeIn} 0.3s ease-in-out forwards;
 
-  @media screen and (${props => props.theme.media.sm}) {
+  @media screen and (${(props) => props.theme.media.sm}) {
     width: 280px;
   }
 
-  @media screen and (${props => props.theme.media.md}) {
+  @media screen and (${(props) => props.theme.media.md}) {
     padding: 32px 32px 24px;
     width: 681px;
     height: 540px;
   }
 
-  @media screen and (${props => props.theme.media.lg}) {
+  @media screen and (${(props) => props.theme.media.lg}) {
   }
 `;
-

@@ -13,9 +13,11 @@ import {
 import burgerIcon from "../../images/Header/burger-btn.png";
 import basket from "../../images/Header/basket.png";
 import user from "../../images/Header/user.png";
+import { Modal } from "../Modal/Modal";
 
 export const Header = () => {
   const [scrolled, setScrolled] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -31,6 +33,14 @@ export const Header = () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+
+  const openModal = () => {
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+  };
 
   return (
     <Wrapper scrolled={scrolled ? 1 : 0}>
@@ -48,10 +58,18 @@ export const Header = () => {
               </Btn>
             </li>
             <li>
-              <Btn>
+              <Btn onClick={openModal}>
                 <Img src={user} alt="user" width="40px" />
               </Btn>
             </li>
+            {isModalOpen && (
+              <Modal onClick={closeModal}>
+                <div>
+                  <h2>Hello!</h2>
+                  <p>This is the content of the modal.</p>
+                </div>
+              </Modal>
+            )}
           </UserNav>
         </HeaderWrapper>
       </Container>
