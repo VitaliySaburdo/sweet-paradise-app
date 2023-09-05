@@ -4,7 +4,6 @@ import { Formik } from "formik";
 import { useDispatch } from "react-redux";
 import { ThunkDispatch } from "redux-thunk";
 import { AnyAction } from "redux";
-import { NavLink } from "react-router-dom";
 import { RootState } from "../../redux/store";
 import { Button } from "../Button/Button";
 import { register } from "../../redux/auth/operations";
@@ -16,7 +15,7 @@ import {
   Title,
   Text,
   Span,
-} from "./RegisterForm.styled";
+} from "./LoginForm.styled";
 
 const validationSchema = yup.object({
   name: yup.string().required("Name is required"),
@@ -28,14 +27,10 @@ const validationSchema = yup.object({
     .string()
     .min(6, "Password should be of minimum 6 characters length")
     .required("Password is required"),
-  confirm: yup
-    .string()
-    .oneOf([yup.ref("password")], "Password does not match")
-    .required("Confirm Password is Required"),
 });
 
-export const RegisterForm = () => {
-  const [isLoginForm, setIsLoginForm] = useState(false);
+export const LoginForm = () => {
+  const [isRegisterForm, setIsRegisterForm] = useState(false);
   const dispatch: ThunkDispatch<RootState, undefined, AnyAction> =
     useDispatch();
   return (
@@ -45,7 +40,6 @@ export const RegisterForm = () => {
           name: "",
           email: "",
           password: "",
-          confirm: "",
         }}
         validationSchema={validationSchema}
         onSubmit={({ name, email, password }, { resetForm }) => {
@@ -102,7 +96,7 @@ export const RegisterForm = () => {
           <Text>
             Already have an account
             <Span>
-              <button onClick={() => setIsLoginForm(true)}>Login</button>
+              <button onClick={() => setIsRegisterForm(true)}>Register</button>
             </Span>
           </Text>
         </StyledForm>

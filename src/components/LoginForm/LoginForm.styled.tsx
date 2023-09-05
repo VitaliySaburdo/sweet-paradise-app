@@ -50,6 +50,7 @@ export const StyledMessage = styled(ErrorMessage)`
   animation: ${fadeIn} 0.5s ease-in-out;
   margin: 0 auto;
 `;
+
 export const Text = styled.p`
   margin-top: 15px;
   font-family: ${p => p.theme.fonts.second};
