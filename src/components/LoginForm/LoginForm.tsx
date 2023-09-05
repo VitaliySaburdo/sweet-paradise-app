@@ -20,7 +20,6 @@ import {
 import { RegisterForm } from "../RegisterForm/RegisterForm";
 
 const validationSchema = yup.object({
-  name: yup.string().required("Name is required"),
   email: yup
     .string()
     .email("Enter a valid email")
@@ -29,7 +28,7 @@ const validationSchema = yup.object({
     .string()
     .min(6, "Password should be of minimum 6 characters length")
     .required("Password is required"),
-}); 
+});
 
 export const LoginForm = () => {
   const [isRegisterForm, setIsRegisterForm] = useState(false);
@@ -46,7 +45,8 @@ export const LoginForm = () => {
             password: "",
           }}
           validationSchema={validationSchema}
-          onSubmit={({ email, password }, { resetForm }) => {
+            onSubmit={({ email, password }, { resetForm }) => {
+            console.log({ email, password });
             dispatch(logIn({ values: { email, password } }));
             resetForm();
           }}
@@ -82,7 +82,9 @@ export const LoginForm = () => {
             <Text>
               Don't have an account yet?
               <Span>
-                <Btn type="button" onClick={() => setIsRegisterForm(true)}>Register</Btn>
+                <Btn type="button" onClick={() => setIsRegisterForm(true)}>
+                  Register
+                </Btn>
               </Span>
             </Text>
           </StyledForm>
