@@ -1,12 +1,18 @@
 import * as yup from "yup";
 import { Formik } from "formik";
-import { useDispatch } from 'react-redux';
-import { ThunkDispatch } from 'redux-thunk';
-import { AnyAction } from 'redux';
-import { RootState } from '../../redux/store';
+import { useDispatch } from "react-redux";
+import { ThunkDispatch } from "redux-thunk";
+import { AnyAction } from "redux";
+import { RootState } from "../../redux/store";
 import { Button } from "../Button/Button";
 import { register } from "../../redux/auth/operations";
-import { StyledForm, StyledField, StyledLabel, StyledMessage, Title } from "./RegisterForm.styled";
+import {
+  StyledForm,
+  StyledField,
+  StyledLabel,
+  StyledMessage,
+  Title,
+} from "./RegisterForm.styled";
 
 const validationSchema = yup.object({
   name: yup.string().required("Name is required"),
@@ -24,10 +30,9 @@ const validationSchema = yup.object({
     .required("Confirm Password is Required"),
 });
 
-
 export const RegisterForm = () => {
-
-  const dispatch: ThunkDispatch<RootState, undefined, AnyAction> = useDispatch();
+  const dispatch: ThunkDispatch<RootState, undefined, AnyAction> =
+    useDispatch();
   return (
     <>
       <Formik
@@ -38,9 +43,9 @@ export const RegisterForm = () => {
           confirm: "",
         }}
         validationSchema={validationSchema}
-        onSubmit={({ name, email, password },  { resetForm }) => {
+        onSubmit={({ name, email, password }, { resetForm }) => {
           dispatch(register({ name, email, password }));
-          resetForm()
+          resetForm();
         }}
       >
         <StyledForm>
@@ -79,9 +84,16 @@ export const RegisterForm = () => {
             name="confirm"
             placeholder="Please confirm your password"
           />
-          <StyledMessage name="confirm" component="div" />
+          <StyledMessage name="confirm" component="div"/>
 
-          <Button type="submit">Register</Button>
+          <Button
+            margin="20px auto 0 auto"
+            height="50px"
+            width="100%"
+            type="submit"
+          >
+            Register
+          </Button>
         </StyledForm>
       </Formik>
     </>

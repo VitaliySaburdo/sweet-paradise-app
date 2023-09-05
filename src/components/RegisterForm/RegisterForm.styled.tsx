@@ -41,6 +41,7 @@ export const StyledLabel = styled.label`
   line-height: calc(14 / 12);
   letter-spacing: 0.01em;
   margin-bottom: 4px;
+  margin-left: 8px;
 `;
 
 export const StyledMessage = styled(ErrorMessage)`

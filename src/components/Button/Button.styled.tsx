@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 interface StyledButtonProps {
   width?: string;
+  height?: string;
 }
 
 export const StyledButton = styled.button<StyledButtonProps>`
@@ -21,7 +22,7 @@ export const StyledButton = styled.button<StyledButtonProps>`
   cursor: pointer;
   @media screen and (${(props) => props.theme.media.md}) {
     width: ${(props) => props.width || '260px'};
-    height: 70px;
+    height: ${(props) => props.height || '70px'};
     font-size: 18px;
   }
 `;
