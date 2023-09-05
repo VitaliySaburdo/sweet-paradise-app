@@ -17,6 +17,7 @@ export const StyledForm = styled(Form)`
 
 export const Title = styled.h2`
   font-weight: 16px;
+  margin: 0 auto;
 `
 
 export const StyledField = styled(Field)`
@@ -29,6 +30,7 @@ export const StyledField = styled(Field)`
   transition-property: border-color, outline-color;
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  margin-bottom: 3px;
   &:focus {
     outline-color: #9c0746;
   }
@@ -45,4 +47,5 @@ export const StyledMessage = styled(ErrorMessage)`
   font-size: 12px;
   color: red;
   animation: ${fadeIn} 0.5s ease-in-out;
+  margin: 0 auto;
 `;
