@@ -1,12 +1,12 @@
 import * as yup from "yup";
 import { Formik } from "formik";
-import { StyledForm, StyledField, StyledLabel, StyledMessage } from "./RegisterForm.styled";
-import { Button } from "../Button/Button";
 import { useDispatch } from 'react-redux';
-import { register } from "../../redux/auth/operations";
 import { ThunkDispatch } from 'redux-thunk';
 import { AnyAction } from 'redux';
 import { RootState } from '../../redux/store';
+import { Button } from "../Button/Button";
+import { register } from "../../redux/auth/operations";
+import { StyledForm, StyledField, StyledLabel, StyledMessage, Title } from "./RegisterForm.styled";
 
 const validationSchema = yup.object({
   name: yup.string().required("Name is required"),
@@ -38,11 +38,13 @@ export const RegisterForm = () => {
           confirm: "",
         }}
         validationSchema={validationSchema}
-        onSubmit={({ name, email, password }) => {
+        onSubmit={({ name, email, password },  { resetForm }) => {
           dispatch(register({ name, email, password }));
+          resetForm()
         }}
       >
         <StyledForm>
+          <Title>Register</Title>
           <StyledLabel htmlFor="name">Name</StyledLabel>
           <StyledField
             type="text"
