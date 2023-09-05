@@ -5,7 +5,7 @@ export const Wrapper = styled.li`
   display: flex;
   flex-direction: column;
   align-items: center;
-    @media screen and (${(props) => props.theme.media.md}) {
+  @media screen and (${(props) => props.theme.media.md}) {
     width: 345px;
   }
   @media screen and (${(props) => props.theme.media.lg}) {
@@ -63,3 +63,33 @@ export const Params = styled.p`
   line-height: normal;
   margin-bottom: 29px;
 `;
+
+// Add to cart
+
+export const Box = styled.div`
+  display: flex;
+  align-items: center;
+  /* background-color: #ffd4dd; */
+`;
+export const Picture = styled.img`
+  width: 160px;
+  height: 160px;
+  margin-right: 20px;
+`;
+export const Input = styled.input`
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+`;
+export const Count = styled.p`
+  color: #9c0746;
+  font-family: Montserrat;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+`;
+
