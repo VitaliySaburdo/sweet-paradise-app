@@ -4,7 +4,6 @@ import { Formik } from "formik";
 import { useDispatch } from "react-redux";
 import { ThunkDispatch } from "redux-thunk";
 import { AnyAction } from "redux";
-import { NavLink } from "react-router-dom";
 import { RootState } from "../../redux/store";
 import { Button } from "../Button/Button";
 import { register } from "../../redux/auth/operations";
@@ -16,7 +15,9 @@ import {
   Title,
   Text,
   Span,
+  Btn,
 } from "./RegisterForm.styled";
+import { LoginForm } from "../LoginForm/LoginForm";
 
 const validationSchema = yup.object({
   name: yup.string().required("Name is required"),
@@ -40,73 +41,77 @@ export const RegisterForm = () => {
     useDispatch();
   return (
     <>
-      <Formik
-        initialValues={{
-          name: "",
-          email: "",
-          password: "",
-          confirm: "",
-        }}
-        validationSchema={validationSchema}
-        onSubmit={({ name, email, password }, { resetForm }) => {
-          dispatch(register({ name, email, password }));
-          resetForm();
-        }}
-      >
-        <StyledForm>
-          <Title>Register</Title>
-          <StyledLabel htmlFor="name">Name</StyledLabel>
-          <StyledField
-            type="text"
-            id="name"
-            name="name"
-            placeholder="Please enter your name"
-          />
-          <StyledMessage name="name" component="div" />
+      {isLoginForm ? (
+        <LoginForm />
+      ) : (
+        <Formik
+          initialValues={{
+            name: "",
+            email: "",
+            password: "",
+            confirm: "",
+          }}
+          validationSchema={validationSchema}
+          onSubmit={({ name, email, password }, { resetForm }) => {
+            dispatch(register({ name, email, password }));
+            resetForm();
+          }}
+        >
+          <StyledForm>
+            <Title>Register</Title>
+            <StyledLabel htmlFor="name">Name</StyledLabel>
+            <StyledField
+              type="text"
+              id="name"
+              name="name"
+              placeholder="Please enter your name"
+            />
+            <StyledMessage name="name" component="div" />
 
-          <StyledLabel htmlFor="email">Email</StyledLabel>
-          <StyledField
-            type="text"
-            id="email"
-            name="email"
-            placeholder="Please your email"
-          />
-          <StyledMessage name="email" component="div" />
+            <StyledLabel htmlFor="email">Email</StyledLabel>
+            <StyledField
+              type="text"
+              id="email"
+              name="email"
+              placeholder="Please your email"
+            />
+            <StyledMessage name="email" component="div" />
 
-          <StyledLabel htmlFor="password">Password</StyledLabel>
-          <StyledField
-            type="password"
-            id="password"
-            name="password"
-            placeholder="Please your password"
-          />
-          <StyledMessage name="password" component="div" />
+            <StyledLabel htmlFor="password">Password</StyledLabel>
+            <StyledField
+              type="password"
+              id="password"
+              name="password"
+              placeholder="Please your password"
+            />
+            <StyledMessage name="password" component="div" />
 
-          <StyledLabel htmlFor="confirm">Confirm</StyledLabel>
-          <StyledField
-            type="password"
-            id="confirm"
-            name="confirm"
-            placeholder="Please confirm your password"
-          />
-          <StyledMessage name="confirm" component="div" />
+            <StyledLabel htmlFor="confirm">Confirm</StyledLabel>
+            <StyledField
+              type="password"
+              id="confirm"
+              name="confirm"
+              placeholder="Please confirm your password"
+            />
+            <StyledMessage name="confirm" component="div" />
 
-          <Button
-            margin="20px auto 0 auto"
-            height="50px"
-            width="100%"
-            type="submit"
-          >
-            Register
-          </Button>
-          <Text>
-            Already have an account
-            <Span>
-              <button onClick={() => setIsLoginForm(true)}>Login</button>
-            </Span>
-          </Text>
-        </StyledForm>
-      </Formik>
+            <Button
+              margin="20px auto 0 auto"
+              height="50px"
+              width="100%"
+              type="submit"
+            >
+              Register
+            </Button>
+            <Text>
+              Already have an account
+              <Span>
+                <Btn onClick={() => setIsLoginForm(true)}>Login</Btn>
+              </Span>
+            </Text>
+          </StyledForm>
+        </Formik>
+      )}
     </>
   );
 };

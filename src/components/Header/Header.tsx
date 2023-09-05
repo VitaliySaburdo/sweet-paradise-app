@@ -14,7 +14,7 @@ import burgerIcon from "../../images/Header/burger-btn.png";
 import basket from "../../images/Header/basket.png";
 import user from "../../images/Header/user.png";
 import { Modal } from "../Modal/Modal";
-import { RegisterForm } from "../RegisterForm/RegisterForm";
+import { LoginForm } from "../LoginForm/LoginForm";
 
 export const Header = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -65,7 +65,7 @@ export const Header = () => {
             </li>
             {isModalOpen && (
               <Modal onClick={closeModal}>
-                <RegisterForm />
+                <LoginForm />
               </Modal>
             )}
           </UserNav>

@@ -60,3 +60,9 @@ export const Text = styled.p`
 export const Span = styled.span`
   margin-left: 5px;
 `;
+export const Btn = styled.button`
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  color: blue;
+`
