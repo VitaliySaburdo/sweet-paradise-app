@@ -6,6 +6,7 @@ import {
   Title,
   Text,
   Params,
+  Item,
   Box,
   Picture,
   Input,
@@ -72,8 +73,8 @@ export const Product: React.FC<NoveltiesItem> = ({ product }) => {
       </Wrapper>
       {isModalOpen && (
         <Modal onClick={closeModal}>
+          <Item>
           <h2>{product.name}</h2>
-          <div>
             <Box>
               <Picture
                 src={
@@ -104,7 +105,7 @@ export const Product: React.FC<NoveltiesItem> = ({ product }) => {
               add to cart
             </Button>
             </Box>
-          </div>
+          </Item>
         </Modal>
       )}
     </>

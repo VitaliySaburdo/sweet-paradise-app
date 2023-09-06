@@ -28,7 +28,9 @@ export const ModalBody = styled.div`
   top: 20%;
   left: 50%;
   transform: translateX(-50%);
-  width: 95vw;
+
+  max-height: 80vh; 
+  overflow-y: auto; 
 
   padding: 44px 20px 16px;
   box-shadow: 3px 8px 14px rgba(136, 198, 253, 0.19);
@@ -37,16 +39,7 @@ export const ModalBody = styled.div`
   opacity: 0;
   animation: ${fadeIn} 0.3s ease-in-out forwards;
 
-  @media screen and (${(props) => props.theme.media.sm}) {
-    width: 280px;
-  }
-
   @media screen and (${(props) => props.theme.media.md}) {
     padding: 32px 32px 24px;
-    width: 343px;
-    
-  }
-
-  @media screen and (${(props) => props.theme.media.lg}) {
   }
 `;

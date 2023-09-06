@@ -93,3 +93,6 @@ export const Count = styled.p`
   line-height: normal;
 `;
 
+export const Item = styled.div`
+width: 500px;
+`
