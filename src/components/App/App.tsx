@@ -1,10 +1,10 @@
 import { StyleSheetManager } from "styled-components";
 import { Route, Routes } from "react-router-dom";
 import { ThemeProvider } from "styled-components";
-import { theme } from "../theme/theme";
-import { SharedLayout } from "./SharedLayout/SharedLayout";
-import { Home } from "../pages/Home";
-import { Catalog } from "../pages/Catalog";
+import { theme } from "../../theme/theme";
+import { SharedLayout } from "../SharedLayout/SharedLayout";
+import { Home } from "../../pages/Home";
+import { Catalog } from "../../pages/Catalog";
 
 function App() {
   return (

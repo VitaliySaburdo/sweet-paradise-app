@@ -15,22 +15,10 @@ import {
 } from "../Product/Products.styled";
 import { Button } from "../Button/Button";
 import { Modal } from "../Modal/Modal";
+import {ProductProps} from '../App/App.types';
 
-interface NoveltiesItem {
-  product: {
-    _id: string;
-    name: string;
-    price: number;
-    weight: string;
-    category: string;
-    favorite: boolean;
-    img: string;
-    ingredients: string;
-    owner: string;
-  };
-}
 
-export const Product: React.FC<NoveltiesItem> = ({ product }) => {
+export const Product: React.FC<ProductProps> = ({ product }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [count, setCount] = useState(1);
 
