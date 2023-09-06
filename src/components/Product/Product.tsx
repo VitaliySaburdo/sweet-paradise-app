@@ -1,26 +1,13 @@
 import React from "react";
 import { useState } from "react";
-import {
-  Img,
-  Wrapper,
-  Title,
-  Text,
-  Params,
-  StyledText,
-  Item,
-  Box,
-  Picture,
-  Input,
-  Count,
-} from "../Product/Products.styled";
+import { Img, Wrapper, Title, Text, Params } from "../Product/Products.styled";
 import { Button } from "../Button/Button";
 import { Modal } from "../Modal/Modal";
-import {ProductProps} from '../App/App.types';
-
+import { ProductProps } from "../App/App.types";
+import { CartItem } from "../CartItem/CartItem";
 
 export const Product: React.FC<ProductProps> = ({ product }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [count, setCount] = useState(1);
 
   const openModal = () => {
     setIsModalOpen(true);
@@ -28,20 +15,6 @@ export const Product: React.FC<ProductProps> = ({ product }) => {
 
   const closeModal = () => {
     setIsModalOpen(false);
-  };
-
-  const increment = () => {
-    setCount((prevState) => prevState + 1);
-  };
-  const decrement = () => {
-    setCount((prevState) => prevState - 1);
-  };
-
-  const handleCountChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const newValue = parseInt(event.target.value, 10);
-    if (!isNaN(newValue)) {
-      setCount(newValue);
-    }
   };
 
   return (
@@ -62,39 +35,7 @@ export const Product: React.FC<ProductProps> = ({ product }) => {
       </Wrapper>
       {isModalOpen && (
         <Modal onClick={closeModal}>
-          <Item>
-          <StyledText>{product.name}</StyledText>
-            <Box>
-              <Picture
-                src={
-                  "https://sweet-paradise-api.onrender.com/static/" +
-                  product.img
-                }
-                alt={product.name}
-              />
-              <button onClick={decrement} disabled={count <= 1}>
-                -
-              </button>
-              <Input
-                type="text"
-                value={count}
-                onChange={handleCountChange}
-                min="1"
-              />
-              <button onClick={increment}>+</button>
-            </Box>
-            <Box>
-              <Count>{product.price * count} uah</Count>
-                          <Button
-              margin="20px auto 0 auto"
-              height="50px"
-              width="140px"
-              type="submit"
-            >
-              add to cart
-            </Button>
-            </Box>
-          </Item>
+          <CartItem product={ product } />
         </Modal>
       )}
     </>
