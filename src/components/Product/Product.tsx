@@ -6,12 +6,15 @@ import { Modal } from "../Modal/Modal";
 import { ProductProps } from "../App/App.types";
 import { CartItem } from "../CartItem/CartItem";
 
+
 export const Product: React.FC<ProductProps> = ({ product }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  const openModal = () => {
+
+  const handleButtonClick = (product: any) => {
     setIsModalOpen(true);
   };
+
 
   const closeModal = () => {
     setIsModalOpen(false);
@@ -29,13 +32,16 @@ export const Product: React.FC<ProductProps> = ({ product }) => {
         <Params>
           {product.price} uah / {product.weight} gr
         </Params>
-        <Button width="200px" onClick={openModal}>
+        <Button
+          width="200px"
+          onClick={()=>handleButtonClick(product)}
+        >
           to buy
         </Button>
       </Wrapper>
       {isModalOpen && (
         <Modal onClick={closeModal}>
-          <CartItem product={ product } />
+          <CartItem product={product} />
         </Modal>
       )}
     </>
