@@ -11,7 +11,7 @@ export const Product: React.FC<ProductProps> = ({ product }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
 
-  const handleButtonClick = (product: any) => {
+  const handleButtonClick = () => {
     setIsModalOpen(true);
   };
 
@@ -34,7 +34,7 @@ export const Product: React.FC<ProductProps> = ({ product }) => {
         </Params>
         <Button
           width="200px"
-          onClick={()=>handleButtonClick(product)}
+          onClick={handleButtonClick}
         >
           to buy
         </Button>

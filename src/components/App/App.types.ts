@@ -9,5 +9,6 @@ export interface ProductProps {
     img: string;
     ingredients: string;
     owner: string;
+    quantity: null;
   };
 }

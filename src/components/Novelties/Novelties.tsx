@@ -13,6 +13,8 @@ interface NoveltiesItem {
   img: string;
   ingredients: string;
   owner: string;
+  quantity: null;
+
 }
 
 interface NoveltiesProps {
