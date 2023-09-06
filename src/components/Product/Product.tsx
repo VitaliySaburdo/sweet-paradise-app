@@ -6,6 +6,7 @@ import {
   Title,
   Text,
   Params,
+  StyledText,
   Item,
   Box,
   Picture,
@@ -74,7 +75,7 @@ export const Product: React.FC<NoveltiesItem> = ({ product }) => {
       {isModalOpen && (
         <Modal onClick={closeModal}>
           <Item>
-          <h2>{product.name}</h2>
+          <StyledText>{product.name}</StyledText>
             <Box>
               <Picture
                 src={

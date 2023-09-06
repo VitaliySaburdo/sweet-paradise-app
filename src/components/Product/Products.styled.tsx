@@ -66,10 +66,14 @@ export const Params = styled.p`
 
 // Add to cart
 
+export const StyledText = styled.h2`
+  font-size: 22px;
+  margin: 5px 10px;
+`
+
 export const Box = styled.div`
   display: flex;
   align-items: center;
-  /* background-color: #ffd4dd; */
 `;
 export const Picture = styled.img`
   width: 160px;
@@ -85,6 +89,7 @@ export const Input = styled.input`
   border-radius: 5px;
 `;
 export const Count = styled.p`
+margin-left: 20px;
   color: #9c0746;
   font-family: Montserrat;
   font-size: 20px;
