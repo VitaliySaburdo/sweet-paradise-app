@@ -7,24 +7,23 @@ import { theme } from "../../theme/theme";
 import { SharedLayout } from "../SharedLayout/SharedLayout";
 import { Home } from "../../pages/Home";
 import { Catalog } from "../../pages/Catalog";
-import {ProductProps} from './App.types';
+import { ProductProps } from "./App.types";
 
 function App() {
   const [novelties, setNovelties] = useState([]);
   const [orders, setOrders] = useState<ProductProps[]>([]);
   const [loading, setLoading] = useState(true);
-  
+
   const addOrder = (novelty: ProductProps): void => {
     const isAlreadyInCart = orders.some((item) => item._id === novelty._id);
     if (!isAlreadyInCart) {
       setOrders([...orders, novelty]);
     }
-    
   };
 
-    const deleteOrder = (novelty: ProductProps): void  => {
-      setOrders(orders.filter((item) => item._id !== novelty._id));
-  }
+  const deleteOrder = (novelty: ProductProps): void => {
+    setOrders(orders.filter((item) => item._id !== novelty._id));
+  };
 
   useEffect(() => {
     async function fetchData() {
@@ -45,8 +44,21 @@ function App() {
     <StyleSheetManager shouldForwardProp={(prop) => prop !== "index"}>
       <ThemeProvider theme={theme}>
         <Routes>
-          <Route path="/" element={<SharedLayout orders={orders} deleteOrder={ deleteOrder } />}>
-            <Route index element={<Home novelties={novelties} onAdd={addOrder} loading={loading} />} />
+          <Route
+            path="/"
+            element={<SharedLayout orders={orders} deleteOrder={deleteOrder} />}
+          >
+            <Route
+              index
+              element={
+                <Home
+                  novelties={novelties}
+                  orders={orders}
+                  onAdd={addOrder}
+                  loading={loading}
+                />
+              }
+            />
             <Route path="/catalog" element={<Catalog />} />
           </Route>
         </Routes>

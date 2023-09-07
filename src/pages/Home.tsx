@@ -8,14 +8,15 @@ interface NoveltiesProps {
   novelties: ProductProps[];
   loading: boolean;
   onAdd: (novelty: ProductProps) => void;
+  orders: ProductProps[];
 }
 
-export const Home: React.FC<NoveltiesProps> = ({novelties, onAdd, loading}) => {
+export const Home: React.FC<NoveltiesProps> = ({novelties, onAdd, loading, orders}) => {
   return (
     <>
       <Hero />
       <Benefits />
-      <Novelties novelties={novelties} loading={loading} onAdd={onAdd} />
+      <Novelties novelties={novelties} loading={loading} onAdd={onAdd} orders={orders} />
       <Work/>
     </>
   );
