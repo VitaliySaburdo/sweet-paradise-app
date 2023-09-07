@@ -1,4 +1,4 @@
-import styled, { keyframes } from 'styled-components';
+import styled, { keyframes } from "styled-components";
 
 const fadeIn = keyframes`
   from {
@@ -29,8 +29,8 @@ export const ModalBody = styled.div`
   left: 50%;
   transform: translateX(-50%);
 
-  max-height: 50vh; 
-  overflow-y: auto; 
+  max-height: 60vh;
+  overflow-y: auto;
 
   padding: 44px 20px 16px;
   box-shadow: 3px 8px 14px rgba(136, 198, 253, 0.19);
@@ -41,5 +41,26 @@ export const ModalBody = styled.div`
 
   @media screen and (${(props) => props.theme.media.md}) {
     padding: 32px 32px 24px;
+  }
+
+  scrollbar-width: thin;
+  scrollbar-color: #333333 #f1f1f1;
+
+  &::-webkit-scrollbar {
+    width: 8px;
+ 
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: #333333;
+    border-radius: 4px;
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    background-color: #555555;
+  }
+
+  &::-webkit-scrollbar-track {
+    background-color: transparent;
   }
 `;

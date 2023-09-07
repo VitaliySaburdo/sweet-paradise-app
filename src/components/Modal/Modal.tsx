@@ -17,10 +17,20 @@ export const Modal: React.FC<ModalProps> = ({ onClick, children }) => {
       }
     };
     window.addEventListener('keydown', handleEscDown);
+    disableBodyScroll();
     return () => {
       window.removeEventListener('keydown', handleEscDown);
+      enableBodyScroll();
     };
   }, [onClick]);
+
+
+function disableBodyScroll() {
+  document.body.style.overflow = 'hidden';
+}
+function enableBodyScroll() {
+  document.body.style.overflow = 'auto';
+}
 
   const handleBackdropClick = (e: React.MouseEvent<HTMLDivElement>) => {
     if (e.target === e.currentTarget) {
@@ -30,7 +40,9 @@ export const Modal: React.FC<ModalProps> = ({ onClick, children }) => {
 return modalRoot
   ? createPortal(
       <Overlay onClick={handleBackdropClick}>
-        <ModalBody>{children}</ModalBody>
+      <ModalBody>
+        
+        {children}</ModalBody>
       </Overlay>,
       modalRoot
     )

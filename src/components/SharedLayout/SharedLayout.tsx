@@ -8,13 +8,14 @@ import {ProductProps} from '../App/App.types';
 // import PawLoader from '../../images/Loader.png';
 
 interface OrderProps{
-orders: ProductProps[];
+  orders: ProductProps[];
+  deleteOrder: (orders: ProductProps) => void;
 }
   
-export const SharedLayout: React.FC<OrderProps> = ({orders}) => {
+export const SharedLayout: React.FC<OrderProps> = ({orders, deleteOrder}) => {
   return (
     <>
-      <Header orders={ orders } />
+      <Header orders={orders} deleteOrder={deleteOrder } />
       <Suspense fallback={'Loading...'}>
         <main>
           <Outlet />

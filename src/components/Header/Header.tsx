@@ -19,10 +19,11 @@ import {ProductProps} from '../App/App.types';
 import { CartList } from "../CartList/CartList";
 
 interface OrderProps{
-orders: ProductProps[];
+  orders: ProductProps[];
+  deleteOrder: (orders: ProductProps) => void;
 }
 
-export const Header: React.FC<OrderProps> = ({orders}) => {
+export const Header: React.FC<OrderProps> = ({orders, deleteOrder}) => {
   const [scrolled, setScrolled] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isCartModalOpen, setIsCartModalOpen] = useState(false);
@@ -73,7 +74,7 @@ export const Header: React.FC<OrderProps> = ({orders}) => {
             </li>
             {isCartModalOpen && (
               <Modal onClick={closeCartModal}>
-                <CartList orders={orders} />
+                <CartList orders={orders} deleteOrder={ deleteOrder } />
               </Modal>
             )}
             <li>

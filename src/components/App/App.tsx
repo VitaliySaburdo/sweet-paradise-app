@@ -14,8 +14,16 @@ function App() {
   const [orders, setOrders] = useState<ProductProps[]>([]);
   const [loading, setLoading] = useState(true);
   
-  const addOrder = (novelty: ProductProps): void  => {
-    setOrders([...orders, novelty])
+  const addOrder = (novelty: ProductProps): void => {
+    const isAlreadyInCart = orders.some((item) => item._id === novelty._id);
+    if (!isAlreadyInCart) {
+      setOrders([...orders, novelty]);
+    }
+    
+  };
+
+    const deleteOrder = (novelty: ProductProps): void  => {
+      setOrders(orders.filter((item) => item._id !== novelty._id));
   }
 
   useEffect(() => {
@@ -37,7 +45,7 @@ function App() {
     <StyleSheetManager shouldForwardProp={(prop) => prop !== "index"}>
       <ThemeProvider theme={theme}>
         <Routes>
-          <Route path="/" element={<SharedLayout orders={orders} />}>
+          <Route path="/" element={<SharedLayout orders={orders} deleteOrder={ deleteOrder } />}>
             <Route index element={<Home novelties={novelties} onAdd={addOrder} loading={loading} />} />
             <Route path="/catalog" element={<Catalog />} />
           </Route>

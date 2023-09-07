@@ -11,9 +11,10 @@ import { ProductProps } from "../App/App.types";
 
 interface CartItemProps {
   product: ProductProps;
+  deleteOrder: (orders: ProductProps) => void;
 }
 
-export const CartItem: React.FC<CartItemProps> = ({ product }) => {
+export const CartItem: React.FC<CartItemProps> = ({ product, deleteOrder }) => {
   const [count, setCount] = useState(1);
 
   const increment = () => {
@@ -56,6 +57,7 @@ export const CartItem: React.FC<CartItemProps> = ({ product }) => {
           <Count>{product.price * count} uah</Count>
         </Box>
       </Item>
+      <button onClick={()=>deleteOrder(product)}>X</button>
     </>
   );
 };
