@@ -15,15 +15,15 @@ import basket from "../../images/Header/basket.png";
 import user from "../../images/Header/user.png";
 import { Modal } from "../Modal/Modal";
 import { LoginForm } from "../LoginForm/LoginForm";
-import {ProductProps} from '../App/App.types';
+import { ProductProps } from "../App/App.types";
 import { CartList } from "../CartList/CartList";
 
-interface OrderProps{
+interface OrderProps {
   orders: ProductProps[];
   deleteOrder: (orders: ProductProps) => void;
 }
 
-export const Header: React.FC<OrderProps> = ({orders, deleteOrder}) => {
+export const Header: React.FC<OrderProps> = ({ orders, deleteOrder }) => {
   const [scrolled, setScrolled] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isCartModalOpen, setIsCartModalOpen] = useState(false);
@@ -51,11 +51,12 @@ export const Header: React.FC<OrderProps> = ({orders, deleteOrder}) => {
     setIsModalOpen(false);
   };
   const openCartModal = () => {
-  setIsCartModalOpen(true);
+    setIsCartModalOpen(true);
   };
   const closeCartModal = () => {
-  setIsCartModalOpen(false);
-};
+    setIsCartModalOpen(false);
+  };
+  console.log(orders);
 
   return (
     <Wrapper scrolled={scrolled ? 1 : 0}>
@@ -74,7 +75,11 @@ export const Header: React.FC<OrderProps> = ({orders, deleteOrder}) => {
             </li>
             {isCartModalOpen && (
               <Modal onClick={closeCartModal}>
-                <CartList orders={orders} deleteOrder={ deleteOrder } />
+                {orders.length === 0 ? (
+                  <h2>Your cart is empty</h2>
+                ) : (
+                  <CartList orders={orders} deleteOrder={deleteOrder} />
+                )}
               </Modal>
             )}
             <li>
