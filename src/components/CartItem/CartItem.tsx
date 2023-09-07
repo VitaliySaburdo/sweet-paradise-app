@@ -10,7 +10,11 @@ import {
 import { Button } from "../Button/Button";
 import { ProductProps } from "../App/App.types";
 
-export const CartItem: React.FC<ProductProps> = ({ product }) => {
+interface CartItemProps {
+  product: ProductProps;
+}
+
+export const CartItem: React.FC<CartItemProps> = ({ product }) => {
   const [count, setCount] = useState(1);
 
   const increment = () => {
@@ -26,10 +30,6 @@ export const CartItem: React.FC<ProductProps> = ({ product }) => {
       setCount(newValue);
     }
   };
-
-  //  const handleAddToCart = () => {
-  //   addToCart({ ...product, quantity: count });
-  // };
 
   return (
     <>

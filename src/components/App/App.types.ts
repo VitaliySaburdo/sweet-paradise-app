@@ -1,5 +1,4 @@
 export interface ProductProps {
-  product: {
     _id: string;
     name: string;
     price: number;
@@ -9,6 +8,4 @@ export interface ProductProps {
     img: string;
     ingredients: string;
     owner: string;
-    quantity: null;
-  };
 }

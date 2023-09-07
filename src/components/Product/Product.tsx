@@ -1,20 +1,26 @@
-import React from "react";
-import { useState } from "react";
+import React, { useState } from "react";
 import { Img, Wrapper, Title, Text, Params } from "../Product/Products.styled";
 import { Button } from "../Button/Button";
 import { Modal } from "../Modal/Modal";
-import { ProductProps } from "../App/App.types";
 import { CartList } from "../CartList/CartList";
+import { NoveltiesItem } from "../Novelties/Novelties";
+
+interface ProductProps {
+  product: NoveltiesItem; // Update the type to match NoveltiesItem
+}
 
 export const Product: React.FC<ProductProps> = ({ product }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [cart, setCart] = useState<ProductProps[]>([]);
+  const [cart, setCart] = useState<NoveltiesItem[]>([]);
 
-  const handleButtonClick = ({product}: any) => {
+  const handleButtonClick = () => {
     setIsModalOpen(true);
-    setCart([...cart, product]);
+    if (!cart.find((item) => item._id === product._id)) {
+      setCart([...cart, product]);
+    } else {
+      console.log('The product is already in the cart');
+    }
   };
-
   console.log(cart);
 
   const closeModal = () => {
@@ -33,8 +39,8 @@ export const Product: React.FC<ProductProps> = ({ product }) => {
         <Params>
           {product.price} uah / {product.weight} gr
         </Params>
-        <Button width="200px" onClick={()=>handleButtonClick({product})}>
-          to buy
+        <Button width="200px" onClick={handleButtonClick}>
+          Add to Cart
         </Button>
       </Wrapper>
       {isModalOpen && (

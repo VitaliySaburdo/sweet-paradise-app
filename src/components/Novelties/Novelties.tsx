@@ -3,7 +3,7 @@ import { Product } from "../Product/Product";
 import { Section } from "../Section/Section";
 import { Title, Wrapper } from "./Novelties.styled";
 
-interface NoveltiesItem {
+export interface NoveltiesItem {
   _id: string;
   name: string;
   price: number;
@@ -13,8 +13,6 @@ interface NoveltiesItem {
   img: string;
   ingredients: string;
   owner: string;
-  quantity: null;
-
 }
 
 interface NoveltiesProps {
