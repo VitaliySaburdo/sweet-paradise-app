@@ -7,7 +7,6 @@ import {
   Input,
   Count,
 } from "./CartItem.styled";
-import { Button } from "../Button/Button";
 import { ProductProps } from "../App/App.types";
 
 interface CartItemProps {
@@ -55,15 +54,6 @@ export const CartItem: React.FC<CartItemProps> = ({ product }) => {
         </Box>
         <Box>
           <Count>{product.price * count} uah</Count>
-          <Button
-            margin="20px auto 0 auto"
-            height="50px"
-            width="140px"
-            type="submit"
-            // onClick={handleAddToCart}
-          >
-            add to cart
-          </Button>
         </Box>
       </Item>
     </>

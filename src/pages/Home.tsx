@@ -5,9 +5,27 @@ import { Hero } from "../components/Hero/Hero";
 import { Novelties } from "../components/Novelties/Novelties";
 import { Work } from "../components/Work/Work";
 
+export interface NoveltiesItem {
+  _id: string;
+  name: string;
+  price: number;
+  weight: string;
+  category: string;
+  favorite: boolean;
+  img: string;
+  ingredients: string;
+  owner: string;
+}
+
+
 export const Home = () => {
   const [novelties, setNovelties] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [orders, setOrders] = useState<NoveltiesItem[]>([]);
+  
+  const addOrder = (novelty: NoveltiesItem): void  => {
+    setOrders([...orders, novelty])
+  }
 
   useEffect(() => {
     async function fetchData() {
@@ -23,11 +41,12 @@ export const Home = () => {
 
     fetchData();
   }, []);
+
   return (
     <>
       <Hero />
       <Benefits />
-      <Novelties novelties={novelties} loading={loading} />
+      <Novelties novelties={novelties} loading={loading} onAdd={addOrder} />
       <Work/>
     </>
   );

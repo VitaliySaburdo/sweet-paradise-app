@@ -18,25 +18,30 @@ export interface NoveltiesItem {
 interface NoveltiesProps {
   novelties: NoveltiesItem[];
   loading: boolean;
+  onAdd: (novelty: NoveltiesItem) => void;
 }
 
-export const Novelties: React.FC<NoveltiesProps> = ({ novelties, loading }) => {
+export const Novelties: React.FC<NoveltiesProps> = ({
+  novelties,
+  loading,
+  onAdd,
+}) => {
   return (
     <>
       <Section>
-      <Container>
-        <Title>Try our new items</Title>
-        {loading ? (
-          <p>Loading...</p>
-        ) : (
-          <Wrapper>
-            {novelties.map((product) => (
-                <Product product={product } key={product._id}/>
-            ))}
-          </Wrapper>
-        )}
+        <Container>
+          <Title>Try our new items</Title>
+          {loading ? (
+            <p>Loading...</p>
+          ) : (
+            <Wrapper>
+              {novelties.map((product) => (
+                <Product product={product} key={product._id} onAdd={onAdd} />
+              ))}
+            </Wrapper>
+          )}
         </Container>
-        </Section>
+      </Section>
     </>
   );
 };

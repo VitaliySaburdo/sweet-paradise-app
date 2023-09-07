@@ -32,6 +32,6 @@ margin-left: 20px;
   line-height: normal;
 `;
 
-export const Item = styled.div`
+export const Item = styled.li`
 width: 500px;
 `
