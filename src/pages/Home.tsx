@@ -42,6 +42,7 @@ export const Home = () => {
     fetchData();
   }, []);
 
+  console.log(orders);
   return (
     <>
       <Hero />

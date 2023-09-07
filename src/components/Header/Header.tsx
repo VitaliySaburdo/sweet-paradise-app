@@ -19,6 +19,7 @@ import { LoginForm } from "../LoginForm/LoginForm";
 export const Header = () => {
   const [scrolled, setScrolled] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isCartModalOpen, setIsCartModalOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -42,6 +43,12 @@ export const Header = () => {
   const closeModal = () => {
     setIsModalOpen(false);
   };
+  const openCartModal = () => {
+  setIsCartModalOpen(true);
+  };
+  const closeCartModal = () => {
+  setIsCartModalOpen(false);
+};
 
   return (
     <Wrapper scrolled={scrolled ? 1 : 0}>
@@ -54,10 +61,15 @@ export const Header = () => {
           <NavBar />
           <UserNav>
             <li>
-              <Btn>
+              <Btn onClick={openCartModal}>
                 <Img src={basket} alt="basket" width="40px" />
               </Btn>
             </li>
+            {isCartModalOpen && (
+              <Modal onClick={closeCartModal}>
+                <h2>Hello</h2>
+              </Modal>
+            )}
             <li>
               <Btn onClick={openModal}>
                 <Img src={user} alt="user" width="40px" />
