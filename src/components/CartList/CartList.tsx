@@ -1,5 +1,6 @@
 import { ProductProps } from "../App/App.types";
 import { CartItem } from "../CartItem/CartItem";
+import {Container} from './CartList.styled';
 
 export const CartList: React.FC<{
   orders: ProductProps[];
@@ -7,11 +8,11 @@ export const CartList: React.FC<{
 }> = ({ orders, deleteOrder }) => {
   return (
     <>
-      <ul>
+      <Container>
         {orders.map((order) => (
           <CartItem key={order._id} product={order} deleteOrder={deleteOrder} />
         ))}
-      </ul>
+      </Container>
     </>
   );
 };

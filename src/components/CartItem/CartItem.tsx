@@ -6,6 +6,8 @@ import {
   Picture,
   Input,
   Count,
+  Btn,
+  CloseBtn,
 } from "./CartItem.styled";
 import { ProductProps } from "../App/App.types";
 
@@ -34,7 +36,10 @@ export const CartItem: React.FC<CartItemProps> = ({ product, deleteOrder }) => {
   return (
     <>
       <Item>
-        <StyledText>{product.name}</StyledText>
+        <Box style={{justifyContent: 'space-between', marginRight: '10px'}}>
+          <StyledText>{product.name}</StyledText>
+          <CloseBtn onClick={() => deleteOrder(product)}>X</CloseBtn>
+        </Box>
         <Box>
           <Picture
             src={
@@ -42,22 +47,19 @@ export const CartItem: React.FC<CartItemProps> = ({ product, deleteOrder }) => {
             }
             alt={product.name}
           />
-          <button onClick={decrement} disabled={count <= 1}>
+          <Btn onClick={decrement} disabled={count <= 1}>
             -
-          </button>
+          </Btn>
           <Input
             type="text"
             value={count}
             onChange={handleCountChange}
             min="1"
           />
-          <button onClick={increment}>+</button>
-        </Box>
-        <Box>
+          <Btn onClick={increment}>+</Btn>
           <Count>{product.price * count} uah</Count>
         </Box>
       </Item>
-      <button onClick={()=>deleteOrder(product)}>X</button>
     </>
   );
 };

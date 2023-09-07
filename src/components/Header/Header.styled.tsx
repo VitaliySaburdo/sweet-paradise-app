@@ -2,7 +2,8 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 
 export const Wrapper = styled.div<{ scrolled: number }>`
-  background-color: ${(props) => (props.scrolled ? "rgba(255, 255, 255, 0.95)" : "transparent")};
+  background-color: ${(props) =>
+    props.scrolled ? "rgba(255, 255, 255, 0.95)" : "transparent"};
   transition: background-color 0.4s ease, opacity 0.4s ease;
   position: fixed;
   top: 0;
@@ -55,10 +56,32 @@ export const Btn = styled.button`
 `;
 export const Img = styled.img`
   width: 17px;
-  @media screen and (${(props) => props.theme.media.md}){
+  @media screen and (${(props) => props.theme.media.md}) {
     width: 30px;
   }
-    @media screen and (${(props) => props.theme.media.lg}){
+  @media screen and (${(props) => props.theme.media.lg}) {
     width: 40px;
   }
-`
+`;
+
+// Cart content
+
+export const CartWrapper = styled.div`
+  min-height: 300px;
+  min-width: 500px;
+`;
+
+export const CartTitle = styled.h2`
+  margin-bottom: 20px;
+`;
+export const CartText = styled.p`
+  font-size: 16px;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 20px;
+`;
+export const CartImg = styled.img`
+margin: 0 auto;
+  width: 40%;
+  height: 40%;
+`;

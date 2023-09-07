@@ -9,9 +9,14 @@ import {
   UserNav,
   Btn,
   Img,
+  CartWrapper,
+  CartTitle,
+  CartText,
+  CartImg,
 } from "./Header.styled";
 import burgerIcon from "../../images/Header/burger-btn.png";
 import basket from "../../images/Header/basket.png";
+import cart from "../../images/Header/cart.png";
 import user from "../../images/Header/user.png";
 import { Modal } from "../Modal/Modal";
 import { LoginForm } from "../LoginForm/LoginForm";
@@ -75,11 +80,17 @@ export const Header: React.FC<OrderProps> = ({ orders, deleteOrder }) => {
             </li>
             {isCartModalOpen && (
               <Modal onClick={closeCartModal}>
-                {orders.length === 0 ? (
-                  <h2>Your cart is empty</h2>
-                ) : (
-                  <CartList orders={orders} deleteOrder={deleteOrder} />
-                )}
+                <CartWrapper>
+                  <CartTitle>Your cart</CartTitle>
+                  {orders.length === 0 ? (
+                    <>
+                      <CartText>Your cart is empty</CartText>
+                      <CartImg src={cart} alt="cart" width="40px" />
+                    </>
+                  ) : (
+                    <CartList orders={orders} deleteOrder={deleteOrder} />
+                  )}
+                </CartWrapper>
               </Modal>
             )}
             <li>
