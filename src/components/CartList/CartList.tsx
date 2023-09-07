@@ -1,12 +1,12 @@
 import { ProductProps } from "../App/App.types";
 import { CartItem } from "../CartItem/CartItem";
 
-export const CartList: React.FC<{ cart: ProductProps[] }> = ({ cart }) => {
+export const CartList: React.FC<{ orders: ProductProps[] }> = ({ orders }) => {
   return (
     <>
       <ul>
-        {cart.map((product) => (
-          <CartItem key={product._id} product={product} />
+        {orders.map((order) => (
+          <CartItem key={order._id} product={order} />
         ))}
       </ul>
     </>

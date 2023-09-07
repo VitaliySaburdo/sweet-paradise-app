@@ -2,23 +2,12 @@ import { Container } from "../Container/Container";
 import { Product } from "../Product/Product";
 import { Section } from "../Section/Section";
 import { Title, Wrapper } from "./Novelties.styled";
-
-export interface NoveltiesItem {
-  _id: string;
-  name: string;
-  price: number;
-  weight: string;
-  category: string;
-  favorite: boolean;
-  img: string;
-  ingredients: string;
-  owner: string;
-}
+import {ProductProps} from '../App/App.types';
 
 interface NoveltiesProps {
-  novelties: NoveltiesItem[];
+  novelties: ProductProps[];
   loading: boolean;
-  onAdd: (novelty: NoveltiesItem) => void;
+  onAdd: (novelty: ProductProps) => void;
 }
 
 export const Novelties: React.FC<NoveltiesProps> = ({

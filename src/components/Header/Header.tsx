@@ -15,8 +15,14 @@ import basket from "../../images/Header/basket.png";
 import user from "../../images/Header/user.png";
 import { Modal } from "../Modal/Modal";
 import { LoginForm } from "../LoginForm/LoginForm";
+import {ProductProps} from '../App/App.types';
+import { CartList } from "../CartList/CartList";
 
-export const Header = () => {
+interface OrderProps{
+orders: ProductProps[];
+}
+
+export const Header: React.FC<OrderProps> = ({orders}) => {
   const [scrolled, setScrolled] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isCartModalOpen, setIsCartModalOpen] = useState(false);
@@ -67,7 +73,7 @@ export const Header = () => {
             </li>
             {isCartModalOpen && (
               <Modal onClick={closeCartModal}>
-                <h2>Hello</h2>
+                <CartList orders={orders} />
               </Modal>
             )}
             <li>

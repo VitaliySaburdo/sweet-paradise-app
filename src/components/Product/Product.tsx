@@ -1,13 +1,13 @@
 import { Img, Wrapper, Title, Text, Params } from "../Product/Products.styled";
 import { Button } from "../Button/Button";
-import { NoveltiesItem } from "../Novelties/Novelties";
+import {ProductProps} from '../App/App.types';
 
-interface ProductProps {
-  product: NoveltiesItem;
-  onAdd: (novelty: NoveltiesItem) => void;
+interface NoveltiesItem {
+  product: ProductProps;
+  onAdd: (novelty: ProductProps) => void;
 }
 
-export const Product: React.FC<ProductProps> = ({ product, onAdd }) => {
+export const Product: React.FC<NoveltiesItem> = ({ product, onAdd }) => {
   return (
     <>
       <Wrapper>
