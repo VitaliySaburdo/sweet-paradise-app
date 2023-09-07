@@ -61,7 +61,6 @@ export const Header: React.FC<OrderProps> = ({ orders, deleteOrder }) => {
   const closeCartModal = () => {
     setIsCartModalOpen(false);
   };
-  console.log(orders);
 
   return (
     <Wrapper scrolled={scrolled ? 1 : 0}>
