@@ -47,6 +47,8 @@ export const Btn = styled.button`
 
 export const CloseBtn = styled.button`
   border: none;
+  font-size: 20px;
+  font-weight: 600;
   color: red;
   background-color: transparent;
   cursor: pointer;
