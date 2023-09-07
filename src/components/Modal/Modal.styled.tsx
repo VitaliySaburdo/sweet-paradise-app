@@ -29,7 +29,7 @@ export const ModalBody = styled.div`
   left: 50%;
   transform: translateX(-50%);
 
-  max-height: 80vh; 
+  max-height: 50vh; 
   overflow-y: auto; 
 
   padding: 44px 20px 16px;
