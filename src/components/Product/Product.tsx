@@ -7,7 +7,6 @@ interface NoveltiesItem {
   product: ProductProps;
   onAdd: (novelty: ProductProps) => void;
   orders: ProductProps[];
-  novelties: ProductProps[];
 }
 
 export const Product: React.FC<NoveltiesItem> = ({ product, onAdd, orders}) => {

@@ -28,7 +28,6 @@ export const Novelties: React.FC<NoveltiesProps> = ({
             <Wrapper>
               {novelties.map((product) => (
                 <Product
-                  novelties={novelties}
                   product={product}
                   key={product._id}
                   onAdd={onAdd}
