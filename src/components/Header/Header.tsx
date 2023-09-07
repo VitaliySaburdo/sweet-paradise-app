@@ -75,6 +75,7 @@ export const Header: React.FC<OrderProps> = ({ orders, deleteOrder }) => {
             <li>
               <Btn onClick={openCartModal}>
                 <Img src={basket} alt="basket" width="40px" />
+                <div>{ orders.length }</div>
               </Btn>
             </li>
             {isCartModalOpen && (
