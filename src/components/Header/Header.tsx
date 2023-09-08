@@ -13,6 +13,7 @@ import {
   CartTitle,
   CartText,
   CartImg,
+  CartIcon,
 } from "./Header.styled";
 import burgerIcon from "../../images/Header/burger-btn.png";
 import basket from "../../images/Header/basket.png";
@@ -75,7 +76,7 @@ export const Header: React.FC<OrderProps> = ({ orders, deleteOrder }) => {
             <li>
               <Btn onClick={openCartModal}>
                 <Img src={basket} alt="basket" width="40px" />
-                <div>{ orders.length }</div>
+                {orders.length > 0 && <CartIcon>{orders.length}</CartIcon>}
               </Btn>
             </li>
             {isCartModalOpen && (

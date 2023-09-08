@@ -48,6 +48,7 @@ export const UserNav = styled.ul`
   gap: 15px;
 `;
 export const Btn = styled.button`
+  position: relative;
   display: block;
   padding: 0;
   background-color: transparent;
@@ -81,7 +82,23 @@ export const CartText = styled.p`
   margin-bottom: 20px;
 `;
 export const CartImg = styled.img`
-margin: 0 auto;
+  margin: 0 auto;
   width: 40%;
   height: 40%;
+`;
+
+export const CartIcon = styled.span`
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  bottom: 0;
+  right: 0;
+  width: 15px;
+  height: 15px;
+  background-color: #FFD4DD;
+  border-radius: 50%;
+  color: #9C0746;
+  font-size: 10px;
+  font-weight: bold;
 `;
