@@ -17,19 +17,19 @@ interface CartItemProps {
 }
 
 export const CartItem: React.FC<CartItemProps> = ({ product, deleteOrder }) => {
-  const [count, setCount] = useState(1);
+  const [quantity, setQuantity] = useState(1);
 
   const increment = () => {
-    setCount((prevState) => prevState + 1);
+    setQuantity((prevState) => prevState + 1);
   };
   const decrement = () => {
-    setCount((prevState) => prevState - 1);
+    setQuantity((prevState) => prevState - 1);
   };
 
-  const handleCountChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+  const handleQuantityChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const newValue = parseInt(event.target.value, 10);
     if (!isNaN(newValue)) {
-      setCount(newValue);
+      setQuantity(newValue);
     }
   };
 
@@ -47,17 +47,17 @@ export const CartItem: React.FC<CartItemProps> = ({ product, deleteOrder }) => {
             }
             alt={product.name}
           />
-          <Btn onClick={decrement} disabled={count <= 1}>
+          <Btn onClick={decrement} disabled={quantity <= 1}>
             -
           </Btn>
           <Input
             type="text"
-            value={count}
-            onChange={handleCountChange}
+            value={quantity}
+            onChange={handleQuantityChange}
             min="1"
           />
           <Btn onClick={increment}>+</Btn>
-          <Count>{product.price * count} uah</Count>
+          <Count>{product.price * quantity} uah</Count>
         </Box>
       </Item>
     </>
