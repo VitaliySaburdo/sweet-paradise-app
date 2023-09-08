@@ -8,6 +8,8 @@ export const Container = styled.ul`
   overflow-y: auto;
   scrollbar-width: thin;
   scrollbar-color: #333333 #f1f1f1;
+  padding-left: 15px;
+  padding-right: 7px;
 
   &::-webkit-scrollbar {
     width: 8px;

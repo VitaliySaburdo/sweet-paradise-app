@@ -15,15 +15,19 @@ function App() {
   const [loading, setLoading] = useState(true);
 
   const addOrder = (novelty: ProductProps): void => {
-    const isAlreadyInCart = orders.some((item) => item._id === novelty._id);
-    if (!isAlreadyInCart) {
-      setOrders([...orders, novelty]);
-    }
-  };
+  const isAlreadyInCart = orders.some((item) => item._id === novelty._id);
+  if (!isAlreadyInCart) {
+    const updatedOrders = [...orders, novelty];
+    setOrders(updatedOrders);
+    localStorage.setItem('orders', JSON.stringify(updatedOrders));
+  }
+};
 
-  const deleteOrder = (novelty: ProductProps): void => {
-    setOrders(orders.filter((item) => item._id !== novelty._id));
-  };
+ const deleteOrder = (novelty: ProductProps): void => {
+  const updatedOrders = orders.filter((item) => item._id !== novelty._id);
+  setOrders(updatedOrders);
+  localStorage.setItem('orders', JSON.stringify(updatedOrders));
+};
 
   useEffect(() => {
     async function fetchData() {
@@ -39,6 +43,13 @@ function App() {
 
     fetchData();
   }, []);
+
+  useEffect(() => {
+  const storedOrders = localStorage.getItem('orders');
+  if (storedOrders) {
+    setOrders(JSON.parse(storedOrders));
+  }
+}, []);
 
   return (
     <StyleSheetManager shouldForwardProp={(prop) => prop !== "index"}>
