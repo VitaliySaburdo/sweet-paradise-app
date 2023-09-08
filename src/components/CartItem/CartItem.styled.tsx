@@ -32,8 +32,10 @@ export const Count = styled.p`
 
 export const Item = styled.li`
   width: 500px;
+  padding: 5px;
   border-radius: 10px;
-  border: 1px solid #9c0746;
+  border: 1px solid #c4c4c4;
+  box-shadow: 0px 10px 20px 0px rgba(66, 2, 29, 0.31);
 `;
 
 export const Btn = styled.button`
