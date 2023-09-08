@@ -4,7 +4,7 @@ export const Container = styled.ul`
   display: flex;
   flex-direction: column;
   gap: 15px;
-  max-height: 30vh;
+  max-height: 45vh;
   overflow-y: auto;
   scrollbar-width: thin;
   scrollbar-color: #333333 #f1f1f1;

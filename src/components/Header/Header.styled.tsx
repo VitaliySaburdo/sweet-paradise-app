@@ -68,8 +68,7 @@ export const Img = styled.img`
 // Cart content
 
 export const CartWrapper = styled.div`
-  min-height: 300px;
-  min-width: 500px;
+  min-width: 515px;
 `;
 
 export const CartTitle = styled.h2`
