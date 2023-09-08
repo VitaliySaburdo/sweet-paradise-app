@@ -27,9 +27,16 @@ import { CartList } from "../CartList/CartList";
 interface OrderProps {
   orders: ProductProps[];
   deleteOrder: (orders: ProductProps) => void;
+  increment: (id: string) => void;
+  decrement: (id: string) => void;
 }
 
-export const Header: React.FC<OrderProps> = ({ orders, deleteOrder }) => {
+export const Header: React.FC<OrderProps> = ({
+  orders,
+  deleteOrder,
+  increment,
+  decrement,
+}) => {
   const [scrolled, setScrolled] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isCartModalOpen, setIsCartModalOpen] = useState(false);
@@ -89,7 +96,12 @@ export const Header: React.FC<OrderProps> = ({ orders, deleteOrder }) => {
                       <CartImg src={cart} alt="cart" width="40px" />
                     </>
                   ) : (
-                    <CartList orders={orders} deleteOrder={deleteOrder} />
+                    <CartList
+                      orders={orders}
+                      deleteOrder={deleteOrder}
+                      increment={increment}
+                      decrement={decrement}
+                    />
                   )}
                 </CartWrapper>
               </Modal>

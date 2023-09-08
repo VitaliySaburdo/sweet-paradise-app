@@ -15,19 +15,49 @@ function App() {
   const [loading, setLoading] = useState(true);
 
   const addOrder = (novelty: ProductProps): void => {
-  const isAlreadyInCart = orders.some((item) => item._id === novelty._id);
-  if (!isAlreadyInCart) {
-    const updatedOrders = [...orders, novelty];
-    setOrders(updatedOrders);
-    localStorage.setItem('orders', JSON.stringify(updatedOrders));
-  }
-};
+    const isAlreadyInCart = orders.some((item) => item._id === novelty._id);
+    if (!isAlreadyInCart) {
+      const updatedOrders = [...orders, novelty];
+      setOrders(updatedOrders);
+      localStorage.setItem("orders", JSON.stringify(updatedOrders));
+    }
+  };
 
- const deleteOrder = (novelty: ProductProps): void => {
-  const updatedOrders = orders.filter((item) => item._id !== novelty._id);
-  setOrders(updatedOrders);
-  localStorage.setItem('orders', JSON.stringify(updatedOrders));
-};
+  const deleteOrder = (novelty: ProductProps): void => {
+    const updatedOrders = orders.filter((item) => item._id !== novelty._id);
+    setOrders(updatedOrders);
+    localStorage.setItem("orders", JSON.stringify(updatedOrders));
+  };
+
+  const increment = (id: string) => {
+    setOrders((orders) => {
+      return orders.map((order) => {
+        if (order._id === id) {
+          return {
+            ...order,
+            quantity: ++order.quantity,
+            totalPrice: order.quantity * order.price
+          };
+        }
+        return order;
+      });
+    });
+  };
+
+  const decrement = (id: string) => {
+        setOrders((orders) => {
+      return orders.map((order) => {
+        if (order._id === id) {
+          return {
+            ...order,
+            quantity: order.quantity - 1 < 1 ? 1 : --order.quantity,
+            totalPrice: order.quantity * order.price
+          };
+        }
+        return order;
+      });
+    });
+  };
 
   useEffect(() => {
     async function fetchData() {
@@ -45,11 +75,11 @@ function App() {
   }, []);
 
   useEffect(() => {
-  const storedOrders = localStorage.getItem('orders');
-  if (storedOrders) {
-    setOrders(JSON.parse(storedOrders));
-  }
-}, []);
+    const storedOrders = localStorage.getItem("orders");
+    if (storedOrders) {
+      setOrders(JSON.parse(storedOrders));
+    }
+  }, []);
 
   return (
     <StyleSheetManager shouldForwardProp={(prop) => prop !== "index"}>
@@ -57,7 +87,14 @@ function App() {
         <Routes>
           <Route
             path="/"
-            element={<SharedLayout orders={orders} deleteOrder={deleteOrder} />}
+            element={
+              <SharedLayout
+                orders={orders}
+                deleteOrder={deleteOrder}
+                increment={increment}
+                decrement={decrement}
+              />
+            }
           >
             <Route
               index

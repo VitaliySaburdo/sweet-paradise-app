@@ -8,4 +8,6 @@ export interface ProductProps {
     img: string;
     ingredients: string;
     owner: string;
+    quantity: number;
+    totalPrice: number;
 }

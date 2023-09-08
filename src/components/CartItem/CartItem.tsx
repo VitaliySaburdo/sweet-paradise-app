@@ -1,4 +1,4 @@
-import { useState } from "react";
+// import { useState } from "react";
 import {
   StyledText,
   Item,
@@ -14,29 +14,22 @@ import { ProductProps } from "../App/App.types";
 interface CartItemProps {
   product: ProductProps;
   deleteOrder: (orders: ProductProps) => void;
+  increment: (id: string) => void;
+  decrement: (id: string) => void;
+  // changeValue: (id:string, value: number)= > void;
 }
 
-export const CartItem: React.FC<CartItemProps> = ({ product, deleteOrder }) => {
-  const [quantity, setQuantity] = useState(1);
-
-  const increment = () => {
-    setQuantity((prevState) => prevState + 1);
-  };
-  const decrement = () => {
-    setQuantity((prevState) => prevState - 1);
-  };
-
-  const handleQuantityChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const newValue = parseInt(event.target.value, 10);
-    if (!isNaN(newValue)) {
-      setQuantity(newValue);
-    }
-  };
-
+export const CartItem: React.FC<CartItemProps> = ({
+  product,
+  deleteOrder,
+  increment,
+  decrement,
+  // changeValue,
+}) => {
   return (
     <>
       <Item>
-        <Box style={{justifyContent: 'space-between', marginRight: '10px'}}>
+        <Box style={{ justifyContent: "space-between", marginRight: "10px" }}>
           <StyledText>{product.name}</StyledText>
           <CloseBtn onClick={() => deleteOrder(product)}>X</CloseBtn>
         </Box>
@@ -47,17 +40,17 @@ export const CartItem: React.FC<CartItemProps> = ({ product, deleteOrder }) => {
             }
             alt={product.name}
           />
-          <Btn onClick={decrement} disabled={quantity <= 1}>
-            -
-          </Btn>
+          <Btn onClick={() => decrement(product._id)}>-</Btn>
           <Input
             type="text"
-            value={quantity}
-            onChange={handleQuantityChange}
+            value={product.quantity || 1}
             min="1"
+            // onChange={(e) => {
+            //   changeValue(product._id, e.target);
+            // }}
           />
-          <Btn onClick={increment}>+</Btn>
-          <Count>{product.price * quantity} uah</Count>
+          <Btn onClick={() => increment(product._id)}>+</Btn>
+          <Count>{product.totalPrice || product.price} uah</Count>
         </Box>
       </Item>
     </>
