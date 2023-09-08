@@ -60,14 +60,13 @@ function App() {
   };
 
   const changeValue = (id: string, value: number) => {
-    console.log(value);
         setOrders((orders) => {
       return orders.map((order) => {
         if (order._id === id) {
           return {
             ...order,
             quantity: value,
-            totalPrice: order.quantity * order.price,
+            totalPrice: value * order.price,
           };
         }
         return order;
