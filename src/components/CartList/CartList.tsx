@@ -7,7 +7,8 @@ export const CartList: React.FC<{
   deleteOrder: (orders: ProductProps) => void;
   increment: (id: string) => void;
   decrement: (id: string) => void;
-}> = ({ orders, deleteOrder, increment, decrement }) => {
+  changeValue: (id:string, value: number) => void;
+}> = ({ orders, deleteOrder, increment, decrement, changeValue }) => {
   return (
     <>
       <Container>
@@ -18,7 +19,7 @@ export const CartList: React.FC<{
             deleteOrder={deleteOrder}
             increment={increment}
             decrement={decrement}
-            // changeValue={changeValue}
+            changeValue={changeValue}
           />
         ))}
       </Container>

@@ -12,6 +12,7 @@ interface OrderProps {
   deleteOrder: (orders: ProductProps) => void;
   increment: (id: string) => void;
   decrement: (id: string) => void;
+  changeValue: (id:string, value: number) => void;
 }
 
 export const SharedLayout: React.FC<OrderProps> = ({
@@ -19,6 +20,7 @@ export const SharedLayout: React.FC<OrderProps> = ({
   deleteOrder,
   decrement,
   increment,
+  changeValue,
 }) => {
   return (
     <>
@@ -27,6 +29,7 @@ export const SharedLayout: React.FC<OrderProps> = ({
         deleteOrder={deleteOrder}
         increment={increment}
         decrement={decrement}
+        changeValue={changeValue}
       />
       <Suspense fallback={"Loading..."}>
         <main>

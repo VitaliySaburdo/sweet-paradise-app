@@ -36,7 +36,7 @@ function App() {
           return {
             ...order,
             quantity: ++order.quantity,
-            totalPrice: order.quantity * order.price
+            totalPrice: order.quantity * order.price,
           };
         }
         return order;
@@ -45,13 +45,29 @@ function App() {
   };
 
   const decrement = (id: string) => {
-        setOrders((orders) => {
+    setOrders((orders) => {
       return orders.map((order) => {
         if (order._id === id) {
           return {
             ...order,
             quantity: order.quantity - 1 < 1 ? 1 : --order.quantity,
-            totalPrice: order.quantity * order.price
+            totalPrice: order.quantity * order.price,
+          };
+        }
+        return order;
+      });
+    });
+  };
+
+  const changeValue = (id: string, value: number) => {
+    console.log(value);
+        setOrders((orders) => {
+      return orders.map((order) => {
+        if (order._id === id) {
+          return {
+            ...order,
+            quantity: value,
+            totalPrice: order.quantity * order.price,
           };
         }
         return order;
@@ -93,6 +109,7 @@ function App() {
                 deleteOrder={deleteOrder}
                 increment={increment}
                 decrement={decrement}
+                changeValue={changeValue}
               />
             }
           >

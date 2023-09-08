@@ -29,6 +29,7 @@ interface OrderProps {
   deleteOrder: (orders: ProductProps) => void;
   increment: (id: string) => void;
   decrement: (id: string) => void;
+  changeValue: (id:string, value: number) => void;
 }
 
 export const Header: React.FC<OrderProps> = ({
@@ -36,6 +37,7 @@ export const Header: React.FC<OrderProps> = ({
   deleteOrder,
   increment,
   decrement,
+  changeValue,
 }) => {
   const [scrolled, setScrolled] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -100,7 +102,8 @@ export const Header: React.FC<OrderProps> = ({
                       orders={orders}
                       deleteOrder={deleteOrder}
                       increment={increment}
-                      decrement={decrement}
+                        decrement={decrement}
+                        changeValue={changeValue}
                     />
                   )}
                 </CartWrapper>

@@ -1,3 +1,4 @@
+// import { useState } from "react";
 import {
   StyledText,
   Item,
@@ -15,7 +16,7 @@ interface CartItemProps {
   deleteOrder: (orders: ProductProps) => void;
   increment: (id: string) => void;
   decrement: (id: string) => void;
-  // changeValue: (id:string, value:  React.ChangeEvent<HTMLInputElement>) => void;
+  changeValue: (id:string, value: number) => void;
 }
 
 export const CartItem: React.FC<CartItemProps> = ({
@@ -23,7 +24,7 @@ export const CartItem: React.FC<CartItemProps> = ({
   deleteOrder,
   increment,
   decrement,
-  // changeValue,
+  changeValue,
 }) => {
   return (
     <>
@@ -41,11 +42,11 @@ export const CartItem: React.FC<CartItemProps> = ({
           />
           <Btn onClick={() => decrement(product._id)}>-</Btn>
           <Input
-            type="number"
+            type="text"
             value={product.quantity || 1}
             min="1"
-            onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
-              // changeValue(product._id, e);
+            onChange={(e:  React.ChangeEvent<HTMLInputElement>) => {
+              changeValue(product._id, parseInt(e.target.value));
             }}
           />
           <Btn onClick={() => increment(product._id)}>+</Btn>
