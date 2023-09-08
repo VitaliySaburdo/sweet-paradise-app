@@ -19,6 +19,12 @@ export const Input = styled.input`
   height: 40px;
   text-align: center;
   border-radius: 5px;
+  &::-webkit-inner-spin-button,
+  &::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    appearance: none;
+    margin: 0;
+  }
 `;
 export const Count = styled.p`
   margin-left: 20px;

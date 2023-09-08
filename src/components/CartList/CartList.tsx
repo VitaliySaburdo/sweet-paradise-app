@@ -18,6 +18,7 @@ export const CartList: React.FC<{
             deleteOrder={deleteOrder}
             increment={increment}
             decrement={decrement}
+            // changeValue={changeValue}
           />
         ))}
       </Container>
