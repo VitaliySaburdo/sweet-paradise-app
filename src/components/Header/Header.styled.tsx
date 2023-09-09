@@ -19,10 +19,12 @@ export const HeaderWrapper = styled.header`
 export const StyledLink = styled(Link)`
   font-family: ${(props) => props.theme.fonts.accent};
   color: ${(props) => props.theme.colors.secondaryColor};
-  font-size: 12px;
-  margin-top: 7px;
-  margin-bottom: 7px;
+  font-size: 22px;
+  margin-left: 10px;
+  margin-top: 14px;
+  margin-bottom: 14px;
   @media screen and (${(props) => props.theme.media.md}) {
+    margin-left: 0;
     font-size: 20px;
     margin-right: 68px;
   }
@@ -56,7 +58,7 @@ export const Btn = styled.button`
   cursor: pointer;
 `;
 export const Img = styled.img`
-  width: 17px;
+  width: 25px;
   @media screen and (${(props) => props.theme.media.md}) {
     width: 30px;
   }
