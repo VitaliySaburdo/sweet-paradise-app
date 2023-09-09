@@ -7,13 +7,16 @@ export const CartList: React.FC<{
   deleteOrder: (orders: ProductProps) => void;
   increment: (id: string) => void;
   decrement: (id: string) => void;
-  changeValue: (id:string, value: number) => void;
+  changeValue: (id: string, value: number) => void;
 }> = ({ orders, deleteOrder, increment, decrement, changeValue }) => {
-
-  const totalPriceAllOrders = orders.reduce((totalPrice, order) => totalPrice + order.totalPrice, 0);
-  const totalQuantityAllOrders = orders.reduce((totalPrice, order) => totalPrice + order.quantity, 0);
-
-  console.log(totalPriceAllOrders)
+  const totalPriceAllOrders = orders.reduce(
+    (totalPrice, order) => totalPrice + (order.totalPrice || order.price),
+    0
+  );
+  const totalQuantityAllOrders = orders.reduce(
+    (totalPrice, order) => totalPrice + (order.quantity || 1),
+    0
+  );
 
   return (
     <>
@@ -29,7 +32,9 @@ export const CartList: React.FC<{
           />
         ))}
       </Container>
-      <h2>Total prise {totalQuantityAllOrders} {totalPriceAllOrders}</h2>
+      <h2>
+        Total prise {totalQuantityAllOrders} {totalPriceAllOrders}
+      </h2>
     </>
   );
 };
