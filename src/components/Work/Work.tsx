@@ -14,7 +14,7 @@ export const Work = () => {
   return (
     <>
       <StyledContainer>
-        <Container>
+      
           <Wrapper>
             <Item>
               <Circle>
@@ -54,7 +54,6 @@ export const Work = () => {
               </Text>
             </Item>
           </Wrapper>
-        </Container>
       </StyledContainer>
     </>
   );

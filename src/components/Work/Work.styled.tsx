@@ -5,10 +5,10 @@ import raspberries from "../../images/Hero/raspberries.png";
 export const StyledContainer = styled(Container)`
 @media screen and (${(props) => props.theme.media.lg}){
   background-image: url(${raspberries});
-  background-position: 70% 120%;
+  background-position: 68% 80%;
+  background-size: 97px;
   background-repeat: no-repeat;
 }
-
 `;
 
 export const Wrapper = styled.ul`
