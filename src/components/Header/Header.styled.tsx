@@ -70,13 +70,14 @@ export const Img = styled.img`
 // Cart content
 
 export const CartWrapper = styled.div`
-  min-width: 320px;
+  min-width: 270px;
   @media screen and (${(props) => props.theme.media.lg}) {
     min-width: 515px;
   }
 `;
 
 export const CartTitle = styled.h2`
+text-align: center;
   margin-bottom: 20px;
 `;
 export const CartText = styled.p`

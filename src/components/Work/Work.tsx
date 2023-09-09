@@ -1,6 +1,7 @@
 import { Container } from "../Container/Container";
-import { Section } from "../Section/Section";
+
 import {
+  StyledContainer,
   Wrapper,
   Item,
   Circle,
@@ -12,7 +13,7 @@ import {
 export const Work = () => {
   return (
     <>
-      <Section>
+      <StyledContainer>
         <Container>
           <Wrapper>
             <Item>
@@ -21,7 +22,7 @@ export const Work = () => {
               </Circle>
               <Title>We receive an order</Title>
               <Text>
-                We receive the order <br/> and contact you <br/> for clarification of
+                We receive the order and contact you for clarification of
                 details
               </Text>
             </Item>
@@ -31,7 +32,7 @@ export const Work = () => {
               </Circle>
               <Title>Preparing an order</Title>
               <Text>
-                We prepare the order <br/> in strict accordance with <br/> the wishes of the client
+                We prepare the order in strict accordance with the wishes of the client
               </Text>
             </Item>
             <Item>
@@ -40,7 +41,7 @@ export const Work = () => {
               </Circle>
               <Title>Sending goods</Title>
               <Text>
-                We send your order <br/> by the previously <br/> approved method
+                We send your order by the previously approved method
               </Text>
             </Item>
             <Item>
@@ -49,12 +50,12 @@ export const Work = () => {
               </Circle>
               <Title>Shipping and payment</Title>
               <Text>
-                Our courier will deliver the goods <br/> to your address <br/> directly to your hands
+                Our courier will deliver the goods to your address directly to your hands
               </Text>
             </Item>
           </Wrapper>
         </Container>
-      </Section>
+      </StyledContainer>
     </>
   );
 };
