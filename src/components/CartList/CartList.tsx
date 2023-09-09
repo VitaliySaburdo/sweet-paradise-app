@@ -1,6 +1,7 @@
 import { ProductProps } from "../App/App.types";
+import { Button } from "../Button/Button";
 import { CartItem } from "../CartItem/CartItem";
-import { Container } from "./CartList.styled";
+import { Container, CartListHeader, StyledWrapper, TotalPrice} from "./CartList.styled";
 
 export const CartList: React.FC<{
   orders: ProductProps[];
@@ -32,9 +33,13 @@ export const CartList: React.FC<{
           />
         ))}
       </Container>
-      <h2>
-        Total prise {totalQuantityAllOrders} {totalPriceAllOrders}
-      </h2>
+      <CartListHeader>
+        <h2>Total prise</h2>
+        <StyledWrapper>
+          <TotalPrice>{totalPriceAllOrders} uah</TotalPrice>
+          <Button width={'200px'}>Checkout</Button>
+        </StyledWrapper>
+      </CartListHeader>
     </>
   );
 };

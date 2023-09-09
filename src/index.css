@@ -4,6 +4,26 @@ body {
   font-family: "Montserrat", sans-serif;
   margin: 0;
   background-color: #ffffff;
+
+  scrollbar-width: thin;
+  scrollbar-color: #ffd4dd;
+
+  &::-webkit-scrollbar {
+    width: 14px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: #9c0746;
+    border-radius: 4px;
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    background-color: #555555;
+  }
+
+  &::-webkit-scrollbar-track {
+    background-color: transparent;
+  }
 }
 
 h1,

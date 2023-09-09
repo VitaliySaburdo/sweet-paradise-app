@@ -25,7 +25,7 @@ export const Overlay = styled.div`
 
 export const ModalBody = styled.div`
   position: absolute;
-  top: 20%;
+  top: 15%;
   left: 50%;
   transform: translateX(-50%);
 

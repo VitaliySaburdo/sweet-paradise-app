@@ -89,12 +89,12 @@ function App() {
     fetchData();
   }, []);
 
-  useEffect(() => {
-    const storedOrders = localStorage.getItem("orders");
-    if (storedOrders) {
-      setOrders(JSON.parse(storedOrders));
-    }
-  }, []);
+  // useEffect(() => {
+  //   const storedOrders = localStorage.getItem("orders");
+  //   if (storedOrders) {
+  //     setOrders(JSON.parse(storedOrders));
+  //   }
+  // }, []);
 
   return (
     <StyleSheetManager shouldForwardProp={(prop) => prop !== "index"}>

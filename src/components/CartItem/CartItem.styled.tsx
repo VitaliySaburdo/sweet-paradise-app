@@ -12,7 +12,7 @@ export const Box = styled.div`
 export const Picture = styled.img`
   width: 100px;
   height: 100px;
-  margin-right: 20px;
+  margin-right: 80px;
 `;
 export const Input = styled.input`
   width: 40px;
@@ -27,7 +27,7 @@ export const Input = styled.input`
   }
 `;
 export const Count = styled.p`
-  margin-left: 20px;
+  margin-left: 60px;
   color: #9c0746;
   font-family: Montserrat;
   font-size: 20px;
@@ -41,7 +41,7 @@ export const Item = styled.li`
   padding: 5px;
   border-radius: 10px;
   border: 1px solid #c4c4c4;
-  box-shadow: 0px 10px 20px 0px rgba(66, 2, 29, 0.31);
+  box-shadow: 0px 5px 10px 0px rgba(66, 2, 29, 0.31);
 `;
 
 export const Btn = styled.button`
@@ -57,7 +57,10 @@ export const CloseBtn = styled.button`
   border: none;
   font-size: 20px;
   font-weight: 600;
-  color: red;
+  color: #929292;
   background-color: transparent;
   cursor: pointer;
+  &:hover{
+   color: red; 
+  }
 `;
