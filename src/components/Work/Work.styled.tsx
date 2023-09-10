@@ -1,17 +1,7 @@
 import styled from "styled-components";
-import { Container } from "../Container/Container";
-import raspberries from "../../images/Hero/raspberries.png";
-
-export const StyledContainer = styled(Container)`
-@media screen and (${(props) => props.theme.media.lg}){
-  background-image: url(${raspberries});
-  background-position: 68% 80%;
-  background-size: 97px;
-  background-repeat: no-repeat;
-}
-`;
 
 export const Wrapper = styled.ul`
+position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -24,6 +14,13 @@ export const Wrapper = styled.ul`
     gap: 0;
   }
 `;
+
+export const StyledImg = styled.img`
+position: absolute;
+bottom: -30px;
+right: 320px;
+width: 98px;
+`
 
 export const Item = styled.li`
   width: 294px;

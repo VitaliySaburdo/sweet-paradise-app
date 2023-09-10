@@ -1,20 +1,20 @@
 import { Container } from "../Container/Container";
+import raspberries from "../../images/Hero/raspberries.png";
 
 import {
-  StyledContainer,
   Wrapper,
   Item,
   Circle,
   StyledNumber,
   Title,
   Text,
+  StyledImg
 } from "./Work.styled";
 
 export const Work = () => {
   return (
     <>
-      <StyledContainer>
-      
+      <Container>
           <Wrapper>
             <Item>
               <Circle>
@@ -52,9 +52,10 @@ export const Work = () => {
               <Text>
                 Our courier will deliver the goods to your address directly to your hands
               </Text>
-            </Item>
-          </Wrapper>
-      </StyledContainer>
+          </Item>
+          <StyledImg src={raspberries} alt="raspberries" width={'98px'} />
+        </Wrapper>
+      </Container>
     </>
   );
 };
