@@ -46,7 +46,7 @@ export const CartItem: React.FC<CartItemProps> = ({
             value={product.quantity || 1}
             min="1"
             onChange={(e:  React.ChangeEvent<HTMLInputElement>) => {
-              changeValue(product._id, parseInt(e.target.value));
+              changeValue(product._id, parseInt(e.target.value, 10));
             }}
           />
           <Btn onClick={() => increment(product._id)}>+</Btn>
