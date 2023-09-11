@@ -43,14 +43,14 @@ export const CartItem: React.FC<CartItemProps> = ({
           <Btn onClick={() => decrement(product._id)}>-</Btn>
           <Input
             type="text"
-            value={product.quantity || 1}
+            value={product.quantity}
             min="1"
             onChange={(e:  React.ChangeEvent<HTMLInputElement>) => {
               changeValue(product._id, parseInt(e.target.value, 10));
             }}
           />
           <Btn onClick={() => increment(product._id)}>+</Btn>
-          <Count>{product.totalPrice || product.price} uah</Count>
+          <Count>{product.totalPrice} uah</Count>
         </Box>
       </Item>
     </>

@@ -11,7 +11,7 @@ export const CartList: React.FC<{
   changeValue: (id: string, value: number) => void;
 }> = ({ orders, deleteOrder, increment, decrement, changeValue }) => {
   const totalPriceAllOrders = orders.reduce(
-    (totalPrice, order) => totalPrice + (order.totalPrice || order.price),
+    (totalPrice, order) => totalPrice + order.totalPrice, 
     0
   );
 
@@ -20,7 +20,7 @@ export const CartList: React.FC<{
       <Container>
         {orders.map((order) => (
           <CartItem
-            key={order._id}
+            key={order._id} 
             product={order}
             deleteOrder={deleteOrder}
             increment={increment}

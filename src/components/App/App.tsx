@@ -26,6 +26,7 @@ const addOrder = (novelty: ProductProps): void => {
       },
     ];
     setOrders(updatedOrders);
+    console.log(updatedOrders);
   }
 };
   const deleteOrder = (novelty: ProductProps): void => {
@@ -40,7 +41,7 @@ const addOrder = (novelty: ProductProps): void => {
           return {
             ...order,
             quantity: ++order.quantity,
-            totalPrice: ++order.quantity * order.price,
+            totalPrice: order.quantity * order.price,
           };
         }
         return order;
