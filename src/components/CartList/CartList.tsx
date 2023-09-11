@@ -14,10 +14,6 @@ export const CartList: React.FC<{
     (totalPrice, order) => totalPrice + (order.totalPrice || order.price),
     0
   );
-  const totalQuantityAllOrders = orders.reduce(
-    (totalPrice, order) => totalPrice + (order.quantity || 1),
-    0
-  );
 
   return (
     <>
