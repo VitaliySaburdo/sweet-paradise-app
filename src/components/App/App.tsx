@@ -6,7 +6,7 @@ import { ThemeProvider } from "styled-components";
 import { theme } from "../../theme/theme";
 import { SharedLayout } from "../SharedLayout/SharedLayout";
 import { Home } from "../../pages/Home";
-import { Catalog } from "../../pages/Catalog";
+import { Goods } from "../../pages/Goods";
 import { ProductProps } from "./App.types";
 
 function App() {
@@ -123,7 +123,7 @@ const addOrder = (novelty: ProductProps): void => {
                 />
               }
             />
-            <Route path="/catalog" element={<Catalog />} />
+            <Route path="/goods" element={<Goods />} />
           </Route>
         </Routes>
       </ThemeProvider>

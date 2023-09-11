@@ -13,10 +13,10 @@ export const NavBar: React.FC<NavBarProps> = ({color, display = false}) => {
       <Nav>
         <NavList display={display.toString()}>
           <li>
-            <p color={color}>About us</p>
+             <StyledLink to={'/'} color={color} >Home</StyledLink>
           </li>
           <li>
-            <StyledLink to={'/catalog'} color={color} >Catalog</StyledLink>
+            <StyledLink to={'/goods'} color={color} >Catalog</StyledLink>
           </li>
           <li>
             <p color={color}>Feedback</p>

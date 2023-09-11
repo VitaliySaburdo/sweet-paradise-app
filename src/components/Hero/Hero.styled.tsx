@@ -3,15 +3,12 @@ import { Button } from "../Button/Button";
 import ellipse from "../../images/Hero/Ellipse.png";
 import leaf from "../../images/Hero/leaf.png";
 import raspberries from "../../images/Hero/raspberries.png";
-
 import { Container } from "../Container/Container";
 
 export const MainWrapper = styled(Container)`
 @media screen and (${(props) => props.theme.media.md}){
   background-image: url(${ellipse});
   background-repeat: no-repeat;
-
-  
 }
   @media screen and (${(props) => props.theme.media.lg}) {
     background-image: url(${leaf}), url(${ellipse}), url(${raspberries});
