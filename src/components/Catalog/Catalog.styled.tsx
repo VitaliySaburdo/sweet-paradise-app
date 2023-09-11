@@ -18,3 +18,13 @@ export const Wrapper = styled.div`
     margin-right: auto;
   }
 `;
+
+export const CatalogTitle = styled.h2`
+text-align: center;
+margin-bottom: 70px;
+`
+
+export const CatalogList = styled.ul`
+  display: flex;
+  justify-content: space-between;
+`
