@@ -1,11 +1,12 @@
 import { Container } from "../Container/Container";
-import { Wrapper } from "./Catalog.styled";
+import { Section } from "../Section/Section";
+// import { Wrapper } from "./Catalog.styled";
 
 export const Catalog = () => {
   return (
     <>
+      <Section>
       <Container>
-        <Wrapper>
           <h1>Yummy catalog</h1>
         <ul>
           <li>
@@ -29,8 +30,8 @@ export const Catalog = () => {
             <p>Donut</p>
           </li>
         </ul>
-        </Wrapper>
-      </Container>
+        </Container>
+        </Section>
     </>
   );
 };
