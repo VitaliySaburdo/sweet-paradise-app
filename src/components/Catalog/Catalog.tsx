@@ -1,3 +1,4 @@
+import {useState} from 'react';
 import { Container } from "../Container/Container";
 import { Section } from "../Section/Section";
 import {
@@ -15,6 +16,14 @@ import muffin from "../../images/Goods/muffin.png";
 import donut from "../../images/Goods/donut.png";
 
 export const Catalog = () => {
+  const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
+  console.log(selectedCategory);
+
+    const handleCategoryClick = (event: React.MouseEvent<HTMLButtonElement>) => {
+    const category = event.currentTarget.getAttribute('data-category');
+    setSelectedCategory(category);
+  };
+
   return (
     <>
       <Section>
@@ -22,7 +31,7 @@ export const Catalog = () => {
           <CatalogTitle>Yummy catalog</CatalogTitle>
           <CatalogList>
             <CatalogItem>
-              <CatalogBtn>
+              <CatalogBtn data-category="eclair" onClick={handleCategoryClick}>
                 <CatalogImg src={eclair} alt="Eclair" />
                 <CatalogText>Eclair</CatalogText>
               </CatalogBtn>
