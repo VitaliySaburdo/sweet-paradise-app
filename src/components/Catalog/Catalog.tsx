@@ -1,6 +1,13 @@
 import { Container } from "../Container/Container";
 import { Section } from "../Section/Section";
-import { CatalogList, CatalogTitle } from "./Catalog.styled";
+import {
+  CatalogList,
+  CatalogTitle,
+  CatalogItem,
+  CatalogImg,
+  CatalogText,
+  CatalogBtn,
+} from "./Catalog.styled";
 import eclair from "../../images/Goods/eclair.png";
 import macaron from "../../images/Goods/macaron.png";
 import cupcake from "../../images/Goods/cupcake.png";
@@ -14,26 +21,36 @@ export const Catalog = () => {
         <Container>
           <CatalogTitle>Yummy catalog</CatalogTitle>
           <CatalogList>
-            <li>
-              <img src={eclair} alt="Eclair" />
-              <p>Eclair</p>
-            </li>
-            <li>
-              <img src={macaron} alt="Macaron" />
-              <p>Macaron</p>
-            </li>
-            <li>
-              <img src={cupcake} alt="Cupcake" />
-              <p>Cupcake</p>
-            </li>
-            <li>
-              <img src={muffin} alt="Muffin" />
-              <p>Muffin</p>
-            </li>
-            <li>
-              <img src={donut} alt="Donut" />
-              <p>Donut</p>
-            </li>
+            <CatalogItem>
+              <CatalogBtn>
+                <CatalogImg src={eclair} alt="Eclair" />
+                <CatalogText>Eclair</CatalogText>
+              </CatalogBtn>
+            </CatalogItem>
+            <CatalogItem>
+              <CatalogBtn>
+                <CatalogImg src={macaron} alt="Macaron" />
+                <CatalogText>Macaron</CatalogText>
+              </CatalogBtn>
+            </CatalogItem>
+            <CatalogItem>
+              <CatalogBtn>
+                <CatalogImg src={cupcake} alt="Cupcake" />
+                <CatalogText>Cupcake</CatalogText>
+              </CatalogBtn>
+            </CatalogItem>
+            <CatalogItem>
+              <CatalogBtn>
+                <CatalogImg src={muffin} alt="Muffin" />
+                <CatalogText>Muffin</CatalogText>
+              </CatalogBtn>
+            </CatalogItem>
+            <CatalogItem>
+              <CatalogBtn>
+                <CatalogImg src={donut} alt="Donut" />
+                <CatalogText>Donut</CatalogText>
+              </CatalogBtn>
+            </CatalogItem>
           </CatalogList>
         </Container>
       </Section>

@@ -20,11 +20,45 @@ export const Wrapper = styled.div`
 `;
 
 export const CatalogTitle = styled.h2`
-text-align: center;
-margin-bottom: 70px;
-`
+  text-align: center;
+  margin-bottom: 70px;
+`;
 
 export const CatalogList = styled.ul`
+  width: 929px;
+  padding: 20px;
+  margin: 0 auto;
   display: flex;
   justify-content: space-between;
-`
+  align-items: end;
+
+`;
+
+export const CatalogItem = styled.li`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
+
+export const CatalogImg = styled.img`
+  margin-bottom: 15px;
+`;
+
+export const CatalogText = styled.p`
+  color: #b44e79;
+  font-family: Montserrat;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+`;
+
+export const CatalogBtn = styled.button`
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+    &:hover{
+     transform: scale(1.2);
+  }
+`;
