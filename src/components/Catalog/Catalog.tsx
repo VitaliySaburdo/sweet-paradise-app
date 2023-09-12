@@ -1,4 +1,4 @@
-import {useState} from 'react';
+import { useState } from "react";
 import { Container } from "../Container/Container";
 import { Section } from "../Section/Section";
 import {
@@ -19,8 +19,8 @@ export const Catalog = () => {
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
   console.log(selectedCategory);
 
-    const handleCategoryClick = (event: React.MouseEvent<HTMLButtonElement>) => {
-    const category = event.currentTarget.getAttribute('data-category');
+  const handleCategoryClick = (event: React.MouseEvent<HTMLButtonElement>) => {
+    const category = event.currentTarget.getAttribute("data-category");
     setSelectedCategory(category);
   };
 
@@ -37,25 +37,25 @@ export const Catalog = () => {
               </CatalogBtn>
             </CatalogItem>
             <CatalogItem>
-              <CatalogBtn>
+              <CatalogBtn data-category="macaron" onClick={handleCategoryClick}>
                 <CatalogImg src={macaron} alt="Macaron" />
                 <CatalogText>Macaron</CatalogText>
               </CatalogBtn>
             </CatalogItem>
             <CatalogItem>
-              <CatalogBtn>
+              <CatalogBtn data-category="cupcake" onClick={handleCategoryClick}>
                 <CatalogImg src={cupcake} alt="Cupcake" />
                 <CatalogText>Cupcake</CatalogText>
               </CatalogBtn>
             </CatalogItem>
             <CatalogItem>
-              <CatalogBtn>
+              <CatalogBtn data-category="muffin" onClick={handleCategoryClick}>
                 <CatalogImg src={muffin} alt="Muffin" />
                 <CatalogText>Muffin</CatalogText>
               </CatalogBtn>
             </CatalogItem>
             <CatalogItem>
-              <CatalogBtn>
+              <CatalogBtn data-category="donut" onClick={handleCategoryClick}>
                 <CatalogImg src={donut} alt="Donut" />
                 <CatalogText>Donut</CatalogText>
               </CatalogBtn>
