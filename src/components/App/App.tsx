@@ -26,7 +26,6 @@ const addOrder = (novelty: ProductProps): void => {
       },
     ];
     setOrders(updatedOrders);
-    console.log(updatedOrders);
   }
 };
   const deleteOrder = (novelty: ProductProps): void => {
