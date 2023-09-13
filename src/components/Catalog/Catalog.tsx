@@ -10,7 +10,7 @@ import {
 } from "./Catalog.styled";
 import eclair from "../../images/Goods/eclair.png";
 import macaron from "../../images/Goods/macaron.png";
-// import cupcake from "../../images/Goods/cupcake.png";
+import cupcake from "../../images/Goods/cupcake.png";
 import muffin from "../../images/Goods/muffin.png";
 import donut from "../../images/Goods/donut.png";
 
@@ -50,10 +50,10 @@ export const Catalog: React.FC<CategoryProps> = ({fetchProductsByCategory}) => {
               </CatalogBtn>
             </CatalogItem>
             <CatalogItem>
-              {/* <CatalogBtn data-category="64dc5d6039fe49cdd5fb98ff" onClick={handleCategoryClick}>
+              <CatalogBtn data-category="64dc5d6039fe49cdd5fb98ff" onClick={handleCategoryClick}>
                 <CatalogImg src={cupcake} alt="Cupcake" />
                 <CatalogText>Cupcake</CatalogText>
-              </CatalogBtn> */}
+              </CatalogBtn>
             </CatalogItem>
             <CatalogItem>
               <CatalogBtn data-category="64dc63c6a1893d42a2047f1f" onClick={handleCategoryClick}>
