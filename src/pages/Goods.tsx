@@ -1,26 +1,32 @@
-import { useEffect } from 'react';
-import {getProductsByCategories} from '../components/apiService/apiService';
+import { useState } from "react";
+import { useEffect } from "react";
+import { getProductsByCategories } from "../components/apiService/apiService";
 import { Catalog } from "../components/Catalog/Catalog";
 
 export const Goods = () => {
-    useEffect(() => {
+  const [category, setCategory] = useState<string>("");
+
+  useEffect(() => {
     async function fetchData() {
       try {
-        const data = await getProductsByCategories("64dcc4148efcb0f7600c8cd0");
-        // setNovelties(data);
-        // setLoading(false);
+        const data = await getProductsByCategories(category);
+        console.log(data);
       } catch (error) {
         console.error("Error fetching data:", error);
-        // setLoading(false);
       }
     }
 
     fetchData();
-    }, []);
-  
+  }, [category]);
+
+  const handleChangeCategory = (id: string) => {
+    console.log(typeof id);
+    setCategory(id);
+  };
+
   return (
     <>
-      <Catalog />
+      <Catalog fetchProductsByCategory={handleChangeCategory} />
     </>
   );
 };
