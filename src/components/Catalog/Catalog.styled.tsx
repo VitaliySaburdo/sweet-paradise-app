@@ -31,7 +31,7 @@ export const CatalogList = styled.ul`
   display: flex;
   justify-content: space-between;
   align-items: end;
-
+  margin-bottom: 160px;
 `;
 
 export const CatalogItem = styled.li`
@@ -58,7 +58,7 @@ export const CatalogBtn = styled.button`
   background-color: transparent;
   cursor: pointer;
   transition: transform 0.3s ease;
-    &:hover{
-     transform: scale(1.2);
+  &:hover {
+    transform: scale(1.2);
   }
 `;

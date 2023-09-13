@@ -19,17 +19,19 @@ export const Title = styled.h2`
   }
 `;
 
+
 export const Wrapper = styled.ul`
   display: flex;
   flex-wrap: wrap; 
   flex-direction: column;
-  align-items: center;
+  align-items: end;
   gap: 60px;
+  min-height: 500px;
   @media screen and (${(props) => props.theme.media.lg}) {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
     margin-bottom: 90px;
-     gap: 0;
+    row-gap: 41px;
+    column-gap: 109px;
   }
 `;

@@ -17,7 +17,7 @@ export const Img = styled.img`
   width: 236px;
   margin-bottom: 13px;
   @media screen and (${(props) => props.theme.media.md}) {
-    width: 394px;
+    width: 320px;
   }
 `;
 
