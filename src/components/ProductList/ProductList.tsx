@@ -1,18 +1,18 @@
 import { Container } from "../Container/Container";
 import { Product } from "../Product/Product";
 import { Section } from "../Section/Section";
-import { Title, Wrapper } from "./Novelties.styled";
+import { Title, Wrapper } from "./ProductList.styled";
 import { ProductProps } from "../App/App.types";
 
 interface NoveltiesProps {
-  novelties: ProductProps[];
+  products: ProductProps[];
   loading: boolean;
   onAdd: (novelty: ProductProps) => void;
   orders: ProductProps[];
 }
 
 export const Novelties: React.FC<NoveltiesProps> = ({
-  novelties,
+  products,
   loading,
   onAdd,
   orders,
@@ -26,7 +26,7 @@ export const Novelties: React.FC<NoveltiesProps> = ({
             <p>Loading...</p>
           ) : (
             <Wrapper>
-              {novelties.map((product) => (
+              {products.map((product) => (
                 <Product
                   product={product}
                   key={product._id}

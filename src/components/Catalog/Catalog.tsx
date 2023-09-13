@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Container } from "../Container/Container";
 import { Section } from "../Section/Section";
 import {
@@ -20,8 +20,11 @@ interface CategoryProps {
 }
 
 export const Catalog: React.FC<CategoryProps> = ({fetchProductsByCategory}) => {
-  const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
-  console.log(selectedCategory);
+  const [selectedCategory, setSelectedCategory] = useState<string>("64dc5d6039fe49cdd5fb98ff");
+
+  useEffect(() => {
+    fetchProductsByCategory(selectedCategory);
+  }, [fetchProductsByCategory, selectedCategory]);
 
   const handleCategoryClick = (event: React.MouseEvent<HTMLButtonElement>) => {
     const category = event.currentTarget.getAttribute("data-category");

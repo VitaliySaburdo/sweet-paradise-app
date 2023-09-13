@@ -10,26 +10,26 @@ import { Goods } from "../../pages/Goods";
 import { ProductProps } from "./App.types";
 
 function App() {
-  const [novelties, setNovelties] = useState([]);
+  const [products, setProducts] = useState([]);
   const [orders, setOrders] = useState<ProductProps[]>([]);
   const [loading, setLoading] = useState(true);
 
-const addOrder = (novelty: ProductProps): void => {
-  const isAlreadyInCart = orders.some((item) => item._id === novelty._id);
-  if (!isAlreadyInCart) {
-    const updatedOrders = [
-      ...orders,
-      {
-        ...novelty,
-        quantity: 1, 
-        totalPrice: novelty.price,
-      },
-    ];
-    setOrders(updatedOrders);
-  }
-};
-  const deleteOrder = (novelty: ProductProps): void => {
-    const updatedOrders = orders.filter((item) => item._id !== novelty._id);
+  const addOrder = (product: ProductProps): void => {
+    const isAlreadyInCart = orders.some((item) => item._id === product._id);
+    if (!isAlreadyInCart) {
+      const updatedOrders = [
+        ...orders,
+        {
+          ...product,
+          quantity: 1,
+          totalPrice: product.price,
+        },
+      ];
+      setOrders(updatedOrders);
+    }
+  };
+  const deleteOrder = (product: ProductProps): void => {
+    const updatedOrders = orders.filter((item) => item._id !== product._id);
     setOrders(updatedOrders);
   };
 
@@ -49,7 +49,6 @@ const addOrder = (novelty: ProductProps): void => {
   };
 
   const decrement = (id: string) => {
-   
     setOrders((orders) => {
       return orders.map((order) => {
         if (order._id === id) {
@@ -65,7 +64,7 @@ const addOrder = (novelty: ProductProps): void => {
   };
 
   const changeValue = (id: string, value: number) => {
-        setOrders((orders) => {
+    setOrders((orders) => {
       return orders.map((order) => {
         if (order._id === id) {
           return {
@@ -83,7 +82,7 @@ const addOrder = (novelty: ProductProps): void => {
     async function fetchData() {
       try {
         const data = await getProductsByCategories("64dcc4148efcb0f7600c8cd0");
-        setNovelties(data);
+        setProducts(data);
         setLoading(false);
       } catch (error) {
         console.error("Error fetching data:", error);
@@ -93,7 +92,6 @@ const addOrder = (novelty: ProductProps): void => {
 
     fetchData();
   }, []);
-
 
   return (
     <StyleSheetManager shouldForwardProp={(prop) => prop !== "index"}>
@@ -115,7 +113,7 @@ const addOrder = (novelty: ProductProps): void => {
               index
               element={
                 <Home
-                  novelties={novelties}
+                  products={products}
                   orders={orders}
                   onAdd={addOrder}
                   loading={loading}
