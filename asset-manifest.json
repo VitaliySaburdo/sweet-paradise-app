@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/sweet-paradise-app/static/css/main.5dcfe178.css",
-    "main.js": "/sweet-paradise-app/static/js/main.9146a354.js",
+    "main.js": "/sweet-paradise-app/static/js/main.d58bd91b.js",
     "static/media/cook_photo.png": "/sweet-paradise-app/static/media/cook_photo.cc82e27637923000947a.png",
     "static/media/cart.png": "/sweet-paradise-app/static/media/cart.4db1aecd72397f7250b9.png",
     "static/media/cupcake-caramel.png": "/sweet-paradise-app/static/media/cupcake-caramel.2064601837db7ca1dbb7.png",
@@ -9,13 +9,17 @@
     "static/media/cupcake-vanilla.png": "/sweet-paradise-app/static/media/cupcake-vanilla.34a007527adc0ab44cf7.png",
     "static/media/leaf.png": "/sweet-paradise-app/static/media/leaf.91a452956c93eb6f5e22.png",
     "static/media/raspberries.png": "/sweet-paradise-app/static/media/raspberries.940b6b1fd63fa14b4133.png",
+    "static/media/donut.png": "/sweet-paradise-app/static/media/donut.a5dd019967e0f8301901.png",
+    "static/media/eclair.png": "/sweet-paradise-app/static/media/eclair.2f039a8f0214ea03c0f8.png",
+    "static/media/muffin.png": "/sweet-paradise-app/static/media/muffin.97f391b48e0b6a6d4031.png",
+    "static/media/macaron.png": "/sweet-paradise-app/static/media/macaron.95f3855f2b919784f86f.png",
     "static/media/Ellipse.png": "/sweet-paradise-app/static/media/Ellipse.6600977067dec86bf0a2.png",
     "index.html": "/sweet-paradise-app/index.html",
     "main.5dcfe178.css.map": "/sweet-paradise-app/static/css/main.5dcfe178.css.map",
-    "main.9146a354.js.map": "/sweet-paradise-app/static/js/main.9146a354.js.map"
+    "main.d58bd91b.js.map": "/sweet-paradise-app/static/js/main.d58bd91b.js.map"
   },
   "entrypoints": [
     "static/css/main.5dcfe178.css",
-    "static/js/main.9146a354.js"
+    "static/js/main.d58bd91b.js"
   ]
 }
