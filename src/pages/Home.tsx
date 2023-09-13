@@ -1,6 +1,6 @@
 import { Benefits } from "../components/Benefits/Benefits";
 import { Hero } from "../components/Hero/Hero";
-import { Novelties } from "../components/ProductList/ProductList";
+import { ProductList } from "../components/ProductList/ProductList";
 import { Work } from "../components/Work/Work";
 import {ProductProps} from '../components/App/App.types';
 
@@ -16,7 +16,7 @@ export const Home: React.FC<NoveltiesProps> = ({products, onAdd, loading, orders
     <>
       <Hero />
       <Benefits />
-      <Novelties products={products} loading={loading} onAdd={onAdd} orders={orders} />
+      <ProductList products={products} loading={loading} onAdd={onAdd} orders={orders} />
       <Work/>
     </>
   );
