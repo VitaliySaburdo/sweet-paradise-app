@@ -49,3 +49,7 @@ img {
 a {
   text-decoration: none;
 }
+
+.active {
+  font-weight: bold;
+}
