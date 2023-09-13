@@ -120,7 +120,12 @@ function App() {
                 />
               }
             />
-            <Route path="/goods" element={<Goods />} />
+            <Route
+              path="/goods"
+              element={
+                <Goods orders={orders} onAdd={addOrder} loading={loading} />
+              }
+            />
           </Route>
         </Routes>
       </ThemeProvider>

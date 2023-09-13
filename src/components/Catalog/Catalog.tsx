@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
-import { Container } from "../Container/Container";
-import { Section } from "../Section/Section";
+
 import {
   CatalogList,
   CatalogTitle,
@@ -36,8 +35,6 @@ export const Catalog: React.FC<CategoryProps> = ({fetchProductsByCategory}) => {
 
   return (
     <>
-      <Section>
-        <Container>
           <CatalogTitle>Yummy catalog</CatalogTitle>
           <CatalogList>
             <CatalogItem>
@@ -71,8 +68,7 @@ export const Catalog: React.FC<CategoryProps> = ({fetchProductsByCategory}) => {
               </CatalogBtn>
             </CatalogItem>
           </CatalogList>
-        </Container>
-      </Section>
+
     </>
   );
 };

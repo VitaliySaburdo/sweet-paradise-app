@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const Title = styled.h2`
   width: 200px;
@@ -16,20 +16,5 @@ export const Title = styled.h2`
     width: 100%;
     font-size: 44px;
     margin-bottom: 80px;
-  }
-`;
-
-export const Wrapper = styled.ul`
-  display: flex;
-  flex-wrap: wrap; 
-  flex-direction: column;
-  align-items: center;
-  gap: 60px;
-  @media screen and (${(props) => props.theme.media.lg}) {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    margin-bottom: 90px;
-     gap: 0;
   }
 `;
