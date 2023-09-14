@@ -1,7 +1,12 @@
 import { ProductProps } from "../App/App.types";
 import { Button } from "../Button/Button";
 import { CartItem } from "../CartItem/CartItem";
-import { Container, CartListHeader, StyledWrapper, TotalPrice} from "./CartList.styled";
+import {
+  Container,
+  CartListHeader,
+  StyledWrapper,
+  TotalPrice,
+} from "./CartList.styled";
 
 export const CartList: React.FC<{
   orders: ProductProps[];
@@ -9,18 +14,26 @@ export const CartList: React.FC<{
   increment: (id: string) => void;
   decrement: (id: string) => void;
   changeValue: (id: string, value: number) => void;
-}> = ({ orders, deleteOrder, increment, decrement, changeValue }) => {
+  closeCartModal: () => void;
+}> = ({ orders, deleteOrder, increment, decrement, changeValue, closeCartModal }) => {
+
   const totalPriceAllOrders = orders.reduce(
-    (totalPrice, order) => totalPrice + order.totalPrice, 
+    (totalPrice, order) => totalPrice + order.totalPrice,
     0
   );
+
+  const handleOnClick = () => {
+    alert('Your order in console')
+    console.log(orders);
+    closeCartModal();
+  };
 
   return (
     <>
       <Container>
         {orders.map((order) => (
           <CartItem
-            key={order._id} 
+            key={order._id}
             product={order}
             deleteOrder={deleteOrder}
             increment={increment}
@@ -33,7 +46,9 @@ export const CartList: React.FC<{
         <h2>Total prise</h2>
         <StyledWrapper>
           <TotalPrice>{totalPriceAllOrders} uah</TotalPrice>
-          <Button width={'200px'}>Checkout</Button>
+          <Button onClick={handleOnClick} width={"200px"}>
+            Checkout
+          </Button>
         </StyledWrapper>
       </CartListHeader>
     </>
