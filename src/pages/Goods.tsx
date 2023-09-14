@@ -33,7 +33,6 @@ export const Goods: React.FC<CatalogProps> = ({ onAdd, loading, orders }) => {
 
   const handleChangeCategory = (id: string) => {
     setCategory(id);
-    // onCategoryChange(products);
   };
 
   return (
