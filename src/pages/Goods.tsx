@@ -2,10 +2,7 @@ import { useState } from "react";
 import { useEffect } from "react";
 import { getProductsByCategories } from "../components/apiService/apiService";
 import { Catalog } from "../components/Catalog/Catalog";
-import { ProductList } from "../components/ProductList/ProductList";
 import { ProductProps } from "../components/App/App.types";
-import { Section } from "../components/Section/Section";
-import { Container } from "../components/Container/Container";
 
 interface CatalogProps {
   loading: boolean;
@@ -37,17 +34,13 @@ export const Goods: React.FC<CatalogProps> = ({ onAdd, loading, orders }) => {
 
   return (
     <>
-      <Section>
-        <Container>
-        <Catalog fetchProductsByCategory={handleChangeCategory} />
-        <ProductList
-          products={products}
-          loading={loading}
-          onAdd={onAdd}
-          orders={orders}
-          />
-          </Container>
-      </Section>
+      <Catalog
+        products={products}
+        loading={loading}
+        onAdd={onAdd}
+        orders={orders}
+        fetchProductsByCategory={handleChangeCategory}
+      />
     </>
   );
 };

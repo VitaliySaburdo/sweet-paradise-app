@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 
 import {
+  Box,
   CatalogList,
   CatalogTitle,
   CatalogItem,
@@ -13,13 +14,25 @@ import macaron from "../../images/Goods/macaron.png";
 import cupcake from "../../images/Goods/cupcake.png";
 import muffin from "../../images/Goods/muffin.png";
 import donut from "../../images/Goods/donut.png";
+import { Section } from "../Section/Section";
+import { Container } from "../Container/Container";
+import { ProductList } from "../ProductList/ProductList";
+import { ProductProps } from "../App/App.types";
 
 interface CategoryProps {
   fetchProductsByCategory: (id: string) => void;
+  loading: boolean;
+  onAdd: (novelty: ProductProps) => void;
+  orders: ProductProps[];
+  products: ProductProps[];
 }
 
 export const Catalog: React.FC<CategoryProps> = ({
   fetchProductsByCategory,
+  onAdd,
+  loading,
+  orders,
+  products,
 }) => {
   const [selectedCategory, setSelectedCategory] = useState<string>(
     "64dc5d6039fe49cdd5fb98ff"
@@ -39,54 +52,65 @@ export const Catalog: React.FC<CategoryProps> = ({
 
   return (
     <>
-      <CatalogTitle>Yummy catalog</CatalogTitle>
-      <CatalogList>
-        <CatalogItem>
-          <CatalogBtn
-            data-category="64dc639ea1893d42a2047f1b"
-            onClick={handleCategoryClick}
-          >
-            <CatalogImg src={eclair} alt="Eclair" />
-            <CatalogText>Eclair</CatalogText>
-          </CatalogBtn>
-        </CatalogItem>
-        <CatalogItem>
-          <CatalogBtn
-            data-category="64dc6219a1893d42a2047f17"
-            onClick={handleCategoryClick}
-          >
-            <CatalogImg src={macaron} alt="Macaron" />
-            <CatalogText>Macaron</CatalogText>
-          </CatalogBtn>
-        </CatalogItem>
-        <CatalogItem>
-          <CatalogBtn
-            data-category="64dc5d6039fe49cdd5fb98ff"
-            onClick={handleCategoryClick}
-          >
-            <CatalogImg src={cupcake} alt="Cupcake" />
-            <CatalogText>Cupcake</CatalogText>
-          </CatalogBtn>
-        </CatalogItem>
-        <CatalogItem>
-          <CatalogBtn
-            data-category="64dc63c6a1893d42a2047f1f"
-            onClick={handleCategoryClick}
-          >
-            <CatalogImg src={muffin} alt="Muffin" />
-            <CatalogText>Muffin</CatalogText>
-          </CatalogBtn>
-        </CatalogItem>
-        <CatalogItem>
-          <CatalogBtn
-            data-category="64dbb87b81bfef72aa005ab4"
-            onClick={handleCategoryClick}
-          >
-            <CatalogImg src={donut} alt="Donut" />
-            <CatalogText>Donut</CatalogText>
-          </CatalogBtn>
-        </CatalogItem>
-      </CatalogList>
+      <Box/>
+      <Section>
+        <Container>
+          <CatalogTitle>Yummy catalog</CatalogTitle>
+          <CatalogList>
+            <CatalogItem>
+              <CatalogBtn
+                data-category="64dc639ea1893d42a2047f1b"
+                onClick={handleCategoryClick}
+              >
+                <CatalogImg src={eclair} alt="Eclair" />
+                <CatalogText>Eclair</CatalogText>
+              </CatalogBtn>
+            </CatalogItem>
+            <CatalogItem>
+              <CatalogBtn
+                data-category="64dc6219a1893d42a2047f17"
+                onClick={handleCategoryClick}
+              >
+                <CatalogImg src={macaron} alt="Macaron" />
+                <CatalogText>Macaron</CatalogText>
+              </CatalogBtn>
+            </CatalogItem>
+            <CatalogItem>
+              <CatalogBtn
+                data-category="64dc5d6039fe49cdd5fb98ff"
+                onClick={handleCategoryClick}
+              >
+                <CatalogImg src={cupcake} alt="Cupcake" />
+                <CatalogText>Cupcake</CatalogText>
+              </CatalogBtn>
+            </CatalogItem>
+            <CatalogItem>
+              <CatalogBtn
+                data-category="64dc63c6a1893d42a2047f1f"
+                onClick={handleCategoryClick}
+              >
+                <CatalogImg src={muffin} alt="Muffin" />
+                <CatalogText>Muffin</CatalogText>
+              </CatalogBtn>
+            </CatalogItem>
+            <CatalogItem>
+              <CatalogBtn
+                data-category="64dbb87b81bfef72aa005ab4"
+                onClick={handleCategoryClick}
+              >
+                <CatalogImg src={donut} alt="Donut" />
+                <CatalogText>Donut</CatalogText>
+              </CatalogBtn>
+            </CatalogItem>
+          </CatalogList>
+          <ProductList
+            products={products}
+            loading={loading}
+            onAdd={onAdd}
+            orders={orders}
+          />
+        </Container>
+      </Section>
     </>
   );
 };

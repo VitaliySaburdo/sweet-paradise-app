@@ -1,5 +1,15 @@
 import styled from "styled-components";
 
+export const Box = styled.div`
+  margin-top: 53px;
+  @media screen and (${(props) => props.theme.media.md}) {
+    margin-top: 51px;
+  }
+  @media screen and (${(props) => props.theme.media.lg}) {
+    margin-top: 71px;
+  }
+`;
+
 export const Wrapper = styled.div`
   margin-top: 85px;
   display: flex;
