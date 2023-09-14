@@ -10,6 +10,7 @@ import {
 } from "./Hero.styled";
 
 import { Slider } from "../Slider/Slider";
+import { Link } from "react-router-dom";
 
 export const Hero = () => {
   return (
@@ -20,8 +21,14 @@ export const Hero = () => {
           <ParadiseWrapper>Paradise</ParadiseWrapper>
             <Wrapper>
               <Title>Sweet Paradise</Title>
-              <Slogan>We will make your life is sweeter!</Slogan>
-              <StyledBtn>Choose a dessert</StyledBtn>
+            <Slogan>We will make your life is sweeter!</Slogan>
+            <Link to={'/goods'}>
+            <StyledBtn>
+  
+                Choose a dessert
+             
+              </StyledBtn>
+               </Link>
             </Wrapper>
             <Slider />
           </div>
