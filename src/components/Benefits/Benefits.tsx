@@ -1,6 +1,7 @@
 import { Container } from "../Container/Container";
-import { Section } from "../Section/Section";
+// import { Section } from "../Section/Section";
 import {
+  MainWrapper,
   Title,
   Wrapper,
   ItemWrapper,
@@ -20,7 +21,7 @@ import cook_photo from "../../images/Benefits/cook_photo.png";
 export const Benefits = () => {
   return (
     <>
-      <Section>
+      <MainWrapper>
         <Container>
           <Title>Why are we delicious?</Title>
           <div style={{ position: "relative" }}>
@@ -65,7 +66,7 @@ export const Benefits = () => {
             <Photo src={cook_photo} alt="cook_photo" />
           </div>
         </Container>
-      </Section>
+      </MainWrapper>
     </>
   );
 };

@@ -1,4 +1,17 @@
 import styled from "styled-components";
+import { Section } from "../Section/Section";
+import strawberry from "../../images/Benefits/strawberry.png";
+
+export const MainWrapper = styled(Section)`
+  overflow: visible;
+
+  @media screen and (${(props) => props.theme.media.lg}) {
+    background-image: url(${strawberry}), url(${strawberry}), url(${strawberry});
+    background-position: 88% 0%, 102% 3%, 98% 23%;
+    background-size: auto, 4% auto, 2% auto;
+    background-repeat: no-repeat;
+  }
+`;
 
 export const Title = styled.h2`
   color: #444251;
@@ -46,7 +59,7 @@ export const Text = styled.p`
     max-width: 100px;
     text-align: start;
   }
-  @media screen and (${(props) => props.theme.media.lg}){
+  @media screen and (${(props) => props.theme.media.lg}) {
     font-size: 24px;
     max-width: 150px;
   }
