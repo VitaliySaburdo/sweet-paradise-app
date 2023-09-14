@@ -23,7 +23,6 @@ export const CartList: React.FC<{
   );
 
   const handleOnClick = () => {
-    alert('Your order in console')
     console.log(orders);
     closeCartModal();
   };
