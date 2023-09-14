@@ -2,9 +2,8 @@ import styled from "styled-components";
 import { Section } from "../Section/Section";
 import strawberry from "../../images/Benefits/strawberry.png";
 
-export const MainWrapper = styled(Section)`
+export const SectionWrapper = styled(Section)`
   overflow: visible;
-
   @media screen and (${(props) => props.theme.media.lg}) {
     background-image: url(${strawberry}), url(${strawberry}), url(${strawberry});
     background-position: 88% 0%, 102% 3%, 98% 23%;
