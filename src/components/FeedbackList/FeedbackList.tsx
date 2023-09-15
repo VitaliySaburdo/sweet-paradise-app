@@ -1,3 +1,4 @@
+import { FeedbackItem } from "../FeedbackItem/FeedbackItem";
 
 interface FeedbackProps {
   feedbacks: {
@@ -8,16 +9,12 @@ interface FeedbackProps {
   }[];
 }
 
-export const FeedbackList: React.FC <FeedbackProps> = ({feedbacks}) => {
+export const FeedbackList: React.FC<FeedbackProps> = ({ feedbacks }) => {
   return (
     <>
       <ul style={{ minHeight: "500px" }}>
         {feedbacks.map((feedback) => (
-          <li key={feedback.id}>
-            <p>{feedback.date.toLocaleDateString()}</p>
-            <p>{feedback.user}</p>
-            <p>{feedback.post}</p>
-          </li>
+          <FeedbackItem key={feedback.id} feedback={feedback} />
         ))}
       </ul>
     </>
