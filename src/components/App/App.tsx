@@ -8,6 +8,7 @@ import { SharedLayout } from "../SharedLayout/SharedLayout";
 import { Home } from "../../pages/Home";
 import { Goods } from "../../pages/Goods";
 import { ProductProps } from "./App.types";
+import { Feedback } from "../../pages/Feedback";
 
 function App() {
   const [products, setProducts] = useState([]);
@@ -124,6 +125,12 @@ function App() {
               path="/goods"
               element={
                 <Goods orders={orders} onAdd={addOrder} loading={loading} />
+              }
+            />
+            <Route
+              path="/feedback"
+              element={
+                <Feedback/>
               }
             />
           </Route>

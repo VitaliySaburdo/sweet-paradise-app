@@ -19,7 +19,7 @@ export const NavBar: React.FC<NavBarProps> = ({color, display = false}) => {
             <StyledLink to={'/goods'} color={color} >Catalog</StyledLink>
           </li>
           <li>
-            <p color={color}>Feedback</p>
+            <StyledLink to={'/feedback'} color={color} >Feedback</StyledLink>
           </li>
           <li>
             <p color={color}>Contacts</p>
