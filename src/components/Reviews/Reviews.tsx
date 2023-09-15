@@ -1,5 +1,6 @@
 import { Button } from "../Button/Button";
 import { Container } from "../Container/Container";
+import { FeedbackList } from "../FeedbackList/FeedbackList";
 import { Section } from "../Section/Section";
 import { feedbacks } from "./dataFeedback";
 import {Wrapper, Title, Text} from './Reviews.styled';
@@ -14,15 +15,7 @@ export const Reviews = () => {
             <Text>Please leave a review about our sweets</Text>
             <Button>Leave feedback</Button>
           </Wrapper>
-          <ul style={{ minHeight: "500px" }}>
-            {feedbacks.map((feedback) => (
-              <li key={feedback.id}>
-                <p>{feedback.date.toLocaleDateString()}</p>
-                <p>{feedback.user}</p>
-                <p>{feedback.post}</p>
-              </li>
-            ))}
-          </ul>
+          <FeedbackList feedbacks={feedbacks } />
         </Container>
       </Section>
     </>
