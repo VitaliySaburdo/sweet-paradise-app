@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/sweet-paradise-app/static/css/main.054c7a94.css",
-    "main.js": "/sweet-paradise-app/static/js/main.f6330f48.js",
+    "main.js": "/sweet-paradise-app/static/js/main.4bb931bc.js",
     "static/media/cook_photo.png": "/sweet-paradise-app/static/media/cook_photo.cc82e27637923000947a.png",
     "static/media/cart.png": "/sweet-paradise-app/static/media/cart.4db1aecd72397f7250b9.png",
     "static/media/cupcake-caramel.png": "/sweet-paradise-app/static/media/cupcake-caramel.2064601837db7ca1dbb7.png",
@@ -18,10 +18,10 @@
     "static/media/Ellipse.png": "/sweet-paradise-app/static/media/Ellipse.6600977067dec86bf0a2.png",
     "index.html": "/sweet-paradise-app/index.html",
     "main.054c7a94.css.map": "/sweet-paradise-app/static/css/main.054c7a94.css.map",
-    "main.f6330f48.js.map": "/sweet-paradise-app/static/js/main.f6330f48.js.map"
+    "main.4bb931bc.js.map": "/sweet-paradise-app/static/js/main.4bb931bc.js.map"
   },
   "entrypoints": [
     "static/css/main.054c7a94.css",
-    "static/js/main.f6330f48.js"
+    "static/js/main.4bb931bc.js"
   ]
 }
