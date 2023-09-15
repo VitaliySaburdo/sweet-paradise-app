@@ -36,3 +36,27 @@ export const Block = styled.div`
     margin-top: 71px;
   }
 `;
+
+//Form
+
+export const Form = styled.form`
+  width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+    & input {
+    margin: 0;
+    height: 40px;
+    padding: 12px 42px;
+    border: 1px solid rgba(33, 33, 33, 0.2);
+    border-radius: 4px;
+    cursor: pointer;
+   
+  }
+`
+export const Label = styled.label`
+ display: inline-flex;
+  align-items: center;
+  font-size: 12px;
+  line-height: calc(14 / 12);
+  width: 100%;
+`
