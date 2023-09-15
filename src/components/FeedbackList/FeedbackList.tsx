@@ -1,4 +1,5 @@
 import { FeedbackItem } from "../FeedbackItem/FeedbackItem";
+import {Wrapper} from './FeedbackList.styled';
 
 interface FeedbackProps {
   feedbacks: {
@@ -12,11 +13,11 @@ interface FeedbackProps {
 export const FeedbackList: React.FC<FeedbackProps> = ({ feedbacks }) => {
   return (
     <>
-      <ul style={{ minHeight: "500px" }}>
+      <Wrapper>
         {feedbacks.map((feedback) => (
           <FeedbackItem key={feedback.id} feedback={feedback} />
         ))}
-      </ul>
+      </Wrapper>
     </>
   );
 };

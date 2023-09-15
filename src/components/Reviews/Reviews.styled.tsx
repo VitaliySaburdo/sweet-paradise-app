@@ -14,7 +14,7 @@ export const Wrapper = styled.div`
   background-color: #ffd4dd;
   filter: drop-shadow(0px 4px 30px rgba(67, 6, 32, 0.3));
   padding: 10px;
-  margin-bottom: 40px;
+  margin-bottom: 60px;
   margin-left: auto;
   margin-right: auto;
 `;
@@ -25,4 +25,14 @@ export const Text = styled.p`
   font-style: normal;
   font-weight: 400;
   line-height: 125%;
+`;
+
+export const Block = styled.div`
+  margin-top: 53px;
+  @media screen and (${(props) => props.theme.media.md}) {
+    margin-top: 51px;
+  }
+  @media screen and (${(props) => props.theme.media.lg}) {
+    margin-top: 71px;
+  }
 `;

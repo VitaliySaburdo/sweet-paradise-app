@@ -1,3 +1,4 @@
+import { Wrapper, Box } from "./FeedbackItem.styled";
 
 interface FeedbackItemProps {
   feedback: {
@@ -8,12 +9,16 @@ interface FeedbackItemProps {
   };
 }
 
-export const FeedbackItem: React.FC<FeedbackItemProps> = ({feedback}) => {
-    return <>
-    <li >
-            <p>{feedback.date.toLocaleDateString()}</p>
-            <p>{feedback.user}</p>
-            <p>{feedback.post}</p>
-          </li>
+export const FeedbackItem: React.FC<FeedbackItemProps> = ({ feedback }) => {
+  return (
+    <>
+      <Wrapper>
+        <Box>
+          <p>{feedback.user}</p>
+          <p>{feedback.date.toLocaleDateString()}</p>
+        </Box>
+        <p>{feedback.post}</p>
+      </Wrapper>
     </>
-}
+  );
+};

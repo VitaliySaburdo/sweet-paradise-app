@@ -3,12 +3,13 @@ import { Container } from "../Container/Container";
 import { FeedbackList } from "../FeedbackList/FeedbackList";
 import { Section } from "../Section/Section";
 import { feedbacks } from "./dataFeedback";
-import {Wrapper, Title, Text} from './Reviews.styled';
+import {Block, Wrapper, Title, Text} from './Reviews.styled';
 
 export const Reviews = () => {
   return (
     <>
       <Section>
+        <Block/>
         <Container>
           <Title>Reviews from our clients</Title>
           <Wrapper>
