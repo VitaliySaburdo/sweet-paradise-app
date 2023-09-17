@@ -103,8 +103,8 @@ export const Header: React.FC<OrderProps> = ({
                       deleteOrder={deleteOrder}
                       increment={increment}
                       decrement={decrement}
-                        changeValue={changeValue}
-                        closeCartModal={closeCartModal}
+                      changeValue={changeValue}
+                      closeCartModal={closeCartModal}
                     />
                   )}
                 </CartWrapper>
