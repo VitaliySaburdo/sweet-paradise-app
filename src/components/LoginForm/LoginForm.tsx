@@ -26,7 +26,7 @@ const validationSchema = yup.object({
     .required("Email is required"),
   password: yup
     .string()
-    .min(6, "Password should be of minimum 6 characters length")
+    .max(6, "Password should be of minimum 6 characters length")
     .required("Password is required"),
 });
 
@@ -46,7 +46,6 @@ export const LoginForm = () => {
           }}
           validationSchema={validationSchema}
             onSubmit={({ email, password }, { resetForm }) => {
-            console.log({ email, password });
             dispatch(logIn({ values: { email, password } }));
             resetForm();
           }}
