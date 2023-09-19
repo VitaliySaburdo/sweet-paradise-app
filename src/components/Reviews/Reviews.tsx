@@ -13,7 +13,7 @@ export const Reviews = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const validationSchema = yup.object({
-    name: yup.string().email("Enter your name").required("Name is required"),
+    name: yup.string().required("Name is required"),
     feedback: yup
       .string()
       .max(50, "Maximum allowed number of characters 50")
@@ -32,7 +32,7 @@ export const Reviews = () => {
     values: { name: string; feedback: string },
     { resetForm }: { resetForm: () => void }
   ) => {
-    console.log(values);
+    console.log("Form values:", values); // Add this line for debugging
     // dispatch(logIn({ values: { email, password } }));
     resetForm();
   };
