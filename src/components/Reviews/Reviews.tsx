@@ -1,6 +1,6 @@
 import { useState } from "react";
 import * as yup from "yup";
-import { Formik} from "formik";
+import { Formik } from "formik";
 import { Button } from "../Button/Button";
 import { Container } from "../Container/Container";
 import { FeedbackList } from "../FeedbackList/FeedbackList";
@@ -10,6 +10,7 @@ import { feedbacks } from "./dataFeedback";
 import {
   StyledForm,
   StyledField,
+  StyledFieldFeedback,
   StyledLabel,
   StyledMessage,
   Title,
@@ -71,10 +72,16 @@ export const Reviews = () => {
                     <StyledMessage name="name" component="div" />
 
                     <StyledLabel htmlFor="feedback">Feedback</StyledLabel>
-                    <StyledField id="feedback" name="feedback" as="textarea" />
+                    <StyledFieldFeedback
+                      id="feedback"
+                      name="feedback"
+                      component="textarea"
+                      rows="4"
+                      cols="50" 
+                    />
                     <StyledMessage name="feedback" component="div" />
 
-                    <Button type="submit">Submit</Button>
+                    <Button customStyle={{margin: '0 auto'}} type="submit">Submit</Button>
                   </StyledForm>
                 </Formik>
               </Modal>
