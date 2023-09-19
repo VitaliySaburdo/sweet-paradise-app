@@ -1,13 +1,22 @@
 import { useState } from "react";
 import * as yup from "yup";
-import { Formik, Field, Form, ErrorMessage } from "formik";
+import { Formik} from "formik";
 import { Button } from "../Button/Button";
 import { Container } from "../Container/Container";
 import { FeedbackList } from "../FeedbackList/FeedbackList";
 import { Modal } from "../Modal/Modal";
 import { Section } from "../Section/Section";
 import { feedbacks } from "./dataFeedback";
-import { Block, Wrapper, Title, Text, Label } from "./Reviews.styled";
+import {
+  StyledForm,
+  StyledField,
+  StyledLabel,
+  StyledMessage,
+  Title,
+  Text,
+  Block,
+  Wrapper,
+} from "./Reviews.styled";
 
 export const Reviews = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -56,17 +65,17 @@ export const Reviews = () => {
                   validationSchema={validationSchema}
                   onSubmit={handleSubmit}
                 >
-                  <Form>
-                    <Label htmlFor="name">Name</Label>
-                    <Field id="name" name="name" type="text" />
-                    <ErrorMessage name="name" component="div" />
+                  <StyledForm>
+                    <StyledLabel htmlFor="name">Name</StyledLabel>
+                    <StyledField id="name" name="name" type="text" />
+                    <StyledMessage name="name" component="div" />
 
-                    <Label htmlFor="feedback">Feedback</Label>
-                    <Field id="feedback" name="feedback" as="textarea" />
-                    <ErrorMessage name="feedback" component="div" />
+                    <StyledLabel htmlFor="feedback">Feedback</StyledLabel>
+                    <StyledField id="feedback" name="feedback" as="textarea" />
+                    <StyledMessage name="feedback" component="div" />
 
                     <Button type="submit">Submit</Button>
-                  </Form>
+                  </StyledForm>
                 </Formik>
               </Modal>
             )}
