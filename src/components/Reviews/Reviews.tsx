@@ -52,7 +52,7 @@ export const Reviews = () => {
       post: values.feedback,
     };
     setReviews((prevFeedbacks) => [newFeedback, ...prevFeedbacks]);
-console.log(newFeedback)
+    console.log(newFeedback);
     // dispatch(logIn({ values: { email, password } }));
     resetForm();
     closeModal();
@@ -93,9 +93,7 @@ console.log(newFeedback)
                     />
                     <StyledMessage name="feedback" component="div" />
 
-                    <StyledButton type="submit">
-                      Submit
-                    </StyledButton>
+                    <StyledButton type="submit">Submit</StyledButton>
                   </StyledForm>
                 </Formik>
               </Modal>
