@@ -51,7 +51,7 @@ export const Reviews = () => {
       date: new Date(),
       post: values.feedback,
     };
-    setReviews((prevFeedbacks) => [...prevFeedbacks, newFeedback]);
+    setReviews((prevFeedbacks) => [newFeedback, ...prevFeedbacks]);
 console.log(newFeedback)
     // dispatch(logIn({ values: { email, password } }));
     resetForm();
