@@ -2,7 +2,6 @@ import { StyledButton } from "./Button.styled";
 
 interface Children {
   children: React.ReactNode;
-  customStyle?: React.CSSProperties;
   type?: "button" | "submit" | "reset";
   width?: string;
   margin?: string;
@@ -12,7 +11,6 @@ interface Children {
 
 export const Button: React.FC<Children> = ({
   children,
-  customStyle,
   margin,
   onClick,
   type = "button",

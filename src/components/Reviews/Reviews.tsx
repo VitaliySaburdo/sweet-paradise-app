@@ -13,6 +13,7 @@ import {
   StyledFieldFeedback,
   StyledLabel,
   StyledMessage,
+  StyledButton,
   Title,
   Text,
   Block,
@@ -51,9 +52,10 @@ export const Reviews = () => {
       post: values.feedback,
     };
     setReviews((prevFeedbacks) => [...prevFeedbacks, newFeedback]);
-
+console.log(newFeedback)
     // dispatch(logIn({ values: { email, password } }));
     resetForm();
+    closeModal();
   };
 
   return (
@@ -90,9 +92,9 @@ export const Reviews = () => {
                     />
                     <StyledMessage name="feedback" component="div" />
 
-                    <Button customStyle={{ margin: "0 auto" }} type="submit">
+                    <StyledButton type="submit">
                       Submit
-                    </Button>
+                    </StyledButton>
                   </StyledForm>
                 </Formik>
               </Modal>
