@@ -21,6 +21,7 @@ import {
 
 export const Reviews = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [reviews, setReviews] = useState(feedbacks);
 
   const validationSchema = yup.object({
     name: yup.string().required("Name is required"),
@@ -42,7 +43,15 @@ export const Reviews = () => {
     values: { name: string; feedback: string },
     { resetForm }: { resetForm: () => void }
   ) => {
-    console.log("Form values:", values); // Add this line for debugging
+    const newFeedback = {
+      id: Date.now(),
+      ...values,
+      user: values.name,
+      date: new Date(),
+      post: values.feedback,
+    };
+    setReviews((prevFeedbacks) => [...prevFeedbacks, newFeedback]);
+
     // dispatch(logIn({ values: { email, password } }));
     resetForm();
   };
@@ -77,17 +86,19 @@ export const Reviews = () => {
                       name="feedback"
                       component="textarea"
                       rows="4"
-                      cols="50" 
+                      cols="50"
                     />
                     <StyledMessage name="feedback" component="div" />
 
-                    <Button customStyle={{margin: '0 auto'}} type="submit">Submit</Button>
+                    <Button customStyle={{ margin: "0 auto" }} type="submit">
+                      Submit
+                    </Button>
                   </StyledForm>
                 </Formik>
               </Modal>
             )}
           </Wrapper>
-          <FeedbackList feedbacks={feedbacks} />
+          <FeedbackList feedbacks={reviews} />
         </Container>
       </Section>
     </>
