@@ -69,6 +69,7 @@ console.log(newFeedback)
             <Button onClick={openModal}>Leave feedback</Button>
             {isModalOpen && (
               <Modal onClick={closeModal}>
+                <Title>Please leave us your feedback</Title>
                 <Formik
                   initialValues={{
                     name: "",

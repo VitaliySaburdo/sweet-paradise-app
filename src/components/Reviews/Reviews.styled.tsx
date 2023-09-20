@@ -5,7 +5,6 @@ import { Button } from "../Button/Button";
 export const StyledButton = styled(Button)`
 margin: 0 auto;
 margin-top: 60px;
-  
 `
 
 const fadeIn = keyframes`
