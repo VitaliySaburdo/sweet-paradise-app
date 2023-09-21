@@ -26,6 +26,7 @@ import { Modal } from "../Modal/Modal";
 import { LoginForm } from "../LoginForm/LoginForm";
 import { ProductProps } from "../App/App.types";
 import { CartList } from "../CartList/CartList";
+import { AdminForm } from "../AdminForm/AdminForm";
 
 interface OrderProps {
   orders: ProductProps[];
@@ -43,8 +44,9 @@ export const Header: React.FC<OrderProps> = ({
   changeValue,
 }) => {
   const [scrolled, setScrolled] = useState(false);
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
   const [isCartModalOpen, setIsCartModalOpen] = useState(false);
+  const [isAdminModalOpen, setIsAdminModalOpen] = useState(false);
 
   const isLogin = useSelector(selectIsLoggedIn);
 
@@ -63,20 +65,6 @@ export const Header: React.FC<OrderProps> = ({
     };
   }, []);
 
-  const openModal = () => {
-    setIsModalOpen(true);
-  };
-
-  const closeModal = () => {
-    setIsModalOpen(false);
-  };
-  const openCartModal = () => {
-    setIsCartModalOpen(true);
-  };
-  const closeCartModal = () => {
-    setIsCartModalOpen(false);
-  };
-
   return (
     <Wrapper scrolled={scrolled ? 1 : 0}>
       <Container>
@@ -89,19 +77,24 @@ export const Header: React.FC<OrderProps> = ({
           <UserNav>
             {isLogin && (
               <li>
-                <Btn>
+                <Btn onClick={() => setIsAdminModalOpen(true)}>
                   <Img src={admin} alt="admin" width="40px" />
                 </Btn>
               </li>
             )}
+            {isAdminModalOpen && (
+              <Modal onClick={() => setIsAdminModalOpen(false)}>
+                <AdminForm />
+              </Modal>
+            )}
             <li>
-              <Btn onClick={openCartModal}>
+              <Btn onClick={() => setIsCartModalOpen(true)}>
                 <Img src={basket} alt="basket" width="40px" />
                 {orders.length > 0 && <CartIcon>{orders.length}</CartIcon>}
               </Btn>
             </li>
             {isCartModalOpen && (
-              <Modal onClick={closeCartModal}>
+              <Modal onClick={() => setIsCartModalOpen(false)}>
                 <CartWrapper>
                   <CartTitle>Your cart</CartTitle>
                   {orders.length === 0 ? (
@@ -116,19 +109,19 @@ export const Header: React.FC<OrderProps> = ({
                       increment={increment}
                       decrement={decrement}
                       changeValue={changeValue}
-                      closeCartModal={closeCartModal}
+                      closeCartModal={() => setIsCartModalOpen(false)}
                     />
                   )}
                 </CartWrapper>
               </Modal>
             )}
             <li>
-              <Btn onClick={openModal}>
+              <Btn onClick={() => setIsLoginModalOpen(true)}>
                 <Img src={user} alt="user" width="40px" />
               </Btn>
             </li>
-            {isModalOpen && (
-              <Modal onClick={closeModal}>
+            {isLoginModalOpen && (
+              <Modal onClick={() => setIsLoginModalOpen(false)}>
                 <LoginForm />
               </Modal>
             )}
