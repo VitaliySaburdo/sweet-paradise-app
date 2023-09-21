@@ -1,7 +1,7 @@
-import {useDispatch} from 'react-redux'
+import { useDispatch } from "react-redux";
 import { useEffect, useState } from "react";
 import { Route, Routes } from "react-router-dom";
-import {refreshUser} from '../../redux/auth/operations';
+import { refreshUser } from "../../redux/auth/operations";
 import { getProductsByCategories } from "../apiService/apiService";
 import { StyleSheetManager } from "styled-components";
 import { ThemeProvider } from "styled-components";
@@ -17,8 +17,7 @@ function App() {
   const [orders, setOrders] = useState<ProductProps[]>([]);
   const [loading, setLoading] = useState(true);
 
-
-    const dispatch = useDispatch();
+  const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(refreshUser() as any);
@@ -136,12 +135,7 @@ function App() {
                 <Goods orders={orders} onAdd={addOrder} loading={loading} />
               }
             />
-            <Route
-              path="/feedback"
-              element={
-                <Feedback/>
-              }
-            />
+            <Route path="/feedback" element={<Feedback />} />
           </Route>
         </Routes>
       </ThemeProvider>
