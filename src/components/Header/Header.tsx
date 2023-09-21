@@ -1,4 +1,6 @@
 import { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
+import { selectIsLoggedIn } from "../../redux/auth/selectors";
 import { Container } from "../Container/Container";
 import { NavBar } from "../NavBar/NavBar";
 import {
@@ -19,6 +21,7 @@ import burgerIcon from "../../images/Header/burger-btn.png";
 import basket from "../../images/Header/basket.png";
 import cart from "../../images/Header/cart.png";
 import user from "../../images/Header/user.png";
+import admin from "../../images/Header/admin.png";
 import { Modal } from "../Modal/Modal";
 import { LoginForm } from "../LoginForm/LoginForm";
 import { ProductProps } from "../App/App.types";
@@ -42,6 +45,8 @@ export const Header: React.FC<OrderProps> = ({
   const [scrolled, setScrolled] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isCartModalOpen, setIsCartModalOpen] = useState(false);
+
+  const isLogin = useSelector(selectIsLoggedIn);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -82,6 +87,13 @@ export const Header: React.FC<OrderProps> = ({
           <StyledLink to="/">Sweet Paradise</StyledLink>
           <NavBar />
           <UserNav>
+            {isLogin && (
+              <li>
+                <Btn>
+                  <Img src={admin} alt="admin" width="40px" />
+                </Btn>
+              </li>
+            )}
             <li>
               <Btn onClick={openCartModal}>
                 <Img src={basket} alt="basket" width="40px" />
