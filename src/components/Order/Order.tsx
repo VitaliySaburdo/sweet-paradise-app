@@ -1,9 +1,9 @@
-import { Container } from "../Container/Container";
 import { Section } from "../Section/Section";
 import { Formik } from "formik";
 import {
   Title,
   Wrapper,
+  StyledContainer,
   StyledText,
   FormWrapper,
   StyledForm,
@@ -18,7 +18,7 @@ export const Order = () => {
   return (
     <>
       <Section>
-        <Container>
+        <StyledContainer>
           <Title>Time to place your order :)</Title>
           <Wrapper>
             <StyledText>Sweet Paradise</StyledText>
@@ -59,7 +59,7 @@ export const Order = () => {
               </Formik>
             </FormWrapper>
           </Wrapper>
-        </Container>
+        </StyledContainer>
       </Section>
     </>
   );

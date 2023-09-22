@@ -1,6 +1,10 @@
 import styled, {keyframes} from "styled-components";
 import { Form, Field, ErrorMessage } from "formik";
 import { Button } from "../Button/Button";
+import { Container } from "../Container/Container";
+import chocolate_1 from '../../images/Order/chocolate_1.png'
+import chocolate_2 from '../../images/Order/chocolate_2.png'
+import cookies from '../../images/Order/cookies.png'
 
 const fadeIn = keyframes`
   from {
@@ -20,6 +24,14 @@ export const Title = styled.h2`
   font-weight: 900;
   line-height: normal;
   margin-bottom: 90px;
+`;
+
+export const StyledContainer = styled(Container)`
+  @media screen and (${(props) => props.theme.media.lg}) {
+    background-image: url(${chocolate_1}), url(${chocolate_2});
+    background-position: 23% 95%, 78% 95%;
+    background-repeat: no-repeat;
+  }
 `;
 
 export const StyledText = styled.p`
@@ -44,6 +56,11 @@ export const Wrapper = styled.div`
   width: 940px;
   height: 604px;
   margin: 0 auto;
+    @media screen and (${(props) => props.theme.media.lg}) {
+    background-image: url(${cookies});
+    background-position: 105% 40%;
+    background-repeat: no-repeat;
+  }
 `;
 
 export const FormWrapper = styled.div`
