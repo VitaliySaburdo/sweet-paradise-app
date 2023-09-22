@@ -1,5 +1,6 @@
 import styled, {keyframes} from "styled-components";
 import { Form, Field, ErrorMessage } from "formik";
+import { Button } from "../Button/Button";
 
 const fadeIn = keyframes`
   from {
@@ -90,13 +91,28 @@ export const StyledField = styled(Field)`
   transition-property: border-color, outline-color;
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  margin-bottom: 3px;
+  margin-bottom: 25px;
   &:focus {
     outline-color: #9c0746;
   }
 `;
 
+export const StyledButton = styled(Button)`
+  margin-bottom: 42px;
+`;
+
+export const Text = styled.p`
+color: #444251;
+text-align: center;
+font-family: Open Sans;
+font-size: 14px;
+font-style: normal;
+font-weight: 400;
+line-height: 125.6%;
+`;
+
 export const StyledLabel = styled.label`
+flex-direction: row;
   font-size: 12px;
   line-height: calc(14 / 12);
   letter-spacing: 0.01em;

@@ -1,4 +1,3 @@
-import { Button } from "../Button/Button";
 import { Container } from "../Container/Container";
 import { Section } from "../Section/Section";
 import { Formik } from "formik";
@@ -10,8 +9,9 @@ import {
   StyledForm,
   FormTitle,
   FormText,
-  StyledLabel,
   StyledField,
+  StyledButton,
+  Text,
 } from "./Order.styled";
 
 export const Order = () => {
@@ -39,14 +39,22 @@ export const Order = () => {
                     Enter your details and we will We'll definitely call you
                     back
                   </FormText>
-                  <StyledLabel htmlFor="name">Name</StyledLabel>
-                  <StyledField type="text" id="name" name="name"/>
-                  <StyledField type="text" />
-                  <Button type="submit">Send</Button>
-                  <p>
+                  <StyledField
+                    type="text"
+                    id="name"
+                    name="name"
+                    placeholder="Please enter your name"
+                  />
+                  <StyledField
+                    type="text"
+                    name="phone"
+                    placeholder="Please enter your phone"
+                  />
+                  <StyledButton type="submit">Send</StyledButton>
+                  <Text>
                     By clicking on the button, you consent to processing Your
                     personal data
-                  </p>
+                  </Text>
                 </StyledForm>
               </Formik>
             </FormWrapper>
