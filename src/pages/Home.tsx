@@ -3,7 +3,8 @@ import { Hero } from "../components/Hero/Hero";
 import { Novelties } from "../components/Novelties/Novelties";
 import { Work } from "../components/Work/Work";
 import {ProductProps} from '../components/App/App.types';
-import { Order } from "../components/Order/Order";
+import { CustomOrder } from "../components/CustomOrder/CustomOrder";
+
 
 interface NoveltiesProps {
   products: ProductProps[];
@@ -18,8 +19,8 @@ export const Home: React.FC<NoveltiesProps> = ({products, onAdd, loading, orders
       <Hero />
       <Benefits />
       <Novelties products={products} loading={loading} onAdd={onAdd} orders={orders} />
+      <CustomOrder/>
       <Work />
-      <Order/>
     </>
   );
 };

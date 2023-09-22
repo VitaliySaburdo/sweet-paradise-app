@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useEffect } from "react";
 import { getProductsByCategories } from "../components/apiService/apiService";
 import { Catalog } from "../components/Catalog/Catalog";
+import { Order } from "../components/Order/Order";
 import { ProductProps } from "../components/App/App.types";
 
 interface CatalogProps {
@@ -41,6 +42,7 @@ export const Goods: React.FC<CatalogProps> = ({ onAdd, loading, orders }) => {
         orders={orders}
         fetchProductsByCategory={handleChangeCategory}
       />
+      <Order/>
     </>
   );
 };
