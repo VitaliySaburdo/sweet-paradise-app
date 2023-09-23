@@ -42,7 +42,7 @@ export const RegisterForm = () => {
   return (
     <>
       {isLoginForm ? (
-        <LoginForm />
+        <LoginForm closeModal={() => setIsLoginForm(false)}/>
       ) : (
         <Formik
           initialValues={{

@@ -122,7 +122,7 @@ export const Header: React.FC<OrderProps> = ({
             </li>
             {isLoginModalOpen && (
               <Modal onClick={() => setIsLoginModalOpen(false)}>
-                <LoginForm />
+                <LoginForm closeModal={() => setIsLoginModalOpen(false)}/>
               </Modal>
             )}
           </UserNav>

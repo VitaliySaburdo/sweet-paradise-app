@@ -19,6 +19,10 @@ import {
 } from "./LoginForm.styled";
 import { RegisterForm } from "../RegisterForm/RegisterForm";
 
+interface LoginFormProps {
+  closeModal: () => void;
+}
+
 const validationSchema = yup.object({
   email: yup
     .string()
@@ -30,7 +34,7 @@ const validationSchema = yup.object({
     .required("Password is required"),
 });
 
-export const LoginForm = () => {
+export const LoginForm: React.FC<LoginFormProps> = ({ closeModal }) => {
   const [isRegisterForm, setIsRegisterForm] = useState(false);
   const dispatch: ThunkDispatch<RootState, undefined, AnyAction> =
     useDispatch();
@@ -47,7 +51,8 @@ export const LoginForm = () => {
           validationSchema={validationSchema}
             onSubmit={({ email, password }, { resetForm }) => {
             dispatch(logIn({ values: { email, password } }));
-            resetForm();
+              resetForm();
+              closeModal();
           }}
         >
           <StyledForm>
