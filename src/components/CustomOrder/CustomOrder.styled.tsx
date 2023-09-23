@@ -6,22 +6,16 @@ export const StyledSection = styled(Section)`
   /* border: 1px solid #000; */
   padding-top: 0;
   padding-bottom: 0;
-    @media screen and (${(props) => props.theme.media.lg}) {
-    background-image: url(${box}), linear-gradient(
-    97deg,
-    #fca4c9 -7.93%,
-    #fe71ad 55.51%,
-    #b44e79 104.2%
-  );
-    background-position: 70% 63%;
+  @media screen and (${(props) => props.theme.media.lg}) {
+    background-image: url(${box}),
+      linear-gradient(97deg, #fca4c9 -7.93%, #fe71ad 55.51%, #b44e79 104.2%);
+    background-position: 80% 100%;
     background-repeat: no-repeat;
   }
 `;
 
-
 export const Box = styled.div`
   margin-top: 180px;
-  margin-left: 83px;
   margin-bottom: 190px;
   width: 500px;
 `;
@@ -63,6 +57,12 @@ export const StyledField = styled.input`
   border-right: none;
   border-left: none;
   border-bottom: solid 1px #ffffff;
+  &:focus {
+    outline: none;
+  }
+  &::placeholder {
+    color: #ffffff;
+  }
   color: #ffffff;
   &:first-child {
     margin-bottom: 17px;
