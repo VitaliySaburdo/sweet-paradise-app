@@ -41,7 +41,7 @@ export const LoginForm: React.FC<LoginFormProps> = ({ closeModal }) => {
   return (
     <>
       {isRegisterForm ? (
-        <RegisterForm />
+        <RegisterForm closeModal={closeModal } />
       ) : (
         <Formik
           initialValues={{
