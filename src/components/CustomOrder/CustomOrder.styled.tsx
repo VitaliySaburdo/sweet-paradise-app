@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import box from '../../images/CustomOrder/box.png';
 
 export const MainWrapper = styled.div`
   border: 1px solid #000;
@@ -8,6 +9,11 @@ export const MainWrapper = styled.div`
     #fe71ad 55.51%,
     #b44e79 104.2%
   );
+    @media screen and (${(props) => props.theme.media.lg}) {
+    background-image: url(${box});
+    background-position: 70% 63%;
+    background-repeat: no-repeat;
+  }
 `;
 
 export const Box = styled.div`
