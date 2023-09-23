@@ -1,5 +1,7 @@
 import { Button } from "../Button/Button";
 import { Container } from "../Container/Container";
+import user from "../../images/CustomOrder/user.png";
+import phone from "../../images/CustomOrder/phone.png";
 
 import {
   StyledSection,
@@ -9,9 +11,15 @@ import {
   Text,
   StyledForm,
   StyledField,
+  Img,
+  StyledLabel,
 } from "./CustomOrder.styled";
 
 export const CustomOrder = () => {
+  const handleOnSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+  };
+
   return (
     <>
       <StyledSection>
@@ -26,9 +34,23 @@ export const CustomOrder = () => {
             <Text>
               Fill out the form and we will call you back to complete your order
             </Text>
-            <StyledForm>
-              <StyledField type="text" name="name" placeholder="Enter your name" />
-              <StyledField type="text" name="phone" placeholder="Enter your phone" />
+            <StyledForm onSubmit={handleOnSubmit}>
+              <StyledLabel htmlFor="name">
+                <StyledField
+                  type="text"
+                  name="name"
+                  placeholder="Enter your name"
+                />
+                <Img src={user} alt="user" width={25} />
+              </StyledLabel>
+              <StyledLabel htmlFor="phone">
+                <StyledField
+                  type="text"
+                  name="phone"
+                  placeholder="Enter your phone"
+                />
+                <Img src={phone} alt="phone" width={25} />
+              </StyledLabel>
               <Button type="submit">More products</Button>
             </StyledForm>
           </Box>

@@ -90,6 +90,7 @@ export const CartImg = styled.img`
   margin: 0 auto;
   width: 40%;
   height: 40%;
+  margin-bottom: 40px;
 `;
 
 export const CartIcon = styled.span`

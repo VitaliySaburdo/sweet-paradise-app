@@ -3,7 +3,7 @@ import box from "../../images/CustomOrder/box.png";
 import { Section } from "../Section/Section";
 
 export const StyledSection = styled(Section)`
-  /* border: 1px solid #000; */
+  border: 1px solid #000;
   padding-top: 0;
   padding-bottom: 0;
   @media screen and (${(props) => props.theme.media.lg}) {
@@ -57,6 +57,7 @@ export const StyledField = styled.input`
   border-right: none;
   border-left: none;
   border-bottom: solid 1px #ffffff;
+   
   &:focus {
     outline: none;
   }
@@ -64,8 +65,22 @@ export const StyledField = styled.input`
     color: #ffffff;
   }
   color: #ffffff;
+  
   &:first-child {
     margin-bottom: 17px;
   }
-  margin-bottom: 40px;
+    &:last-child {
+    margin-bottom: 40px;
+  }
+
 `;
+
+export const Img = styled.img`
+  position: absolute;
+  right: 50%;
+  top: 0;
+`;
+
+export const StyledLabel = styled.label`
+  position: relative;
+`
