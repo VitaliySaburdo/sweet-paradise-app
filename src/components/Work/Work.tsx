@@ -10,10 +10,12 @@ import {
   Text,
   StyledImg
 } from "./Work.styled";
+import { Section } from "../Section/Section";
 
 export const Work = () => {
   return (
     <>
+      <Section>
       <Container>
           <Wrapper>
             <Item>
@@ -55,7 +57,8 @@ export const Work = () => {
           </Item>
           <StyledImg src={raspberries} alt="raspberries" width={'98px'} />
         </Wrapper>
-      </Container>
+        </Container>
+        </Section>
     </>
   );
 };
