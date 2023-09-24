@@ -20,7 +20,7 @@ export const SliderWrapper = styled.div<{ image: number }>`
 
 export const PriceWrapper = styled.p`
   position: absolute;
-  top: 230px;
+  top: 5px;
   right: 65px;
   display: flex;
   justify-content: center;

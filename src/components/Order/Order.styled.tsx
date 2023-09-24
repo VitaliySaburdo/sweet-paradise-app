@@ -29,7 +29,7 @@ export const Title = styled.h2`
 export const StyledContainer = styled(Container)`
   @media screen and (${(props) => props.theme.media.lg}) {
     background-image: url(${chocolate_1}), url(${chocolate_2});
-    background-position: 23% 95%, 78% 95%;
+    background-position: 10% 95%, 95% 95%;
     background-repeat: no-repeat;
   }
 `;
