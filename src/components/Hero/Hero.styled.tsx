@@ -7,31 +7,25 @@ import { Container } from "../Container/Container";
 import { Section } from "../Section/Section";
 
 export const StyledSection = styled(Section)`
-overflow: hidden;
+  overflow: hidden;
   padding-bottom: 0;
-    padding-top: 85px;
+  padding-top: 85px;
   @media screen and (${(props) => props.theme.media.md}) {
     padding-top: 196px;
   }
   @media screen and (${(props) => props.theme.media.lg}) {
     padding-top: 298px;
     padding-bottom: 180px;
-        background-image: url(${leaf}),  url(${raspberries}), url(${ellipse});
+    background-image: url(${leaf}), url(${raspberries}), url(${ellipse});
     background-position: 68% 63%, 30.5% 82%, 100% 0;
     background-repeat: no-repeat;
   }
 `;
 
 export const MainWrapper = styled(Container)`
-  /* @media screen and (${(props) => props.theme.media.md}) {
-    background-image: url(${ellipse});
-    background-repeat: no-repeat;
-  } */
-  /* @media screen and (${(props) => props.theme.media.lg}) {
-    background-image: url(${leaf}), url(${ellipse}), url(${raspberries});
-    background-position: 70% 63%, 100% 0, 30.5% 82%;
-    background-repeat: no-repeat;
-  } */
+  @media screen and (${(props) => props.theme.media.mdToLg}) {
+    overflow: hidden;
+  }
 `;
 
 export const SweetWrapper = styled.p`

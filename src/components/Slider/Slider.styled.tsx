@@ -37,8 +37,8 @@ export const PriceWrapper = styled.p`
   font-weight: 500;
   line-height: 105.2%;
   @media screen and (${(props) => props.theme.media.md}) {
-    top: 380px;
-    right: 170px;
+    top: 20px;
+    right: 150px;
     width: 100px;
     height: 100px;
     font-size: 22px;
