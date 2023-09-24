@@ -12,6 +12,9 @@ export const StyledSection = styled(Section)`
   padding-top: 85px;
   @media screen and (${(props) => props.theme.media.md}) {
     padding-top: 196px;
+        background-image: url(${leaf}), url(${ellipse});
+    background-position: 25% 63%, -120% -180%;
+    background-repeat: no-repeat;
   }
   @media screen and (${(props) => props.theme.media.lg}) {
     padding-top: 298px;
@@ -23,7 +26,7 @@ export const StyledSection = styled(Section)`
 `;
 
 export const MainWrapper = styled(Container)`
-  @media screen and (${(props) => props.theme.media.mdToLg}) {
+  @media screen and (${(props) => props.theme.media.smToLg}) {
     overflow: hidden;
   }
 `;
