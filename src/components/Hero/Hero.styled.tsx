@@ -12,8 +12,8 @@ export const StyledSection = styled(Section)`
   padding-top: 85px;
   @media screen and (${(props) => props.theme.media.md}) {
     padding-top: 196px;
-        background-image: url(${leaf}), url(${ellipse});
-    background-position: 20% 63%, -80% -180%;
+    background-image: url(${leaf}), url(${ellipse});
+    background-position: 20% 63%, -100% -180%;
     background-repeat: no-repeat;
   }
   @media screen and (${(props) => props.theme.media.lg}) {
