@@ -16,8 +16,8 @@ overflow: hidden;
   @media screen and (${(props) => props.theme.media.lg}) {
     padding-top: 298px;
     padding-bottom: 180px;
-        background-image: url(${leaf}), url(${ellipse}), url(${raspberries});
-    background-position: 67% 63%, 100% 0, 30.5% 82%;
+        background-image: url(${leaf}),  url(${raspberries}), url(${ellipse});
+    background-position: 68% 63%, 30.5% 82%, 100% 0;
     background-repeat: no-repeat;
   }
 `;
