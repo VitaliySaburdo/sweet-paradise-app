@@ -5,17 +5,19 @@ export const Nav = styled.nav`
   display: flex;
   align-items: center;
 `;
+
 export const NavList = styled.ul<{ display: string }>`
   display: none;
-
   @media screen and (${(props) => props.theme.media.md}) {
-    display: ${(props) => (props.display ? "none" : "flex")};
-    gap: 33px;
+    /* display: ${(props) => (props.display ? "none" : "flex")}; */
+    display: flex;
+    gap: 20px;
     margin-top: 26px;
     margin-bottom: 26px;
   }
   @media screen and (${(props) => props.theme.media.lg}) {
     display: flex;
+    gap: 33px;
   }
 `;
 
