@@ -1,13 +1,16 @@
 import styled from "styled-components";
-import box from "../../images/CustomOrder/box.png";
 import { Section } from "../Section/Section";
+import box from "../../images/CustomOrder/box.png";
+import leaf from '../../images/CustomOrder/leaf.png';
+import leaf_blur from '../../images/CustomOrder/leaf_blur.png';
+
 
 export const StyledSection = styled(Section)`
   border: 1px solid #000;
   padding-top: 0;
   padding-bottom: 0;
   @media screen and (${(props) => props.theme.media.lg}) {
-    background-image: url(${box}),
+    background-image:  url(${box}),
       linear-gradient(97deg, #fca4c9 -7.93%, #fe71ad 55.51%, #b44e79 104.2%);
     background-position: 80% 100%;
     background-repeat: no-repeat;

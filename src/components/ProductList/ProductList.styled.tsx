@@ -24,7 +24,7 @@ export const Wrapper = styled.ul`
   display: flex;
   flex-wrap: wrap; 
   flex-direction: column;
-  align-items: end;
+  align-items: center;
   gap: 60px;
   min-height: 500px;
   @media screen and (${(props) => props.theme.media.lg}) {
