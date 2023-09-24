@@ -34,6 +34,10 @@ export const Box = styled.div`
     margin-left: auto;
     margin-right: auto;
   }
+  @media screen and (${(props) => props.theme.media.lg}) {
+    margin-left: 0;
+    margin-right: 0;
+  }
 `;
 
 export const Title = styled.h2`
@@ -46,6 +50,9 @@ export const Title = styled.h2`
   margin-bottom: 40px;
   @media screen and (${(props) => props.theme.media.md}) {
     text-align: center;
+  }
+  @media screen and (${(props) => props.theme.media.lg}) {
+    text-align: start;
   }
 `;
 
@@ -64,10 +71,13 @@ export const Text = styled.p`
 `;
 
 export const StyledForm = styled.form`
-  display: flex;
-  flex-direction: column;
   @media screen and (${(props) => props.theme.media.md}) {
+    display: flex;
+    flex-direction: column;
     align-items: center;
+  }
+  @media screen and (${(props) => props.theme.media.lg}) {
+    align-items: start;
   }
 `;
 
@@ -97,11 +107,10 @@ export const StyledField = styled.input`
 `;
 
 export const Img = styled.img`
-  position: absolute;
-  right: 50%;
-  top: 0;
   @media screen and (${(props) => props.theme.media.md}) {
+    position: absolute;
     right: 0;
+    top: 0;
   }
 `;
 

@@ -77,7 +77,7 @@ export const CartWrapper = styled.div`
 `;
 
 export const CartTitle = styled.h2`
-text-align: center;
+  text-align: center;
   margin-bottom: 20px;
 `;
 export const CartText = styled.p`
@@ -102,9 +102,9 @@ export const CartIcon = styled.span`
   right: 0;
   width: 15px;
   height: 15px;
-  background-color: #FFD4DD;
+  background-color: #ffd4dd;
   border-radius: 50%;
-  color: #9C0746;
+  color: #9c0746;
   font-size: 10px;
   font-weight: bold;
 `;
