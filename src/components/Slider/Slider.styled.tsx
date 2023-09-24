@@ -5,7 +5,7 @@ export const SliderWrapper = styled.div<{ image: number }>`
   width: 190px;
   height: 225px;
   display: flex;
-   transform: ${(props) => `translate3d(-${props.image * 100}%, 0, 0)`};
+  transform: ${(props) => `translate3d(-${props.image * 100}%, 0, 0)`};
   transition: transform 0.5s ease-in-out;
   @media screen and (${(props) => props.theme.media.md}) {
     width: 356px;
@@ -45,7 +45,7 @@ export const PriceWrapper = styled.p`
   }
   @media screen and (${(props) => props.theme.media.lg}) {
     top: -50px;
-    right: 20px;
+    right: 300px;
   }
 `;
 
@@ -64,7 +64,8 @@ export const TextWrapper = styled.p`
   @media screen and (${(props) => props.theme.media.lg}) {
     position: absolute;
     top: 450px;
-    right: 150px;
+    /* right: 150px; */
+    right: 410px;
   }
 `;
 
@@ -76,8 +77,8 @@ export const BtnWrapper = styled.div`
   @media screen and (${(props) => props.theme.media.lg}) {
     position: absolute;
     z-index: 20;
-        top: 540px;
-    right: 160px;
+    top: 540px;
+    right: 420px;
   }
 `;
 export const Btn = styled.button`

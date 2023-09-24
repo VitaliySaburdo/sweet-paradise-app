@@ -1,4 +1,5 @@
 import {
+  StyledSection,
   MainWrapper,
   SweetWrapper,
   ParadiseWrapper,
@@ -15,30 +16,28 @@ import { Link } from "react-router-dom";
 export const Hero = () => {
   return (
     <>
-      <MainWrapper>
-        <div style={{ position: "relative" }}>
-          <SweetWrapper>Sweet</SweetWrapper>
-          <ParadiseWrapper>Paradise</ParadiseWrapper>
+      <StyledSection>
+        <div style={{ position: "relative"}}>
+        <MainWrapper>
+            <SweetWrapper>Sweet</SweetWrapper>
+            <ParadiseWrapper>Paradise</ParadiseWrapper>
             <Wrapper>
               <Title>Sweet Paradise</Title>
-            <Slogan>We will make your life is sweeter!</Slogan>
-            <Link to={'/goods'}>
-            <StyledBtn>
-  
-                Choose a dessert
-             
-              </StyledBtn>
-               </Link>
+              <Slogan>We will make your life is sweeter!</Slogan>
+              <Link to={"/goods"}>
+                <StyledBtn>Choose a dessert</StyledBtn>
+              </Link>
             </Wrapper>
             <Slider />
-          </div>
           <VideoContainer
             title="confectionery"
             src="https://www.youtube.com/embed/mHsOfgF84aA"
             allow="autoplay; encrypted-media"
             allowFullScreen
           ></VideoContainer>
-      </MainWrapper>
+          </MainWrapper>
+          </div>
+      </StyledSection>
     </>
   );
 };

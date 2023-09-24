@@ -3,7 +3,6 @@ import styled from 'styled-components';
 export const StyledContainer = styled.div`
   margin: 0 auto;
   padding: 0 20px;
-  overflow: hidden;
 
   @media screen and (${props => props.theme.media.smToMd}) {
     width: 360px;
@@ -15,7 +14,7 @@ export const StyledContainer = styled.div`
   }
 
   @media screen and (${props => props.theme.media.lg}) {
-    width: 1900px;
-    padding: 0 250px;
+    width: 1420px;
+    padding: 0;
   }
 `;

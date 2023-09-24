@@ -4,17 +4,34 @@ import ellipse from "../../images/Hero/Ellipse.png";
 import leaf from "../../images/Hero/leaf.png";
 import raspberries from "../../images/Hero/raspberries.png";
 import { Container } from "../Container/Container";
+import { Section } from "../Section/Section";
 
-export const MainWrapper = styled(Container)`
-@media screen and (${(props) => props.theme.media.md}){
-  background-image: url(${ellipse});
-  background-repeat: no-repeat;
-}
+export const StyledSection = styled(Section)`
+overflow: hidden;
+  padding-bottom: 0;
+    padding-top: 85px;
+  @media screen and (${(props) => props.theme.media.md}) {
+    padding-top: 196px;
+  }
   @media screen and (${(props) => props.theme.media.lg}) {
-    background-image: url(${leaf}), url(${ellipse}), url(${raspberries});
+    padding-top: 298px;
+    padding-bottom: 180px;
+        background-image: url(${leaf}), url(${ellipse}), url(${raspberries});
     background-position: 70% 63%, 100% 0, 30.5% 82%;
     background-repeat: no-repeat;
   }
+`;
+
+export const MainWrapper = styled(Container)`
+  /* @media screen and (${(props) => props.theme.media.md}) {
+    background-image: url(${ellipse});
+    background-repeat: no-repeat;
+  } */
+  /* @media screen and (${(props) => props.theme.media.lg}) {
+    background-image: url(${leaf}), url(${ellipse}), url(${raspberries});
+    background-position: 70% 63%, 100% 0, 30.5% 82%;
+    background-repeat: no-repeat;
+  } */
 `;
 
 export const SweetWrapper = styled.p`
@@ -54,18 +71,15 @@ export const ParadiseWrapper = styled.p`
   }
 `;
 export const Wrapper = styled.div`
-  margin-top: 85px;
   display: flex;
   flex-direction: column;
   align-items: center;
   @media screen and (${(props) => props.theme.media.md}) {
-    margin-top: 196px;
     width: 550px;
     margin-left: auto;
     margin-right: auto;
   }
   @media screen and (${(props) => props.theme.media.lg}) {
-    margin-top: 298px;
     width: 620px;
     margin-left: 0;
     margin-right: auto;
@@ -81,7 +95,6 @@ export const Title = styled.h1`
     font-size: 60px;
     margin-bottom: 38px;
   }
-
   @media screen and (${(props) => props.theme.media.lg}) {
     font-size: 80px;
     margin-bottom: 41px;
@@ -124,7 +137,6 @@ export const VideoContainer = styled.iframe`
     margin-top: 206px;
     width: 340px;
     height: 220px;
-    margin-bottom: 180px;
   }
 `;
 export const StyledBtn = styled(Button)`
