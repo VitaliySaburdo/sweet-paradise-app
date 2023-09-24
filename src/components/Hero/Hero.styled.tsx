@@ -17,7 +17,7 @@ overflow: hidden;
     padding-top: 298px;
     padding-bottom: 180px;
         background-image: url(${leaf}), url(${ellipse}), url(${raspberries});
-    background-position: 70% 63%, 100% 0, 30.5% 82%;
+    background-position: 67% 63%, 100% 0, 30.5% 82%;
     background-repeat: no-repeat;
   }
 `;

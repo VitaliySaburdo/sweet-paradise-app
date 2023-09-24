@@ -44,8 +44,8 @@ export const PriceWrapper = styled.p`
     font-size: 22px;
   }
   @media screen and (${(props) => props.theme.media.lg}) {
-    top: -50px;
-    right: 300px;
+    top: -400px;
+    right: 35px;
   }
 `;
 
@@ -63,9 +63,8 @@ export const TextWrapper = styled.p`
   box-shadow: 0px 15px 40px 0px rgba(0, 0, 0, 0.25);
   @media screen and (${(props) => props.theme.media.lg}) {
     position: absolute;
-    top: 450px;
-    /* right: 150px; */
-    right: 410px;
+    top: 100px;
+    right: 160px;
   }
 `;
 
@@ -77,8 +76,8 @@ export const BtnWrapper = styled.div`
   @media screen and (${(props) => props.theme.media.lg}) {
     position: absolute;
     z-index: 20;
-    top: 540px;
-    right: 420px;
+    top: 190px;
+    right: 175px;
   }
 `;
 export const Btn = styled.button`
@@ -93,11 +92,11 @@ export const Btn = styled.button`
 
 export const MainWrapper = styled.div<{ index: number }>`
   margin-top: 57px;
-  position: relative;
+  /* position: relative; */
   width: 100%;
   @media screen and (${(props) => props.theme.media.lg}) {
     position: absolute;
-    top: -350px;
+    top: -690px;
     width: 1000px;
     height: 1000px;
     border-radius: 50%;
