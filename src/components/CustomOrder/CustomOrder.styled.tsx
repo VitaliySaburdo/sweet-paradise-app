@@ -13,7 +13,7 @@ export const StyledSection = styled(Section)`
   padding-bottom: 0;
   background-image: url(${box_sm}),
     linear-gradient(97deg, #fca4c9 -7.93%, #fe71ad 55.51%, #b44e79 104.2%);
-  background-position: center 95%;
+  background-position: center 40%;
   background-repeat: no-repeat;
   @media screen and (${(props) => props.theme.media.md}) {
     background-image: url(${box_md}),
@@ -49,14 +49,16 @@ export const Box = styled.div`
 export const Title = styled.h2`
   font-family: Montserrat;
   text-align: center;
-  font-size: 50px;
+  font-size: 24px;
   color: #a0114e;
   font-style: normal;
   font-weight: 900;
   line-height: normal;
-  margin-bottom: 40px;
+  margin-bottom: 400px;
   @media screen and (${(props) => props.theme.media.md}) {
+    font-size: 50px;
     text-align: center;
+    margin-bottom: 40px;
   }
   @media screen and (${(props) => props.theme.media.lg}) {
     text-align: start;
@@ -71,12 +73,13 @@ export const Text = styled.p`
   text-align: center;
   color: #fff;
   font-family: Open Sans;
-  font-size: 22px;
+  font-size: 16px;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
   margin-bottom: 51px;
   @media screen and (${(props) => props.theme.media.lg}) {
+    font-size: 22px;
     text-align: start;
   }
 `;
@@ -114,11 +117,9 @@ export const StyledField = styled.input`
 `;
 
 export const Img = styled.img`
-  @media screen and (${(props) => props.theme.media.md}) {
-    position: absolute;
-    right: 0;
-    top: 0;
-  }
+  position: absolute;
+  right: 0;
+  top: 0;
 `;
 
 export const StyledLabel = styled.label`
