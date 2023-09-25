@@ -1,4 +1,3 @@
-import { Button } from "../Button/Button";
 import { Container } from "../Container/Container";
 import user from "../../images/CustomOrder/user.png";
 import phone from "../../images/CustomOrder/phone.png";
@@ -13,6 +12,7 @@ import {
   StyledField,
   Img,
   StyledLabel,
+  StyledButton,
 } from "./CustomOrder.styled";
 
 export const CustomOrder = () => {
@@ -51,7 +51,7 @@ export const CustomOrder = () => {
                 />
                 <Img src={phone} alt="phone" width={25} />
               </StyledLabel>
-              <Button type="submit">More products</Button>
+              <StyledButton type="submit">More products</StyledButton>
             </StyledForm>
           </Box>
         </Container>

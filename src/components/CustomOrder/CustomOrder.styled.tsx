@@ -1,6 +1,8 @@
 import styled from "styled-components";
 import { Section } from "../Section/Section";
 import box from "../../images/CustomOrder/box.png";
+import box_md from "../../images/CustomOrder/box_md.png";
+import { Button } from "../Button/Button";
 // import leaf from '../../images/CustomOrder/leaf.png';
 // import leaf_blur from '../../images/CustomOrder/leaf_blur.png';
 
@@ -9,13 +11,13 @@ export const StyledSection = styled(Section)`
   padding-top: 0;
   padding-bottom: 0;
   @media screen and (${(props) => props.theme.media.md}) {
-    background-image: linear-gradient(
+    background-image: url(${box_md}), linear-gradient(
       97deg,
       #fca4c9 -7.93%,
       #fe71ad 55.51%,
       #b44e79 104.2%
     );
-    /* background-position: 80% 100%; */
+    background-position: center 95%;
     background-repeat: no-repeat;
   }
   @media screen and (${(props) => props.theme.media.lg}) {
@@ -33,10 +35,12 @@ export const Box = styled.div`
   @media screen and (${(props) => props.theme.media.md}) {
     margin-left: auto;
     margin-right: auto;
+    margin-bottom: 732px;
   }
   @media screen and (${(props) => props.theme.media.lg}) {
     margin-left: 0;
     margin-right: 0;
+    margin-bottom: 190px;
   }
 `;
 
@@ -61,6 +65,7 @@ export const AccentText = styled.span`
 `;
 
 export const Text = styled.p`
+  text-align: center;
   color: #fff;
   font-family: Open Sans;
   font-size: 22px;
@@ -68,6 +73,9 @@ export const Text = styled.p`
   font-weight: 400;
   line-height: normal;
   margin-bottom: 51px;
+  @media screen and (${(props) => props.theme.media.lg}) {
+    text-align: start;
+  }
 `;
 
 export const StyledForm = styled.form`
@@ -97,13 +105,6 @@ export const StyledField = styled.input`
     color: #ffffff;
   }
   color: #ffffff;
-
-  &:first-child {
-    margin-bottom: 17px;
-  }
-  &:last-child {
-    margin-bottom: 40px;
-  }
 `;
 
 export const Img = styled.img`
@@ -116,4 +117,11 @@ export const Img = styled.img`
 
 export const StyledLabel = styled.label`
   position: relative;
+  &:first-child {
+    margin-bottom: 17px;
+  }
+`;
+
+export const StyledButton = styled(Button)`
+  margin-top: 40px;
 `;
