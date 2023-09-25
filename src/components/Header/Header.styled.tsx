@@ -15,7 +15,8 @@ export const Wrapper = styled.div<{ scrolled: number }>`
 export const CustomMenu = styled(Menu)`
   background-color: #FFFFFF;
   top: 0;
-  /* left: 0; */
+  left: 0;
+  
 `;
 
 export const HeaderWrapper = styled.header`

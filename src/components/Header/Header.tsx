@@ -80,7 +80,7 @@ export const Header: React.FC<OrderProps> = ({
           </BurgerMenu>
           <StyledLink to="/">Sweet Paradise</StyledLink>
           {isOpen && (
-            <CustomMenu right>
+            <CustomMenu>
               <NavBar />
             </CustomMenu>
           )}
