@@ -2,6 +2,7 @@ import { Container } from "../Container/Container";
 import raspberries from "../../images/Hero/raspberries.png";
 
 import {
+  MainTitle,
   Wrapper,
   Item,
   Circle,
@@ -16,7 +17,8 @@ export const Work = () => {
   return (
     <>
       <Section>
-      <Container>
+        <Container>
+          <MainTitle>How we are working?</MainTitle>
           <Wrapper>
             <Item>
               <Circle>
