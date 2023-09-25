@@ -13,14 +13,14 @@ export const StyledSection = styled(Section)`
   @media screen and (${(props) => props.theme.media.md}) {
     padding-top: 196px;
     background-image: url(${leaf}), url(${ellipse});
-    background-position: 20% 63%, -100% -180%;
+    background-position: 20% 68%, -100% -180%;
     background-repeat: no-repeat;
   }
   @media screen and (${(props) => props.theme.media.lg}) {
     padding-top: 298px;
     padding-bottom: 180px;
     background-image: url(${leaf}), url(${raspberries}), url(${ellipse});
-    background-position: 65% 63%, 30.5% 82%, 100% 0;
+    background-position: 68% 65%, 30.5% 82%, 100% 0;
     background-repeat: no-repeat;
   }
 `;
