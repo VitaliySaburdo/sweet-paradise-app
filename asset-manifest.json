@@ -1,13 +1,14 @@
 {
   "files": {
     "main.css": "/sweet-paradise-app/static/css/main.054c7a94.css",
-    "main.js": "/sweet-paradise-app/static/js/main.4e3bcdd6.js",
+    "main.js": "/sweet-paradise-app/static/js/main.be0bce20.js",
     "static/media/box.png": "/sweet-paradise-app/static/media/box.0ba3471c67c970443a55.png",
     "static/media/box_md.png": "/sweet-paradise-app/static/media/box_md.35a5de8a8b90505b4eaf.png",
     "static/media/cookies.png": "/sweet-paradise-app/static/media/cookies.16afb37d4b328ceb4e47.png",
     "static/media/cook_photo.png": "/sweet-paradise-app/static/media/cook_photo.cc82e27637923000947a.png",
     "static/media/chocolate_1.png": "/sweet-paradise-app/static/media/chocolate_1.4a61e304231b4456db5a.png",
     "static/media/cart.png": "/sweet-paradise-app/static/media/cart.4db1aecd72397f7250b9.png",
+    "static/media/box_sm.png": "/sweet-paradise-app/static/media/box_sm.ebfd4a4d05c3552d9bf5.png",
     "static/media/cupcake-caramel.png": "/sweet-paradise-app/static/media/cupcake-caramel.2064601837db7ca1dbb7.png",
     "static/media/cupcake-chocolate.png": "/sweet-paradise-app/static/media/cupcake-chocolate.9fa2f166d74679e9d7d2.png",
     "static/media/chocolate_2.png": "/sweet-paradise-app/static/media/chocolate_2.7110e372fc69ee189922.png",
@@ -21,12 +22,13 @@
     "static/media/muffin.png": "/sweet-paradise-app/static/media/muffin.97f391b48e0b6a6d4031.png",
     "static/media/macaron.png": "/sweet-paradise-app/static/media/macaron.95f3855f2b919784f86f.png",
     "static/media/Ellipse.png": "/sweet-paradise-app/static/media/Ellipse.6600977067dec86bf0a2.png",
+    "static/media/leaf_sm.png": "/sweet-paradise-app/static/media/leaf_sm.96325f28bb6a68d78046.png",
     "index.html": "/sweet-paradise-app/index.html",
     "main.054c7a94.css.map": "/sweet-paradise-app/static/css/main.054c7a94.css.map",
-    "main.4e3bcdd6.js.map": "/sweet-paradise-app/static/js/main.4e3bcdd6.js.map"
+    "main.be0bce20.js.map": "/sweet-paradise-app/static/js/main.be0bce20.js.map"
   },
   "entrypoints": [
     "static/css/main.054c7a94.css",
-    "static/js/main.4e3bcdd6.js"
+    "static/js/main.be0bce20.js"
   ]
 }
