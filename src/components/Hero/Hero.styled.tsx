@@ -20,7 +20,7 @@ export const StyledSection = styled(Section)`
     padding-top: 298px;
     padding-bottom: 180px;
     background-image: url(${leaf}), url(${raspberries}), url(${ellipse});
-    background-position: 68% 63%, 30.5% 82%, 100% 0;
+    background-position: 65% 63%, 30.5% 82%, 100% 0;
     background-repeat: no-repeat;
   }
 `;
