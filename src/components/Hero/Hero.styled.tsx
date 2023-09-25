@@ -2,6 +2,7 @@ import styled, { css } from "styled-components";
 import { Button } from "../Button/Button";
 import ellipse from "../../images/Hero/Ellipse.png";
 import leaf from "../../images/Hero/leaf.png";
+import leaf_sm from "../../images/Hero/leaf_sm.png";
 import raspberries from "../../images/Hero/raspberries.png";
 import { Container } from "../Container/Container";
 import { Section } from "../Section/Section";
@@ -10,18 +11,19 @@ export const StyledSection = styled(Section)`
   overflow: hidden;
   padding-bottom: 0;
   padding-top: 85px;
+  background-image: url(${leaf_sm});
+  background-repeat: no-repeat;
+  background-position: 70% 65%;
   @media screen and (${(props) => props.theme.media.md}) {
     padding-top: 196px;
     background-image: url(${leaf}), url(${ellipse});
-    background-position: 20% 68%, -100% -180%;
-    background-repeat: no-repeat;
+    background-position: 25% 65%, -100% -180%;
   }
   @media screen and (${(props) => props.theme.media.lg}) {
     padding-top: 298px;
     padding-bottom: 180px;
     background-image: url(${leaf}), url(${raspberries}), url(${ellipse});
     background-position: 68% 65%, 30.5% 82%, 100% 0;
-    background-repeat: no-repeat;
   }
 `;
 
