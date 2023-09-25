@@ -16,6 +16,7 @@ import {
   CartText,
   CartImg,
   CartIcon,
+  CustomMenu,
 } from "./Header.styled";
 import burgerIcon from "../../images/Header/burger-btn.png";
 import basket from "../../images/Header/basket.png";
@@ -47,6 +48,7 @@ export const Header: React.FC<OrderProps> = ({
   const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
   const [isCartModalOpen, setIsCartModalOpen] = useState(false);
   const [isAdminModalOpen, setIsAdminModalOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
 
   const isLogin = useSelector(selectIsLoggedIn);
 
@@ -65,15 +67,23 @@ export const Header: React.FC<OrderProps> = ({
     };
   }, []);
 
+ const toggleMenu = () => {
+  setIsOpen(!isOpen);
+};
+
   return (
     <Wrapper scrolled={scrolled ? 1 : 0}>
       <Container>
         <HeaderWrapper>
-          <BurgerMenu>
+          <BurgerMenu onClick={toggleMenu}>
             <img src={burgerIcon} alt="menu" />
           </BurgerMenu>
           <StyledLink to="/">Sweet Paradise</StyledLink>
-          <NavBar />
+          {isOpen && (
+            <CustomMenu right>
+              <NavBar />
+            </CustomMenu>
+          )}
           <UserNav>
             {isLogin && (
               <li>
@@ -122,7 +132,7 @@ export const Header: React.FC<OrderProps> = ({
             </li>
             {isLoginModalOpen && (
               <Modal onClick={() => setIsLoginModalOpen(false)}>
-                <LoginForm closeModal={() => setIsLoginModalOpen(false)}/>
+                <LoginForm closeModal={() => setIsLoginModalOpen(false)} />
               </Modal>
             )}
           </UserNav>
