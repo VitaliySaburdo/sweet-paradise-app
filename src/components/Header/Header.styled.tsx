@@ -1,4 +1,4 @@
-import styled, { css } from "styled-components";
+import styled, {css} from "styled-components";
 import { Link } from "react-router-dom";
 
 export const Wrapper = styled.div<{ scrolled: number }>`
@@ -59,21 +59,25 @@ export const BurgerMenu = styled.div<{ open: boolean }>`
   transition-property: transform;
   transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
 
-  ${(props) =>
-    props.open &&
-    css`
-      display: flex;
-      flex-direction: column;
-      transform: translateX(0);
-      pointer-events: auto;
-    `}
+  ${(props) => props.open && css `
+        display: flex;
+    flex-direction: column;
+    transform: translateX(0);
+    pointer-events: auto;
+  `}
+  &.active {
+    display: flex;
+    flex-direction: column;
+    transform: translateX(0);
+    pointer-events: auto;
+  }
 
   @media screen and (${(props) => props.theme.media.md}) {
     display: none;
   }
 `;
 
-export const BurgerBtnSkin = styled.div<{ open: boolean }>`
+export const BurgerBtnSkin = styled.div<{open: boolean}>`
   position: relative;
   z-index: 1000;
   width: 24px;

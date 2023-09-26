@@ -81,7 +81,7 @@ export const Header: React.FC<OrderProps> = ({
               <span></span>
             </BurgerBtnSkin>
             <BurgerMenu open={open}>
-              <NavBar />
+              {/* <NavBar /> */}
             </BurgerMenu>
           </BurgerBtn>
           <StyledLink to="/">Sweet Paradise</StyledLink>
