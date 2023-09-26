@@ -66,9 +66,9 @@ export const Header: React.FC<OrderProps> = ({
     };
   }, []);
 
-//  const toggleMenu = () => {
-//   setIsOpen(!isOpen);
-// };
+  //  const toggleMenu = () => {
+  //   setIsOpen(!isOpen);
+  // };
 
   return (
     <Wrapper scrolled={scrolled ? 1 : 0}>
@@ -78,11 +78,7 @@ export const Header: React.FC<OrderProps> = ({
             <img src={burgerIcon} alt="menu" />
           </BurgerMenu>
           <StyledLink to="/">Sweet Paradise</StyledLink>
-         
-     
-              <NavBar />
-      
-    
+          <NavBar />
           <UserNav>
             {isLogin && (
               <li>
