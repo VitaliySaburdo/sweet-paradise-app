@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-import { slide as Menu } from "react-burger-menu";
 
 export const Wrapper = styled.div<{ scrolled: number }>`
   background-color: ${(props) =>
@@ -10,13 +9,6 @@ export const Wrapper = styled.div<{ scrolled: number }>`
   top: 0;
   width: 100%;
   z-index: 1000;
-`;
-
-export const CustomMenu = styled(Menu)`
-  background-color: #FFFFFF;
-  top: 0;
-  left: 0;
-  
 `;
 
 export const HeaderWrapper = styled.header`
