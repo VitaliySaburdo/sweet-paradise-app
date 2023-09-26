@@ -44,6 +44,60 @@ export const BurgerMenu = styled.button`
   }
 `;
 
+export const BurgerBtnSkin = styled.div<{ isOpen: boolean }>`
+  position: relative;
+  z-index: 1000;
+  width: 24px;
+  height: 16px;
+  transition: all 0.3s ease 0s;
+
+  &::before,
+  &::after,
+  & span {
+    content: '';
+    background-color: #000000;
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    left: 0;
+    transition: all 0.3s ease 0s;
+  }
+
+  &::before {
+    top: 0;
+  }
+
+  &::after {
+    bottom: 0;
+  }
+
+  & span {
+    top: 7px;
+  }
+
+${(props) =>
+    props.isOpen &&
+    `
+   & span {
+      transform: scale(0);
+    }
+
+    &::before {
+      transform: rotate(45deg);
+      top: 6.5px;
+    }
+
+    &::after {
+      transform: rotate(-45deg);
+      bottom: 6.5px;
+    }
+  `}
+
+  @media screen and (${(props) => props.theme.media.md}) {
+    display: none;
+  }
+`
+
 export const UserNav = styled.ul`
   margin-left: auto;
   display: flex;

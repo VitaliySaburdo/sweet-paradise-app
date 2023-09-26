@@ -9,7 +9,6 @@ export const Nav = styled.nav`
 export const NavList = styled.ul<{ display: string }>`
   display: none;
   @media screen and (${(props) => props.theme.media.md}) {
-    /* display: ${(props) => (props.display ? "none" : "flex")}; */
     display: flex;
     gap: 20px;
     margin-top: 26px;

@@ -16,8 +16,9 @@ import {
   CartText,
   CartImg,
   CartIcon,
+  BurgerBtnSkin,
 } from "./Header.styled";
-import burgerIcon from "../../images/Header/burger-btn.png";
+// import burgerIcon from "../../images/Header/burger-btn.png";
 import basket from "../../images/Header/basket.png";
 import cart from "../../images/Header/cart.png";
 import user from "../../images/Header/user.png";
@@ -47,7 +48,7 @@ export const Header: React.FC<OrderProps> = ({
   const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
   const [isCartModalOpen, setIsCartModalOpen] = useState(false);
   const [isAdminModalOpen, setIsAdminModalOpen] = useState(false);
-  // const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
 
   const isLogin = useSelector(selectIsLoggedIn);
 
@@ -66,16 +67,18 @@ export const Header: React.FC<OrderProps> = ({
     };
   }, []);
 
-  //  const toggleMenu = () => {
-  //   setIsOpen(!isOpen);
-  // };
+   const toggleMenu = () => {
+    setIsOpen(!isOpen);
+  };
 
   return (
     <Wrapper scrolled={scrolled ? 1 : 0}>
       <Container>
         <HeaderWrapper>
-          <BurgerMenu>
-            <img src={burgerIcon} alt="menu" />
+          <BurgerMenu onClick={toggleMenu}>
+            <BurgerBtnSkin isOpen={isOpen}>
+              <span></span>
+            </BurgerBtnSkin>
           </BurgerMenu>
           <StyledLink to="/">Sweet Paradise</StyledLink>
           <NavBar />
