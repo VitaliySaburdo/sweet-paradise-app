@@ -7,9 +7,14 @@ export const Nav = styled.nav`
 `;
 
 export const NavList = styled.ul<{ display: string }>`
-  display: none;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-top: 26px;
+  margin-bottom: 26px;
   @media screen and (${(props) => props.theme.media.md}) {
     display: flex;
+    flex-direction: row;
     gap: 20px;
     margin-top: 26px;
     margin-bottom: 26px;

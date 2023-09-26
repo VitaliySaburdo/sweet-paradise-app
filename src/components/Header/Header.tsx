@@ -6,6 +6,7 @@ import { NavBar } from "../NavBar/NavBar";
 import {
   Wrapper,
   HeaderWrapper,
+  NvBarWrapper,
   StyledLink,
   BurgerBtn,
   BurgerMenu,
@@ -19,7 +20,6 @@ import {
   CartIcon,
   BurgerBtnSkin,
 } from "./Header.styled";
-// import burgerIcon from "../../images/Header/burger-btn.png";
 import basket from "../../images/Header/basket.png";
 import cart from "../../images/Header/cart.png";
 import user from "../../images/Header/user.png";
@@ -68,7 +68,7 @@ export const Header: React.FC<OrderProps> = ({
     };
   }, []);
 
-   const toggleMenu = () => {
+  const toggleMenu = () => {
     setIsOpen(!open);
   };
 
@@ -81,11 +81,13 @@ export const Header: React.FC<OrderProps> = ({
               <span></span>
             </BurgerBtnSkin>
             <BurgerMenu open={open}>
-              {/* <NavBar /> */}
+              <NavBar />
             </BurgerMenu>
           </BurgerBtn>
           <StyledLink to="/">Sweet Paradise</StyledLink>
-          <NavBar />
+          <NvBarWrapper>
+            <NavBar />
+          </NvBarWrapper>
           <UserNav>
             {isLogin && (
               <li>
