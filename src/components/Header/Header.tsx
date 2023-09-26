@@ -7,6 +7,7 @@ import {
   Wrapper,
   HeaderWrapper,
   StyledLink,
+  BurgerBtn,
   BurgerMenu,
   UserNav,
   Btn,
@@ -48,7 +49,7 @@ export const Header: React.FC<OrderProps> = ({
   const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
   const [isCartModalOpen, setIsCartModalOpen] = useState(false);
   const [isAdminModalOpen, setIsAdminModalOpen] = useState(false);
-  const [isOpen, setIsOpen] = useState(false);
+  const [open, setIsOpen] = useState(false);
 
   const isLogin = useSelector(selectIsLoggedIn);
 
@@ -68,18 +69,21 @@ export const Header: React.FC<OrderProps> = ({
   }, []);
 
    const toggleMenu = () => {
-    setIsOpen(!isOpen);
+    setIsOpen(!open);
   };
 
   return (
     <Wrapper scrolled={scrolled ? 1 : 0}>
       <Container>
         <HeaderWrapper>
-          <BurgerMenu onClick={toggleMenu}>
-            <BurgerBtnSkin isOpen={isOpen}>
+          <BurgerBtn onClick={toggleMenu}>
+            <BurgerBtnSkin open={open}>
               <span></span>
             </BurgerBtnSkin>
-          </BurgerMenu>
+            <BurgerMenu open={open}>
+              <NavBar />
+            </BurgerMenu>
+          </BurgerBtn>
           <StyledLink to="/">Sweet Paradise</StyledLink>
           <NavBar />
           <UserNav>

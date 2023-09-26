@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { Link } from "react-router-dom";
 
 export const Wrapper = styled.div<{ scrolled: number }>`
@@ -34,7 +34,7 @@ export const StyledLink = styled(Link)`
   }
 `;
 
-export const BurgerMenu = styled.button`
+export const BurgerBtn = styled.button`
   display: block;
   border: none;
   background-color: transparent;
@@ -43,8 +43,37 @@ export const BurgerMenu = styled.button`
     display: none;
   }
 `;
+export const BurgerMenu = styled.div<{ open: boolean }>`
+  transform: translateX(100%);
+  pointer-events: none;
+  z-index: 500;
+  position: fixed;
+  overflow-y: scroll;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #ffffff;
+  padding: 48px 40px;
 
-export const BurgerBtnSkin = styled.div<{ isOpen: boolean }>`
+  transition-property: transform;
+  transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
+
+  ${(props) =>
+    props.open &&
+    css`
+      display: flex;
+      flex-direction: column;
+      transform: translateX(0);
+      pointer-events: auto;
+    `}
+
+  @media screen and (${(props) => props.theme.media.md}) {
+    display: none;
+  }
+`;
+
+export const BurgerBtnSkin = styled.div<{ open: boolean }>`
   position: relative;
   z-index: 1000;
   width: 24px;
@@ -54,7 +83,7 @@ export const BurgerBtnSkin = styled.div<{ isOpen: boolean }>`
   &::before,
   &::after,
   & span {
-    content: '';
+    content: "";
     background-color: #000000;
     position: absolute;
     width: 100%;
@@ -75,28 +104,28 @@ export const BurgerBtnSkin = styled.div<{ isOpen: boolean }>`
     top: 7px;
   }
 
-${(props) =>
-    props.isOpen &&
-    `
-   & span {
-      transform: scale(0);
-    }
+  ${(props) =>
+    props.open &&
+    css`
+      & span {
+        transform: scale(0);
+      }
 
-    &::before {
-      transform: rotate(45deg);
-      top: 6.5px;
-    }
+      &::before {
+        transform: rotate(45deg);
+        top: 6.5px;
+      }
 
-    &::after {
-      transform: rotate(-45deg);
-      bottom: 6.5px;
-    }
-  `}
+      &::after {
+        transform: rotate(-45deg);
+        bottom: 6.5px;
+      }
+    `}
 
   @media screen and (${(props) => props.theme.media.md}) {
     display: none;
   }
-`
+`;
 
 export const UserNav = styled.ul`
   margin-left: auto;
