@@ -1,5 +1,6 @@
 import styled, { css } from "styled-components";
 import { Link } from "react-router-dom";
+import fruit from '../../images/Mobil/fruit.png';
 
 export const Wrapper = styled.div<{ scrolled: number }>`
   background-color: ${(props) =>
@@ -62,6 +63,11 @@ export const BurgerMenu = styled.div<{ open: boolean }>`
   height: 100vh;
   background-color: #ffffff;
   padding: 48px 40px;
+
+  background-image: url(${fruit});
+   background-repeat: no-repeat;
+   background-size: 50%;
+   background-position: 50% 70%;
 
   transition-property: transform;
   transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
