@@ -33,5 +33,6 @@ export const Wrapper = styled.ul`
     margin-bottom: 90px;
     row-gap: 41px;
     column-gap: 109px;
+    align-items: end;
   }
 `;
