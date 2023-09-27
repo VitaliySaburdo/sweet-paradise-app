@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Container } from "../Container/Container";
 
 export const Box = styled.div`
   margin-top: 53px;
@@ -33,6 +34,10 @@ export const CatalogTitle = styled.h2`
   text-align: center;
   margin-bottom: 70px;
 `;
+
+export const StyledContainer = styled(Container)`
+  overflow: hidden;
+`
 
 export const CatalogList = styled.ul`
   width: 929px;

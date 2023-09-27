@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 
 import {
   Box,
+  StyledContainer,
   CatalogList,
   CatalogTitle,
   CatalogItem,
@@ -15,7 +16,7 @@ import cupcake from "../../images/Goods/cupcake.png";
 import muffin from "../../images/Goods/muffin.png";
 import donut from "../../images/Goods/donut.png";
 import { Section } from "../Section/Section";
-import { Container } from "../Container/Container";
+// import { Container } from "../Container/Container";
 import { ProductList } from "../ProductList/ProductList";
 import { ProductProps } from "../App/App.types";
 
@@ -54,7 +55,7 @@ export const Catalog: React.FC<CategoryProps> = ({
     <>
       <Box/>
       <Section>
-        <Container>
+        <StyledContainer>
           <CatalogTitle>Yummy catalog</CatalogTitle>
           <CatalogList>
             <CatalogItem>
@@ -109,7 +110,7 @@ export const Catalog: React.FC<CategoryProps> = ({
             onAdd={onAdd}
             orders={orders}
           />
-        </Container>
+        </StyledContainer>
       </Section>
     </>
   );

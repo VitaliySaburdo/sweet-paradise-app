@@ -1,10 +1,10 @@
-import styled, {keyframes} from "styled-components";
+import styled, { keyframes } from "styled-components";
 import { Form, Field, ErrorMessage } from "formik";
 import { Button } from "../Button/Button";
 import { Container } from "../Container/Container";
-import chocolate_1 from '../../images/Order/chocolate_1.png'
-import chocolate_2 from '../../images/Order/chocolate_2.png'
-import cookies from '../../images/Order/cookies.png'
+import chocolate_1 from "../../images/Order/chocolate_1.png";
+import chocolate_2 from "../../images/Order/chocolate_2.png";
+import cookies from "../../images/Order/cookies.png";
 
 const fadeIn = keyframes`
   from {
@@ -24,6 +24,9 @@ export const Title = styled.h2`
   font-weight: 900;
   line-height: normal;
   margin-bottom: 90px;
+  @media screen and (${(props) => props.theme.media.md}) {
+    font-size: 44px;
+  }
 `;
 
 export const StyledContainer = styled(Container)`
@@ -46,6 +49,9 @@ export const StyledText = styled.p`
   line-height: normal;
   rotate: 270deg;
   white-space: nowrap;
+  @media screen and (${(props) => props.theme.media.md}) {
+    left: -23.5%;
+  }
 `;
 
 export const Wrapper = styled.div`
@@ -56,10 +62,14 @@ export const Wrapper = styled.div`
   width: 940px;
   height: 604px;
   margin: 0 auto;
-    @media screen and (${(props) => props.theme.media.lg}) {
+  @media screen and (${(props) => props.theme.media.md}) {
+    width: 728px;
+  }
+  @media screen and (${(props) => props.theme.media.lg}) {
     background-image: url(${cookies});
     background-position: 105% 40%;
     background-repeat: no-repeat;
+    width: 940px;
   }
 `;
 
@@ -72,24 +82,24 @@ export const FormWrapper = styled.div`
 `;
 
 export const FormTitle = styled.h3`
-color: #9C0746;
-font-family: Montserrat;
-font-size: 30px;
-font-style: normal;
-font-weight: 700;
-line-height: normal;
-margin-bottom: 18px;
+  color: #9c0746;
+  font-family: Montserrat;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  margin-bottom: 18px;
 `;
 
 export const FormText = styled.p`
-color: #444251;
-text-align: center;
-font-family: Open Sans;
-font-size: 18px;
-font-style: normal;
-font-weight: 400;
-line-height: 125.6%;
-margin-bottom: 45px;
+  color: #444251;
+  text-align: center;
+  font-family: Open Sans;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 125.6%;
+  margin-bottom: 45px;
 `;
 
 export const StyledForm = styled(Form)`
@@ -119,17 +129,17 @@ export const StyledButton = styled(Button)`
 `;
 
 export const Text = styled.p`
-color: #444251;
-text-align: center;
-font-family: Open Sans;
-font-size: 14px;
-font-style: normal;
-font-weight: 400;
-line-height: 125.6%;
+  color: #444251;
+  text-align: center;
+  font-family: Open Sans;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 125.6%;
 `;
 
 export const StyledLabel = styled.label`
-flex-direction: row;
+  flex-direction: row;
   font-size: 12px;
   line-height: calc(14 / 12);
   letter-spacing: 0.01em;
