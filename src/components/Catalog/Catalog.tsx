@@ -16,7 +16,6 @@ import cupcake from "../../images/Goods/cupcake.png";
 import muffin from "../../images/Goods/muffin.png";
 import donut from "../../images/Goods/donut.png";
 import { Section } from "../Section/Section";
-// import { Container } from "../Container/Container";
 import { ProductList } from "../ProductList/ProductList";
 import { ProductProps } from "../App/App.types";
 
