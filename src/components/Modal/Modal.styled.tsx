@@ -9,6 +9,15 @@ const fadeIn = keyframes`
   }
 `;
 
+export const CrossBtn = styled.button`
+display: block;
+border: none;
+background: transparent;
+cursor: pointer;
+padding: 0;
+margin-left: auto;
+`
+
 export const Overlay = styled.div`
   position: fixed;
   top: 0;

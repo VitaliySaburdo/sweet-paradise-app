@@ -1,6 +1,7 @@
 import { createPortal } from 'react-dom';
-import { Overlay, ModalBody } from './Modal.styled';
+import { Overlay, ModalBody, CrossBtn } from './Modal.styled';
 import { useEffect } from 'react';
+import cross from '../../images/Modal/cross.png'
 
 const modalRoot = document.querySelector('#modal-root');
 
@@ -32,16 +33,18 @@ function enableBodyScroll() {
   document.body.style.overflow = 'auto';
 }
 
-  const handleBackdropClick = (e: React.MouseEvent<HTMLDivElement>) => {
-    if (e.target === e.currentTarget) {
-      onClick();
-    }
+  const handleBackdropClick = () => {
+      onClick(); 
   };
+
+
 return modalRoot
   ? createPortal(
       <Overlay onClick={handleBackdropClick}>
-      <ModalBody>
-        
+      <ModalBody onClick={(e)=>e.stopPropagation()}>
+        <CrossBtn onClick={handleBackdropClick} type="button">
+          <img src={cross} alt="cross" width={14}/>
+        </CrossBtn>
         {children}</ModalBody>
       </Overlay>,
       modalRoot
