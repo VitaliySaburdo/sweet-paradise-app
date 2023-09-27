@@ -10,12 +10,15 @@ export const Box = styled.div`
   align-items: center;
 `;
 export const Picture = styled.img`
-  width: 100px;
-  height: 100px;
-  margin-right: 20px;
-  @media screen and (${(props) => props.theme.media.lg}) {
+  width: 50px;
+  height: 50px;
+  margin-right: 10px;
+  @media screen and (${(props) => props.theme.media.md}) {
+    width: 100px;
+    height: 100px;
     margin-right: 80px;
   }
+
 `;
 export const Input = styled.input`
   width: 40px;
@@ -33,21 +36,28 @@ export const Count = styled.p`
   margin-left: 20px;
   color: #9c0746;
   font-family: Montserrat;
-  font-size: 20px;
+  font-size: 16px;
   font-style: normal;
   font-weight: 600;
   line-height: normal;
+  text-align: center;
+  @media screen and (${(props) => props.theme.media.md}){
+    font-size: 20px;
+  }
   @media screen and (${(props) => props.theme.media.lg}) {
     margin-left: 60px;
   }
 `;
 
 export const Item = styled.li`
-  width: 320px;
+  width: 300px;
   padding: 5px;
   border-radius: 10px;
   border: 1px solid #c4c4c4;
   box-shadow: 0px 5px 10px 0px rgba(66, 2, 29, 0.31);
+  @media screen and (${(props) => props.theme.media.md}){
+    width: 500px;
+  }
   @media screen and (${(props) => props.theme.media.lg}) {
     width: 500px;
   }

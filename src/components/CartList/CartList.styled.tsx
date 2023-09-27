@@ -10,14 +10,13 @@ export const Container = styled.ul`
 
   scrollbar-width: thin;
   scrollbar-color: #333333 #f1f1f1;
-  
 
   &::-webkit-scrollbar {
     width: 8px;
   }
 
   &::-webkit-scrollbar-thumb {
-    background-color: #9C0746;
+    background-color: #9c0746;
     border-radius: 4px;
   }
 
@@ -45,11 +44,14 @@ export const StyledWrapper = styled.div`
 `;
 
 export const TotalPrice = styled.p`
-    color: #9c0746;
+  color: #9c0746;
   font-family: Montserrat;
-  font-size: 20px;
+  font-size: 16px;
   font-style: normal;
   font-weight: 600;
   line-height: normal;
   padding: 10px;
-`
+  @media screen and (${(props) => props.theme.media.md}) {
+    font-size: 20px;
+  }
+`;
