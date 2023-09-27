@@ -16,6 +16,7 @@ background: transparent;
 cursor: pointer;
 padding: 0;
 margin-left: auto;
+margin-bottom: 8px
 `
 
 export const Overlay = styled.div`

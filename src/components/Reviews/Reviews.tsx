@@ -89,7 +89,7 @@ export const Reviews = () => {
                       name="feedback"
                       component="textarea"
                       rows="4"
-                      cols="50"
+                      cols="35"
                     />
                     <StyledMessage name="feedback" component="div" />
 
