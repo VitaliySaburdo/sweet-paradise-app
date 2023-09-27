@@ -71,7 +71,9 @@ export const Wrapper = styled.div`
   width: 360px;
   height: 550px;
   margin: 0 auto;
+  border-radius: 10px;
   @media screen and (${(props) => props.theme.media.md}) {
+    border-radius: 0;
     width: 728px;
     height: 604px;
   }
@@ -84,12 +86,15 @@ export const Wrapper = styled.div`
 `;
 
 export const FormWrapper = styled.div`
-  height: 100%;
+  height: 96%;
   width: 340px;
   border-radius: 10px;
   background-color: #ffffff;
   padding: 45px 60px;
+  margin-top: auto;
+  margin-bottom: auto;
   @media screen and (${(props) => props.theme.media.md}) {
+    height: 100%;
     width: 500px;
     padding: 68px 68px 82px 68px;
   }
