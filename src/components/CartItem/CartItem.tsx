@@ -1,4 +1,3 @@
-// import { useState } from "react";
 import {
   StyledText,
   Item,
@@ -10,6 +9,7 @@ import {
   CloseBtn,
 } from "./CartItem.styled";
 import { ProductProps } from "../App/App.types";
+import cross from '../../images/Modal/cross.png';
 
 interface CartItemProps {
   product: ProductProps;
@@ -31,7 +31,9 @@ export const CartItem: React.FC<CartItemProps> = ({
       <Item>
         <Box style={{ justifyContent: "space-between", marginRight: "10px" }}>
           <StyledText>{product.name}</StyledText>
-          <CloseBtn onClick={() => deleteOrder(product)}>X</CloseBtn>
+          <CloseBtn onClick={() => deleteOrder(product)}>
+            <img src={cross} alt="cross" width={16}/>
+          </CloseBtn>
         </Box>
         <Box>
           <Picture
