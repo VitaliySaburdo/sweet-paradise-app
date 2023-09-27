@@ -34,6 +34,7 @@ export const Title = styled.h2`
 `;
 
 export const StyledContainer = styled(Container)`
+  padding: 0;
   @media screen and (${(props) => props.theme.media.lg}) {
     background-image: url(${chocolate_1}), url(${chocolate_2});
     background-position: 10% 95%, 95% 95%;
@@ -84,11 +85,12 @@ export const Wrapper = styled.div`
 
 export const FormWrapper = styled.div`
   height: 100%;
-  width: 500px;
+  width: 340px;
   border-radius: 10px;
   background-color: #ffffff;
   padding: 45px 60px;
   @media screen and (${(props) => props.theme.media.md}) {
+    width: 500px;
     padding: 68px 68px 82px 68px;
   }
 `;
