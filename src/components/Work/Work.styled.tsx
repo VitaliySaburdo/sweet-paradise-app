@@ -40,9 +40,14 @@ export const Wrapper = styled.ul`
 
 export const StyledImg = styled.img`
 position: absolute;
+  bottom: -50px;
+  right: 100px;
+  width: 98px;
+@media screen and (${(props) => props.theme.media.md}){
   bottom: -30px;
   right: 620px;
   width: 98px;
+}
 @media screen and (${(props) => props.theme.media.lg}){
   right: 320px;
 }
