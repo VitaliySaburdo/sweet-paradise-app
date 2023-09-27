@@ -19,13 +19,17 @@ export const Title = styled.h2`
   text-align: center;
   color: #444251;
   font-family: Montserrat;
-  font-size: 50px;
+  font-size: 24px;
   font-style: normal;
   font-weight: 900;
   line-height: normal;
-  margin-bottom: 90px;
+  margin-bottom: 60px;
   @media screen and (${(props) => props.theme.media.md}) {
     font-size: 44px;
+    margin-bottom: 90px;
+  }
+  @media screen and (${(props) => props.theme.media.lg}) {
+    font-size: 50px;
   }
 `;
 
@@ -38,19 +42,23 @@ export const StyledContainer = styled(Container)`
 `;
 
 export const StyledText = styled.p`
-  position: absolute;
-  bottom: 43%;
-  left: -13%;
-  color: #9c0746;
-  font-family: Sail;
-  font-size: 70px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
-  rotate: 270deg;
-  white-space: nowrap;
+  display: none;
   @media screen and (${(props) => props.theme.media.md}) {
+    display: block;
+    position: absolute;
+    bottom: 43%;
     left: -23.5%;
+    color: #9c0746;
+    font-family: Sail;
+    font-size: 70px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    rotate: 270deg;
+    white-space: nowrap;
+  }
+  @media screen and (${(props) => props.theme.media.lg}) {
+    left: -13%;
   }
 `;
 
@@ -59,11 +67,12 @@ export const Wrapper = styled.div`
   display: flex;
   justify-content: center;
   background-color: #ffd4dd;
-  width: 940px;
-  height: 604px;
+  width: 360px;
+  height: 550px;
   margin: 0 auto;
   @media screen and (${(props) => props.theme.media.md}) {
     width: 728px;
+    height: 604px;
   }
   @media screen and (${(props) => props.theme.media.lg}) {
     background-image: url(${cookies});
@@ -78,28 +87,37 @@ export const FormWrapper = styled.div`
   width: 500px;
   border-radius: 10px;
   background-color: #ffffff;
-  padding: 68px 68px 82px 68px;
+  padding: 45px 60px;
+  @media screen and (${(props) => props.theme.media.md}) {
+    padding: 68px 68px 82px 68px;
+  }
 `;
 
 export const FormTitle = styled.h3`
   color: #9c0746;
   font-family: Montserrat;
-  font-size: 30px;
+  font-size: 20px;
   font-style: normal;
   font-weight: 700;
   line-height: normal;
   margin-bottom: 18px;
+  @media screen and (${(props) => props.theme.media.md}) {
+    font-size: 30px;
+  }
 `;
 
 export const FormText = styled.p`
   color: #444251;
   text-align: center;
   font-family: Open Sans;
-  font-size: 18px;
+  font-size: 16px;
   font-style: normal;
   font-weight: 400;
   line-height: 125.6%;
   margin-bottom: 45px;
+  @media screen and (${(props) => props.theme.media.md}) {
+    font-size: 18px;
+  }
 `;
 
 export const StyledForm = styled(Form)`
@@ -110,10 +128,10 @@ export const StyledForm = styled(Form)`
 
 export const StyledField = styled(Field)`
   margin: 0;
-  height: 40px;
+  height: 60px;
   padding: 12px 42px;
   border: 1px solid rgba(33, 33, 33, 0.2);
-  border-radius: 20px;
+  border-radius: 30px;
   cursor: pointer;
   transition-property: border-color, outline-color;
   transition-duration: 250ms;
@@ -121,6 +139,10 @@ export const StyledField = styled(Field)`
   margin-bottom: 25px;
   &:focus {
     outline-color: #9c0746;
+  }
+  @media screen and (${(props) => props.theme.media.md}) {
+    height: 40px;
+    border-radius: 20px;
   }
 `;
 
