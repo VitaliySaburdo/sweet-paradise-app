@@ -3,8 +3,8 @@ import styled from "styled-components";
 export const TooltipText = styled.span`
 position: absolute;
   z-index: 100;
-  top: 45px;
-  right: 10px;
+  top: 40px;
+  right: 8px;
 
   text-align: center;
   white-space: nowrap;
@@ -13,7 +13,7 @@ position: absolute;
   line-height: normal;
   font-weight: 600;
   font-size: 12px;
-  padding: 5px;
+  padding: 6px;
   border-radius: 5px;
   color: ${(props) => props.theme.colors.textColor};
   background-color: ${(props) => props.theme.colors.btnTxtColor};

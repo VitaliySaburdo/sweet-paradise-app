@@ -92,9 +92,11 @@ export const Header: React.FC<OrderProps> = ({
           <UserNav>
             {isLogin && (
               <li>
-                <Btn onClick={() => setIsAdminModalOpen(true)}>
-                  <Img src={admin} alt="admin" width="40px" />
-                </Btn>
+                <Tooltip content="Admin panel">
+                  <Btn onClick={() => setIsAdminModalOpen(true)}>
+                    <Img src={admin} alt="admin" width="40px" />
+                  </Btn>
+                </Tooltip>
               </li>
             )}
             {isAdminModalOpen && (
@@ -102,16 +104,16 @@ export const Header: React.FC<OrderProps> = ({
                 <AdminForm />
               </Modal>
             )}
-            
+
             <li>
               <Tooltip content={"Basket"}>
                 <Btn onClick={() => setIsCartModalOpen(true)}>
                   <Img src={basket} alt="basket" width="40px" />
                   {orders.length > 0 && <CartIcon>{orders.length}</CartIcon>}
-              </Btn>
+                </Btn>
               </Tooltip>
-              </li>
-            
+            </li>
+
             {isCartModalOpen && (
               <Modal onClick={() => setIsCartModalOpen(false)}>
                 <CartWrapper>
@@ -136,10 +138,10 @@ export const Header: React.FC<OrderProps> = ({
             )}
             <li>
               <Tooltip content={"User menu"}>
-              <Btn onClick={() => setIsLoginModalOpen(true)}>
-                <Img src={user} alt="user" width="40px" />
+                <Btn onClick={() => setIsLoginModalOpen(true)}>
+                  <Img src={user} alt="user" width="40px" />
                 </Btn>
-                </Tooltip>
+              </Tooltip>
             </li>
             {isLoginModalOpen && (
               <Modal onClick={() => setIsLoginModalOpen(false)}>
