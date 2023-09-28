@@ -41,8 +41,9 @@ export const StyledContainer = styled(Container)`
   overflow: hidden;
   @media screen and (${(props) => props.theme.media.lg}){
   background-image:url(${fruit}), url(${chocolate});
+  background-size: 25%, 50%;
   background-repeat: no-repeat;
-  background-position: -15% 0%, 130% 0%;
+  background-position: -10% 3%, 130% 0%;
   }
 `
 
