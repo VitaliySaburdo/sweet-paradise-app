@@ -3,6 +3,7 @@ import { useSelector } from "react-redux";
 import { selectIsLoggedIn } from "../../redux/auth/selectors";
 import { Container } from "../Container/Container";
 import { NavBar } from "../NavBar/NavBar";
+import { Tooltip } from "../Tooltip/Tooltip";
 import {
   Wrapper,
   HeaderWrapper,
@@ -101,19 +102,23 @@ export const Header: React.FC<OrderProps> = ({
                 <AdminForm />
               </Modal>
             )}
+            
             <li>
-              <Btn onClick={() => setIsCartModalOpen(true)}>
-                <Img src={basket} alt="basket" width="40px" />
-                {orders.length > 0 && <CartIcon>{orders.length}</CartIcon>}
+              <Tooltip content={"Basket"}>
+                <Btn onClick={() => setIsCartModalOpen(true)}>
+                  <Img src={basket} alt="basket" width="40px" />
+                  {orders.length > 0 && <CartIcon>{orders.length}</CartIcon>}
               </Btn>
-            </li>
+              </Tooltip>
+              </li>
+            
             {isCartModalOpen && (
               <Modal onClick={() => setIsCartModalOpen(false)}>
                 <CartWrapper>
-                  <CartTitle>Your cart</CartTitle>
+                  <CartTitle>Your basket</CartTitle>
                   {orders.length === 0 ? (
                     <>
-                      <CartText>Your cart is empty</CartText>
+                      <CartText>Your basket is empty</CartText>
                       <CartImg src={cart} alt="cart" width="40px" />
                     </>
                   ) : (
@@ -130,9 +135,11 @@ export const Header: React.FC<OrderProps> = ({
               </Modal>
             )}
             <li>
+              <Tooltip content={"User menu"}>
               <Btn onClick={() => setIsLoginModalOpen(true)}>
                 <Img src={user} alt="user" width="40px" />
-              </Btn>
+                </Btn>
+                </Tooltip>
             </li>
             {isLoginModalOpen && (
               <Modal onClick={() => setIsLoginModalOpen(false)}>
