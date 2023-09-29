@@ -1,6 +1,6 @@
 import styled, { keyframes } from "styled-components";
 import { Form, Field, ErrorMessage } from "formik";
-import { Button } from "../Button/Button";
+import { Button } from "../../components/Button/Button";
 
 export const StyledButton = styled(Button)`
 margin: 0 auto;

@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { selectIsLoggedIn } from "../../redux/auth/selectors";
-import { Container } from "../Container/Container";
-import { NavBar } from "../NavBar/NavBar";
-import { Tooltip } from "../Tooltip/Tooltip";
+import { Container } from "../../components/Container/Container";
+import { NavBar } from "../../components/NavBar/NavBar";
+import { Tooltip } from "../../components/Tooltip/Tooltip";
 import {
   Wrapper,
   HeaderWrapper,
@@ -25,11 +25,11 @@ import basket from "../../images/Header/basket.png";
 import cart from "../../images/Header/cart.png";
 import user from "../../images/Header/user.png";
 import admin from "../../images/Header/admin.png";
-import { Modal } from "../Modal/Modal";
-import { LoginForm } from "../LoginForm/LoginForm";
-import { ProductProps } from "../App/App.types";
-import { CartList } from "../CartList/CartList";
-import { AdminForm } from "../AdminForm/AdminForm";
+import { Modal } from "../../components/Modal/Modal";
+import { LoginForm } from "../../components/LoginForm/LoginForm";
+import { ProductProps } from "../../components/App/App.types";
+import { CartList } from "../../components/CartList/CartList";
+import { AdminForm } from "../../components/AdminForm/AdminForm";
 
 interface OrderProps {
   orders: ProductProps[];

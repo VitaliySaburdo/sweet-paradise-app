@@ -1,5 +1,5 @@
-import { Container } from "../Container/Container";
-import { NavBar } from "../NavBar/NavBar";
+import { Container } from "../../components/Container/Container";
+import { NavBar } from "../../components/NavBar/NavBar";
 
 import {
   FooterWrapper,

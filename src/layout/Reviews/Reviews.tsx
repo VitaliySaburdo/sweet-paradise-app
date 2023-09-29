@@ -1,12 +1,12 @@
 import { useState } from "react";
 import * as yup from "yup";
 import { Formik } from "formik";
-import { Button } from "../Button/Button";
-import { Container } from "../Container/Container";
-import { FeedbackList } from "../FeedbackList/FeedbackList";
-import { Modal } from "../Modal/Modal";
-import { Section } from "../Section/Section";
-import { feedbacks } from "./dataFeedback";
+import { Button } from "../../components/Button/Button";
+import { Container } from "../../components/Container/Container";
+import { FeedbackList } from "../../components/FeedbackList/FeedbackList";
+import { Modal } from "../../components/Modal/Modal";
+import { Section } from "../../components/Section/Section";
+import { feedbacks } from "../../db/dataFeedback";
 import {
   StyledForm,
   StyledField,

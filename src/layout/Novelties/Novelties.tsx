@@ -1,8 +1,8 @@
-import { Container } from "../Container/Container";
-import { ProductList } from "../ProductList/ProductList";
-import { Section } from "../Section/Section";
+import { Container } from "../../components/Container/Container";
+import { ProductList } from "../../components/ProductList/ProductList";
+import { Section } from "../../components/Section/Section";
 import { Title } from "./Novelties.styled";
-import { ProductProps } from "../App/App.types";
+import { ProductProps } from "../../components/App/App.types";
 
 interface NoveltiesProps {
   products: ProductProps[];

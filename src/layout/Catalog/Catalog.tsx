@@ -15,9 +15,9 @@ import macaron from "../../images/Goods/macaron.png";
 import cupcake from "../../images/Goods/cupcake.png";
 import muffin from "../../images/Goods/muffin.png";
 import donut from "../../images/Goods/donut.png";
-import { Section } from "../Section/Section";
-import { ProductList } from "../ProductList/ProductList";
-import { ProductProps } from "../App/App.types";
+import { Section } from "../../components/Section/Section";
+import { ProductList } from "../../components/ProductList/ProductList";
+import { ProductProps } from "../../components/App/App.types";
 
 interface CategoryProps {
   fetchProductsByCategory: (id: string) => void;

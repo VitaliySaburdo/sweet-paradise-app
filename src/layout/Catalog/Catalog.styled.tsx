@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Container } from "../Container/Container";
+import { Container } from "../../components/Container/Container";
 import chocolate from '../../images/Catalog/chocolate.png';
 import fruit from '../../images/Catalog/fruit.png';
 

@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Section } from "../Section/Section";
+import { Section } from "../../components/Section/Section";
 import strawberry from "../../images/Benefits/strawberry.png";
 
 export const SectionWrapper = styled(Section)`

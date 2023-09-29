@@ -1,7 +1,7 @@
 import { Suspense } from "react";
 import { Outlet } from "react-router-dom";
-import { Header } from "../Header/Header";
-import { Footer } from "../Footer/Footer";
+import { Header } from "../../layout/Header/Header";
+import { Footer } from "../../layout/Footer/Footer";
 import { ProductProps } from "../App/App.types";
 
 // import { Loader } from 'components/Loader/Loader';

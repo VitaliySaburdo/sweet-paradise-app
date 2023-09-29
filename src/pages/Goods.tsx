@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useEffect } from "react";
 import { getProductsByCategories } from "../components/apiService/apiService";
-import { Catalog } from "../components/Catalog/Catalog";
+import { Catalog } from "../layout/Catalog/Catalog";
 import { Order } from "../components/Order/Order";
 import { ProductProps } from "../components/App/App.types";
 

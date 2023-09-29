@@ -1,4 +1,4 @@
-import { Container } from "../Container/Container";
+import { Container } from "../../components/Container/Container";
 import raspberries from "../../images/Hero/raspberries.png";
 
 import {
@@ -11,7 +11,7 @@ import {
   Text,
   StyledImg
 } from "./Work.styled";
-import { Section } from "../Section/Section";
+import { Section } from "../../components/Section/Section";
 
 export const Work = () => {
   return (

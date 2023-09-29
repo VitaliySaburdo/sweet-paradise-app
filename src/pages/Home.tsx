@@ -1,7 +1,7 @@
-import { Benefits } from "../components/Benefits/Benefits";
-import { Hero } from "../components/Hero/Hero";
-import { Novelties } from "../components/Novelties/Novelties";
-import { Work } from "../components/Work/Work";
+import { Benefits } from "../layout/Benefits/Benefits";
+import { Hero } from "../layout/Hero/Hero";
+import { Novelties } from "../layout/Novelties/Novelties";
+import { Work } from "../layout/Work/Work";
 import {ProductProps} from '../components/App/App.types';
 import { CustomOrder } from "../components/CustomOrder/CustomOrder";
 

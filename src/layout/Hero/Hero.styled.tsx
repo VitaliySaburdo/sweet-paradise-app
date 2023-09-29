@@ -1,11 +1,11 @@
 import styled, { css } from "styled-components";
-import { Button } from "../Button/Button";
+import { Button } from "../../components/Button/Button";
 import ellipse from "../../images/Hero/Ellipse.png";
 import leaf from "../../images/Hero/leaf.png";
 import leaf_sm from "../../images/Hero/leaf_sm.png";
 import raspberries from "../../images/Hero/raspberries.png";
-import { Container } from "../Container/Container";
-import { Section } from "../Section/Section";
+import { Container } from "../../components/Container/Container";
+import { Section } from "../../components/Section/Section";
 
 export const StyledSection = styled(Section)`
   overflow: hidden;

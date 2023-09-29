@@ -10,7 +10,7 @@ import {
   StyledBtn,
 } from "./Hero.styled";
 
-import { Slider } from "../Slider/Slider";
+import { Slider } from "../../components/Slider/Slider";
 import { Link } from "react-router-dom";
 
 export const Hero = () => {
