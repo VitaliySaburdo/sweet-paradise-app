@@ -61,7 +61,7 @@ export const BurgerMenu = styled.div<{ open: boolean }>`
   left: 0;
   width: 100vw;
   height: 100vh;
-  background-color: #ffffff;
+  background-color: ${(props) => props.theme.colors.witeBcgColor};
   padding: 48px 40px;
 
   background-image: url(${fruit});
@@ -103,7 +103,7 @@ export const BurgerBtnSkin = styled.div<{ open: boolean }>`
   &::after,
   & span {
     content: "";
-    background-color: #000000;
+    background-color: ${(props) => props.theme.colors.blackBcgColor};
     position: absolute;
     width: 100%;
     height: 2px;
@@ -204,9 +204,9 @@ export const CartIcon = styled.span`
   right: 0;
   width: 15px;
   height: 15px;
-  background-color: #ffd4dd;
+  background-color: ${(props) => props.theme.colors.primaryColor};
   border-radius: 50%;
-  color: #9c0746;
+  color: ${(props) => props.theme.colors.secondaryColor};
   font-size: 10px;
   font-weight: bold;
 `;

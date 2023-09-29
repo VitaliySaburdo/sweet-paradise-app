@@ -68,7 +68,7 @@ export const CatalogImg = styled.img`
 `;
 
 export const CatalogText = styled.p`
-  color: #b44e79;
+  color: ${(props) => props.theme.colors.secondaryTextColor};
   font-family: Montserrat;
   font-size: 16px;
   font-style: normal;

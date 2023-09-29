@@ -17,7 +17,7 @@ const fadeIn = keyframes`
 
 export const Title = styled.h2`
   text-align: center;
-  color: #444251;
+  color: ${(props) => props.theme.colors.textColor};
   font-family: Montserrat;
   font-size: 24px;
   font-style: normal;
@@ -49,7 +49,7 @@ export const StyledText = styled.p`
     position: absolute;
     bottom: 43%;
     left: -23.5%;
-    color: #9c0746;
+    color: ${(props) => props.theme.colors.secondaryColor};
     font-family: Sail;
     font-size: 70px;
     font-style: normal;
@@ -67,7 +67,7 @@ export const Wrapper = styled.div`
   position: relative;
   display: flex;
   justify-content: center;
-  background-color: #ffd4dd;
+  background-color: ${(props) => props.theme.colors.primaryColor};
   width: 360px;
   height: 550px;
   margin: 0 auto;
@@ -89,7 +89,7 @@ export const FormWrapper = styled.div`
   height: 96%;
   width: 340px;
   border-radius: 10px;
-  background-color: #ffffff;
+  background-color: ${(props) => props.theme.colors.witeBcgColor};
   padding: 45px 60px;
   margin-top: auto;
   margin-bottom: auto;
@@ -101,7 +101,7 @@ export const FormWrapper = styled.div`
 `;
 
 export const FormTitle = styled.h3`
-  color: #9c0746;
+  color: ${(props) => props.theme.colors.secondaryColor};
   font-family: Montserrat;
   font-size: 20px;
   font-style: normal;
@@ -114,7 +114,7 @@ export const FormTitle = styled.h3`
 `;
 
 export const FormText = styled.p`
-  color: #444251;
+  color: ${(props) => props.theme.colors.textColor};
   text-align: center;
   font-family: Open Sans;
   font-size: 16px;
@@ -145,7 +145,7 @@ export const StyledField = styled(Field)`
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   margin-bottom: 25px;
   &:focus {
-    outline-color: #9c0746;
+    outline-color: ${(props) => props.theme.colors.secondaryColor};
   }
   @media screen and (${(props) => props.theme.media.md}) {
     height: 40px;
@@ -158,7 +158,7 @@ export const StyledButton = styled(Button)`
 `;
 
 export const Text = styled.p`
-  color: #444251;
+  color: ${(props) => props.theme.colors.textColor};
   text-align: center;
   font-family: Open Sans;
   font-size: 14px;

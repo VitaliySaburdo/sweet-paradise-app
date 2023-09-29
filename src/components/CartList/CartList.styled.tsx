@@ -16,12 +16,12 @@ export const Container = styled.ul`
   }
 
   &::-webkit-scrollbar-thumb {
-    background-color: #9c0746;
+    background-color: ${(props) => props.theme.colors.secondaryColor};
     border-radius: 4px;
   }
 
   &::-webkit-scrollbar-thumb:hover {
-    background-color: #555555;
+    background-color: ${(props) => props.theme.colors.scrollBcgColor};
   }
 
   &::-webkit-scrollbar-track {

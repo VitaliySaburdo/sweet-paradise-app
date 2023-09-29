@@ -50,7 +50,7 @@ export const Title = styled.h2`
   font-family: Montserrat;
   text-align: center;
   font-size: 24px;
-  color: #a0114e;
+  color: ${(props) => props.theme.colors.titleTextColor};
   font-style: normal;
   font-weight: 900;
   line-height: normal;
@@ -66,12 +66,12 @@ export const Title = styled.h2`
 `;
 
 export const AccentText = styled.span`
-  color: #ffffff;
+  color: ${(props) => props.theme.colors.witeTextColor};
 `;
 
 export const Text = styled.p`
   text-align: center;
-  color: #fff;
+  color: ${(props) => props.theme.colors.witeTextColor};
   font-family: Open Sans;
   font-size: 16px;
   font-style: normal;
@@ -105,15 +105,15 @@ export const StyledField = styled.input`
   border-top: none;
   border-right: none;
   border-left: none;
-  border-bottom: solid 1px #ffffff;
+  border-bottom: solid 1px ${(props) => props.theme.colors.witeTextColor};
 
   &:focus {
     outline: none;
   }
   &::placeholder {
-    color: #ffffff;
+    color: ${(props) => props.theme.colors.witeTextColor};
   }
-  color: #ffffff;
+  color: ${(props) => props.theme.colors.witeTextColor};
 `;
 
 export const Img = styled.img`

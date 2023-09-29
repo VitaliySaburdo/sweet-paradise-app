@@ -46,7 +46,7 @@ export const StyledField = styled(Field)`
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   margin-bottom: 3px;
   &:focus {
-    outline-color: #9c0746;
+    outline-color: ${(props) => props.theme.colors.secondaryColor};
   }
 `;
 export const StyledFieldFeedback = styled(Field)`
@@ -61,7 +61,7 @@ export const StyledFieldFeedback = styled(Field)`
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   margin-bottom: 3px;
   &:focus {
-    outline-color: #9c0746;
+    outline-color: ${(props) => props.theme.colors.secondaryColor};
   }
 `;
 
@@ -78,7 +78,7 @@ export const Wrapper = styled.div`
   align-items: center;
   justify-content: space-around;
   border-radius: 10px;
-  background-color: #ffd4dd;
+  background-color: ${(props) => props.theme.colors.primaryColor};
   filter: drop-shadow(0px 4px 30px rgba(67, 6, 32, 0.3));
   padding: 10px;
   margin-bottom: 60px;

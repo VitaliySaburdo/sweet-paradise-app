@@ -13,7 +13,7 @@ export const SectionWrapper = styled(Section)`
 `;
 
 export const Title = styled.h2`
-  color: #444251;
+  color: ${(props) => props.theme.colors.textColor};
   text-align: center;
   font-family: Montserrat;
   font-size: 24px;
@@ -45,7 +45,7 @@ export const Wrapper = styled.ul`
 `;
 
 export const Text = styled.p`
-  color: #444251;
+  color: ${(props) => props.theme.colors.textColor};
   text-align: center;
   font-family: Open Sans;
   font-size: 16px;
@@ -101,9 +101,9 @@ export const ImgWrapper = styled.div`
   height: 80px;
   border-radius: 50%;
   margin-bottom: 15px;
-  background-color: #fde5ea;
+  background-color: ${(props) => props.theme.colors.primaryColor};
   stroke-width: 1px;
-  stroke: #ffd4dd;
+  stroke: ${(props) => props.theme.colors.primaryColor};
   filter: drop-shadow(0px 15px 40px rgba(254, 195, 207, 0.5));
   @media screen and (${(props) => props.theme.media.md}) {
     margin-bottom: 0;

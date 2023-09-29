@@ -4,7 +4,7 @@ export const Title = styled.h2`
   width: 200px;
   margin-left: auto;
   margin-right: auto;
-  color: #444251;
+  color: ${(props) => props.theme.colors.textColor};
   text-align: center;
   font-family: Montserrat;
   font-size: 24px;

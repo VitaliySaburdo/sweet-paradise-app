@@ -30,7 +30,7 @@ export const Overlay = styled.div`
   align-items: center;
   overflow: hidden auto;
   z-index: 1000;
-  background-color: #61616199;
+  background-color: ${(props) => props.theme.colors.overlayColor};
 `;
 
 export const ModalBody = styled.div`
@@ -42,7 +42,7 @@ export const ModalBody = styled.div`
   padding: 44px 20px 16px;
   box-shadow: 3px 8px 14px rgba(136, 198, 253, 0.19);
   border-radius: 20px;
-  background-color: #ffffff;
+  background-color: ${(props) => props.theme.colors.witeBcgColor};
   opacity: 0;
   animation: ${fadeIn} 0.3s ease-in-out forwards;
 

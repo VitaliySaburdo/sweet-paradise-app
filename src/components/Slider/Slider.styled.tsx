@@ -59,7 +59,7 @@ export const TextWrapper = styled.p`
   width: 140px;
   height: 45px;
   border-radius: 40px;
-  background: #fff;
+  background: ${(props) => props.theme.colors.witeBcgColor};
   box-shadow: 0px 15px 40px 0px rgba(0, 0, 0, 0.25);
   @media screen and (${(props) => props.theme.media.lg}) {
     position: absolute;
@@ -84,7 +84,7 @@ export const Btn = styled.button`
   width: 50px;
   height: 50px;
   border-radius: 5px;
-  background: #fff;
+  background: ${(props) => props.theme.colors.witeBcgColor};
   box-shadow: 0px 4px 30px 0px rgba(0, 0, 0, 0.25);
   border: none;
   cursor: pointer;
@@ -92,7 +92,6 @@ export const Btn = styled.button`
 
 export const MainWrapper = styled.div<{ index: number }>`
   margin-top: 57px;
-  /* position: relative; */
   width: 100%;
   @media screen and (${(props) => props.theme.media.lg}) {
     position: absolute;

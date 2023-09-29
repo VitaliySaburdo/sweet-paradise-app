@@ -40,7 +40,7 @@ export const SweetWrapper = styled.p`
     position: absolute;
     top: -250px;
     left: -450px;
-    color: #9c0746;
+    color: ${(props) => props.theme.colors.secondaryColor};
     font-family: Sail;
     font-size: 400px;
     font-style: normal;
@@ -59,7 +59,7 @@ export const ParadiseWrapper = styled.p`
     z-index: -1;
     top: -160px;
     left: -220px;
-    color: #9c0746;
+    color: ${(props) => props.theme.colors.secondaryColor};
     font-family: Montserrat;
     font-size: 400px;
     font-style: normal;

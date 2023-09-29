@@ -18,9 +18,17 @@ export const theme = Object.freeze({
   colors: {
     // My styles
     textColor: '#444251',
+    witeTextColor: '#FFFFFF', 
     primaryColor: '#FFD4DD',
     secondaryColor: '#9C0746',
     btnTxtColor: '#FFFFFF',
+    secondaryTextColor: '#b44e79',
+    titleTextColor: '#a0114e',
+    witeBcgColor: '#FFFFFF',
+    blackBcgColor: '#000000',
+    btnHoverColor: '#bf1c60',
+    scrollBcgColor: '#555555',
+    overlayColor: '#61616199',
 
   },
   media: {

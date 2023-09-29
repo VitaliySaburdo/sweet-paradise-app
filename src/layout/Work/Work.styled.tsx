@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const MainTitle = styled.h2`
-color: #444251;
+color: ${(props) => props.theme.colors.textColor};
 text-align: center;
 font-family: Montserrat;
 font-size: 24px;
@@ -62,8 +62,7 @@ export const Item = styled.li`
   align-items: center;
   padding: 40px;
   border-radius: 5px;
-  border: 1px solid #ffd4dd;
-  /* background-color: #ffffff; */
+  border: 1px solid ${(props) => props.theme.colors.primaryColor};
 `;
 export const Circle = styled.div`
   display: flex;
@@ -72,12 +71,12 @@ export const Circle = styled.div`
   width: 80px;
   height: 80px;
   border-radius: 50%;
-  background-color: #ffd4dd;
+  background-color: ${(props) => props.theme.colors.primaryColor};
   filter: drop-shadow(0px 4px 30px rgba(67, 6, 32, 0.3));
   margin-bottom: 32px;
 `;
 export const StyledNumber = styled.p`
-  color: #b44e79;
+  color: ${(props) => props.theme.colors.secondaryTextColor};
   text-align: center;
   font-family: Montserrat;
   font-size: 30px;
@@ -87,7 +86,7 @@ export const StyledNumber = styled.p`
 `;
 
 export const Title = styled.h3`
-  color: #b44e79;
+  color: ${(props) => props.theme.colors.secondaryTextColor};
   text-align: center;
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   font-family: Montserrat;
@@ -99,7 +98,7 @@ export const Title = styled.h3`
 `;
 
 export const Text = styled.p`
-  color: #444251;
+  color: ${(props) => props.theme.colors.textColor};
   text-align: center;
   font-family: Open Sans;
   font-size: 16px;

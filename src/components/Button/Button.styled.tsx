@@ -23,7 +23,7 @@ export const StyledButton = styled.button<StyledButtonProps>`
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   &:hover {
-    background-color: #bf1c60;
+    background-color: ${(props) => props.theme.colors.btnHoverColor};
   }
   @media screen and (${(props) => props.theme.media.md}) {
     width: ${(props) => props.width || "260px"};

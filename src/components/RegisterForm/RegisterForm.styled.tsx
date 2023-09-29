@@ -32,7 +32,7 @@ export const StyledField = styled(Field)`
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   margin-bottom: 3px;
   &:focus {
-    outline-color: #9c0746;
+    outline-color: ${(props) => props.theme.colors.secondaryColor};
   }
 `;
 

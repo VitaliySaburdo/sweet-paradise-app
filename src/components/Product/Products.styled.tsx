@@ -22,7 +22,7 @@ export const Img = styled.img`
 `;
 
 export const Title = styled.h3`
-  color: #9c0746;
+  color: ${(props) => props.theme.colors.secondaryColor};
   text-align: center;
   font-family: Montserrat;
   font-size: 26px;
@@ -40,7 +40,7 @@ export const Title = styled.h3`
 
 export const Text = styled.p`
   width: 220px;
-  color: #444251;
+  color: ${(props) => props.theme.colors.textColor};
   text-align: center;
   font-family: Open Sans;
   font-size: 14px;
@@ -54,7 +54,7 @@ export const Text = styled.p`
 `;
 
 export const Params = styled.p`
-  color: #9c0746;
+  color: ${(props) => props.theme.colors.secondaryColor};
   text-align: center;
   font-family: Montserrat;
   font-size: 20px;

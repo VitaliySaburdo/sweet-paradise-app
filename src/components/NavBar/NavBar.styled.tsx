@@ -27,14 +27,14 @@ export const NavList = styled.ul<{ display: string }>`
 `;
 
 export const StyledLink = styled(NavLink)`
-  color: ${(props) => props.color || "#444251"};
+  color: ${(props) => props.color || props.theme.colors.textColor};
   font-family: Montserrat;
   font-size: 16px;
   font-style: normal;
-  font-weight: 400;
+  font-weight: 600;
   line-height: normal;
   &.active {
-    color: #000000;
+    color: ${(props) => props.theme.colors.blackBcgColor};
     font-weight: 600;
     transition-duration: 300ms;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);

@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 export const FooterWrapper = styled.footer`
   padding-top: 40px;
   padding-bottom: 40px;
-  background-color: #9c0746;
+  background-color: ${(props) => props.theme.colors.secondaryColor};
   @media screen and (${(props) => props.theme.media.md}) {
     padding-top: 110px;
     padding-bottom: 20px;
@@ -12,7 +12,7 @@ export const FooterWrapper = styled.footer`
 `;
 export const StyledLogoLink = styled(Link)`
   display: block;
-  color: #fff;
+  color: ${(props) => props.theme.colors.witeTextColor};
   font-family: Sail;
   font-size: 24px;
   font-style: normal;
@@ -29,7 +29,7 @@ export const StyledLogoLink = styled(Link)`
 
 export const StyledPhoneLink = styled(Link)`
   display: block;
-  color: #fff;
+  color: ${(props) => props.theme.colors.witeTextColor};
   font-family: Open Sans;
   font-size: 16px;
   font-style: normal;
@@ -43,7 +43,7 @@ export const StyledPhoneLink = styled(Link)`
   }
 `;
 export const Text = styled.p`
-  color: #fff;
+  color: ${(props) => props.theme.colors.witeTextColor};
   font-family: Open Sans;
   font-size: 12px;
   font-style: normal;
