@@ -27,7 +27,7 @@ import user from "../../images/Header/user.png";
 import admin from "../../images/Header/admin.png";
 import { Modal } from "../../components/Modal/Modal";
 import { LoginForm } from "../../components/LoginForm/LoginForm";
-import { ProductProps } from "../../App/App.types";
+import { ProductProps } from "../../app/App.types";
 import { CartList } from "../../components/CartList/CartList";
 import { AdminForm } from "../../components/AdminForm/AdminForm";
 

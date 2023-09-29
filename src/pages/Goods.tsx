@@ -3,7 +3,7 @@ import { useEffect } from "react";
 import { getProductsByCategories } from "../services/apiService";
 import { Catalog } from "../layout/Catalog/Catalog";
 import { Order } from "../components/Order/Order";
-import { ProductProps } from "../App/App.types";
+import { ProductProps } from "../app/App.types";
 
 interface CatalogProps {
   loading: boolean;

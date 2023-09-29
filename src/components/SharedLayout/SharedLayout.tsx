@@ -2,7 +2,7 @@ import { Suspense } from "react";
 import { Outlet } from "react-router-dom";
 import { Header } from "../../layout/Header/Header";
 import { Footer } from "../../layout/Footer/Footer";
-import { ProductProps } from "../../App/App.types";
+import { ProductProps } from "../../app/App.types";
 
 // import { Loader } from 'components/Loader/Loader';
 // import PawLoader from '../../images/Loader.png';

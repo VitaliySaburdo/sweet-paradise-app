@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Img, Wrapper, Title, Text, Params } from "../Product/Products.styled";
 import { Button } from "../Button/Button";
-import {ProductProps} from '../../App/App.types';
+import {ProductProps} from '../../app/App.types';
 
 interface NoveltiesItem {
   product: ProductProps;

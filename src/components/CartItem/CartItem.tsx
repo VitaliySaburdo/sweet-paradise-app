@@ -8,7 +8,7 @@ import {
   Btn,
   CloseBtn,
 } from "./CartItem.styled";
-import { ProductProps } from "../../App/App.types";
+import { ProductProps } from "../../app/App.types";
 import cross from '../../images/Modal/cross.png';
 
 interface CartItemProps {

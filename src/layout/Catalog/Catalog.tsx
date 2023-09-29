@@ -17,7 +17,7 @@ import muffin from "../../images/Goods/muffin.png";
 import donut from "../../images/Goods/donut.png";
 import { Section } from "../../components/Section/Section";
 import { ProductList } from "../../components/ProductList/ProductList";
-import { ProductProps } from "../../App/App.types";
+import { ProductProps } from "../../app/App.types";
 
 interface CategoryProps {
   fetchProductsByCategory: (id: string) => void;
