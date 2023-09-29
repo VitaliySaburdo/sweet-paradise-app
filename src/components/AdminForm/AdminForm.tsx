@@ -6,7 +6,8 @@ export const AdminForm = () => {
 
   return (
     <>
-      <h2>Admin panel</h2>
+      <h2>Add goods</h2>
+      
       <button onClick={() => dispatch(logOut() as any)}>Logout</button>
     </>
   );
