@@ -2,7 +2,7 @@ import { useDispatch } from "react-redux";
 import { useEffect, useState } from "react";
 import { Route, Routes } from "react-router-dom";
 import { refreshUser } from "../redux/auth/operations";
-import { getProductsByCategories } from "../apiService/apiService";
+import { getProductsByCategories } from "../services/apiService";
 import { StyleSheetManager } from "styled-components";
 import { ThemeProvider } from "styled-components";
 import { theme } from "../theme/theme";
