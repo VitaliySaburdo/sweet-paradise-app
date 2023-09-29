@@ -2,8 +2,8 @@ import { Benefits } from "../layout/Benefits/Benefits";
 import { Hero } from "../layout/Hero/Hero";
 import { Novelties } from "../layout/Novelties/Novelties";
 import { Work } from "../layout/Work/Work";
-import {ProductProps} from '../components/App/App.types';
-import { CustomOrder } from "../components/CustomOrder/CustomOrder";
+import {ProductProps} from '../App/App.types';
+import { CustomOrder } from "../layout/CustomOrder/CustomOrder";
 
 
 interface NoveltiesProps {

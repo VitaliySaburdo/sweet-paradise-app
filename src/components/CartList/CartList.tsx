@@ -1,4 +1,4 @@
-import { ProductProps } from "../App/App.types";
+import { ProductProps } from "../../App/App.types";
 import { Button } from "../Button/Button";
 import { CartItem } from "../CartItem/CartItem";
 import {

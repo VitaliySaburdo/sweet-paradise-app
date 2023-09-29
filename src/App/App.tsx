@@ -1,16 +1,16 @@
 import { useDispatch } from "react-redux";
 import { useEffect, useState } from "react";
 import { Route, Routes } from "react-router-dom";
-import { refreshUser } from "../../redux/auth/operations";
+import { refreshUser } from "../redux/auth/operations";
 import { getProductsByCategories } from "../apiService/apiService";
 import { StyleSheetManager } from "styled-components";
 import { ThemeProvider } from "styled-components";
-import { theme } from "../../theme/theme";
-import { SharedLayout } from "../SharedLayout/SharedLayout";
-import { Home } from "../../pages/Home";
-import { Goods } from "../../pages/Goods";
+import { theme } from "../theme/theme";
+import { SharedLayout } from "../components/SharedLayout/SharedLayout";
+import { Home } from "../pages/Home";
+import { Goods } from "../pages/Goods";
 import { ProductProps } from "./App.types";
-import { Feedback } from "../../pages/Feedback";
+import { Feedback } from "../pages/Feedback";
 
 function App() {
   const [products, setProducts] = useState([]);

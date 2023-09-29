@@ -1,4 +1,4 @@
-import { Container } from "../Container/Container";
+import { Container } from "../../components/Container/Container";
 import user from "../../images/CustomOrder/user.png";
 import phone from "../../images/CustomOrder/phone.png";
 

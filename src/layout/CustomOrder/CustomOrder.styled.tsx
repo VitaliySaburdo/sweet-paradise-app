@@ -1,9 +1,9 @@
 import styled from "styled-components";
-import { Section } from "../Section/Section";
+import { Section } from "../../components/Section/Section";
 import box from "../../images/CustomOrder/box.png";
 import box_md from "../../images/CustomOrder/box_md.png";
 import box_sm from "../../images/CustomOrder/box_sm.png";
-import { Button } from "../Button/Button";
+import { Button } from "../../components/Button/Button";
 // import leaf from '../../images/CustomOrder/leaf.png';
 // import leaf_blur from '../../images/CustomOrder/leaf_blur.png';
 

@@ -1,6 +1,6 @@
 import { Product } from "../Product/Product";
 import { Wrapper } from "./ProductList.styled";
-import { ProductProps } from "../App/App.types";
+import { ProductProps } from "../../App/App.types";
 
 interface ProductListProps {
   products: ProductProps[];
