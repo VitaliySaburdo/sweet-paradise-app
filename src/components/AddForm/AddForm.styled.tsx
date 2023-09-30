@@ -55,7 +55,7 @@ export const StyledMessage = styled(ErrorMessage)`
 
 export const StyledFieldIngredients = styled(Field)`
   margin: 0;
-  height: 160px;
+  height: 120px;
   padding: 12px 20px;
   border: 1px solid rgba(33, 33, 33, 0.2);
   border-radius: 10px;

@@ -106,7 +106,7 @@ export const AddForm: React.FC<AddFormProps> = ({ closeModal }) => {
               name="ingredients"
               component="textarea"
               rows="4"
-              cols="30"
+              cols="20"
             />
             <StyledMessage name="ingredients" component="div" />
 
