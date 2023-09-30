@@ -29,7 +29,7 @@ import { Modal } from "../../components/Modal/Modal";
 import { LoginForm } from "../../components/LoginForm/LoginForm";
 import { ProductProps } from "../../App/App.types";
 import { CartList } from "../../components/CartList/CartList";
-import { AdminForm } from "../../components/AdminForm/AdminForm";
+import { AdminForm } from "../../components/AddForm/AddForm";
 
 interface OrderProps {
   orders: ProductProps[];
