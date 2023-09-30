@@ -76,3 +76,35 @@ export const LogoutBtn = styled(Button)`
   margin-left: auto;
   margin-right: auto;
 `;
+
+export const StyledFileInputWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
+
+export const StyledFileInput = styled(Field)`
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 4px;
+  background-color: #fff;
+  
+
+  opacity: 0; 
+  position: absolute;
+   cursor: pointer;
+`;
+
+export const StyledFileInputLabel = styled.label`
+  background-color: #3498db;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 14px;
+  margin-top: 10px;
+ 
+
+  &:hover {
+    background-color: #2980b9;
+  }
+`;
