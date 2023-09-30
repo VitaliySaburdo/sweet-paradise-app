@@ -29,7 +29,7 @@ import { Modal } from "../../components/Modal/Modal";
 import { LoginForm } from "../../components/LoginForm/LoginForm";
 import { ProductProps } from "../../App/App.types";
 import { CartList } from "../../components/CartList/CartList";
-import { AdminForm } from "../../components/AddForm/AddForm";
+import { AddForm } from "../../components/AddForm/AddForm";
 
 interface OrderProps {
   orders: ProductProps[];
@@ -101,7 +101,7 @@ export const Header: React.FC<OrderProps> = ({
             )}
             {isAdminModalOpen && (
               <Modal onClick={() => setIsAdminModalOpen(false)}>
-                <AdminForm />
+                <AddForm closeModal={() => setIsAdminModalOpen(false)} />
               </Modal>
             )}
 

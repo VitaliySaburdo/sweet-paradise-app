@@ -1,5 +1,6 @@
-import styled, {keyframes} from "styled-components";
+import styled, { keyframes } from "styled-components";
 import { Form, Field, ErrorMessage } from "formik";
+import { Button } from "../Button/Button";
 
 const fadeIn = keyframes`
   from {
@@ -13,12 +14,13 @@ const fadeIn = keyframes`
 export const StyledForm = styled(Form)`
   display: flex;
   flex-direction: column;
+  margin-bottom: 20px;
 `;
 
 export const Title = styled.h2`
   font-weight: 16px;
   margin: 0 auto;
-`
+`;
 
 export const StyledField = styled(Field)`
   margin: 0;
@@ -49,4 +51,28 @@ export const StyledMessage = styled(ErrorMessage)`
   color: red;
   animation: ${fadeIn} 0.5s ease-in-out;
   margin: 0 auto;
+`;
+
+export const StyledFieldIngredients = styled(Field)`
+  margin: 0;
+  height: 160px;
+  padding: 12px 20px;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 10px;
+  cursor: pointer;
+  transition-property: border-color, outline-color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  margin-bottom: 3px;
+  &:focus {
+    outline-color: ${(props) => props.theme.colors.secondaryColor};
+  }
+`;
+
+export const LogoutBtn = styled(Button)`
+  display: block;
+  width: 120px;
+  height: 40px;
+  margin-left: auto;
+  margin-right: auto;
 `;
