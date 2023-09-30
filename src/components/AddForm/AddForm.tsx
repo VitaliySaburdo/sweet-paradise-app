@@ -60,7 +60,6 @@ export const AddForm: React.FC<AddFormProps> = ({ closeModal }) => {
                   const selectedFile = event.currentTarget.files?.[0];
 
                   if (selectedFile) {
-                    // Use Formik's setFieldValue to update the form's state
                     setFieldValue("img", selectedFile);
                   } else {
                     // Handle the case where no file is selected, e.g., show an error message
