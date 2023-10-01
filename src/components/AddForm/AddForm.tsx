@@ -1,5 +1,5 @@
 import { useDispatch } from "react-redux";
-import { Formik } from "formik";
+import { Formik, FormikHelpers  } from "formik";
 import { logOut } from "../../redux/auth/operations";
 import { Button } from "../Button/Button";
 import {
@@ -17,27 +17,41 @@ import {
 
 interface AddFormProps {
   closeModal: () => void;
+};
+
+interface FormValues {
+  name: string;
+  price: string;
+  weight: string;
+  category: string;
+  ingredients: string;
+  img: File | null;
 }
+
+const initialValues: FormValues = {
+  name: "",
+  price: "",
+  weight: "",
+  category: "",
+  ingredients: "",
+  img: null,
+};
 
 export const AddForm: React.FC<AddFormProps> = ({ closeModal }) => {
   const dispatch = useDispatch();
+
+  const handleOnSubmit = (
+    values: FormValues,
+    { resetForm }: FormikHelpers<FormValues>
+  ) => {
+    console.log(values);
+    resetForm();
+    closeModal();
+  };
+
   return (
     <>
-      <Formik
-        initialValues={{
-          name: "",
-          price: "",
-          weight: "",
-          category: "",
-          ingredients: "",
-          img: null,
-        }}
-        onSubmit={(values, { resetForm }) => {
-          console.log(values);
-          resetForm();
-          closeModal();
-        }}
-      >
+      <Formik initialValues={initialValues} onSubmit={handleOnSubmit}>
         {({ setFieldValue }) => (
           <StyledForm>
             <Title>Add goods</Title>
