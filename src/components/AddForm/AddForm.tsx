@@ -1,5 +1,6 @@
+import {useState} from 'react';
 import { useDispatch } from "react-redux";
-import { Formik, FormikHelpers  } from "formik";
+import { Formik, FormikHelpers, useFormikContext } from "formik";
 import { logOut } from "../../redux/auth/operations";
 import { Button } from "../Button/Button";
 import {
@@ -17,7 +18,7 @@ import {
 
 interface AddFormProps {
   closeModal: () => void;
-};
+}
 
 interface FormValues {
   name: string;
@@ -25,7 +26,7 @@ interface FormValues {
   weight: string;
   category: string;
   ingredients: string;
-  img: File | null;
+  file: string;
 }
 
 const initialValues: FormValues = {
@@ -34,11 +35,13 @@ const initialValues: FormValues = {
   weight: "",
   category: "",
   ingredients: "",
-  img: null,
+  file: "",
 };
 
 export const AddForm: React.FC<AddFormProps> = ({ closeModal }) => {
+    const [photoPreview, setPhotoPreview] = useState<string | null>(null);
   const dispatch = useDispatch();
+  const { setFieldValue } = useFormikContext();
 
   const handleOnSubmit = (
     values: FormValues,
@@ -46,17 +49,23 @@ export const AddForm: React.FC<AddFormProps> = ({ closeModal }) => {
   ) => {
     const formData = new FormData();
 
-      formData.append("name", values.name);
-      formData.append("price", values.price);
-      formData.append("weight", values.weight);
-      formData.append("category", values.category);
-      formData.append("ingredients", values.ingredients);
-      formData.append("img", values.img!);
+    formData.append("name", values.name);
+    formData.append("price", values.price);
+    formData.append("weight", values.weight);
+    formData.append("category", values.category);
+    formData.append("ingredients", values.ingredients);
+    formData.append("img", values.file!);
 
-
-    console.log(values);
+    console.log(formData);
     resetForm();
     closeModal();
+  };
+
+  const handleUploadFile = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const uploadFile = event.currentTarget.files?.[0];
+    setFieldValue("file", uploadFile);
+    const preview = uploadFile ? URL.createObjectURL(uploadFile) : null;
+    setPhotoPreview(preview);
   };
 
   return (
@@ -77,18 +86,11 @@ export const AddForm: React.FC<AddFormProps> = ({ closeModal }) => {
             <StyledFileInputWrapper>
               <StyledFileInput
                 type="file"
-                id="img"
-                name="img"
+                id="file"
+                name="file"
+                accept="image/*"
                 placeholder="Please select an image"
-                onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
-                  const selectedFile = event.currentTarget.files?.[0];
-
-                  if (selectedFile) {
-                    setFieldValue("img", selectedFile);
-                  } else {
-                    // Handle the case where no file is selected, e.g., show an error message
-                  }
-                }}
+                onChange={handleUploadFile}
               />
               <StyledFileInputLabel htmlFor="img">
                 Select an Image
