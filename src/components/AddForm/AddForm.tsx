@@ -44,6 +44,16 @@ export const AddForm: React.FC<AddFormProps> = ({ closeModal }) => {
     values: FormValues,
     { resetForm }: FormikHelpers<FormValues>
   ) => {
+    const formData = new FormData();
+
+      formData.append("name", values.name);
+      formData.append("price", values.price);
+      formData.append("weight", values.weight);
+      formData.append("category", values.category);
+      formData.append("ingredients", values.ingredients);
+      formData.append("img", values.img!);
+
+
     console.log(values);
     resetForm();
     closeModal();
