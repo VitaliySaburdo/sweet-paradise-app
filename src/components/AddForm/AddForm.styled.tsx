@@ -41,6 +41,7 @@ margin-left: auto;
 export const Title = styled.h2`
   font-weight: 16px;
   margin: 0 auto;
+  margin-bottom: 20px;
 `;
 
 export const StyledField = styled(Field)`
@@ -76,7 +77,7 @@ export const StyledMessage = styled(ErrorMessage)`
 
 export const StyledFieldIngredients = styled(Field)`
   margin: 0;
-  height: 120px;
+  height: 160px;
   padding: 12px 20px;
   border: 1px solid rgba(33, 33, 33, 0.2);
   border-radius: 10px;
@@ -92,8 +93,8 @@ export const StyledFieldIngredients = styled(Field)`
 
 export const LogoutBtn = styled(Button)`
   display: block;
-  width: 120px;
-  height: 40px;
+  width: 180px;
+  height: 50px;
   margin-left: auto;
   margin-right: auto;
 `;
@@ -105,6 +106,7 @@ export const StyledFileInputWrapper = styled.div`
 `;
 
 export const StyledFileInput = styled(Field)`
+background-color: #3498db;
   border: 1px solid #ccc;
   padding: 10px;
   border-radius: 4px;
@@ -113,17 +115,17 @@ export const StyledFileInput = styled(Field)`
 
   opacity: 0; 
   position: absolute;
-   cursor: pointer;
+    cursor: pointer;
 `;
 
 export const StyledFileInputLabel = styled.label`
   background-color: #3498db;
   color: #fff;
   border: none;
-  padding: 10px 20px;
+  padding: 50px 20px;
   border-radius: 14px;
   margin-top: 10px;
- 
+ margin-bottom: 10px;
 
   &:hover {
     background-color: #2980b9;

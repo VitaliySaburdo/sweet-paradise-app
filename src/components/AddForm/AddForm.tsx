@@ -2,7 +2,6 @@ import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { Formik, FormikHelpers, useFormikContext } from "formik";
 import { logOut } from "../../redux/auth/operations";
-import { Button } from "../Button/Button";
 import {
   StyledForm,
   Title,
@@ -50,6 +49,9 @@ export const AddForm: React.FC<AddFormProps> = ({ closeModal }) => {
     values: FormValues,
     { resetForm }: FormikHelpers<FormValues>
   ) => {
+    console.log(values)
+
+
     const formData = new FormData();
 
     formData.append("name", values.name);
@@ -96,6 +98,7 @@ export const AddForm: React.FC<AddFormProps> = ({ closeModal }) => {
               <StyledMessage name="name" component="div" />
 
               <StyledFileInputWrapper>
+                <StyledFileInputLabel htmlFor="file">
                 <StyledFileInput
                   type="file"
                   id="file"
@@ -103,12 +106,20 @@ export const AddForm: React.FC<AddFormProps> = ({ closeModal }) => {
                   accept="image/*"
                   placeholder="Please select an image"
                   onChange={handleUploadFile}
-                />
-                <StyledFileInputLabel htmlFor="file">
+                  />
                   Select an Image
-                </StyledFileInputLabel>
+                  </StyledFileInputLabel>
+                <StyledLabel htmlFor="file">Add image</StyledLabel>
+                
+                  
+                
               </StyledFileInputWrapper>
               <StyledMessage name="file" component="div" />
+              <div style={{ display: "flex" }}>
+                {" "}
+                <PrevBtn onClick={() => closeModal()}>Cancel</PrevBtn>
+                <NextBtn onClick={handleOnNexBtn}>Next</NextBtn>
+              </div>
             </>
           )}
 
@@ -142,7 +153,7 @@ export const AddForm: React.FC<AddFormProps> = ({ closeModal }) => {
               <StyledMessage name="weight" component="div" />
             </>
           )}
-          {(stage === 1 || stage === 2) && (
+          {stage === 2 && (
             <div style={{ display: "flex" }}>
               {" "}
               <PrevBtn onClick={handleOnPrevBtn}>Prev</PrevBtn>
@@ -164,7 +175,7 @@ export const AddForm: React.FC<AddFormProps> = ({ closeModal }) => {
               <div style={{ display: "flex" }}>
                 {" "}
                 <PrevBtn onClick={handleOnPrevBtn}>Prev</PrevBtn>
-                <AddBtn type="submit">add</AddBtn>
+                <AddBtn type="submit">Add</AddBtn>
               </div>
             </>
           )}
