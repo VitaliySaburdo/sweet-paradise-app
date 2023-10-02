@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { Formik, FormikHelpers } from "formik";
+import { createProduct } from "../../services/apiService";
 import { logOut } from "../../redux/auth/operations";
 import {
   StyledForm,
@@ -47,7 +48,7 @@ export const AddForm: React.FC<AddFormProps> = ({ closeModal }) => {
 
   const formData = new FormData();
 
-  const handleOnSubmit = (
+  const handleOnSubmit = async (
     values: FormValues,
     { resetForm }: FormikHelpers<FormValues>
   ) => {
@@ -59,7 +60,12 @@ export const AddForm: React.FC<AddFormProps> = ({ closeModal }) => {
     if (selectedFile) {
       formData.append("file", selectedFile);
     }
-
+    
+    try {
+        await createProduct(formData);
+    } catch (error) {
+      console.log(error);
+    }
     resetForm();
     closeModal();
   };
