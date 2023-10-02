@@ -7,6 +7,10 @@ export const getProductsByCategories = async (id: string) => {
   return response.data;
 };
 
+export const getAllCategories = async () => {
+  const response = await axios.get(`${BASE_URL}/categories`);
+  return response.data;
+};
 
 export const createProduct = async (values: any) => {
   console.log(values);
