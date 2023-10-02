@@ -65,13 +65,14 @@ export const AddForm: React.FC<AddFormProps> = ({ closeModal }) => {
     fetchData();
   }, []);
 
-  const formData = new FormData();
+
 
   const handleOnSubmit = async (
     values: FormValues,
     { resetForm }: FormikHelpers<FormValues>
   ) => {
-  
+      const formData = new FormData();
+
     formData.append("name", values.name);
     formData.append("price", values.price);
     formData.append("weight", values.weight);
@@ -80,6 +81,15 @@ export const AddForm: React.FC<AddFormProps> = ({ closeModal }) => {
     if (selectedFile) {
       formData.append("file", selectedFile);
     }
+
+    // const productData = {
+    //   name: values.name,
+    //   price: parseFloat(values.price),
+    //   weight: values.weight,
+    //   category: selectCategory,
+    //   img: selectedFile?.name || "",
+    //   ingredients: values.ingredients,
+    // };
 
     try {
       await createProduct(formData);
@@ -161,7 +171,6 @@ export const AddForm: React.FC<AddFormProps> = ({ closeModal }) => {
                 placeholder="Please enter category of goods"
                 onChange={(e: React.ChangeEvent<HTMLSelectElement>) =>
                   setSelectCategory(e.target.value)
-                  
                 }
               >
                 {categories.length &&

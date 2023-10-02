@@ -1,6 +1,6 @@
-import axios from 'axios';
+import axios from "axios";
 
-const BASE_URL = 'https://sweet-paradise-api.onrender.com'
+const BASE_URL = "https://sweet-paradise-api.onrender.com";
 
 export const getProductsByCategories = async (id: string) => {
   const response = await axios.get(`${BASE_URL}/products/category/${id}`);
@@ -12,8 +12,12 @@ export const getAllCategories = async () => {
   return response.data;
 };
 
-export const createProduct = async (values: any) => {
-    return await axios.post(`https://sweet-paradise-api.onrender.com/products`, values, {
+export const createProduct = async (productData: any) => {
+  console.log(productData);
+  return await axios.post(
+    `https://sweet-paradise-api.onrender.com/products`,
+    productData, {
     headers: { 'Content-Type': 'multipart/form-data' },
-  });
+  }
+  );
 };
