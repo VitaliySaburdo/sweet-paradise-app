@@ -29,7 +29,7 @@ interface FormValues {
   weight: string;
   category: string;
   ingredients: string;
-  file: string;
+  file: File | null;
 }
 
 const initialValues: FormValues = {
@@ -38,7 +38,7 @@ const initialValues: FormValues = {
   weight: "",
   category: "",
   ingredients: "",
-  file: "",
+  file: null,
 };
 
 export const AddForm: React.FC<AddFormProps> = ({ closeModal }) => {
@@ -52,6 +52,7 @@ export const AddForm: React.FC<AddFormProps> = ({ closeModal }) => {
     values: FormValues,
     { resetForm }: FormikHelpers<FormValues>
   ) => {
+    console.log(values);
     formData.append("name", values.name);
     formData.append("price", values.price);
     formData.append("weight", values.weight);
