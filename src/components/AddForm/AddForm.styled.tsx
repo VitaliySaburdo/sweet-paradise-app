@@ -17,6 +17,27 @@ export const StyledForm = styled(Form)`
   margin-bottom: 20px;
 `;
 
+export const NextBtn = styled(Button)`
+width: 130px;
+height: 40px;
+margin-top: 20px;
+margin-left: auto;
+`
+
+export const PrevBtn = styled(Button)`
+width: 130px;
+height: 40px;
+margin-top: 20px;
+margin-right: auto;
+`
+
+export const AddBtn = styled(Button)`
+width: 130px;
+height: 40px;
+margin-top: 20px;
+margin-left: auto;
+`
+
 export const Title = styled.h2`
   font-weight: 16px;
   margin: 0 auto;
