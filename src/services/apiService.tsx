@@ -13,8 +13,7 @@ export const getAllCategories = async () => {
 };
 
 export const createProduct = async (values: any) => {
-  console.log(values);
-    return await axios.post(`BASE_URL}/products`, values, {
+    return await axios.post(`https://sweet-paradise-api.onrender.com/products`, values, {
     headers: { 'Content-Type': 'multipart/form-data' },
   });
 };
