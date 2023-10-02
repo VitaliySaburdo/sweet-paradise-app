@@ -53,6 +53,12 @@ export const AddForm: React.FC<AddFormProps> = ({ closeModal }) => {
   const dispatch = useDispatch();
 
   useEffect(() => {
+  if (categories.length > 0) {
+    setSelectCategory(categories[0]._id);
+  }
+}, [categories]);
+
+  useEffect(() => {
     const fetchData = async () => {
       try {
         const data = await getAllCategories();
@@ -65,34 +71,33 @@ export const AddForm: React.FC<AddFormProps> = ({ closeModal }) => {
     fetchData();
   }, []);
 
-
-
   const handleOnSubmit = async (
     values: FormValues,
     { resetForm }: FormikHelpers<FormValues>
   ) => {
-      const formData = new FormData();
+    //   const formData = new FormData();
 
-    formData.append("name", values.name);
-    formData.append("price", values.price);
-    formData.append("weight", values.weight);
-    formData.append("category", selectCategory);
-    formData.append("ingredients", values.ingredients);
-    if (selectedFile) {
-      formData.append("file", selectedFile);
-    }
+    // formData.append("name", values.name);
+    // formData.append("price", values.price);
+    // formData.append("weight", values.weight);
+    // formData.append("category", selectCategory);
+    // formData.append("ingredients", values.ingredients);
+    // if (selectedFile) {
+    //   formData.append("file", selectedFile);
+    // }
 
-    // const productData = {
-    //   name: values.name,
-    //   price: parseFloat(values.price),
-    //   weight: values.weight,
-    //   category: selectCategory,
-    //   img: selectedFile?.name || "",
-    //   ingredients: values.ingredients,
-    // };
+    const productData = {
+      name: values.name,
+      price: parseFloat(values.price),
+      weight: values.weight,
+      category: selectCategory,
+      img: selectedFile?.name || "",
+      ingredients: values.ingredients,
+    };
+    console.log(productData);
 
     try {
-      await createProduct(formData);
+      await createProduct(productData);
     } catch (error) {
       console.log(error);
     }
