@@ -39,7 +39,7 @@ const initialValues: FormValues = {
 };
 
 export const AddForm: React.FC<AddFormProps> = ({ closeModal }) => {
-    const [photoPreview, setPhotoPreview] = useState<string | null>(null);
+    // const [photoPreview, setPhotoPreview] = useState<string | null>(null);
   const dispatch = useDispatch();
   const { setFieldValue } = useFormikContext();
 
@@ -64,8 +64,8 @@ export const AddForm: React.FC<AddFormProps> = ({ closeModal }) => {
   const handleUploadFile = (event: React.ChangeEvent<HTMLInputElement>) => {
     const uploadFile = event.currentTarget.files?.[0];
     setFieldValue("file", uploadFile);
-    const preview = uploadFile ? URL.createObjectURL(uploadFile) : null;
-    setPhotoPreview(preview);
+    // const preview = uploadFile ? URL.createObjectURL(uploadFile) : null;
+    // setPhotoPreview(preview);
   };
 
   return (
