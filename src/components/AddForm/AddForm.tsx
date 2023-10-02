@@ -45,7 +45,11 @@ const initialValues: FormValues = {
 export const AddForm: React.FC<AddFormProps> = ({ closeModal }) => {
   const [stage, setStage] = useState<number>(1);
   const [selectedFile, setSelectedFile] = useState<File | null>(null);
-  const [categories, setCategories] = useState<{ id: string; name: string; }[]>([]);
+  const [categories, setCategories] = useState<{ _id: string; name: string }[]>(
+    []
+  );
+  const [selectCategory, setSelectCategory] = useState<string>("");
+
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -67,11 +71,10 @@ export const AddForm: React.FC<AddFormProps> = ({ closeModal }) => {
     values: FormValues,
     { resetForm }: FormikHelpers<FormValues>
   ) => {
-    console.log(values);
     formData.append("name", values.name);
     formData.append("price", values.price);
     formData.append("weight", values.weight);
-    formData.append("category", values.category);
+    formData.append("category", selectCategory);
     formData.append("ingredients", values.ingredients);
     if (selectedFile) {
       formData.append("file", selectedFile);
@@ -150,16 +153,21 @@ export const AddForm: React.FC<AddFormProps> = ({ closeModal }) => {
               <StyledMessage name="price" component="div" />
 
               <StyledLabel htmlFor="category">Category</StyledLabel>
-              <select
+              <StyledField
+                as="select"
                 id="category"
                 name="category"
                 placeholder="Please enter category of goods"
+                onChange={(e: React.ChangeEvent<HTMLSelectElement>) =>
+                  setSelectCategory(e.target.value)
+                  
+                }
               >
                 {categories.length &&
                   categories.map((item) => (
-                    <option value={item.id}>{item.name}</option>
+                    <option key={item._id} value={item._id} label={item.name} />
                   ))}
-              </select>
+              </StyledField>
               <StyledMessage name="category" component="div" />
 
               <StyledLabel htmlFor="weight">Weight</StyledLabel>

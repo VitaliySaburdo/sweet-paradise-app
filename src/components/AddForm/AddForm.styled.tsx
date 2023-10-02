@@ -47,7 +47,8 @@ export const Title = styled.h2`
 export const StyledField = styled(Field)`
   margin: 0;
   height: 40px;
-  padding: 12px 42px;
+  font-size: 16px;
+  padding: 5px 22px;
   border: 1px solid rgba(33, 33, 33, 0.2);
   border-radius: 20px;
   cursor: pointer;
@@ -59,6 +60,7 @@ export const StyledField = styled(Field)`
     outline-color: ${(props) => props.theme.colors.secondaryColor};
   }
 `;
+
 
 export const StyledLabel = styled.label`
   font-size: 12px;
