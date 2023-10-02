@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import { Formik, FormikHelpers, useFormikContext } from "formik";
+import { Formik, FormikHelpers } from "formik";
 import { logOut } from "../../redux/auth/operations";
 import {
   StyledForm,
@@ -41,27 +41,25 @@ const initialValues: FormValues = {
 };
 
 export const AddForm: React.FC<AddFormProps> = ({ closeModal }) => {
-  // const [photoPreview, setPhotoPreview] = useState<string | null>(null);
   const [stage, setStage] = useState<number>(1);
+  const [selectedFile, setSelectedFile] = useState<File | null>(null);
   const dispatch = useDispatch();
+
+  const formData = new FormData();
 
   const handleOnSubmit = (
     values: FormValues,
     { resetForm }: FormikHelpers<FormValues>
   ) => {
-    console.log(values)
-
-
-    const formData = new FormData();
-
     formData.append("name", values.name);
     formData.append("price", values.price);
     formData.append("weight", values.weight);
     formData.append("category", values.category);
     formData.append("ingredients", values.ingredients);
-    formData.append("img", values.file!);
+    if (selectedFile) {
+      formData.append("file", selectedFile);
+    }
 
-    console.log(formData);
     resetForm();
     closeModal();
   };
@@ -75,10 +73,8 @@ export const AddForm: React.FC<AddFormProps> = ({ closeModal }) => {
   };
 
   const handleUploadFile = (event: React.ChangeEvent<HTMLInputElement>) => {
-    // const uploadFile = event.currentTarget.files?.[0];
-    // setFieldValue("file", uploadFile);
-    // const preview = uploadFile ? URL.createObjectURL(uploadFile) : null;
-    // setPhotoPreview(preview);
+    const uploadFile = event.currentTarget.files?.[0] ?? null;
+    setSelectedFile(uploadFile);
   };
 
   return (
@@ -99,20 +95,17 @@ export const AddForm: React.FC<AddFormProps> = ({ closeModal }) => {
 
               <StyledFileInputWrapper>
                 <StyledFileInputLabel htmlFor="file">
-                <StyledFileInput
-                  type="file"
-                  id="file"
-                  name="file"
-                  accept="image/*"
-                  placeholder="Please select an image"
-                  onChange={handleUploadFile}
+                  <StyledFileInput
+                    type="file"
+                    id="file"
+                    name="file"
+                    accept="image/*"
+                    placeholder="Please select an image"
+                    onChange={handleUploadFile}
                   />
                   Select an Image
-                  </StyledFileInputLabel>
+                </StyledFileInputLabel>
                 <StyledLabel htmlFor="file">Add image</StyledLabel>
-                
-                  
-                
               </StyledFileInputWrapper>
               <StyledMessage name="file" component="div" />
               <div style={{ display: "flex" }}>
