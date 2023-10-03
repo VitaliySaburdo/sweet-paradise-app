@@ -128,17 +128,17 @@ export const AddForm: React.FC<AddFormProps> = ({ closeModal }) => {
                 <StyledFileInputLabel htmlFor="file">
                   <StyledFileInput
                     type="file"
-                    id="file"
-                    name="file"
+                    id="img"
+                    name="img"
                     accept="image/*"
                     placeholder="Please select an image"
                     onChange={handleUploadFile}
                   />
                   Select an Image
                 </StyledFileInputLabel>
-                <StyledLabel htmlFor="file">Add image</StyledLabel>
+                <StyledLabel htmlFor="img">Add image</StyledLabel>
               </StyledFileInputWrapper>
-              <StyledMessage name="file" component="div" />
+              <StyledMessage name="img" component="div" />
               <div style={{ display: "flex" }}>
                 {" "}
                 <PrevBtn onClick={() => closeModal()}>Cancel</PrevBtn>
