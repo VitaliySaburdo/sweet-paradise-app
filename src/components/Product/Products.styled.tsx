@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Button } from "../Button/Button";
 
 export const Wrapper = styled.li`
   width: 100%;
@@ -13,11 +14,49 @@ export const Wrapper = styled.li`
   }
 `;
 
+export const DeleteBtn = styled(Button)`
+  background-color: #be3333;
+  &:hover {
+    background-color: red;
+  }
+`;
+
 export const Img = styled.img`
   width: 236px;
   margin-bottom: 13px;
   @media screen and (${(props) => props.theme.media.md}) {
     width: 320px;
+  }
+`;
+
+export const DeleteTitle = styled.h3`
+  margin-top: 10px;
+  text-align: center;
+  margin-bottom: 30px;
+`;
+
+export const BtnWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+`;
+
+export const ConfirmBtn = styled(Button)`
+  width: 140px;
+  height: 50px;
+  background-color: #be3333;
+  &:hover {
+    background-color: red;
+  }
+`;
+
+export const CancelBtn = styled(Button)`
+  width: 140px;
+  height: 50px;
+  background-color: #035a03;
+    &:hover {
+    background-color: green;
   }
 `;
 
@@ -63,4 +102,3 @@ export const Params = styled.p`
   line-height: normal;
   margin-bottom: 29px;
 `;
-

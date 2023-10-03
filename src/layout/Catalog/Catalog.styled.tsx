@@ -1,7 +1,5 @@
 import styled from "styled-components";
 import { Container } from "../../components/Container/Container";
-import chocolate from '../../images/Catalog/chocolate.png';
-import fruit from '../../images/Catalog/fruit.png';
 
 export const Box = styled.div`
   margin-top: 53px;
@@ -39,12 +37,6 @@ export const CatalogTitle = styled.h2`
 
 export const StyledContainer = styled(Container)`
   overflow: hidden;
-  @media screen and (${(props) => props.theme.media.lg}){
-  background-image:url(${fruit}), url(${chocolate});
-  background-size: 25%, 50%;
-  background-repeat: no-repeat;
-  background-position: -10% 3%, 130% 0%;
-  }
 `
 
 export const CatalogList = styled.ul`
@@ -54,7 +46,7 @@ export const CatalogList = styled.ul`
   display: flex;
   justify-content: space-between;
   align-items: end;
-  margin-bottom: 160px;
+  margin-bottom: 40px;
 `;
 
 export const CatalogItem = styled.li`
