@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/sweet-paradise-app/static/css/main.054c7a94.css",
-    "main.js": "/sweet-paradise-app/static/js/main.8afdb7c9.js",
+    "main.js": "/sweet-paradise-app/static/js/main.570d4be4.js",
     "static/media/box.png": "/sweet-paradise-app/static/media/box.0ba3471c67c970443a55.png",
     "static/media/box_md.png": "/sweet-paradise-app/static/media/box_md.35a5de8a8b90505b4eaf.png",
     "static/media/cookies.png": "/sweet-paradise-app/static/media/cookies.16afb37d4b328ceb4e47.png",
@@ -15,7 +15,6 @@
     "static/media/chocolate_2.png": "/sweet-paradise-app/static/media/chocolate_2.7110e372fc69ee189922.png",
     "static/media/cupcake-vanilla.png": "/sweet-paradise-app/static/media/cupcake-vanilla.34a007527adc0ab44cf7.png",
     "static/media/cross.png": "/sweet-paradise-app/static/media/cross.b70da88ad16748f91a9c.png",
-    "static/media/chocolate.png": "/sweet-paradise-app/static/media/chocolate.e101729793ec27074a23.png",
     "static/media/leaf.png": "/sweet-paradise-app/static/media/leaf.91a452956c93eb6f5e22.png",
     "static/media/raspberries.png": "/sweet-paradise-app/static/media/raspberries.940b6b1fd63fa14b4133.png",
     "static/media/cupcake.png": "/sweet-paradise-app/static/media/cupcake.a795080760a70b1aee4c.png",
@@ -28,10 +27,10 @@
     "static/media/leaf_sm.png": "/sweet-paradise-app/static/media/leaf_sm.96325f28bb6a68d78046.png",
     "index.html": "/sweet-paradise-app/index.html",
     "main.054c7a94.css.map": "/sweet-paradise-app/static/css/main.054c7a94.css.map",
-    "main.8afdb7c9.js.map": "/sweet-paradise-app/static/js/main.8afdb7c9.js.map"
+    "main.570d4be4.js.map": "/sweet-paradise-app/static/js/main.570d4be4.js.map"
   },
   "entrypoints": [
     "static/css/main.054c7a94.css",
-    "static/js/main.8afdb7c9.js"
+    "static/js/main.570d4be4.js"
   ]
 }
