@@ -83,18 +83,8 @@ export const AddForm: React.FC<AddFormProps> = ({ closeModal }) => {
     formData.append("category", selectCategory);
     formData.append("ingredients", values.ingredients);
     if (selectedFile) {
-      formData.append("file", selectedFile);
-    }
-
-    // const productData = {
-    //   name: values.name,
-    //   price: parseFloat(values.price),
-    //   weight: values.weight,
-    //   category: selectCategory,
-    //   img: selectedFile?.name || "",
-    //   ingredients: values.ingredients,
-    // };
-    console.log(formData);
+      formData.append("img", selectedFile);
+    };
 
     try {
       await createProduct(formData);
