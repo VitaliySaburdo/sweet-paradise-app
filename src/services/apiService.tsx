@@ -17,3 +17,7 @@ export const createProduct = async (productData: any) => {
     headers: { "Content-Type": "multipart/form-data" },
   });
 };
+
+export const deleteProduct = async (id: string) => {
+  return await axios.delete(`${BASE_URL}/products/${id}`);
+};
