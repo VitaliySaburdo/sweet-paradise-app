@@ -139,7 +139,7 @@ export const AddForm: React.FC<AddFormProps> = ({ closeModal }) => {
                 <StyledLabel htmlFor="img">Add image</StyledLabel>
               </StyledFileInputWrapper>
               <StyledMessage name="img" component="div" />
-              <div style={{ display: "flex" }}>
+              <div style={{ display: "flex", gap: '10px' }}>
                 {" "}
                 <PrevBtn onClick={() => closeModal()}>Cancel</PrevBtn>
                 <NextBtn onClick={handleOnNexBtn}>Next</NextBtn>
@@ -186,7 +186,7 @@ export const AddForm: React.FC<AddFormProps> = ({ closeModal }) => {
             </>
           )}
           {stage === 2 && (
-            <div style={{ display: "flex" }}>
+            <div style={{ display: "flex", gap: '10px' }}>
               {" "}
               <PrevBtn onClick={handleOnPrevBtn}>Prev</PrevBtn>
               <NextBtn onClick={handleOnNexBtn}>Next</NextBtn>
@@ -201,10 +201,10 @@ export const AddForm: React.FC<AddFormProps> = ({ closeModal }) => {
                 name="ingredients"
                 component="textarea"
                 rows="6"
-                cols="25"
+                cols="20"
               />
               <StyledMessage name="ingredients" component="div" />
-              <div style={{ display: "flex" }}>
+              <div style={{ display: "flex", gap: '10px' }}>
                 {" "}
                 <PrevBtn onClick={handleOnPrevBtn}>Prev</PrevBtn>
                 <AddBtn type="submit">Add</AddBtn>

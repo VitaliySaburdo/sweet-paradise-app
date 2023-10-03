@@ -13,7 +13,6 @@ export const getAllCategories = async () => {
 };
 
 export const createProduct = async (productData: any) => {
-  console.log(productData);
   return await axios.post(`${BASE_URL}/products`, productData, {
     headers: { "Content-Type": "multipart/form-data" },
   });
