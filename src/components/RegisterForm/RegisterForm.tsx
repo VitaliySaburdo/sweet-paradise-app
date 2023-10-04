@@ -1,4 +1,3 @@
-import * as yup from "yup";
 import React, { useState } from "react";
 import { Formik } from "formik";
 import { useDispatch } from "react-redux";
@@ -7,6 +6,7 @@ import { AnyAction } from "redux";
 import { RootState } from "../../redux/store";
 import { Button } from "../Button/Button";
 import { register } from "../../redux/auth/operations";
+import {registerSchema} from '../../helpers/ValidationSchemas'
 import {
   StyledForm,
   StyledField,
@@ -23,21 +23,6 @@ interface RegisterFormProps {
   closeModal: () => void;
 }
 
-const validationSchema = yup.object({
-  name: yup.string().required("Name is required"),
-  email: yup
-    .string()
-    .email("Enter a valid email")
-    .required("Email is required"),
-  password: yup
-    .string()
-    .min(6, "Password should be of minimum 6 characters length")
-    .required("Password is required"),
-  confirm: yup
-    .string()
-    .oneOf([yup.ref("password")], "Password does not match")
-    .required("Confirm Password is Required"),
-});
 
 export const RegisterForm: React.FC<RegisterFormProps> = ({ closeModal }) => {
   const [isLoginForm, setIsLoginForm] = useState(false);
@@ -55,7 +40,7 @@ export const RegisterForm: React.FC<RegisterFormProps> = ({ closeModal }) => {
             password: "",
             confirm: "",
           }}
-          validationSchema={validationSchema}
+          validationSchema={registerSchema}
           onSubmit={({ name, email, password }, { resetForm }) => {
             dispatch(register({ name, email, password }));
             resetForm();

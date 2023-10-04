@@ -53,10 +53,10 @@ export const AddForm: React.FC<AddFormProps> = ({ closeModal }) => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-  if (categories.length > 0) {
-    setSelectCategory(categories[0]._id);
-  }
-}, [categories]);
+    if (categories.length > 0) {
+      setSelectCategory(categories[0]._id);
+    }
+  }, [categories]);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -75,7 +75,7 @@ export const AddForm: React.FC<AddFormProps> = ({ closeModal }) => {
     values: FormValues,
     { resetForm }: FormikHelpers<FormValues>
   ) => {
-      const formData = new FormData();
+    const formData = new FormData();
 
     formData.append("name", values.name);
     formData.append("price", values.price);
@@ -84,7 +84,7 @@ export const AddForm: React.FC<AddFormProps> = ({ closeModal }) => {
     formData.append("ingredients", values.ingredients);
     if (selectedFile) {
       formData.append("img", selectedFile);
-    };
+    }
 
     try {
       await createProduct(formData);
@@ -139,7 +139,7 @@ export const AddForm: React.FC<AddFormProps> = ({ closeModal }) => {
                 <StyledLabel htmlFor="img">Add image</StyledLabel>
               </StyledFileInputWrapper>
               <StyledMessage name="img" component="div" />
-              <div style={{ display: "flex", gap: '10px' }}>
+              <div style={{ display: "flex", gap: "10px" }}>
                 {" "}
                 <PrevBtn onClick={() => closeModal()}>Cancel</PrevBtn>
                 <NextBtn onClick={handleOnNexBtn}>Next</NextBtn>
@@ -186,7 +186,7 @@ export const AddForm: React.FC<AddFormProps> = ({ closeModal }) => {
             </>
           )}
           {stage === 2 && (
-            <div style={{ display: "flex", gap: '10px' }}>
+            <div style={{ display: "flex", gap: "10px" }}>
               {" "}
               <PrevBtn onClick={handleOnPrevBtn}>Prev</PrevBtn>
               <NextBtn onClick={handleOnNexBtn}>Next</NextBtn>
@@ -204,7 +204,7 @@ export const AddForm: React.FC<AddFormProps> = ({ closeModal }) => {
                 cols="20"
               />
               <StyledMessage name="ingredients" component="div" />
-              <div style={{ display: "flex", gap: '10px' }}>
+              <div style={{ display: "flex", gap: "10px" }}>
                 {" "}
                 <PrevBtn onClick={handleOnPrevBtn}>Prev</PrevBtn>
                 <AddBtn type="submit">Add</AddBtn>

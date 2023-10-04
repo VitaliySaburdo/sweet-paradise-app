@@ -1,4 +1,3 @@
-import * as yup from "yup";
 import { useState } from "react";
 import { Formik } from "formik";
 import { useDispatch } from "react-redux";
@@ -7,6 +6,7 @@ import { AnyAction } from "redux";
 import { RootState } from "../../redux/store";
 import { Button } from "../Button/Button";
 import { logIn } from "../../redux/auth/operations";
+import {loginSchema} from '../../helpers/ValidationSchemas'
 import {
   StyledForm,
   StyledField,
@@ -23,16 +23,6 @@ interface LoginFormProps {
   closeModal: () => void;
 }
 
-const validationSchema = yup.object({
-  email: yup
-    .string()
-    .email("Enter a valid email")
-    .required("Email is required"),
-  password: yup
-    .string()
-    .min(6, "Password should be of minimum 6 characters length")
-    .required("Password is required"),
-});
 
 export const LoginForm: React.FC<LoginFormProps> = ({ closeModal }) => {
   const [isRegisterForm, setIsRegisterForm] = useState(false);
@@ -48,7 +38,7 @@ export const LoginForm: React.FC<LoginFormProps> = ({ closeModal }) => {
             email: "",
             password: "",
           }}
-          validationSchema={validationSchema}
+          validationSchema={loginSchema}
             onSubmit={({ email, password }, { resetForm }) => {
             dispatch(logIn({ values: { email, password } }));
               resetForm();
