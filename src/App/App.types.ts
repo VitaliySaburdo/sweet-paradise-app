@@ -5,7 +5,7 @@ export interface ProductProps {
     weight: string;
     category: string;
     favorite: boolean;
-    img: string;
+    img: File | null;
     ingredients: string;
     owner: string;
     quantity: number;

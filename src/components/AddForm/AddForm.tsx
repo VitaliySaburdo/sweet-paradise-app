@@ -30,7 +30,7 @@ interface FormValues {
   weight: string;
   category: string;
   ingredients: string;
-  file: File | null;
+  img: File | null;
 }
 
 const initialValues: FormValues = {
@@ -39,7 +39,7 @@ const initialValues: FormValues = {
   weight: "",
   category: "",
   ingredients: "",
-  file: null,
+  img: null,
 };
 
 export const AddForm: React.FC<AddFormProps> = ({ closeModal }) => {
@@ -125,7 +125,7 @@ export const AddForm: React.FC<AddFormProps> = ({ closeModal }) => {
               <StyledMessage name="name" component="div" />
 
               <StyledFileInputWrapper>
-                <StyledFileInputLabel htmlFor="file">
+                <StyledFileInputLabel htmlFor="img">
                   <StyledFileInput
                     type="file"
                     id="img"
