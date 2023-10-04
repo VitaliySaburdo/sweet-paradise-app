@@ -4,7 +4,6 @@ import { Formik, FormikHelpers } from "formik";
 import { createProduct } from "../../services/apiService";
 import { getAllCategories } from "../../services/apiService";
 import { logOut } from "../../redux/auth/operations";
-import { addProductSchema } from "../../helpers/ValidationSchemas";
 import {
   StyledForm,
   Title,
@@ -31,7 +30,7 @@ interface FormValues {
   weight: string;
   category: string;
   ingredients: string;
-  img: string;
+  img: File | null;
 }
 
 const initialValues: FormValues = {
@@ -40,7 +39,7 @@ const initialValues: FormValues = {
   weight: "",
   category: "",
   ingredients: "",
-  img: "",
+  img: null,
 };
 
 export const AddForm: React.FC<AddFormProps> = ({ closeModal }) => {
@@ -96,7 +95,7 @@ export const AddForm: React.FC<AddFormProps> = ({ closeModal }) => {
     closeModal();
   };
 
-  const handleOnNexBtn = (validateFor: () => void) => {
+  const handleOnNexBtn = () => {
     setStage((prevStage) => prevStage + 1);
   };
 
@@ -114,10 +113,8 @@ export const AddForm: React.FC<AddFormProps> = ({ closeModal }) => {
       <Formik
         initialValues={initialValues}
         onSubmit={handleOnSubmit}
-        validationSchema={addProductSchema}
       >
-        {({ validateForm }) => {
-          return (
+
             <StyledForm>
               <Title>Add goods</Title>
               {stage === 1 && (
@@ -149,7 +146,7 @@ export const AddForm: React.FC<AddFormProps> = ({ closeModal }) => {
                   <div style={{ display: "flex", gap: "10px" }}>
                     {" "}
                     <PrevBtn onClick={() => closeModal()}>Cancel</PrevBtn>
-                    <NextBtn onClick={() => handleOnNexBtn(validateForm)}>Next</NextBtn>
+                    <NextBtn onClick={handleOnNexBtn}>Next</NextBtn>
                   </div>
                 </>
               )}
@@ -200,7 +197,7 @@ export const AddForm: React.FC<AddFormProps> = ({ closeModal }) => {
                 <div style={{ display: "flex", gap: "10px" }}>
                   {" "}
                   <PrevBtn onClick={handleOnPrevBtn}>Prev</PrevBtn>
-                  <NextBtn onClick={() => handleOnNexBtn(validateForm)}>Next</NextBtn>
+                  <NextBtn onClick={handleOnNexBtn}>Next</NextBtn>
                 </div>
               )}
               {stage === 3 && (
@@ -223,8 +220,6 @@ export const AddForm: React.FC<AddFormProps> = ({ closeModal }) => {
                 </>
               )}
             </StyledForm>
-          );
-        }}
       </Formik>
       <LogoutBtn
         onClick={() => {
