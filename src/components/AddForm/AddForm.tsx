@@ -30,7 +30,7 @@ interface FormValues {
   weight: string;
   category: string;
   ingredients: string;
-  img: File | null;
+  img: string;
 }
 
 const initialValues: FormValues = {
@@ -39,7 +39,7 @@ const initialValues: FormValues = {
   weight: "",
   category: "",
   ingredients: "",
-  img: null,
+  img: "",
 };
 
 export const AddForm: React.FC<AddFormProps> = ({ closeModal }) => {
