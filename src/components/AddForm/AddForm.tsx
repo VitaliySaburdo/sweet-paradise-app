@@ -4,6 +4,7 @@ import { Formik, FormikHelpers } from "formik";
 import { createProduct } from "../../services/apiService";
 import { getAllCategories } from "../../services/apiService";
 import { logOut } from "../../redux/auth/operations";
+import { addProductSchema } from "../../helpers/ValidationSchemas";
 import {
   StyledForm,
   Title,
@@ -95,7 +96,7 @@ export const AddForm: React.FC<AddFormProps> = ({ closeModal }) => {
     closeModal();
   };
 
-  const handleOnNexBtn = () => {
+  const handleOnNexBtn = (validateFor: () => void) => {
     setStage((prevStage) => prevStage + 1);
   };
 
@@ -110,108 +111,120 @@ export const AddForm: React.FC<AddFormProps> = ({ closeModal }) => {
 
   return (
     <>
-      <Formik initialValues={initialValues} onSubmit={handleOnSubmit}>
-        <StyledForm>
-          <Title>Add goods</Title>
-          {stage === 1 && (
-            <>
-              <StyledLabel htmlFor="name">Name</StyledLabel>
-              <StyledField
-                type="text"
-                id="name"
-                name="name"
-                placeholder="Please enter name of goods"
-              />
-              <StyledMessage name="name" component="div" />
-
-              <StyledFileInputWrapper>
-                <StyledFileInputLabel htmlFor="img">
-                  <StyledFileInput
-                    type="file"
-                    id="img"
-                    name="img"
-                    accept="image/*"
-                    placeholder="Please select an image"
-                    onChange={handleUploadFile}
+      <Formik
+        initialValues={initialValues}
+        onSubmit={handleOnSubmit}
+        validationSchema={addProductSchema}
+      >
+        {({ validateForm }) => {
+          return (
+            <StyledForm>
+              <Title>Add goods</Title>
+              {stage === 1 && (
+                <>
+                  <StyledLabel htmlFor="name">Name</StyledLabel>
+                  <StyledField
+                    type="text"
+                    id="name"
+                    name="name"
+                    placeholder="Please enter name of goods"
                   />
-                  Select an Image
-                </StyledFileInputLabel>
-                <StyledLabel htmlFor="img">Add image</StyledLabel>
-              </StyledFileInputWrapper>
-              <StyledMessage name="img" component="div" />
-              <div style={{ display: "flex", gap: "10px" }}>
-                {" "}
-                <PrevBtn onClick={() => closeModal()}>Cancel</PrevBtn>
-                <NextBtn onClick={handleOnNexBtn}>Next</NextBtn>
-              </div>
-            </>
-          )}
+                  <StyledMessage name="name" component="div" />
 
-          {stage === 2 && (
-            <>
-              <StyledLabel htmlFor="price">Price</StyledLabel>
-              <StyledField
-                type="text"
-                id="price"
-                name="price"
-                placeholder="Please enter your price"
-              />
-              <StyledMessage name="price" component="div" />
+                  <StyledFileInputWrapper>
+                    <StyledFileInputLabel htmlFor="img">
+                      <StyledFileInput
+                        type="file"
+                        id="img"
+                        name="img"
+                        accept="image/*"
+                        placeholder="Please select an image"
+                        onChange={handleUploadFile}
+                      />
+                      Select an Image
+                    </StyledFileInputLabel>
+                    <StyledLabel htmlFor="img">Add image</StyledLabel>
+                  </StyledFileInputWrapper>
+                  <StyledMessage name="img" component="div" />
+                  <div style={{ display: "flex", gap: "10px" }}>
+                    {" "}
+                    <PrevBtn onClick={() => closeModal()}>Cancel</PrevBtn>
+                    <NextBtn onClick={() => handleOnNexBtn(validateForm)}>Next</NextBtn>
+                  </div>
+                </>
+              )}
 
-              <StyledLabel htmlFor="category">Category</StyledLabel>
-              <StyledField
-                as="select"
-                id="category"
-                name="category"
-                placeholder="Please enter category of goods"
-                onChange={(e: React.ChangeEvent<HTMLSelectElement>) =>
-                  setSelectCategory(e.target.value)
-                }
-              >
-                {categories.length &&
-                  categories.map((item) => (
-                    <option key={item._id} value={item._id} label={item.name} />
-                  ))}
-              </StyledField>
-              <StyledMessage name="category" component="div" />
+              {stage === 2 && (
+                <>
+                  <StyledLabel htmlFor="price">Price</StyledLabel>
+                  <StyledField
+                    type="text"
+                    id="price"
+                    name="price"
+                    placeholder="Please enter your price"
+                  />
+                  <StyledMessage name="price" component="div" />
 
-              <StyledLabel htmlFor="weight">Weight</StyledLabel>
-              <StyledField
-                type="text"
-                id="weight"
-                name="weight"
-                placeholder="Please enter weight of goods"
-              />
-              <StyledMessage name="weight" component="div" />
-            </>
-          )}
-          {stage === 2 && (
-            <div style={{ display: "flex", gap: "10px" }}>
-              {" "}
-              <PrevBtn onClick={handleOnPrevBtn}>Prev</PrevBtn>
-              <NextBtn onClick={handleOnNexBtn}>Next</NextBtn>
-            </div>
-          )}
-          {stage === 3 && (
-            <>
-              {" "}
-              <StyledLabel htmlFor="ingredients">Ingredients</StyledLabel>
-              <StyledFieldIngredients
-                id="ingredients"
-                name="ingredients"
-                component="textarea"
-                rows="6"
-                cols="20"
-              />
-              <StyledMessage name="ingredients" component="div" />
-              <div style={{ display: "flex", gap: "10px" }}>
-                {" "}
-                <PrevBtn onClick={handleOnPrevBtn}>Prev</PrevBtn>
-                <AddBtn type="submit">Add</AddBtn>
-              </div>
-            </>
-          )}
-        </StyledForm>
+                  <StyledLabel htmlFor="category">Category</StyledLabel>
+                  <StyledField
+                    as="select"
+                    id="category"
+                    name="category"
+                    placeholder="Please enter category of goods"
+                    onChange={(e: React.ChangeEvent<HTMLSelectElement>) =>
+                      setSelectCategory(e.target.value)
+                    }
+                  >
+                    {categories.length &&
+                      categories.map((item) => (
+                        <option
+                          key={item._id}
+                          value={item._id}
+                          label={item.name}
+                        />
+                      ))}
+                  </StyledField>
+                  <StyledMessage name="category" component="div" />
+
+                  <StyledLabel htmlFor="weight">Weight</StyledLabel>
+                  <StyledField
+                    type="text"
+                    id="weight"
+                    name="weight"
+                    placeholder="Please enter weight of goods"
+                  />
+                  <StyledMessage name="weight" component="div" />
+                </>
+              )}
+              {stage === 2 && (
+                <div style={{ display: "flex", gap: "10px" }}>
+                  {" "}
+                  <PrevBtn onClick={handleOnPrevBtn}>Prev</PrevBtn>
+                  <NextBtn onClick={() => handleOnNexBtn(validateForm)}>Next</NextBtn>
+                </div>
+              )}
+              {stage === 3 && (
+                <>
+                  {" "}
+                  <StyledLabel htmlFor="ingredients">Ingredients</StyledLabel>
+                  <StyledFieldIngredients
+                    id="ingredients"
+                    name="ingredients"
+                    component="textarea"
+                    rows="6"
+                    cols="20"
+                  />
+                  <StyledMessage name="ingredients" component="div" />
+                  <div style={{ display: "flex", gap: "10px" }}>
+                    {" "}
+                    <PrevBtn onClick={handleOnPrevBtn}>Prev</PrevBtn>
+                    <AddBtn type="submit">Add</AddBtn>
+                  </div>
+                </>
+              )}
+            </StyledForm>
+          );
+        }}
       </Formik>
       <LogoutBtn
         onClick={() => {
