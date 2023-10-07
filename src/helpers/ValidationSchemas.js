@@ -29,9 +29,13 @@ export const registerSchema = yup.object({
 
 export const addProductSchema = yup.object().shape({
   name: yup.string().required("Name is required"),
-  img: yup.object().shape({
-    file: yup.mixed().required("Image is required"),
-  }),
+  img: yup.mixed()
+    .test("fileType", "Image is required", (value) => {
+      if (!value) return false;
+      const acceptedFormats = ["image/jpeg", "image/png"];
+      return acceptedFormats.includes(value.type);
+    })
+    .required("Image is required"),
   price: yup.number().required("Price is required"),
   category: yup.string().required("Category is required"),
   weight: yup.string().required("Weight is required"),

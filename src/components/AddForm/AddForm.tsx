@@ -125,7 +125,7 @@ export const AddForm: React.FC<AddFormProps> = ({ closeModal }) => {
       <Formik
         initialValues={initialValues}
         onSubmit={handleOnSubmit}
-        // validationSchema={addProductSchema}
+        validationSchema={addProductSchema}
       >
         {({ isValid, validateForm, values }) => (
           <StyledForm>
