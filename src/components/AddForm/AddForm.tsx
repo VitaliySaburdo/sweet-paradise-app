@@ -31,7 +31,7 @@ interface FormValues {
   weight: string;
   category: string;
   ingredients: string;
-  img: File | null;
+  img: File | string;
 }
 
 const initialValues: FormValues = {
@@ -40,7 +40,7 @@ const initialValues: FormValues = {
   weight: "",
   category: "",
   ingredients: "",
-  img: null,
+  img: "",
 };
 
 export const AddForm: React.FC<AddFormProps> = ({ closeModal }) => {
@@ -97,15 +97,12 @@ export const AddForm: React.FC<AddFormProps> = ({ closeModal }) => {
     closeModal();
   };
 
-  const handleOnNexBtn = (isValid: boolean, validateForm: () => void, values: {}) => {
-    if (isValid) {
-      setStage((prevStage) => prevStage + 1);
-      console.log(isValid);
-    } else {
-      console.log("Form is not valid");
-    }
-    console.log(validateForm);
-    console.log(values);
+  const handleOnNexBtn = (
+    isValid: boolean,
+    validateForm: () => void,
+    values: any
+  ) => {
+    setStage((prevStage) => prevStage + 1);
   };
 
   const handleOnPrevBtn = () => {
@@ -128,7 +125,7 @@ export const AddForm: React.FC<AddFormProps> = ({ closeModal }) => {
       <Formik
         initialValues={initialValues}
         onSubmit={handleOnSubmit}
-        validationSchema={addProductSchema}
+        // validationSchema={addProductSchema}
       >
         {({ isValid, validateForm, values }) => (
           <StyledForm>
