@@ -4,6 +4,7 @@ import { Formik, FormikHelpers } from "formik";
 import { createProduct } from "../../services/apiService";
 import { getAllCategories } from "../../services/apiService";
 import { logOut } from "../../redux/auth/operations";
+import { addProductSchema } from "../../helpers/ValidationSchemas";
 import {
   StyledForm,
   Title,
@@ -96,9 +97,15 @@ export const AddForm: React.FC<AddFormProps> = ({ closeModal }) => {
     closeModal();
   };
 
-  const handleOnNexBtn = (isValid: boolean) => {
-    setStage((prevStage) => prevStage + 1);
-    console.log(isValid);
+  const handleOnNexBtn = (isValid: boolean, validateForm: () => void, values: {}) => {
+    if (isValid) {
+      setStage((prevStage) => prevStage + 1);
+      console.log(isValid);
+    } else {
+      console.log("Form is not valid");
+    }
+    console.log(validateForm);
+    console.log(values);
   };
 
   const handleOnPrevBtn = () => {
@@ -118,8 +125,12 @@ export const AddForm: React.FC<AddFormProps> = ({ closeModal }) => {
 
   return (
     <>
-      <Formik initialValues={initialValues} onSubmit={handleOnSubmit}>
-        {({ isValid }) => (
+      <Formik
+        initialValues={initialValues}
+        onSubmit={handleOnSubmit}
+        validationSchema={addProductSchema}
+      >
+        {({ isValid, validateForm, values }) => (
           <StyledForm>
             <Title>Add goods</Title>
             {stage === 1 && (
@@ -144,7 +155,7 @@ export const AddForm: React.FC<AddFormProps> = ({ closeModal }) => {
                       placeholder="Please select an image"
                       onChange={handleUploadFile}
                     />
-                    {!imageUrl && 'Select an Image'}
+                    {!imageUrl && "Select an Image"}
                   </StyledFileInputLabel>
                   <StyledLabel htmlFor="img">Add image</StyledLabel>
                 </StyledFileInputWrapper>
@@ -152,7 +163,13 @@ export const AddForm: React.FC<AddFormProps> = ({ closeModal }) => {
                 <div style={{ display: "flex", gap: "10px" }}>
                   {" "}
                   <PrevBtn onClick={() => closeModal()}>Cancel</PrevBtn>
-                  <NextBtn onClick={()=>{handleOnNexBtn(isValid)}}>Next</NextBtn>
+                  <NextBtn
+                    onClick={() => {
+                      handleOnNexBtn(isValid, validateForm, values);
+                    }}
+                  >
+                    Next
+                  </NextBtn>
                 </div>
               </>
             )}
@@ -180,7 +197,11 @@ export const AddForm: React.FC<AddFormProps> = ({ closeModal }) => {
                 >
                   {categories.length &&
                     categories.map((item) => (
-                      <option key={item._id} value={item._id} label={item.name} />
+                      <option
+                        key={item._id}
+                        value={item._id}
+                        label={item.name}
+                      />
                     ))}
                 </StyledField>
                 <StyledMessage name="category" component="div" />
@@ -199,7 +220,13 @@ export const AddForm: React.FC<AddFormProps> = ({ closeModal }) => {
               <div style={{ display: "flex", gap: "10px" }}>
                 {" "}
                 <PrevBtn onClick={handleOnPrevBtn}>Prev</PrevBtn>
-                <NextBtn onClick={()=>{handleOnNexBtn(isValid)}}>Next</NextBtn>
+                <NextBtn
+                  onClick={() => {
+                    handleOnNexBtn(isValid, validateForm, values);
+                  }}
+                >
+                  Next
+                </NextBtn>
               </div>
             )}
             {stage === 3 && (
