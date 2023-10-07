@@ -122,15 +122,20 @@ background-color: #3498db;
 `;
 
 export const StyledFileInputLabel = styled.label`
-  background-color: #3498db;
-  color: #fff;
-  border: none;
-  padding: 50px 20px;
+ display: flex;
+  justify-content: center;
+  align-items: center; 
+  background-color: #FFFFFF;
+  color: #000000;
+  border: 2px solid rgba(33, 33, 33, 0.2);
+  min-width: 140px;
+  min-height: 60px;
   border-radius: 14px;
   margin-top: 10px;
  margin-bottom: 10px;
+ cursor: pointer;
 
   &:hover {
-    background-color: #2980b9;
+    border-color: ${(props) => props.theme.colors.secondaryColor};
   }
 `;
