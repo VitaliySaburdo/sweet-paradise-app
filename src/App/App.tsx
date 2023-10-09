@@ -140,7 +140,12 @@ function App() {
             <Route
               path="/goods"
               element={
-                <Goods orders={orders} onAdd={addOrder} loading={loading} addProductCategory={addProductCategory} />
+                <Goods
+                  orders={orders}
+                  onAdd={addOrder}
+                  loading={loading}
+                  addProductCategory={addProductCategory}
+                />
               }
             />
             <Route path="/feedback" element={<Feedback />} />
