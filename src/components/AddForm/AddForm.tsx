@@ -106,18 +106,15 @@ export const AddForm: React.FC<AddFormProps> = ({ closeModal }) => {
     touched: any,
     setErrors: any
   ) => {
-    
-   await validateForm();
-   
+     await validateForm();
+
     const { name, img } = values;
 
     if (stage === 1) {
-      if (!name && !img) {
-        alert("Please fill all fields")
-        return
+      if (!name || !img) {
+        return;
       }
     }
-
 
     if (stage === 2) {
       setFieldValue("category", selectCategory);
@@ -170,7 +167,7 @@ export const AddForm: React.FC<AddFormProps> = ({ closeModal }) => {
                   name="name"
                   placeholder="Please enter name of goods"
                 />
-                <StyledMessage name="name" component="div" />
+                <span>{ errors.name}</span>
 
                 <StyledFileInputWrapper>
                   <StyledFileInputLabel htmlFor="img">
@@ -186,7 +183,7 @@ export const AddForm: React.FC<AddFormProps> = ({ closeModal }) => {
                   </StyledFileInputLabel>
                   <StyledLabel htmlFor="img">Add image</StyledLabel>
                 </StyledFileInputWrapper>
-                <StyledMessage name="img" component="div" />
+                <span>{ errors.img }</span>
                 <div style={{ display: "flex", gap: "10px" }}>
                   {" "}
                   <PrevBtn onClick={() => closeModal()}>Cancel</PrevBtn>
