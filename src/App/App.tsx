@@ -16,6 +16,9 @@ function App() {
   const [products, setProducts] = useState([]);
   const [orders, setOrders] = useState<ProductProps[]>([]);
   const [loading, setLoading] = useState(true);
+  const [addProductCategory, setaAddProductCategory] = useState("");
+
+  console.log(addProductCategory);
 
   const dispatch = useDispatch();
 
@@ -102,6 +105,10 @@ function App() {
     fetchData();
   }, []);
 
+  const addProductByCategory = (id: string) => {
+    setaAddProductCategory(id);
+  };
+
   return (
     <StyleSheetManager shouldForwardProp={(prop) => prop !== "index"}>
       <ThemeProvider theme={theme}>
@@ -115,6 +122,7 @@ function App() {
                 increment={increment}
                 decrement={decrement}
                 changeValue={changeValue}
+                addProductByCategory={addProductByCategory}
               />
             }
           >
@@ -132,7 +140,7 @@ function App() {
             <Route
               path="/goods"
               element={
-                <Goods orders={orders} onAdd={addOrder} loading={loading} />
+                <Goods orders={orders} onAdd={addOrder} loading={loading} addProductCategory={addProductCategory} />
               }
             />
             <Route path="/feedback" element={<Feedback />} />

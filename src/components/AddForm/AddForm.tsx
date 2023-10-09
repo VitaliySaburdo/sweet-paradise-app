@@ -22,6 +22,7 @@ import {
 
 interface AddFormProps {
   closeModal: () => void;
+  addProductByCategory: (id: string) => void; 
 }
 
 interface FormValues {
@@ -42,7 +43,7 @@ const initialValues: FormValues = {
   img: "",
 };
 
-export const AddForm: React.FC<AddFormProps> = ({ closeModal }) => {
+export const AddForm: React.FC<AddFormProps> = ({ closeModal, addProductByCategory }) => {
   const [stage, setStage] = useState<number>(1);
   const [selectedFile, setSelectedFile] = useState<File | null>(null);
   const [imageUrl, setImageUrl] = useState<string | null>(null);
@@ -94,6 +95,7 @@ export const AddForm: React.FC<AddFormProps> = ({ closeModal }) => {
     }
     resetForm();
     closeModal();
+    addProductByCategory(selectCategory);
   };
 
   const handleOnNexBtn = async (

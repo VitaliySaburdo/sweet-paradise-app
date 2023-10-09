@@ -37,6 +37,7 @@ interface OrderProps {
   increment: (id: string) => void;
   decrement: (id: string) => void;
   changeValue: (id: string, value: number) => void;
+  addProductByCategory: (id: string) => void;
 }
 
 export const Header: React.FC<OrderProps> = ({
@@ -45,6 +46,7 @@ export const Header: React.FC<OrderProps> = ({
   increment,
   decrement,
   changeValue,
+  addProductByCategory,
 }) => {
   const [scrolled, setScrolled] = useState(false);
   const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
@@ -101,7 +103,7 @@ export const Header: React.FC<OrderProps> = ({
             )}
             {isAdminModalOpen && (
               <Modal onClick={() => setIsAdminModalOpen(false)}>
-                <AddForm closeModal={() => setIsAdminModalOpen(false)} />
+                <AddForm addProductByCategory={addProductByCategory} closeModal={() => setIsAdminModalOpen(false)} />
               </Modal>
             )}
 
