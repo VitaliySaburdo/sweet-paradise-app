@@ -40,7 +40,6 @@ export const addProductSchema = yup.object().shape({
     .number()
     .typeError("Price must be a valid number")
     .required("Price is required"),
-  category: yup.string().required("Category is required"),
   weight: yup.string().required("Weight is required"),
   ingredients: yup.string().required("Ingredients is required"),
 });

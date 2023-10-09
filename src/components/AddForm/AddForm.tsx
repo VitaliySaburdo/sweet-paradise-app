@@ -80,7 +80,7 @@ export const AddForm: React.FC<AddFormProps> = ({ closeModal }) => {
     const formData = new FormData();
 
     formData.append("name", values.name);
-    formData.append("price", values.price);
+    formData.append("price", String(values.price));
     formData.append("weight", values.weight);
     formData.append("category", selectCategory);
     formData.append("ingredients", values.ingredients);
@@ -98,17 +98,13 @@ export const AddForm: React.FC<AddFormProps> = ({ closeModal }) => {
   };
 
   const handleOnNexBtn = async (
-    setFieldValue: (field: string, value: any) => void,
-    isValid: boolean,
+    setFieldValue: (field: string, value: string) => void,
     validateForm: () => void,
-    values: any,
-    errors: any,
-    touched: any,
-    setErrors: any
+    values: { name: string; img: File | string; price: string; weight: string }
   ) => {
-     await validateForm();
+    await validateForm();
 
-    const { name, img } = values;
+    const { name, img, price, weight } = values;
 
     if (stage === 1) {
       if (!name || !img) {
@@ -118,6 +114,9 @@ export const AddForm: React.FC<AddFormProps> = ({ closeModal }) => {
 
     if (stage === 2) {
       setFieldValue("category", selectCategory);
+      if (!price || !weight) {
+        return;
+      }
     }
     setStage((prevStage) => prevStage + 1);
   };
@@ -167,7 +166,7 @@ export const AddForm: React.FC<AddFormProps> = ({ closeModal }) => {
                   name="name"
                   placeholder="Please enter name of goods"
                 />
-                <span>{ errors.name}</span>
+                <StyledMessage>{errors.name}</StyledMessage>
 
                 <StyledFileInputWrapper>
                   <StyledFileInputLabel htmlFor="img">
@@ -183,7 +182,8 @@ export const AddForm: React.FC<AddFormProps> = ({ closeModal }) => {
                   </StyledFileInputLabel>
                   <StyledLabel htmlFor="img">Add image</StyledLabel>
                 </StyledFileInputWrapper>
-                <span>{ errors.img }</span>
+                <StyledMessage>{errors.img}</StyledMessage>
+
                 <div style={{ display: "flex", gap: "10px" }}>
                   {" "}
                   <PrevBtn onClick={() => closeModal()}>Cancel</PrevBtn>
@@ -191,12 +191,8 @@ export const AddForm: React.FC<AddFormProps> = ({ closeModal }) => {
                     onClick={() => {
                       handleOnNexBtn(
                         setFieldValue,
-                        isValid,
                         validateForm,
                         values,
-                        errors,
-                        touched,
-                        setErrors
                       );
                     }}
                   >
@@ -215,7 +211,7 @@ export const AddForm: React.FC<AddFormProps> = ({ closeModal }) => {
                   name="price"
                   placeholder="Please enter your price"
                 />
-                <StyledMessage name="price" component="div" />
+                <StyledMessage>{errors.price}</StyledMessage>
 
                 <StyledLabel htmlFor="category">Category</StyledLabel>
                 <StyledField
@@ -236,7 +232,7 @@ export const AddForm: React.FC<AddFormProps> = ({ closeModal }) => {
                       />
                     ))}
                 </StyledField>
-                <StyledMessage name="category" component="div" />
+                <StyledMessage>{errors.category}</StyledMessage>
 
                 <StyledLabel htmlFor="weight">Weight</StyledLabel>
                 <StyledField
@@ -245,7 +241,7 @@ export const AddForm: React.FC<AddFormProps> = ({ closeModal }) => {
                   name="weight"
                   placeholder="Please enter weight of goods"
                 />
-                <StyledMessage name="weight" component="div" />
+                <StyledMessage>{errors.weight}</StyledMessage>
               </>
             )}
             {stage === 2 && (
@@ -256,12 +252,8 @@ export const AddForm: React.FC<AddFormProps> = ({ closeModal }) => {
                   onClick={() => {
                     handleOnNexBtn(
                       setFieldValue,
-                      isValid,
                       validateForm,
                       values,
-                      errors,
-                      touched,
-                      setErrors
                     );
                   }}
                 >
@@ -280,7 +272,7 @@ export const AddForm: React.FC<AddFormProps> = ({ closeModal }) => {
                   rows="6"
                   cols="20"
                 />
-                <StyledMessage name="ingredients" component="div" />
+                <StyledMessage>{errors.ingredients}</StyledMessage>
                 <div style={{ display: "flex", gap: "10px" }}>
                   {" "}
                   <PrevBtn onClick={handleOnPrevBtn}>Prev</PrevBtn>

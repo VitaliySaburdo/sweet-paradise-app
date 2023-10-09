@@ -1,5 +1,5 @@
 import styled, { keyframes } from "styled-components";
-import { Form, Field, ErrorMessage } from "formik";
+import { Form, Field } from "formik";
 import { Button } from "../Button/Button";
 
 const fadeIn = keyframes`
@@ -69,7 +69,7 @@ export const StyledLabel = styled.label`
   margin-left: 8px;
 `;
 
-export const StyledMessage = styled(ErrorMessage)`
+export const StyledMessage = styled.span`
   font-size: 12px;
   color: red;
   animation: ${fadeIn} 0.5s ease-in-out;
