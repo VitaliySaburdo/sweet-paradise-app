@@ -101,9 +101,23 @@ export const AddForm: React.FC<AddFormProps> = ({ closeModal }) => {
     setFieldValue: (field: string, value: any) => void,
     isValid: boolean,
     validateForm: () => void,
-    values: any
+    values: any,
+    errors: any,
+    touched: any,
+    setErrors: any
   ) => {
     
+    validateForm();
+    
+    const { name, img } = values;
+    if (stage === 1) {
+      if (!name && !img) {
+        alert("Please fill all fields")
+        return
+      }
+    }
+
+
     if (stage === 2) {
       setFieldValue("category", selectCategory);
     }
@@ -135,7 +149,15 @@ export const AddForm: React.FC<AddFormProps> = ({ closeModal }) => {
         onSubmit={handleOnSubmit}
         validationSchema={addProductSchema}
       >
-        {({ isValid, validateForm, values, setFieldValue }) => (
+        {({
+          isValid,
+          validateForm,
+          values,
+          setFieldValue,
+          errors,
+          touched,
+          setErrors,
+        }) => (
           <StyledForm>
             <Title>Add goods</Title>
             {stage === 1 && (
@@ -173,7 +195,10 @@ export const AddForm: React.FC<AddFormProps> = ({ closeModal }) => {
                         setFieldValue,
                         isValid,
                         validateForm,
-                        values
+                        values,
+                        errors,
+                        touched,
+                        setErrors
                       );
                     }}
                   >
@@ -235,7 +260,10 @@ export const AddForm: React.FC<AddFormProps> = ({ closeModal }) => {
                       setFieldValue,
                       isValid,
                       validateForm,
-                      values
+                      values,
+                      errors,
+                      touched,
+                      setErrors
                     );
                   }}
                 >
