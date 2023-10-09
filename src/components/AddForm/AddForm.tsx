@@ -97,7 +97,7 @@ export const AddForm: React.FC<AddFormProps> = ({ closeModal }) => {
     closeModal();
   };
 
-  const handleOnNexBtn = (
+  const handleOnNexBtn = async (
     setFieldValue: (field: string, value: any) => void,
     isValid: boolean,
     validateForm: () => void,
@@ -107,9 +107,10 @@ export const AddForm: React.FC<AddFormProps> = ({ closeModal }) => {
     setErrors: any
   ) => {
     
-    validateForm();
-    
+   await validateForm();
+   
     const { name, img } = values;
+
     if (stage === 1) {
       if (!name && !img) {
         alert("Please fill all fields")
