@@ -108,7 +108,7 @@ export const StyledFileInputWrapper = styled.div`
   align-items: center;
 `;
 
-export const StyledFileInput = styled(Field)`
+export const StyledFileInput = styled.input`
 background-color: #3498db;
   border: 1px solid #ccc;
   padding: 10px;
@@ -116,8 +116,9 @@ background-color: #3498db;
   background-color: #fff;
   
 
-  opacity: 0; 
+  /* opacity: 0;  */
   position: absolute;
+  bottom: 50px;
     cursor: pointer;
 `;
 

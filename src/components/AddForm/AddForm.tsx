@@ -103,22 +103,27 @@ export const AddForm: React.FC<AddFormProps> = ({ closeModal }) => {
     values: any
   ) => {
     setStage((prevStage) => prevStage + 1);
+    console.log(values);
   };
 
   const handleOnPrevBtn = () => {
     setStage((prevStage) => (prevStage > 1 ? prevStage - 1 : prevStage));
   };
 
-  const handleUploadFile = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const uploadFile = event.currentTarget.files?.[0] ?? null;
-    setSelectedFile(uploadFile);
-    if (uploadFile) {
-      const imageUrl = URL.createObjectURL(uploadFile);
-      setImageUrl(imageUrl);
-    } else {
-      setImageUrl(null);
-    }
-  };
+  const handleUploadFile =
+    (setFieldValue: (field: string, value: any) => void, values: any) =>
+    (event: React.ChangeEvent<HTMLInputElement>) => {
+      console.log(values);
+      const uploadFile = event.currentTarget.files?.[0] ?? null;
+      setSelectedFile(uploadFile);
+      if (uploadFile) {
+        const imageUrl = URL.createObjectURL(uploadFile);
+        setImageUrl(imageUrl);
+        setFieldValue("img", uploadFile);
+      } else {
+        setImageUrl(null);
+      }
+    };
 
   return (
     <>
@@ -127,7 +132,7 @@ export const AddForm: React.FC<AddFormProps> = ({ closeModal }) => {
         onSubmit={handleOnSubmit}
         validationSchema={addProductSchema}
       >
-        {({ isValid, validateForm, values }) => (
+        {({ isValid, validateForm, values, setFieldValue }) => (
           <StyledForm>
             <Title>Add goods</Title>
             {stage === 1 && (
@@ -149,8 +154,7 @@ export const AddForm: React.FC<AddFormProps> = ({ closeModal }) => {
                       id="img"
                       name="img"
                       accept="image/*"
-                      placeholder="Please select an image"
-                      onChange={handleUploadFile}
+                      onChange={handleUploadFile(setFieldValue, values)}
                     />
                     {!imageUrl && "Select an Image"}
                   </StyledFileInputLabel>
