@@ -18,25 +18,25 @@ export const StyledForm = styled(Form)`
 `;
 
 export const NextBtn = styled(Button)`
-width: 130px;
-height: 40px;
-margin-top: 20px;
-margin-left: auto;
-`
+  width: 130px;
+  height: 40px;
+  margin-top: 20px;
+  margin-left: auto;
+`;
 
 export const PrevBtn = styled(Button)`
-width: 130px;
-height: 40px;
-margin-top: 20px;
-margin-right: auto;
-`
+  width: 130px;
+  height: 40px;
+  margin-top: 20px;
+  margin-right: auto;
+`;
 
 export const AddBtn = styled(Button)`
-width: 130px;
-height: 40px;
-margin-top: 20px;
-margin-left: auto;
-`
+  width: 130px;
+  height: 40px;
+  margin-top: 20px;
+  margin-left: auto;
+`;
 
 export const Title = styled.h2`
   font-weight: 16px;
@@ -60,7 +60,6 @@ export const StyledField = styled(Field)`
     outline-color: ${(props) => props.theme.colors.secondaryColor};
   }
 `;
-
 
 export const StyledLabel = styled.label`
   font-size: 12px;
@@ -109,32 +108,35 @@ export const StyledFileInputWrapper = styled.div`
 `;
 
 export const StyledFileInput = styled.input`
-background-color: #3498db;
+  background-color: #3498db;
   border: 1px solid #ccc;
-  padding: 10px;
   border-radius: 4px;
   background-color: #fff;
-  
 
-  /* opacity: 0;  */
+  opacity: 0; 
   position: absolute;
   bottom: 50px;
-    cursor: pointer;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
 `;
 
 export const StyledFileInputLabel = styled.label`
- display: flex;
+  display: flex;
+  position: relative;
   justify-content: center;
-  align-items: center; 
-  background-color: #FFFFFF;
+  align-items: center;
+  background-color: #ffffff;
   color: #000000;
   border: 2px solid rgba(33, 33, 33, 0.2);
   min-width: 140px;
   min-height: 60px;
   border-radius: 14px;
   margin-top: 10px;
- margin-bottom: 10px;
- cursor: pointer;
+  margin-bottom: 10px;
+  cursor: pointer;
 
   &:hover {
     border-color: ${(props) => props.theme.colors.secondaryColor};

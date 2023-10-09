@@ -98,12 +98,16 @@ export const AddForm: React.FC<AddFormProps> = ({ closeModal }) => {
   };
 
   const handleOnNexBtn = (
+    setFieldValue: (field: string, value: any) => void,
     isValid: boolean,
     validateForm: () => void,
     values: any
   ) => {
+    
+    if (stage === 2) {
+      setFieldValue("category", selectCategory);
+    }
     setStage((prevStage) => prevStage + 1);
-    console.log(values);
   };
 
   const handleOnPrevBtn = () => {
@@ -113,7 +117,6 @@ export const AddForm: React.FC<AddFormProps> = ({ closeModal }) => {
   const handleUploadFile =
     (setFieldValue: (field: string, value: any) => void, values: any) =>
     (event: React.ChangeEvent<HTMLInputElement>) => {
-      console.log(values);
       const uploadFile = event.currentTarget.files?.[0] ?? null;
       setSelectedFile(uploadFile);
       if (uploadFile) {
@@ -166,7 +169,12 @@ export const AddForm: React.FC<AddFormProps> = ({ closeModal }) => {
                   <PrevBtn onClick={() => closeModal()}>Cancel</PrevBtn>
                   <NextBtn
                     onClick={() => {
-                      handleOnNexBtn(isValid, validateForm, values);
+                      handleOnNexBtn(
+                        setFieldValue,
+                        isValid,
+                        validateForm,
+                        values
+                      );
                     }}
                   >
                     Next
@@ -192,9 +200,9 @@ export const AddForm: React.FC<AddFormProps> = ({ closeModal }) => {
                   id="category"
                   name="category"
                   placeholder="Please enter category of goods"
-                  onChange={(e: React.ChangeEvent<HTMLSelectElement>) =>
-                    setSelectCategory(e.target.value)
-                  }
+                  onChange={(e: React.ChangeEvent<HTMLSelectElement>) => {
+                    setSelectCategory(e.target.value);
+                  }}
                 >
                   {categories.length &&
                     categories.map((item) => (
@@ -223,7 +231,12 @@ export const AddForm: React.FC<AddFormProps> = ({ closeModal }) => {
                 <PrevBtn onClick={handleOnPrevBtn}>Prev</PrevBtn>
                 <NextBtn
                   onClick={() => {
-                    handleOnNexBtn(isValid, validateForm, values);
+                    handleOnNexBtn(
+                      setFieldValue,
+                      isValid,
+                      validateForm,
+                      values
+                    );
                   }}
                 >
                   Next
