@@ -33,6 +33,12 @@ export const Goods: React.FC<CatalogProps> = ({ onAdd, loading, orders }) => {
     setCategory(id);
   };
 
+  const changedCategory = async (id: string) => {
+    setCategory(id);
+    const data = await getProductsByCategories(category);
+    setProducts(data);
+  };
+
   return (
     <>
       <Catalog
@@ -41,8 +47,9 @@ export const Goods: React.FC<CatalogProps> = ({ onAdd, loading, orders }) => {
         onAdd={onAdd}
         orders={orders}
         fetchProductsByCategory={handleChangeCategory}
+        changedCategory={changedCategory}
       />
-      <Order/>
+      <Order />
     </>
   );
 };

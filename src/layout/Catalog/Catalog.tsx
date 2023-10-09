@@ -25,6 +25,7 @@ interface CategoryProps {
   onAdd: (novelty: ProductProps) => void;
   orders: ProductProps[];
   products: ProductProps[];
+  changedCategory: (id: string) => void;
 }
 
 export const Catalog: React.FC<CategoryProps> = ({
@@ -33,6 +34,7 @@ export const Catalog: React.FC<CategoryProps> = ({
   loading,
   orders,
   products,
+  changedCategory,
 }) => {
   const [selectedCategory, setSelectedCategory] = useState<string>(
     "64dc5d6039fe49cdd5fb98ff"
@@ -49,6 +51,8 @@ export const Catalog: React.FC<CategoryProps> = ({
       fetchProductsByCategory(category);
     }
   };
+
+
 
   return (
     <>
@@ -108,6 +112,7 @@ export const Catalog: React.FC<CategoryProps> = ({
             loading={loading}
             onAdd={onAdd}
             orders={orders}
+            changedCategory={changedCategory}
           />
         </StyledContainer>
       </Section>

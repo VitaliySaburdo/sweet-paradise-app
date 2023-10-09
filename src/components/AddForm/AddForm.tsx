@@ -1,8 +1,7 @@
 import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { Formik, FormikHelpers } from "formik";
-import { createProduct } from "../../services/apiService";
-import { getAllCategories } from "../../services/apiService";
+import { createProduct, getAllCategories } from "../../services/apiService";
 import { logOut } from "../../redux/auth/operations";
 import { addProductSchema } from "../../helpers/ValidationSchemas";
 import {

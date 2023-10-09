@@ -7,6 +7,7 @@ interface ProductListProps {
   loading: boolean;
   onAdd: (novelty: ProductProps) => void;
   orders: ProductProps[];
+  changedCategory: (id: string) => void;
 }
 
 export const ProductList: React.FC<ProductListProps> = ({
@@ -14,6 +15,7 @@ export const ProductList: React.FC<ProductListProps> = ({
   loading,
   onAdd,
   orders,
+  changedCategory,
 }) => {
   return (
     <>
@@ -27,6 +29,7 @@ export const ProductList: React.FC<ProductListProps> = ({
               key={product._id}
               onAdd={onAdd}
               orders={orders}
+              changedCategory={changedCategory}
             />
           ))}
         </Wrapper>

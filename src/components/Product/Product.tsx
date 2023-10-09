@@ -21,6 +21,7 @@ import { ProductProps } from "../../App/App.types";
 interface NoveltiesItem {
   product: ProductProps;
   onAdd: (novelty: ProductProps) => void;
+  changedCategory: (id: string) => void;
   orders: ProductProps[];
 }
 
@@ -28,6 +29,7 @@ export const Product: React.FC<NoveltiesItem> = ({
   product,
   onAdd,
   orders,
+  changedCategory,
 }) => {
   const [added, setAdded] = useState(false);
   const [isDelete, setIsDelete] = useState(false);
@@ -50,6 +52,7 @@ export const Product: React.FC<NoveltiesItem> = ({
     } catch (error) {
       console.error("Error deleting product:", error);
     }
+    changedCategory(product.category);
   };
 
   return (
