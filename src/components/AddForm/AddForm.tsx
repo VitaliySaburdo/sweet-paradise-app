@@ -126,7 +126,7 @@ export const AddForm: React.FC<AddFormProps> = ({ closeModal }) => {
   };
 
   const handleUploadFile =
-    (setFieldValue: (field: string, value: any) => void, values: any) =>
+    (setFieldValue: (field: string, value: any) => void) =>
     (event: React.ChangeEvent<HTMLInputElement>) => {
       const uploadFile = event.currentTarget.files?.[0] ?? null;
       setSelectedFile(uploadFile);
@@ -147,13 +147,10 @@ export const AddForm: React.FC<AddFormProps> = ({ closeModal }) => {
         validationSchema={addProductSchema}
       >
         {({
-          isValid,
           validateForm,
           values,
           setFieldValue,
           errors,
-          touched,
-          setErrors,
         }) => (
           <StyledForm>
             <Title>Add goods</Title>
@@ -176,7 +173,7 @@ export const AddForm: React.FC<AddFormProps> = ({ closeModal }) => {
                       id="img"
                       name="img"
                       accept="image/*"
-                      onChange={handleUploadFile(setFieldValue, values)}
+                      onChange={handleUploadFile(setFieldValue)}
                     />
                     {!imageUrl && "Select an Image"}
                   </StyledFileInputLabel>

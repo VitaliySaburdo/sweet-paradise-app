@@ -31,9 +31,9 @@ export const addProductSchema = yup.object().shape({
   name: yup.string().required("Name is required"),
   img: yup
     .mixed()
-    .test("fileType", "Only image files are allowed", (value) => {
+    .test("fileType", "Only image/png files are allowed", (value) => {
       if (!value) return true;
-      return ["image/jpg", "image/jpeg", "image/png"].includes(value.type);
+      return [ "image/png"].includes(value.type);
     })
     .required("Image is required"),
   price: yup
