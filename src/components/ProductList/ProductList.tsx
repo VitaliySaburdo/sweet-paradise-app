@@ -22,7 +22,7 @@ export const ProductList: React.FC<ProductListProps> = ({
     <>
       {loading ? (
         <Wrapper>
-          {Array.from({ length: products.length }, (_, index) => (
+          {Array.from({ length: 3 }, (_, index) => (
             <ProductSkeleton key={index}/>
           ))}
           </Wrapper>
