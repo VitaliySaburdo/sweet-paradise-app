@@ -49,7 +49,6 @@ export const Goods: React.FC<CatalogProps> = ({
     fetchData();
   }, [addProductCategory]);
 
-  console.log("id:", addProductCategory);
 
   const handleChangeCategory = (id: string) => {
     setCategory(id);

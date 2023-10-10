@@ -1,9 +1,9 @@
 import Skeleton from "react-loading-skeleton";
 import { Wrapper, Img, Title, Text, Params } from "./ProductSkeleton.styled";
 
-export const ProductSkeleton = ({ key }: { key: number }) => {
+export const ProductSkeleton = () => {
   return <>
-      <Wrapper key={key}>
+      <Wrapper>
         <Img>
           <Skeleton height={"100%"} />
         </Img>

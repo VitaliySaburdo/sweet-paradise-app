@@ -43,24 +43,24 @@ export const Catalog: React.FC<CategoryProps> = ({
   const [selectedCategory, setSelectedCategory] = useState<string>(
     "64dc5d6039fe49cdd5fb98ff"
   );
-  const [scrollPosition, setScrollPosition] = useState(0);
+  const [scrollposition, setScrollPosition] = useState(0);
 
   const scrollLeft = () => {
-    if (scrollPosition <= -700) {
+    if (scrollposition <= -700) {
       return;
     } else {
-      setScrollPosition(scrollPosition - 100);
+      setScrollPosition(scrollposition - 100);
     }
   };
 
   const scrollRight = () => {
-    if (scrollPosition >= 0) {
+    if (scrollposition >= 0) {
       return;
     } else {
-      setScrollPosition(scrollPosition + 100);
+      setScrollPosition(scrollposition + 100);
     }
   };
-  console.log(scrollPosition);
+
   useEffect(() => {
     fetchProductsByCategory(selectedCategory);
   }, [fetchProductsByCategory, selectedCategory]);
@@ -79,7 +79,7 @@ export const Catalog: React.FC<CategoryProps> = ({
       <Section>
         <StyledContainer>
           <CatalogTitle>Yummy catalog</CatalogTitle>
-          <CatalogList scrollPosition={scrollPosition}>
+          <CatalogList scrollPosition={scrollposition}>
             <CatalogItem>
               <CatalogBtn
                 data-category="64dc639ea1893d42a2047f1b"
