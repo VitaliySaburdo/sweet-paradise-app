@@ -11,6 +11,7 @@ import { Home } from "../pages/Home";
 import { Goods } from "../pages/Goods";
 import { ProductProps } from "./App.types";
 import { Feedback } from "../pages/Feedback";
+import { NotFound } from "../pages/NotFound";
 
 function App() {
   const [products, setProducts] = useState([]);
@@ -147,6 +148,7 @@ function App() {
               }
             />
             <Route path="/feedback" element={<Feedback />} />
+            <Route path="*" element={<NotFound/>} />
           </Route>
         </Routes>
       </ThemeProvider>
