@@ -1,6 +1,6 @@
 import { Container } from "../../components/Container/Container";
-import user from "../../images/CustomOrder/user.png";
-import phone from "../../images/CustomOrder/phone.png";
+import User from "../../images/CustomOrder/user.png";
+import Phone from "../../images/CustomOrder/phone.png";
 
 import {
   StyledSection,
@@ -14,10 +14,16 @@ import {
   StyledLabel,
   StyledButton,
 } from "./CustomOrder.styled";
+import { useState } from "react";
 
 export const CustomOrder = () => {
+
+  const [name, setName] = useState('');
+  const [phone, setPhone] = useState('');
+
   const handleOnSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    console.log({name: name, phone: phone});
   };
 
   return (
@@ -40,16 +46,18 @@ export const CustomOrder = () => {
                   type="text"
                   name="name"
                   placeholder="Enter your name"
+                  onChange={(e)=>setName(e.target.value)}
                 />
-                <Img src={user} alt="user" width={25} />
+                <Img src={User} alt="user" width={25} />
               </StyledLabel>
               <StyledLabel htmlFor="phone">
                 <StyledField
                   type="text"
                   name="phone"
                   placeholder="Enter your phone"
+                  onChange={(e)=>setPhone(e.target.value)}
                 />
-                <Img src={phone} alt="phone" width={25} />
+                <Img src={Phone} alt="phone" width={25} />
               </StyledLabel>
               <StyledButton type="submit">More products</StyledButton>
             </StyledForm>
