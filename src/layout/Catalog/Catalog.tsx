@@ -9,12 +9,16 @@ import {
   CatalogImg,
   CatalogText,
   CatalogBtn,
+  BtnLeft,
+  BtnRight,
 } from "./Catalog.styled";
 import eclair from "../../images/Goods/eclair.png";
 import macaron from "../../images/Goods/macaron.png";
 import cupcake from "../../images/Goods/cupcake.png";
 import muffin from "../../images/Goods/muffin.png";
 import donut from "../../images/Goods/donut.png";
+import leftBtn from '../../images/Catalog/leftBtn.png';
+import rightBtn from '../../images/Catalog/rightBtn.png';
 import { Section } from "../../components/Section/Section";
 import { ProductList } from "../../components/ProductList/ProductList";
 import { ProductProps } from "../../App/App.types";
@@ -39,6 +43,15 @@ export const Catalog: React.FC<CategoryProps> = ({
   const [selectedCategory, setSelectedCategory] = useState<string>(
     "64dc5d6039fe49cdd5fb98ff"
   );
+  const [scrollPosition, setScrollPosition] = useState(0);
+
+  const scrollLeft = () => {
+    setScrollPosition(scrollPosition - 100);
+  };
+
+  const scrollRight = () => {
+    setScrollPosition(scrollPosition + 100);
+  };
 
   useEffect(() => {
     fetchProductsByCategory(selectedCategory);
@@ -52,15 +65,13 @@ export const Catalog: React.FC<CategoryProps> = ({
     }
   };
 
-
-
   return (
     <>
-      <Box/>
+      <Box />
       <Section>
         <StyledContainer>
           <CatalogTitle>Yummy catalog</CatalogTitle>
-          <CatalogList>
+          <CatalogList scrollPosition={scrollPosition}>
             <CatalogItem>
               <CatalogBtn
                 data-category="64dc639ea1893d42a2047f1b"
@@ -107,6 +118,8 @@ export const Catalog: React.FC<CategoryProps> = ({
               </CatalogBtn>
             </CatalogItem>
           </CatalogList>
+          <BtnLeft onClick={scrollLeft}> <img src={leftBtn} alt="button" width={30} /> </BtnLeft>
+          <BtnRight onClick={scrollRight}><img src={rightBtn} alt="button" width={30} /></BtnRight>
           <ProductList
             products={products}
             loading={loading}

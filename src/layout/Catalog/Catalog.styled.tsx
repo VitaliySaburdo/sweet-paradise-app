@@ -37,9 +37,11 @@ export const CatalogTitle = styled.h2`
 
 export const StyledContainer = styled(Container)`
   overflow: hidden;
-`
+  position: relative;
+`;
 
-export const CatalogList = styled.ul`
+export const CatalogList = styled.ul<{ scrollPosition: number }>`
+  transform: ${(props) => `translateX(${props.scrollPosition}px)`};
   width: 929px;
   padding: 20px;
   margin: 0 auto;
@@ -47,6 +49,10 @@ export const CatalogList = styled.ul`
   justify-content: space-between;
   align-items: end;
   margin-bottom: 40px;
+  transition: transform 0.3s ease;
+  @media screen and (${(props) => props.theme.media.lg}){
+    transform: translateX(0);
+  }
 `;
 
 export const CatalogItem = styled.li`
@@ -72,8 +78,30 @@ export const CatalogBtn = styled.button`
   border: none;
   background-color: transparent;
   cursor: pointer;
-  transition: transform 0.3s ease;
   &:hover {
     transform: scale(1.2);
+  }
+`;
+
+export const BtnLeft = styled.button`
+  background-color: transparent;
+  border: none;
+  position: absolute;
+  top: 200px;
+  left: 0;
+  padding: 0;
+  @media screen and (${(props) => props.theme.media.lg}) {
+    display: none;
+  }
+`;
+export const BtnRight = styled.button`
+  background-color: transparent;
+  border: none;
+  position: absolute;
+  top: 200px;
+  right: 0;
+  padding: 0;
+  @media screen and (${(props) => props.theme.media.lg}) {
+    display: none;
   }
 `;
