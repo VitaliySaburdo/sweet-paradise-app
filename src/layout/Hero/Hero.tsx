@@ -14,6 +14,11 @@ import { Slider } from "../../components/Slider/Slider";
 import { Link } from "react-router-dom";
 
 export const Hero = () => {
+
+  const handleOnClick = () => {
+    window.scrollTo(0, 0);
+}
+
   return (
     <>
       <StyledSection>
@@ -24,7 +29,7 @@ export const Hero = () => {
             <Wrapper>
               <Title>Sweet Paradise</Title>
               <Slogan>We will make your life is sweeter!</Slogan>
-              <Link to={"/goods"}>
+              <Link onClick={handleOnClick} to={"/goods"}>
                 <StyledBtn>Choose a dessert</StyledBtn>
               </Link>
             </Wrapper>
