@@ -1,6 +1,7 @@
 import { Product } from "../Product/Product";
 import { Wrapper } from "./ProductList.styled";
 import { ProductProps } from "../../App/App.types";
+import { ProductSkeleton } from "../ProductSkeleton/ProductSceleton";
 
 interface ProductListProps {
   products: ProductProps[];
@@ -20,7 +21,7 @@ export const ProductList: React.FC<ProductListProps> = ({
   return (
     <>
       {loading ? (
-        <p>Loading...</p>
+        <ProductSkeleton/>
       ) : (
         <Wrapper>
           {products.map((product) => (

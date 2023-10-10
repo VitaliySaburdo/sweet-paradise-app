@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { selectIsLoggedIn } from "../../redux/auth/selectors";
+import Sceleton from 'react-loading-skeleton'
+import 'react-loading-skeleton/dist/skeleton.css'
 import { deleteProduct } from "../../services/apiService";
 import { Modal } from "../Modal/Modal";
 import {
@@ -58,15 +60,15 @@ export const Product: React.FC<NoveltiesItem> = ({
   return (
     <>
       <Wrapper>
-        <Img
+        {<Img
           src={"https://sweet-paradise-api.onrender.com/static/" + product.img}
           alt={product.name}
-        />
-        <Title>{product.name}</Title>
-        <Text>{product.ingredients}</Text>
-        <Params>
+        /> || <Sceleton/>}
+        {<Title>{product.name}</Title> || <Sceleton/>}
+        {<Text>{product.ingredients}</Text> || <Sceleton/>}
+        {<Params>
           {product.price} uah / {product.weight} gr
-        </Params>
+        </Params> || <Sceleton/>}
 
         {isLogin ? (
           <DeleteBtn onClick={handleOnDelete}>Delete</DeleteBtn>
@@ -87,7 +89,7 @@ export const Product: React.FC<NoveltiesItem> = ({
             </BtnWrapper>
           </Modal>
         )}
-      </Wrapper>
+        </Wrapper>
     </>
   );
 };

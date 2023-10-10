@@ -1,6 +1,7 @@
 import { useDispatch } from "react-redux";
 import { useEffect, useState } from "react";
 import { Route, Routes } from "react-router-dom";
+import { SkeletonTheme } from 'react-loading-skeleton'
 import { refreshUser } from "../redux/auth/operations";
 import { getProductsByCategories } from "../services/apiService";
 import { StyleSheetManager } from "styled-components";
@@ -16,7 +17,7 @@ import { NotFound } from "../pages/NotFound";
 function App() {
   const [products, setProducts] = useState([]);
   const [orders, setOrders] = useState<ProductProps[]>([]);
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
   const [addProductCategory, setaAddProductCategory] = useState("");
 
   const dispatch = useDispatch();
@@ -94,10 +95,10 @@ function App() {
       try {
         const data = await getProductsByCategories("64dcc4148efcb0f7600c8cd0");
         setProducts(data);
-        setLoading(false);
+        setLoading(true);
       } catch (error) {
         console.error("Error fetching data:", error);
-        setLoading(false);
+        setLoading(true);
       }
     }
 
@@ -111,6 +112,7 @@ function App() {
   return (
     <StyleSheetManager shouldForwardProp={(prop) => prop !== "index"}>
       <ThemeProvider theme={theme}>
+        <SkeletonTheme baseColor="#c2c1c1" highlightColor="#e0e0e0">
         <Routes>
           <Route
             path="/"
@@ -150,7 +152,8 @@ function App() {
             <Route path="/feedback" element={<Feedback />} />
             <Route path="*" element={<NotFound/>} />
           </Route>
-        </Routes>
+          </Routes>
+          </SkeletonTheme>
       </ThemeProvider>
     </StyleSheetManager>
   );
