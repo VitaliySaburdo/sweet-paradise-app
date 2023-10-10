@@ -18,8 +18,6 @@ function App() {
   const [loading, setLoading] = useState(true);
   const [addProductCategory, setaAddProductCategory] = useState("");
 
-  console.log(addProductCategory);
-
   const dispatch = useDispatch();
 
   useEffect(() => {

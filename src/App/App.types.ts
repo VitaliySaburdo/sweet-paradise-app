@@ -2,7 +2,7 @@ export interface ProductProps {
     _id: string;
     name: string;
     price: number;
-    weight: string;
+    weight: number;
     category: string;
     favorite: boolean;
     img: File | null;
