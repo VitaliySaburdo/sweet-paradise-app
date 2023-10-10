@@ -17,7 +17,7 @@ import { NotFound } from "../pages/NotFound";
 function App() {
   const [products, setProducts] = useState([]);
   const [orders, setOrders] = useState<ProductProps[]>([]);
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
   const [addProductCategory, setaAddProductCategory] = useState("");
 
   const dispatch = useDispatch();
@@ -95,10 +95,10 @@ function App() {
       try {
         const data = await getProductsByCategories("64dcc4148efcb0f7600c8cd0");
         setProducts(data);
-        setLoading(true);
+        setLoading(false);
       } catch (error) {
         console.error("Error fetching data:", error);
-        setLoading(true);
+        setLoading(false);
       }
     }
 
