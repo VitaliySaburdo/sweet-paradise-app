@@ -17,13 +17,14 @@ import {
 import { useState } from "react";
 
 export const CustomOrder = () => {
-
-  const [name, setName] = useState('');
-  const [phone, setPhone] = useState('');
+  const [name, setName] = useState("");
+  const [phone, setPhone] = useState("");
 
   const handleOnSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log({name: name, phone: phone});
+    console.log({ name: name, phone: phone });
+    setName('');
+    setPhone('');
   };
 
   return (
@@ -45,8 +46,9 @@ export const CustomOrder = () => {
                 <StyledField
                   type="text"
                   name="name"
+                  value={name}
                   placeholder="Enter your name"
-                  onChange={(e)=>setName(e.target.value)}
+                  onChange={(e) => setName(e.target.value)}
                 />
                 <Img src={User} alt="user" width={25} />
               </StyledLabel>
@@ -54,8 +56,9 @@ export const CustomOrder = () => {
                 <StyledField
                   type="text"
                   name="phone"
+                  value={phone}
                   placeholder="Enter your phone"
-                  onChange={(e)=>setPhone(e.target.value)}
+                  onChange={(e) => setPhone(e.target.value)}
                 />
                 <Img src={Phone} alt="phone" width={25} />
               </StyledLabel>
