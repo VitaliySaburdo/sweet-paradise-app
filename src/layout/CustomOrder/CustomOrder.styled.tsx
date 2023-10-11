@@ -4,8 +4,6 @@ import box from "../../images/CustomOrder/box.png";
 import box_md from "../../images/CustomOrder/box_md.png";
 import box_sm from "../../images/CustomOrder/box_sm.png";
 import { Button } from "../../components/Button/Button";
-// import leaf from '../../images/CustomOrder/leaf.png';
-// import leaf_blur from '../../images/CustomOrder/leaf_blur.png';
 
 export const StyledSection = styled(Section)`
   border: 1px solid #000;

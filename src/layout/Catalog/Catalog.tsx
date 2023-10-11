@@ -128,10 +128,10 @@ export const Catalog: React.FC<CategoryProps> = ({
           </CatalogList>
           <BtnLeft onClick={scrollLeft}>
             {" "}
-            <img src={leftBtn} alt="button" width={30} />{" "}
+            <img src={leftBtn} alt="button" width={20} />{" "}
           </BtnLeft>
           <BtnRight onClick={scrollRight}>
-            <img src={rightBtn} alt="button" width={30} />
+            <img src={rightBtn} alt="button" width={20} />
           </BtnRight>
           <ProductList
             products={products}
