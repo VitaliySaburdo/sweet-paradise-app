@@ -43,7 +43,7 @@ export const Catalog: React.FC<CategoryProps> = ({
   const [selectedCategory, setSelectedCategory] = useState<string>(
     "64dc5d6039fe49cdd5fb98ff"
   );
-  const [scrollposition, setScrollPosition] = useState(0);
+  const [scrollposition, setScrollPosition] = useState(-200);
 
   const scrollLeft = () => {
     if (scrollposition <= -700) {
