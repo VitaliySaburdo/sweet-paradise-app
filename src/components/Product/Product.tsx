@@ -64,8 +64,8 @@ export const Product: React.FC<NoveltiesItem> = ({
           src={"https://sweet-paradise-api.onrender.com/static/" + product.img}
           alt={product.name}
         /> || <Sceleton/>}
-        {<Title>{product.name}</Title> || <Sceleton/>}
-        {<Text>{product.ingredients}</Text> || <Sceleton/>}
+        <Title>{product.name || <Sceleton/>}</Title> 
+        <Text>{product.ingredients || <Sceleton/>}</Text> 
         {<Params>
           {product.price} uah / {product.weight} gr
         </Params> || <Sceleton/>}

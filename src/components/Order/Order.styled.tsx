@@ -68,7 +68,7 @@ export const Wrapper = styled.div`
   display: flex;
   justify-content: center;
   background-color: ${(props) => props.theme.colors.primaryColor};
-  width: 360px;
+  width: 320px;
   height: 550px;
   margin: 0 auto;
   border-radius: 10px;
@@ -87,7 +87,7 @@ export const Wrapper = styled.div`
 
 export const FormWrapper = styled.div`
   height: 96%;
-  width: 340px;
+  width: 300px;
   border-radius: 10px;
   background-color: ${(props) => props.theme.colors.witeBcgColor};
   padding: 45px 60px;
