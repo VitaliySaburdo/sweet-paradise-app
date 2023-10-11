@@ -85,13 +85,13 @@ export const CatalogBtn = styled.button`
 
 export const BtnLeft = styled.button`
   background-color: #FFFFFF;
-  border: solid 2px #9C0746;
+  border: solid 3px #9C0746;
   border-radius: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 40px;
-  height: 40px;
+  width: 50px;
+  height: 50px;
   position: absolute;
   top: 200px;
   left: 0;
@@ -102,13 +102,13 @@ export const BtnLeft = styled.button`
 `;
 export const BtnRight = styled.button`
   background-color: #FFFFFF;
-  border: solid 2px #9C0746;
+  border: solid 3px #9C0746;
   border-radius: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 40px;
-  height: 40px;
+  width: 50px;
+  height: 50px;
   position: absolute;
   top: 200px;
   right: 0;
