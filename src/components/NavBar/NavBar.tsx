@@ -16,16 +16,16 @@ export const NavBar: React.FC<NavBarProps> = ({ color, display = false }) => {
       <Nav>
         <NavList display={display.toString()}>
           <li>
-             <StyledLink onClick={handleOnClick} to={'/'} color={color} >Home</StyledLink>
+             <StyledLink onClick={handleOnClick} to={'/'} color={color}>Home</StyledLink>
           </li>
           <li>
-            <StyledLink onClick={handleOnClick} to={'/goods'} color={color} >Catalog</StyledLink>
+            <StyledLink onClick={handleOnClick} to={'/goods'} color={color}>Catalog</StyledLink>
           </li>
           <li>
-            <StyledLink onClick={handleOnClick} to={'/feedback'} color={color} >Feedback</StyledLink>
+            <StyledLink onClick={handleOnClick} to={'/feedback'} color={color}>Feedback</StyledLink>
           </li>
           <li>
-            <p color={color}>Contacts</p>
+            <StyledLink onClick={handleOnClick} to={'/contacts'} color={color}>Contacts</StyledLink>
           </li>
         </NavList>
       </Nav>
