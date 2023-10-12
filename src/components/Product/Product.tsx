@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
-import { selectIsLoggedIn, selectUser } from "../../redux/auth/selectors";
+import { selectIsLoggedIn } from "../../redux/auth/selectors";
 import Sceleton from 'react-loading-skeleton'
 import 'react-loading-skeleton/dist/skeleton.css'
 import { deleteProduct } from "../../services/apiService";
@@ -37,9 +37,6 @@ export const Product: React.FC<NoveltiesItem> = ({
   const [isDelete, setIsDelete] = useState(false);
 
   const isLogin = useSelector(selectIsLoggedIn);
-  const USER = useSelector(selectUser);
-
-  console.log(USER)
 
   useEffect(() => {
     const isNoveltyInCart = orders.some((order) => order._id === product._id);
