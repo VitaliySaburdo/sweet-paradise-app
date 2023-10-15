@@ -1,15 +1,16 @@
 import { Link } from "react-router-dom";
 import { Container } from "../../components/Container/Container";
 import { Section } from "../../components/Section/Section";
+import {MainTitle, Wrapper, Title} from './Contacts.styled';
 
 export const Contacts = () => {
   return (
     <>
       <Section>
         <Container>
-          <div>
-            <h2>Contacts</h2>
-            <p>Call us</p>
+          <Wrapper>
+            <MainTitle>Contacts</MainTitle>
+            <Title>Call us</Title>
             <ul>
               <li>
                 <Link to="tel:0800222222">0 (800) 22-22-22</Link>
@@ -53,7 +54,7 @@ export const Contacts = () => {
                 <p>10:00 - 16:00</p>
               </li>
             </ul>
-          </div>
+          </Wrapper>
           <div>
             <h3>Our address</h3>
             <p>Maidan of Independence Kyiv, 02000</p>
