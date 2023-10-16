@@ -49,7 +49,7 @@ export const PhoneContainer = styled.ul`
   display: grid;
   grid-template-columns: [first] 240px;
   row-gap: 20px;
-  @media screen and (${(props) => props.theme.media.md}){
+  @media screen and (${(props) => props.theme.media.md}) {
     grid-template-columns: [first] 240px [line2] 240px;
   }
 `;
@@ -93,11 +93,17 @@ export const StyledIframe = styled.iframe`
   }
 `;
 
-
 export const Box = styled.div`
-display: block;
-@media screen and (${(props) => props.theme.media.md}){
-display: flex;
-}
-    
-`
+  display: block;
+  margin-top: 20px;
+  @media screen and (${(props) => props.theme.media.md}) {
+    display: flex;
+    gap: 20px;
+  }
+`;
+export const ScheduleBox = styled.div`
+    margin-top: 20px;
+    @media screen and (${(props) => props.theme.media.md}){
+        margin-top: 0px;
+    }
+`;

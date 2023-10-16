@@ -12,6 +12,7 @@ import {
   IconContainer,
   StyledLink,
     StyledIframe,
+    ScheduleBox,
   Box,
   Text,
 } from "./Contacts.styled";
@@ -99,7 +100,7 @@ export const Contacts = () => {
                   </li>
                 </ul>
               </div>
-              <div>
+              <ScheduleBox>
                 <Title>Schedule</Title>
                 <ScheduleContainer>
                   <Text>Mon-Fr</Text>
@@ -113,7 +114,7 @@ export const Contacts = () => {
                   <Text>Sun</Text>
                   <Text>10:00 - 16:00</Text>
                 </ScheduleContainer>
-              </div>
+              </ScheduleBox>
             </Box>
           </Wrapper>
           <AddressContainer>
