@@ -3,9 +3,12 @@ import { Link } from "react-router-dom";
 
 export const Wrapper = styled.div`
   margin-top: 20px;
-  display: flex;
+  display: block;
   column-gap: 20px;
   margin-bottom: 20px;
+  @media screen and (${(props) => props.theme.media.md}) {
+    display: flex;
+  }
 `;
 
 export const MainTitle = styled.h2`
@@ -44,8 +47,11 @@ export const Title = styled.h3`
 
 export const PhoneContainer = styled.ul`
   display: grid;
-  grid-template-columns: [first] 240px [line2] 240px;
+  grid-template-columns: [first] 240px;
   row-gap: 20px;
+  @media screen and (${(props) => props.theme.media.md}){
+    grid-template-columns: [first] 240px [line2] 240px;
+  }
 `;
 
 export const SocialContainer = styled.ul`
@@ -55,8 +61,11 @@ export const SocialContainer = styled.ul`
 `;
 export const ScheduleContainer = styled.div`
   display: flex;
-  justify-content: flex-end;
+  justify-content: flex-start;
   gap: 10px;
+  @media screen and (${(props) => props.theme.media.md}) {
+    justify-content: flex-end;
+  }
 `;
 
 export const AddressContainer = styled.div`
@@ -73,4 +82,13 @@ export const City = styled.span`
 `;
 export const IconContainer = styled.svg`
   margin-right: 5px;
+`;
+
+export const StyledIframe = styled.iframe`
+  width: 320px;
+  height: 250px;
+  @media screen and (${(props) => props.theme.media.md}) {
+    width: 600px;
+    height: 450px;
+  }
 `;

@@ -10,7 +10,8 @@ import {
   ScheduleContainer,
   City,
   IconContainer,
-  StyledLink,
+    StyledLink,
+  StyledIframe,
   Text,
 } from "./Contacts.styled";
 
@@ -113,9 +114,8 @@ export const Contacts = () => {
             <p>Maidan of Independence Kyiv, 02000</p>
           </AddressContainer>
           <div>
-            <div></div>
             <div>
-              <iframe
+              <StyledIframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d317.5632572258487!2d30.523549653589736!3d50.45030047805847!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d4ce50ffa1b91f%3A0x42d5962fe7e791c!2z0JzQsNC50LTQsNC9INCd0LXQt9Cw0LvQtdC20L3QvtGB0YLQuA!5e0!3m2!1sru!2sua!4v1697385917570!5m2!1sru!2sua"
                 width="600"
                 height="450"
@@ -124,7 +124,7 @@ export const Contacts = () => {
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
                 title="Google Maps"
-              ></iframe>
+              ></StyledIframe>
             </div>
           </div>
         </Container>
