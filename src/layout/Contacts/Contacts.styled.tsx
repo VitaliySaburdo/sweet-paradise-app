@@ -102,8 +102,14 @@ export const Box = styled.div`
   }
 `;
 export const ScheduleBox = styled.div`
-    margin-top: 20px;
-    @media screen and (${(props) => props.theme.media.md}){
-        margin-top: 0px;
-    }
+  margin-top: 20px;
+  @media screen and (${(props) => props.theme.media.md}) {
+    margin-top: 0px;
+  }
+`;
+
+export const SocialBox = styled.ul`
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 `;

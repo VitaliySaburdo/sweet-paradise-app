@@ -9,7 +9,8 @@ import {
   AddressContainer,
   ScheduleContainer,
   City,
-  IconContainer,
+    IconContainer,
+  SocialBox,
   StyledLink,
     StyledIframe,
     ScheduleBox,
@@ -70,7 +71,7 @@ export const Contacts = () => {
             <Box>
               <div>
                 <Title>Write us</Title>
-                <ul>
+                <SocialBox>
                   <li>
                     <StyledLink to="https://www.viber.com/ua/">
                       {" "}
@@ -98,7 +99,7 @@ export const Contacts = () => {
                       sweet_paradise@mail.com
                     </StyledLink>
                   </li>
-                </ul>
+                </SocialBox>
               </div>
               <ScheduleBox>
                 <Title>Schedule</Title>
