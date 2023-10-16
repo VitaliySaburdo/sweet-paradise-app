@@ -10,8 +10,9 @@ import {
   ScheduleContainer,
   City,
   IconContainer,
-    StyledLink,
-  StyledIframe,
+  StyledLink,
+    StyledIframe,
+  Box,
   Text,
 } from "./Contacts.styled";
 
@@ -65,49 +66,55 @@ export const Contacts = () => {
                 </li>
               </PhoneContainer>
             </div>
-            <div>
-              <Title>Write us</Title>
-              <ul>
-                <li>
-                  <StyledLink to="https://www.viber.com/ua/">
-                    {" "}
-                    <IconContainer width={17} height={17}>
-                      <use href={icons + "#icon-viber"}></use>
-                    </IconContainer>
-                    Viber
-                  </StyledLink>
-                </li>
-                <li>
-                  <StyledLink to="https://web.telegram.org/">                      <IconContainer width={17} height={17}>
+            <Box>
+              <div>
+                <Title>Write us</Title>
+                <ul>
+                  <li>
+                    <StyledLink to="https://www.viber.com/ua/">
+                      {" "}
+                      <IconContainer width={17} height={17}>
+                        <use href={icons + "#icon-viber"}></use>
+                      </IconContainer>
+                      Viber
+                    </StyledLink>
+                  </li>
+                  <li>
+                    <StyledLink to="https://web.telegram.org/">
+                      {" "}
+                      <IconContainer width={17} height={17}>
                         <use href={icons + "#icon-telegram"}></use>
                       </IconContainer>
-                    Telegram
-                  </StyledLink>
-                </li>
-                <li>
-                  <StyledLink to="mailto:sweet_paradise@mail.com">                      <IconContainer width={17} height={17}>
+                      Telegram
+                    </StyledLink>
+                  </li>
+                  <li>
+                    <StyledLink to="mailto:sweet_paradise@mail.com">
+                      {" "}
+                      <IconContainer width={17} height={17}>
                         <use href={icons + "#icon-mail"}></use>
                       </IconContainer>
-                    sweet_paradise@mail.com
-                  </StyledLink>
-                </li>
-              </ul>
-            </div>
-            <div>
-              <Title>Schedule</Title>
-              <ScheduleContainer>
-                <Text>Mon-Fr</Text>
-                <Text>09:00 - 20:00</Text>
-              </ScheduleContainer>
-              <ScheduleContainer>
-                <Text>Sat</Text>
-                <Text>10:00 - 16:00</Text>
-              </ScheduleContainer>
-              <ScheduleContainer>
-                <Text>Sun</Text>
-                <Text>10:00 - 16:00</Text>
-              </ScheduleContainer>
-            </div>
+                      sweet_paradise@mail.com
+                    </StyledLink>
+                  </li>
+                </ul>
+              </div>
+              <div>
+                <Title>Schedule</Title>
+                <ScheduleContainer>
+                  <Text>Mon-Fr</Text>
+                  <Text>09:00 - 20:00</Text>
+                </ScheduleContainer>
+                <ScheduleContainer>
+                  <Text>Sat</Text>
+                  <Text>10:00 - 16:00</Text>
+                </ScheduleContainer>
+                <ScheduleContainer>
+                  <Text>Sun</Text>
+                  <Text>10:00 - 16:00</Text>
+                </ScheduleContainer>
+              </div>
+            </Box>
           </Wrapper>
           <AddressContainer>
             <Title>Our address</Title>

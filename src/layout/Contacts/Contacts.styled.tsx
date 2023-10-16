@@ -6,7 +6,7 @@ export const Wrapper = styled.div`
   display: block;
   column-gap: 20px;
   margin-bottom: 20px;
-  @media screen and (${(props) => props.theme.media.md}) {
+  @media screen and (${(props) => props.theme.media.lg}) {
     display: flex;
   }
 `;
@@ -92,3 +92,12 @@ export const StyledIframe = styled.iframe`
     height: 450px;
   }
 `;
+
+
+export const Box = styled.div`
+display: block;
+@media screen and (${(props) => props.theme.media.md}){
+display: flex;
+}
+    
+`
