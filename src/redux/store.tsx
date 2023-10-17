@@ -1,6 +1,7 @@
-import { configureStore } from '@reduxjs/toolkit';
+import { configureStore, combineReducers } from '@reduxjs/toolkit';
 import storage from 'redux-persist/lib/storage';
 import { authReducer } from './auth/authSlice';
+import {productsReducer} from './product/productsSlice';
 import {
   persistStore,
   FLUSH,
@@ -18,10 +19,14 @@ const authPersistConfig = {
   whiteList: ['token'],
 };
 
+const rootReducer = combineReducers({
+  auth: persistReducer(authPersistConfig, authReducer),
+  products: productsReducer,
+});
+
+
 export const store = configureStore({
-  reducer: {
-    auth: persistReducer(authPersistConfig, authReducer),
-  },
+  reducer: rootReducer,
   middleware: getDefaultMiddleware =>
     getDefaultMiddleware({
       serializableCheck: {
