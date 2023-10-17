@@ -1,5 +1,6 @@
 import { createSlice, isAnyOf } from "@reduxjs/toolkit";
 import { logOut } from "../auth/operations";
+import {ProductProps} from '../../App/App.types'
 import {
   getProductsAll,
   getProductsByCategories,
@@ -7,20 +8,9 @@ import {
   deleteProduct,
 } from "./operations";
 
-interface ProductsType {
-  _id: string;
-  name: string;
-  price: number;
-  weight: number;
-  category: string;
-  favorite: boolean;
-  img: File | null;
-  ingredients: string;
-  owner: string;
-}
 
 interface ProductsState {
-  products: ProductsType[];
+  products: ProductProps[];
   isLoading: boolean;
   error: string | null;
 }
