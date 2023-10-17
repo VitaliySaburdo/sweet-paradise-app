@@ -8,6 +8,9 @@ export interface ProductProps {
     img: File | null;
     ingredients: string;
     owner: string;
-    quantity: number;
-    totalPrice: number;
-}
+};
+
+export interface OrderProps extends ProductProps {
+  quantity: number;
+  totalPrice: number;
+};

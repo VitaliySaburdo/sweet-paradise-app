@@ -2,13 +2,10 @@ import { Suspense } from "react";
 import { Outlet } from "react-router-dom";
 import { Header } from "../../layout/Header/Header";
 import { Footer } from "../../layout/Footer/Footer";
-import { ProductProps } from "../../App/App.types";
+import { ProductProps, OrderProps } from "../../App/App.types";
 
-// import { Loader } from 'components/Loader/Loader';
-// import PawLoader from '../../images/Loader.png';
-
-interface OrderProps {
-  orders: ProductProps[];
+interface SharedLayoutProps {
+  orders: OrderProps[];
   deleteOrder: (orders: ProductProps) => void;
   increment: (id: string) => void;
   decrement: (id: string) => void;
@@ -16,7 +13,7 @@ interface OrderProps {
   addProductByCategory: (id: string) => void;
 }
 
-export const SharedLayout: React.FC<OrderProps> = ({
+export const SharedLayout: React.FC<SharedLayoutProps> = ({
   orders,
   deleteOrder,
   decrement,

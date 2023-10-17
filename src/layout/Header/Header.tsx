@@ -27,12 +27,12 @@ import user from "../../images/Header/user.png";
 import admin from "../../images/Header/admin.png";
 import { Modal } from "../../components/Modal/Modal";
 import { LoginForm } from "../../components/LoginForm/LoginForm";
-import { ProductProps } from "../../App/App.types";
+import { ProductProps, OrderProps } from "../../App/App.types";
 import { CartList } from "../../components/CartList/CartList";
 import { AddForm } from "../../components/AddForm/AddForm";
 
-interface OrderProps {
-  orders: ProductProps[];
+interface HeaderProps {
+  orders: OrderProps[];
   deleteOrder: (orders: ProductProps) => void;
   increment: (id: string) => void;
   decrement: (id: string) => void;
@@ -40,7 +40,7 @@ interface OrderProps {
   addProductByCategory: (id: string) => void;
 }
 
-export const Header: React.FC<OrderProps> = ({
+export const Header: React.FC<HeaderProps> = ({
   orders,
   deleteOrder,
   increment,

@@ -1,4 +1,4 @@
-import { ProductProps } from "../../App/App.types";
+import { ProductProps, OrderProps } from "../../App/App.types";
 import { Button } from "../Button/Button";
 import { CartItem } from "../CartItem/CartItem";
 import {
@@ -8,8 +8,9 @@ import {
   TotalPrice,
 } from "./CartList.styled";
 
+
 export const CartList: React.FC<{
-  orders: ProductProps[];
+  orders: OrderProps[];
   deleteOrder: (orders: ProductProps) => void;
   increment: (id: string) => void;
   decrement: (id: string) => void;

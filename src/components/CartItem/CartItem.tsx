@@ -8,11 +8,11 @@ import {
   Btn,
   CloseBtn,
 } from "./CartItem.styled";
-import { ProductProps } from "../../App/App.types";
+import { ProductProps, OrderProps } from "../../App/App.types";
 import cross from '../../images/Modal/cross.png';
 
 interface CartItemProps {
-  product: ProductProps;
+  product: OrderProps;
   deleteOrder: (orders: ProductProps) => void;
   increment: (id: string) => void;
   decrement: (id: string) => void;
