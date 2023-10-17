@@ -57,5 +57,5 @@ const authSlice = createSlice({
 });
 
 export const authReducer = authSlice.reducer;
-export type RootState = ReturnType<typeof authReducer>;
+
 
