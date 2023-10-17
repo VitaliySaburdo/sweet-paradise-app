@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { register, logIn, logOut, refreshUser } from "./operations";
+import { register, logIn, logOut, refreshUser } from "./authOperations";
 
 type User = {
   _id: string | null;

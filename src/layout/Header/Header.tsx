@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
-import { selectIsLoggedIn } from "../../redux/auth/selectors";
+import { selectIsLoggedIn } from "../../redux/auth/authSelectors";
 import { Container } from "../../components/Container/Container";
 import { NavBar } from "../../components/NavBar/NavBar";
 import { Tooltip } from "../../components/Tooltip/Tooltip";

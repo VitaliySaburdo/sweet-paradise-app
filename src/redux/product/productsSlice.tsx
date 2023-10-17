@@ -1,12 +1,12 @@
 import { createSlice, isAnyOf } from "@reduxjs/toolkit";
-import { logOut } from "../auth/operations";
+import { logOut } from "../auth/authOperations";
 import {ProductProps} from '../../App/App.types'
 import {
   getProductsAll,
   getProductsByCategories,
   addProduct,
   deleteProduct,
-} from "./operations";
+} from "./productsOperations";
 
 
 interface ProductsState {

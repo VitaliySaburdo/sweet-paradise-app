@@ -5,7 +5,7 @@ import { ThunkDispatch } from "redux-thunk";
 import { AnyAction } from "redux";
 import { RootState } from "../../redux/store";
 import { Button } from "../Button/Button";
-import { logIn } from "../../redux/auth/operations";
+import { logIn } from "../../redux/auth/authOperations";
 import {loginSchema} from '../../helpers/ValidationSchemas'
 import {
   StyledForm,

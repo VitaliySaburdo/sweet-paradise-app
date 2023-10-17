@@ -2,7 +2,7 @@ import { useDispatch } from "react-redux";
 import { useEffect, useState } from "react";
 import { Route, Routes } from "react-router-dom";
 import { SkeletonTheme } from "react-loading-skeleton";
-import { refreshUser } from "../redux/auth/operations";
+import { refreshUser } from "../redux/auth/authOperations";
 import { getProductsByCategories } from "../services/apiService";
 import { StyleSheetManager } from "styled-components";
 import { ThemeProvider } from "styled-components";

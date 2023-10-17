@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
-import { selectIsLoggedIn } from "../../redux/auth/selectors";
+import { selectIsLoggedIn } from "../../redux/auth/authSelectors";
 import Sceleton from 'react-loading-skeleton'
 import 'react-loading-skeleton/dist/skeleton.css'
 import { deleteProduct } from "../../services/apiService";

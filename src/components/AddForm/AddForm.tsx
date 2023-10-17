@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { Formik, FormikHelpers } from "formik";
 import { createProduct, getAllCategories } from "../../services/apiService";
-import { logOut } from "../../redux/auth/operations";
+import { logOut } from "../../redux/auth/authOperations";
 import { addProductSchema } from "../../helpers/ValidationSchemas";
 import {
   StyledForm,

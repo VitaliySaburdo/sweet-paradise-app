@@ -1,6 +1,6 @@
 import axios from "axios";
 import { createAsyncThunk } from "@reduxjs/toolkit";
-import { RootState } from "../../redux/store";
+import { RootState } from "../store";
 
 axios.defaults.baseURL = "https://sweet-paradise-api.onrender.com";
 
