@@ -38,7 +38,7 @@ const authSlice = createSlice({
         state.token = action.payload.token;
         state.isLoggedIn = true;
       })
-      .addCase(logOut.fulfilled, (state, action) => {
+      .addCase(logOut.fulfilled, (state) => {
         state.user = { _id: null, name: null, email: null, role: null };
         state.token = null;
         state.isLoggedIn = false;
@@ -57,3 +57,5 @@ const authSlice = createSlice({
 });
 
 export const authReducer = authSlice.reducer;
+export type RootState = ReturnType<typeof authReducer>;
+
