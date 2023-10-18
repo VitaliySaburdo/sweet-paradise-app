@@ -1,4 +1,4 @@
-import { useDispatch } from "react-redux";
+import { useAppDispatch } from "../hooks/reduxHook";
 import { useEffect, useState } from "react";
 import { Route, Routes } from "react-router-dom";
 import { SkeletonTheme } from "react-loading-skeleton";
@@ -19,10 +19,10 @@ function App() {
   const [orders, setOrders] = useState<OrderProps[]>([]);
   const [addProductCategory, setaAddProductCategory] = useState("");
 
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
 
   useEffect(() => {
-    dispatch(refreshUser() as any);
+    dispatch(refreshUser());
   }, [dispatch]);
 
   const addOrder = (product: ProductProps): void => {

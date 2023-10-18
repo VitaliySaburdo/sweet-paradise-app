@@ -1,3 +1,4 @@
+import { useAppDispatch, useAppSelector } from "../hooks/reduxHook";
 import { useEffect } from "react";
 import { getProductsByCategories } from "../redux/product/productsOperations";
 import { Benefits } from "../layout/Benefits/Benefits";
@@ -7,7 +8,6 @@ import { Work } from "../layout/Work/Work";
 import {ProductProps} from '../App/App.types';
 import { CustomOrder } from "../layout/CustomOrder/CustomOrder";
 import { selectIsLoading, selectProducts } from "../redux/product/productsSelectors";
-import { useDispatch, useSelector } from "react-redux";
 
 interface NoveltiesProps {
   onAdd: (novelty: ProductProps) => void;
@@ -17,13 +17,13 @@ interface NoveltiesProps {
 
 export const Home: React.FC<NoveltiesProps> = ({ onAdd, orders }) => {
 
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
 
-  const products = useSelector(selectProducts);
-  const loading = useSelector(selectIsLoading);
+  const products = useAppSelector(selectProducts);
+  const loading = useAppSelector(selectIsLoading);
 
   useEffect(() => {
-      dispatch(getProductsByCategories("64dcc4148efcb0f7600c8cd0") as any);
+      dispatch(getProductsByCategories("64dcc4148efcb0f7600c8cd0"));
   }, [dispatch]);
 
   return (
