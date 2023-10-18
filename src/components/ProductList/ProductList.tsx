@@ -6,14 +6,12 @@ import { ProductSkeleton } from "../ProductSkeleton/ProductSceleton";
 interface ProductListProps {
   products: ProductProps[];
   loading: boolean;
-  orders: ProductProps[];
   changedCategory: (id: string) => void;
 }
 
 export const ProductList: React.FC<ProductListProps> = ({
   products,
   loading,
-  orders,
   changedCategory,
 }) => {
   return (
@@ -30,7 +28,6 @@ export const ProductList: React.FC<ProductListProps> = ({
             <Product
               product={product}
               key={product._id}
-              orders={orders}
               changedCategory={changedCategory}
             />
           ))}

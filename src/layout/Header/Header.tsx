@@ -31,21 +31,11 @@ import { LoginForm } from "../../components/LoginForm/LoginForm";
 import { CartList } from "../../components/CartList/CartList";
 import { AddForm } from "../../components/AddForm/AddForm";
 
-
-
 interface HeaderProps {
-  increment: (id: string) => void;
-  decrement: (id: string) => void;
-  changeValue: (id: string, value: number) => void;
   addProductByCategory: (id: string) => void;
 }
 
-export const Header: React.FC<HeaderProps> = ({
-  increment,
-  decrement,
-  changeValue,
-  addProductByCategory,
-}) => {
+export const Header: React.FC<HeaderProps> = ({ addProductByCategory }) => {
   const [scrolled, setScrolled] = useState(false);
   const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
   const [isCartModalOpen, setIsCartModalOpen] = useState(false);
@@ -102,7 +92,10 @@ export const Header: React.FC<HeaderProps> = ({
             )}
             {isAdminModalOpen && (
               <Modal onClick={() => setIsAdminModalOpen(false)}>
-                <AddForm addProductByCategory={addProductByCategory} closeModal={() => setIsAdminModalOpen(false)} />
+                <AddForm
+                  addProductByCategory={addProductByCategory}
+                  closeModal={() => setIsAdminModalOpen(false)}
+                />
               </Modal>
             )}
 
@@ -127,9 +120,6 @@ export const Header: React.FC<HeaderProps> = ({
                   ) : (
                     <CartList
                       orders={orders}
-                      increment={increment}
-                      decrement={decrement}
-                      changeValue={changeValue}
                       closeCartModal={() => setIsCartModalOpen(false)}
                     />
                   )}

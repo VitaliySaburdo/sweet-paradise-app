@@ -7,13 +7,11 @@ import { ProductProps } from "../../App/App.types";
 interface NoveltiesProps {
   products: ProductProps[];
   loading: boolean;
-  orders: ProductProps[];
 }
 
 export const Novelties: React.FC<NoveltiesProps> = ({
   products,
   loading,
-  orders,
 }) => {
   const changedCategory = (id: string) => {
     console.log(id);
@@ -26,7 +24,6 @@ export const Novelties: React.FC<NoveltiesProps> = ({
           <ProductList
             products={products}
             loading={loading}
-            orders={orders}
             changedCategory={changedCategory}
           />
         </Container>

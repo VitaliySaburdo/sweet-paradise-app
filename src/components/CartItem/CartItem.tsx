@@ -1,4 +1,7 @@
 import { deleteOrder } from "../../redux/orders/ordersSlice";
+import { increment } from "../../redux/orders/ordersSlice";
+import { decrement } from "../../redux/orders/ordersSlice";
+import { changeValue } from "../../redux/orders/ordersSlice";
 import {
   StyledText,
   Item,
@@ -15,21 +18,25 @@ import { useAppDispatch } from "../../hooks/reduxHook";
 
 interface CartItemProps {
   product: OrderProps;
-  increment: (id: string) => void;
-  decrement: (id: string) => void;
-  changeValue: (id: string, value: number) => void;
 }
 
 export const CartItem: React.FC<CartItemProps> = ({
   product,
-  increment,
-  decrement,
-  changeValue,
 }) => {
   const dispatch = useAppDispatch();
 
   const onDelete = (id: string) => {
     dispatch(deleteOrder(id));
+  };
+
+  const onIncrement = (id: string) => {
+    dispatch(increment(id));
+  };
+    const onDecrement = (id: string) => {
+    dispatch(decrement(id));
+  };
+    const onChangeValue = (id: string, value: number ) => {
+    dispatch(changeValue({id, value}));
   };
 
   return (
@@ -48,16 +55,16 @@ export const CartItem: React.FC<CartItemProps> = ({
             }
             alt={product.name}
           />
-          <Btn onClick={() => decrement(product._id)}>-</Btn>
+          <Btn onClick={() => onDecrement(product._id)}>-</Btn>
           <Input
             type="text"
             value={product.quantity || 1}
             min="1"
             onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
-              changeValue(product._id, parseInt(e.target.value, 10));
+              onChangeValue(product._id, parseInt(e.target.value, 10));
             }}
           />
-          <Btn onClick={() => increment(product._id)}>+</Btn>
+          <Btn onClick={() => onIncrement(product._id)}>+</Btn>
           <Count>{product.totalPrice || product.price} uah</Count>
         </Box>
       </Item>

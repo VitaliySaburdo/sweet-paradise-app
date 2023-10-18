@@ -3,15 +3,12 @@ import { useEffect } from "react";
 import { getProductsByCategories } from "../services/apiService";
 import { Catalog } from "../layout/Catalog/Catalog";
 import { Order } from "../components/Order/Order";
-import { ProductProps } from "../App/App.types";
 
 interface CatalogProps {
-  orders: ProductProps[];
   addProductCategory: string;
 }
 
 export const Goods: React.FC<CatalogProps> = ({
-  orders,
   addProductCategory,
 }) => {
   const [category, setCategory] = useState<string>("");
@@ -63,7 +60,6 @@ export const Goods: React.FC<CatalogProps> = ({
       <Catalog
         products={products}
         loading={loading}
-        orders={orders}
         fetchProductsByCategory={handleChangeCategory}
         changedCategory={changedCategory}
       />

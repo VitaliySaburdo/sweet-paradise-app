@@ -9,14 +9,12 @@ import { theme } from "../theme/theme";
 import { SharedLayout } from "../components/SharedLayout/SharedLayout";
 import { Home } from "../pages/Home";
 import { Goods } from "../pages/Goods";
-import { OrderProps } from "./App.types";
 import { Feedback } from "../pages/Feedback";
 import { NotFound } from "../pages/NotFound";
 import { ContactsPage } from "../pages/ContactsPage";
 
 
 function App() {
-  const [orders, setOrders] = useState<OrderProps[]>([]);
   const [addProductCategory, setaAddProductCategory] = useState("");
 
   const dispatch = useAppDispatch();
@@ -24,51 +22,6 @@ function App() {
   useEffect(() => {
     dispatch(refreshUser());
   }, [dispatch]);
-
-  const increment = (id: string) => {
-    setOrders((orders) => {
-      return orders.map((order) => {
-        if (order._id === id) {
-          return {
-            ...order,
-            quantity: ++order.quantity,
-            totalPrice: order.quantity * order.price,
-          };
-        }
-        return order;
-      });
-    });
-  };
-
-  const decrement = (id: string) => {
-    setOrders((orders) => {
-      return orders.map((order) => {
-        if (order._id === id) {
-          return {
-            ...order,
-            quantity: order.quantity - 1 < 1 ? 1 : --order.quantity,
-            totalPrice: order.quantity * order.price,
-          };
-        }
-        return order;
-      });
-    });
-  };
-
-  const changeValue = (id: string, value: number) => {
-    setOrders((orders) => {
-      return orders.map((order) => {
-        if (order._id === id) {
-          return {
-            ...order,
-            quantity: value,
-            totalPrice: value * order.price,
-          };
-        }
-        return order;
-      });
-    });
-  };
 
   const addProductByCategory = (id: string) => {
     setaAddProductCategory(id);
@@ -83,22 +36,18 @@ function App() {
               path="/"
               element={
                 <SharedLayout
-                  increment={increment}
-                  decrement={decrement}
-                  changeValue={changeValue}
                   addProductByCategory={addProductByCategory}
                 />
               }
             >
               <Route
                 index
-                element={<Home orders={orders} />}
+                element={<Home />}
               />
               <Route
                 path="/goods"
                 element={
                   <Goods
-                    orders={orders}
                     addProductCategory={addProductCategory}
                   />
                 }

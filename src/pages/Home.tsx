@@ -5,16 +5,13 @@ import { Benefits } from "../layout/Benefits/Benefits";
 import { Hero } from "../layout/Hero/Hero";
 import { Novelties } from "../layout/Novelties/Novelties";
 import { Work } from "../layout/Work/Work";
-import {ProductProps} from '../App/App.types';
 import { CustomOrder } from "../layout/CustomOrder/CustomOrder";
 import { selectIsLoading, selectProducts } from "../redux/product/productsSelectors";
 
-interface NoveltiesProps {
-  orders: ProductProps[];
-};
 
 
-export const Home: React.FC<NoveltiesProps> = ({ orders }) => {
+
+export const Home: React.FC = () => {
 
   const dispatch = useAppDispatch();
 
@@ -29,7 +26,7 @@ export const Home: React.FC<NoveltiesProps> = ({ orders }) => {
     <>
       <Hero />
       <Benefits />
-      <Novelties products={products} loading={loading} orders={orders} />
+      <Novelties products={products} loading={loading} />
       <CustomOrder/>
       <Work />
     </>

@@ -20,17 +20,16 @@ import {
 } from "../Product/Products.styled";
 import { Button } from "../Button/Button";
 import { ProductProps } from "../../App/App.types";
+import { selectOrders } from "../../redux/orders/ordersSelector";
 
 
 interface NoveltiesItem {
   product: ProductProps;
   changedCategory: (id: string) => void;
-  orders: ProductProps[];
 }
 
 export const Product: React.FC<NoveltiesItem> = ({
   product,
-  orders,
   changedCategory,
 }) => {
   const [added, setAdded] = useState(false);
@@ -39,6 +38,7 @@ export const Product: React.FC<NoveltiesItem> = ({
   const dispatch = useAppDispatch();
 
   const isLogin = useAppSelector(selectIsLoggedIn);
+  const orders = useAppSelector(selectOrders);
 
   useEffect(() => {
     const currentOrder = orders.some((order) => order._id === product._id);

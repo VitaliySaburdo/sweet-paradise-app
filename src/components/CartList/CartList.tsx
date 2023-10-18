@@ -11,11 +11,8 @@ import {
 
 export const CartList: React.FC<{
   orders: OrderProps[];
-  increment: (id: string) => void;
-  decrement: (id: string) => void;
-  changeValue: (id: string, value: number) => void;
   closeCartModal: () => void;
-}> = ({ orders, increment, decrement, changeValue, closeCartModal }) => {
+}> = ({ orders, closeCartModal }) => {
 
   const totalPriceAllOrders = orders.reduce(
     (totalPrice, order) => totalPrice + order.totalPrice,
@@ -34,9 +31,6 @@ export const CartList: React.FC<{
           <CartItem
             key={order._id}
             product={order}
-            increment={increment}
-            decrement={decrement}
-            changeValue={changeValue}
           />
         ))}
       </Container>
