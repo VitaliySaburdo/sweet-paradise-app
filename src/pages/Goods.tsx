@@ -6,7 +6,6 @@ import { Order } from "../components/Order/Order";
 import { ProductProps } from "../App/App.types";
 
 interface CatalogProps {
-  loading: boolean;
   onAdd: (novelty: ProductProps) => void;
   orders: ProductProps[];
   addProductCategory: string;
@@ -14,12 +13,12 @@ interface CatalogProps {
 
 export const Goods: React.FC<CatalogProps> = ({
   onAdd,
-  loading,
   orders,
   addProductCategory,
 }) => {
   const [category, setCategory] = useState<string>("");
   const [products, setProducts] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     async function fetchData() {
@@ -27,15 +26,17 @@ export const Goods: React.FC<CatalogProps> = ({
         if (category) {
           const data = await getProductsByCategories(category);
           setProducts(data);
+          setLoading(false);
         }
       } catch (error) {
         console.error("Error fetching data:", error);
+        setLoading(false);
       }
     }
     fetchData();
   }, [category]);
 
-    useEffect(() => {
+  useEffect(() => {
     async function fetchData() {
       try {
         if (addProductCategory) {
@@ -48,7 +49,6 @@ export const Goods: React.FC<CatalogProps> = ({
     }
     fetchData();
   }, [addProductCategory]);
-
 
   const handleChangeCategory = (id: string) => {
     setCategory(id);

@@ -3,7 +3,6 @@ import { useEffect, useState } from "react";
 import { Route, Routes } from "react-router-dom";
 import { SkeletonTheme } from "react-loading-skeleton";
 import { refreshUser } from "../redux/auth/authOperations";
-import { getProductsByCategories } from "../services/apiService";
 import { StyleSheetManager } from "styled-components";
 import { ThemeProvider } from "styled-components";
 import { theme } from "../theme/theme";
@@ -16,9 +15,7 @@ import { NotFound } from "../pages/NotFound";
 import { ContactsPage } from "../pages/ContactsPage";
 
 function App() {
-  const [products, setProducts] = useState([]);
   const [orders, setOrders] = useState<OrderProps[]>([]);
-  const [loading, setLoading] = useState(true);
   const [addProductCategory, setaAddProductCategory] = useState("");
 
   const dispatch = useDispatch();
@@ -91,21 +88,6 @@ function App() {
     });
   };
 
-  useEffect(() => {
-    async function fetchData() {
-      try {
-        const data = await getProductsByCategories("64dcc4148efcb0f7600c8cd0");
-        setProducts(data);
-        setLoading(false);
-      } catch (error) {
-        console.error("Error fetching data:", error);
-        setLoading(false);
-      }
-    }
-
-    fetchData();
-  }, []);
-
   const addProductByCategory = (id: string) => {
     setaAddProductCategory(id);
   };
@@ -132,10 +114,8 @@ function App() {
                 index
                 element={
                   <Home
-                    products={products}
                     orders={orders}
                     onAdd={addOrder}
-                    loading={loading}
                   />
                 }
               />
@@ -145,7 +125,6 @@ function App() {
                   <Goods
                     orders={orders}
                     onAdd={addOrder}
-                    loading={loading}
                     addProductCategory={addProductCategory}
                   />
                 }

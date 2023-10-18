@@ -1,3 +1,5 @@
+import { useEffect, useState } from "react";
+import { getProductsByCategories } from "../services/apiService";
 import { Benefits } from "../layout/Benefits/Benefits";
 import { Hero } from "../layout/Hero/Hero";
 import { Novelties } from "../layout/Novelties/Novelties";
@@ -7,13 +9,28 @@ import { CustomOrder } from "../layout/CustomOrder/CustomOrder";
 
 
 interface NoveltiesProps {
-  products: ProductProps[];
-  loading: boolean;
   onAdd: (novelty: ProductProps) => void;
   orders: ProductProps[];
 }
 
-export const Home: React.FC<NoveltiesProps> = ({products, onAdd, loading, orders}) => {
+export const Home: React.FC<NoveltiesProps> = ({ onAdd, orders }) => {
+  const [products, setProducts] = useState([]);
+    const [loading, setLoading] = useState(true);
+
+    useEffect(() => {
+    async function fetchData() {
+      try {
+        const data = await getProductsByCategories("64dcc4148efcb0f7600c8cd0");
+        setProducts(data);
+        setLoading(false);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+        setLoading(false);
+      }
+    }
+
+    fetchData();
+  }, []);
   return (
     <>
       <Hero />
