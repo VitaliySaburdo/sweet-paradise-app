@@ -13,7 +13,6 @@ import { Feedback } from "../pages/Feedback";
 import { NotFound } from "../pages/NotFound";
 import { ContactsPage } from "../pages/ContactsPage";
 
-
 function App() {
   const [addProductCategory, setaAddProductCategory] = useState("");
 
@@ -35,22 +34,13 @@ function App() {
             <Route
               path="/"
               element={
-                <SharedLayout
-                  addProductByCategory={addProductByCategory}
-                />
+                <SharedLayout addProductByCategory={addProductByCategory} />
               }
             >
-              <Route
-                index
-                element={<Home />}
-              />
+              <Route index element={<Home />} />
               <Route
                 path="/goods"
-                element={
-                  <Goods
-                    addProductCategory={addProductCategory}
-                  />
-                }
+                element={<Goods addProductCategory={addProductCategory} />}
               />
               <Route path="/feedback" element={<Feedback />} />
               <Route path="/contacts" element={<ContactsPage />} />
