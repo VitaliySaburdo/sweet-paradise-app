@@ -14,6 +14,7 @@ import { Feedback } from "../pages/Feedback";
 import { NotFound } from "../pages/NotFound";
 import { ContactsPage } from "../pages/ContactsPage";
 
+
 function App() {
   const [orders, setOrders] = useState<OrderProps[]>([]);
   const [addProductCategory, setaAddProductCategory] = useState("");
@@ -112,12 +113,7 @@ function App() {
             >
               <Route
                 index
-                element={
-                  <Home
-                    orders={orders}
-                    onAdd={addOrder}
-                  />
-                }
+                element={<Home orders={orders} onAdd={addOrder} />}
               />
               <Route
                 path="/goods"

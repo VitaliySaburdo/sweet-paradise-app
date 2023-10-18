@@ -1,36 +1,31 @@
-import { useEffect, useState } from "react";
-import { getProductsByCategories } from "../services/apiService";
+import { useEffect } from "react";
+import { getProductsByCategories } from "../redux/product/productsOperations";
 import { Benefits } from "../layout/Benefits/Benefits";
 import { Hero } from "../layout/Hero/Hero";
 import { Novelties } from "../layout/Novelties/Novelties";
 import { Work } from "../layout/Work/Work";
 import {ProductProps} from '../App/App.types';
 import { CustomOrder } from "../layout/CustomOrder/CustomOrder";
-
+import { selectIsLoading, selectProducts } from "../redux/product/productsSelectors";
+import { useDispatch, useSelector } from "react-redux";
 
 interface NoveltiesProps {
   onAdd: (novelty: ProductProps) => void;
   orders: ProductProps[];
-}
+};
+
 
 export const Home: React.FC<NoveltiesProps> = ({ onAdd, orders }) => {
-  const [products, setProducts] = useState([]);
-    const [loading, setLoading] = useState(true);
 
-    useEffect(() => {
-    async function fetchData() {
-      try {
-        const data = await getProductsByCategories("64dcc4148efcb0f7600c8cd0");
-        setProducts(data);
-        setLoading(false);
-      } catch (error) {
-        console.error("Error fetching data:", error);
-        setLoading(false);
-      }
-    }
+  const dispatch = useDispatch();
 
-    fetchData();
-  }, []);
+  const products = useSelector(selectProducts);
+  const loading = useSelector(selectIsLoading);
+
+  useEffect(() => {
+      dispatch(getProductsByCategories("64dcc4148efcb0f7600c8cd0") as any);
+  }, [dispatch]);
+
   return (
     <>
       <Hero />
