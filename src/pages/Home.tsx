@@ -10,12 +10,11 @@ import { CustomOrder } from "../layout/CustomOrder/CustomOrder";
 import { selectIsLoading, selectProducts } from "../redux/product/productsSelectors";
 
 interface NoveltiesProps {
-  onAdd: (novelty: ProductProps) => void;
   orders: ProductProps[];
 };
 
 
-export const Home: React.FC<NoveltiesProps> = ({ onAdd, orders }) => {
+export const Home: React.FC<NoveltiesProps> = ({ orders }) => {
 
   const dispatch = useAppDispatch();
 
@@ -30,7 +29,7 @@ export const Home: React.FC<NoveltiesProps> = ({ onAdd, orders }) => {
     <>
       <Hero />
       <Benefits />
-      <Novelties products={products} loading={loading} onAdd={onAdd} orders={orders} />
+      <Novelties products={products} loading={loading} orders={orders} />
       <CustomOrder/>
       <Work />
     </>

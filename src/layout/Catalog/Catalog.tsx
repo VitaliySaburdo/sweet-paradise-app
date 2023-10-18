@@ -26,7 +26,6 @@ import { ProductProps } from "../../App/App.types";
 interface CategoryProps {
   fetchProductsByCategory: (id: string) => void;
   loading: boolean;
-  onAdd: (novelty: ProductProps) => void;
   orders: ProductProps[];
   products: ProductProps[];
   changedCategory: (id: string) => void;
@@ -34,7 +33,6 @@ interface CategoryProps {
 
 export const Catalog: React.FC<CategoryProps> = ({
   fetchProductsByCategory,
-  onAdd,
   loading,
   orders,
   products,
@@ -136,7 +134,6 @@ export const Catalog: React.FC<CategoryProps> = ({
           <ProductList
             products={products}
             loading={loading}
-            onAdd={onAdd}
             orders={orders}
             changedCategory={changedCategory}
           />

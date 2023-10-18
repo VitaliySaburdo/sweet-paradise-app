@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
-import { useSelector } from "react-redux";
+import { useAppDispatch, useAppSelector } from "../../hooks/reduxHook";
 import { selectIsLoggedIn } from "../../redux/auth/authSelectors";
+import {addOrder} from '../../redux/orders/ordersSlice';
 import Sceleton from 'react-loading-skeleton'
 import 'react-loading-skeleton/dist/skeleton.css'
 import { deleteProduct } from "../../services/apiService";
@@ -20,28 +21,33 @@ import {
 import { Button } from "../Button/Button";
 import { ProductProps } from "../../App/App.types";
 
+
 interface NoveltiesItem {
   product: ProductProps;
-  onAdd: (novelty: ProductProps) => void;
   changedCategory: (id: string) => void;
   orders: ProductProps[];
 }
 
 export const Product: React.FC<NoveltiesItem> = ({
   product,
-  onAdd,
   orders,
   changedCategory,
 }) => {
   const [added, setAdded] = useState(false);
   const [isDelete, setIsDelete] = useState(false);
 
-  const isLogin = useSelector(selectIsLoggedIn);
+  const dispatch = useAppDispatch();
+
+  const isLogin = useAppSelector(selectIsLoggedIn);
 
   useEffect(() => {
-    const isNoveltyInCart = orders.some((order) => order._id === product._id);
-    setAdded(isNoveltyInCart);
+    const currentOrder = orders.some((order) => order._id === product._id);
+    setAdded(currentOrder);
   }, [orders, product]);
+
+  const onAdd = (product: ProductProps) => {
+    dispatch(addOrder(product))
+  }
 
   const handleOnDelete = () => {
     setIsDelete(true);

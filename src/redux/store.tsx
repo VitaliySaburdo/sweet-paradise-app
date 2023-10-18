@@ -2,7 +2,7 @@ import { configureStore, combineReducers } from '@reduxjs/toolkit';
 import storage from 'redux-persist/lib/storage';
 import { authReducer } from './auth/authSlice';
 import { productsReducer } from './product/productsSlice';
-import {ordersReducer} from './orders/ordersSlise';
+import {ordersReducer} from './orders/ordersSlice';
 import {
   persistStore,
   FLUSH,

@@ -6,13 +6,11 @@ import { Order } from "../components/Order/Order";
 import { ProductProps } from "../App/App.types";
 
 interface CatalogProps {
-  onAdd: (novelty: ProductProps) => void;
   orders: ProductProps[];
   addProductCategory: string;
 }
 
 export const Goods: React.FC<CatalogProps> = ({
-  onAdd,
   orders,
   addProductCategory,
 }) => {
@@ -65,7 +63,6 @@ export const Goods: React.FC<CatalogProps> = ({
       <Catalog
         products={products}
         loading={loading}
-        onAdd={onAdd}
         orders={orders}
         fetchProductsByCategory={handleChangeCategory}
         changedCategory={changedCategory}

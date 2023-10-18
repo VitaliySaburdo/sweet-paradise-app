@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
-import { useSelector } from "react-redux";
+import { useAppSelector } from "../../hooks/reduxHook";
 import { selectIsLoggedIn } from "../../redux/auth/authSelectors";
+import { selectOrders } from "../../redux/orders/ordersSelector";
 import { Container } from "../../components/Container/Container";
 import { NavBar } from "../../components/NavBar/NavBar";
 import { Tooltip } from "../../components/Tooltip/Tooltip";
@@ -27,12 +28,13 @@ import user from "../../images/Header/user.png";
 import admin from "../../images/Header/admin.png";
 import { Modal } from "../../components/Modal/Modal";
 import { LoginForm } from "../../components/LoginForm/LoginForm";
-import { ProductProps, OrderProps } from "../../App/App.types";
+import { ProductProps } from "../../App/App.types";
 import { CartList } from "../../components/CartList/CartList";
 import { AddForm } from "../../components/AddForm/AddForm";
 
+
+
 interface HeaderProps {
-  orders: OrderProps[];
   deleteOrder: (orders: ProductProps) => void;
   increment: (id: string) => void;
   decrement: (id: string) => void;
@@ -41,7 +43,6 @@ interface HeaderProps {
 }
 
 export const Header: React.FC<HeaderProps> = ({
-  orders,
   deleteOrder,
   increment,
   decrement,
@@ -54,7 +55,8 @@ export const Header: React.FC<HeaderProps> = ({
   const [isAdminModalOpen, setIsAdminModalOpen] = useState(false);
   const [open, setIsOpen] = useState(false);
 
-  const isLogin = useSelector(selectIsLoggedIn);
+  const isLogin = useAppSelector(selectIsLoggedIn);
+  const orders = useAppSelector(selectOrders);
 
   useEffect(() => {
     const handleScroll = () => {

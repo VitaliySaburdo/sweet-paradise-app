@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import {OrderProps} from '../../App/App.types';
+import {OrderProps, ProductProps} from '../../App/App.types';
 
 interface OrdersState {
   orders: OrderProps[];
@@ -13,7 +13,7 @@ const ordersSlice = createSlice({
   name: 'orders',
   initialState,
   reducers: {
-    addOrder: (state, action: PayloadAction<OrderProps>) => {
+    addOrder: (state, action: PayloadAction<ProductProps>) => {
       const { _id } = action.payload;
       const existingOrder = state.orders.find((order) => order._id === _id);
       if (existingOrder) {

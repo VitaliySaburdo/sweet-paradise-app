@@ -25,20 +25,6 @@ function App() {
     dispatch(refreshUser());
   }, [dispatch]);
 
-  const addOrder = (product: ProductProps): void => {
-    const isAlreadyInCart = orders.some((item) => item._id === product._id);
-    if (!isAlreadyInCart) {
-      const updatedOrders = [
-        ...orders,
-        {
-          ...product,
-          quantity: 1,
-          totalPrice: product.price,
-        },
-      ];
-      setOrders(updatedOrders);
-    }
-  };
   const deleteOrder = (product: ProductProps): void => {
     const updatedOrders = orders.filter((item) => item._id !== product._id);
     setOrders(updatedOrders);
@@ -102,7 +88,6 @@ function App() {
               path="/"
               element={
                 <SharedLayout
-                  orders={orders}
                   deleteOrder={deleteOrder}
                   increment={increment}
                   decrement={decrement}
@@ -113,14 +98,13 @@ function App() {
             >
               <Route
                 index
-                element={<Home orders={orders} onAdd={addOrder} />}
+                element={<Home orders={orders} />}
               />
               <Route
                 path="/goods"
                 element={
                   <Goods
                     orders={orders}
-                    onAdd={addOrder}
                     addProductCategory={addProductCategory}
                   />
                 }
