@@ -9,7 +9,7 @@ import { theme } from "../theme/theme";
 import { SharedLayout } from "../components/SharedLayout/SharedLayout";
 import { Home } from "../pages/Home";
 import { Goods } from "../pages/Goods";
-import { ProductProps, OrderProps } from "./App.types";
+import { OrderProps } from "./App.types";
 import { Feedback } from "../pages/Feedback";
 import { NotFound } from "../pages/NotFound";
 import { ContactsPage } from "../pages/ContactsPage";
@@ -24,11 +24,6 @@ function App() {
   useEffect(() => {
     dispatch(refreshUser());
   }, [dispatch]);
-
-  const deleteOrder = (product: ProductProps): void => {
-    const updatedOrders = orders.filter((item) => item._id !== product._id);
-    setOrders(updatedOrders);
-  };
 
   const increment = (id: string) => {
     setOrders((orders) => {
@@ -88,7 +83,6 @@ function App() {
               path="/"
               element={
                 <SharedLayout
-                  deleteOrder={deleteOrder}
                   increment={increment}
                   decrement={decrement}
                   changeValue={changeValue}

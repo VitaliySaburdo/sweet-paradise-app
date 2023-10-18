@@ -1,4 +1,4 @@
-import { ProductProps, OrderProps } from "../../App/App.types";
+import { OrderProps } from "../../App/App.types";
 import { Button } from "../Button/Button";
 import { CartItem } from "../CartItem/CartItem";
 import {
@@ -11,12 +11,11 @@ import {
 
 export const CartList: React.FC<{
   orders: OrderProps[];
-  deleteOrder: (orders: ProductProps) => void;
   increment: (id: string) => void;
   decrement: (id: string) => void;
   changeValue: (id: string, value: number) => void;
   closeCartModal: () => void;
-}> = ({ orders, deleteOrder, increment, decrement, changeValue, closeCartModal }) => {
+}> = ({ orders, increment, decrement, changeValue, closeCartModal }) => {
 
   const totalPriceAllOrders = orders.reduce(
     (totalPrice, order) => totalPrice + order.totalPrice,
@@ -35,7 +34,6 @@ export const CartList: React.FC<{
           <CartItem
             key={order._id}
             product={order}
-            deleteOrder={deleteOrder}
             increment={increment}
             decrement={decrement}
             changeValue={changeValue}

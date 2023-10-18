@@ -28,14 +28,12 @@ import user from "../../images/Header/user.png";
 import admin from "../../images/Header/admin.png";
 import { Modal } from "../../components/Modal/Modal";
 import { LoginForm } from "../../components/LoginForm/LoginForm";
-import { ProductProps } from "../../App/App.types";
 import { CartList } from "../../components/CartList/CartList";
 import { AddForm } from "../../components/AddForm/AddForm";
 
 
 
 interface HeaderProps {
-  deleteOrder: (orders: ProductProps) => void;
   increment: (id: string) => void;
   decrement: (id: string) => void;
   changeValue: (id: string, value: number) => void;
@@ -43,7 +41,6 @@ interface HeaderProps {
 }
 
 export const Header: React.FC<HeaderProps> = ({
-  deleteOrder,
   increment,
   decrement,
   changeValue,
@@ -130,7 +127,6 @@ export const Header: React.FC<HeaderProps> = ({
                   ) : (
                     <CartList
                       orders={orders}
-                      deleteOrder={deleteOrder}
                       increment={increment}
                       decrement={decrement}
                       changeValue={changeValue}

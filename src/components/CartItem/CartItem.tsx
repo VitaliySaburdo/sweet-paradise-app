@@ -1,3 +1,4 @@
+import { deleteOrder } from "../../redux/orders/ordersSlice";
 import {
   StyledText,
   Item,
@@ -8,31 +9,36 @@ import {
   Btn,
   CloseBtn,
 } from "./CartItem.styled";
-import { ProductProps, OrderProps } from "../../App/App.types";
-import cross from '../../images/Modal/cross.png';
+import { OrderProps } from "../../App/App.types";
+import cross from "../../images/Modal/cross.png";
+import { useAppDispatch } from "../../hooks/reduxHook";
 
 interface CartItemProps {
   product: OrderProps;
-  deleteOrder: (orders: ProductProps) => void;
   increment: (id: string) => void;
   decrement: (id: string) => void;
-  changeValue: (id:string, value: number) => void;
+  changeValue: (id: string, value: number) => void;
 }
 
 export const CartItem: React.FC<CartItemProps> = ({
   product,
-  deleteOrder,
   increment,
   decrement,
   changeValue,
 }) => {
+  const dispatch = useAppDispatch();
+
+  const onDelete = (id: string) => {
+    dispatch(deleteOrder(id));
+  };
+
   return (
     <>
       <Item>
         <Box style={{ justifyContent: "space-between", marginRight: "10px" }}>
           <StyledText>{product.name}</StyledText>
-          <CloseBtn onClick={() => deleteOrder(product)}>
-            <img src={cross} alt="cross" width={16}/>
+          <CloseBtn onClick={() => onDelete(product._id)}>
+            <img src={cross} alt="cross" width={16} />
           </CloseBtn>
         </Box>
         <Box>
@@ -47,7 +53,7 @@ export const CartItem: React.FC<CartItemProps> = ({
             type="text"
             value={product.quantity || 1}
             min="1"
-            onChange={(e:  React.ChangeEvent<HTMLInputElement>) => {
+            onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
               changeValue(product._id, parseInt(e.target.value, 10));
             }}
           />
