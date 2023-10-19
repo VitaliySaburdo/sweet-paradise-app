@@ -3,7 +3,7 @@ import Apple_tart from "../images/Novelties/Apple_tart.png";
 import Tiramisu from "../images/Novelties/Tiramisu.png";
 import { ProductProps } from "../App/App.types";
 
-export const Novelties: ProductProps[] = [
+export const novelties: ProductProps[] = [
   {
     _id: "52e02dd5-0d8b-4492-b187-c875aa66a0c0",
     name: "Panna cotta",
