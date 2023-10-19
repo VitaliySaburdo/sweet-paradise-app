@@ -2,7 +2,8 @@ import { configureStore, combineReducers } from '@reduxjs/toolkit';
 import storage from 'redux-persist/lib/storage';
 import { authReducer } from './auth/authSlice';
 import { productsReducer } from './product/productsSlice';
-import {ordersReducer} from './orders/ordersSlice';
+import { ordersReducer } from './orders/ordersSlice';
+import {categoriesReducer} from './categories/categoriesSlice'
 import {
   persistStore,
   FLUSH,
@@ -24,6 +25,7 @@ const rootReducer = combineReducers({
   auth: persistReducer(authPersistConfig, authReducer),
   products: productsReducer,
   orders: ordersReducer,
+  categories: categoriesReducer,
 });
 
 
