@@ -16,7 +16,7 @@ export const notify = ({ message, type }: NotificationsProps) => {
     pauseOnFocusLoss: true,
     draggable: true,
     pauseOnHover: true,
-    theme: "light",
+    theme:"colored",
   };
 
   switch (type) {

@@ -1,6 +1,7 @@
 import { Container } from "../../components/Container/Container";
 import User from "../../images/CustomOrder/user.png";
 import Phone from "../../images/CustomOrder/phone.png";
+import { notify } from "../../helpers/Notification";
 
 import {
   StyledSection,
@@ -22,13 +23,17 @@ export const CustomOrder = () => {
 
   const handleOnSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setName('');
-    setPhone('');
+    if (!name || !phone) {
+      notify({ message: `Please fill all fields`, type: "warning" }); 
+      return;
+    }
+    setName("");
+    setPhone("");
+    notify({ message: `${name} your order has been submitted`, type: "info" });
   };
 
   return (
     <>
-
       <StyledSection>
         <Container>
           <Box>
