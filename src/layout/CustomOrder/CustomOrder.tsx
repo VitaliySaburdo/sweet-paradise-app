@@ -1,6 +1,8 @@
 import { Container } from "../../components/Container/Container";
 import User from "../../images/CustomOrder/user.png";
 import Phone from "../../images/CustomOrder/phone.png";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 import {
   StyledSection,
@@ -22,13 +24,14 @@ export const CustomOrder = () => {
 
   const handleOnSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log({ name: name, phone: phone });
     setName('');
     setPhone('');
+    toast(`Hello, ${name} we'll recall you soon`);
   };
 
   return (
     <>
+      <ToastContainer />
       <StyledSection>
         <Container>
           <Box>
