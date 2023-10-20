@@ -24,9 +24,15 @@ interface LoginFormProps {
 export const LoginForm: React.FC<LoginFormProps> = ({ closeModal }) => {
   const [isRegisterForm, setIsRegisterForm] = useState(false);
   const [showPass, setShowPass] = useState(false);
+  const [typePass, setTypePass] = useState("password");
 
-  const toggleIcon = () => {
-    setShowPass(true);
+  const handleIconClick = () => {
+    setShowPass(!showPass);
+    if (typePass === "password") {
+      setTypePass("text");
+    } else {
+      setTypePass("password");
+    }
   };
 
   const dispatch = useAppDispatch();
@@ -65,14 +71,16 @@ export const LoginForm: React.FC<LoginFormProps> = ({ closeModal }) => {
             <StyledLabel htmlFor="password">Password</StyledLabel>
             <div style={{ position: "relative" }}>
               <StyledField
-                type="password"
+                type={typePass}
                 id="password"
                 name="password"
                 placeholder="Please enter your password"
               />
-              <span onClick={toggleIcon}>
-                <StyledIcon id={"icon-hide"} />
-              </span>
+              {showPass ? (
+                <StyledIcon id="icon-hide" onClick={handleIconClick} />
+              ) : (
+                <StyledIcon id="icon-show" onClick={handleIconClick} />
+              )}
             </div>
             <StyledMessage name="password" component="div" />
 

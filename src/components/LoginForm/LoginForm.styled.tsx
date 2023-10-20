@@ -27,6 +27,7 @@ export const StyledIcon = styled(Icon)`
   top: 12px;
   fill: rgba(33, 33, 33, 0.2);
   stroke: rgba(33, 33, 33, 0.2);
+  cursor: pointer;
 `;
 
 
