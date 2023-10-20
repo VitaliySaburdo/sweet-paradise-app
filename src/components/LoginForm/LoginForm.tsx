@@ -4,6 +4,7 @@ import { useDispatch } from "react-redux";
 import { ThunkDispatch } from "redux-thunk";
 import { AnyAction } from "redux";
 import { RootState } from "../../redux/store";
+import { RegisterForm } from "../RegisterForm/RegisterForm";
 import { Button } from "../Button/Button";
 import { logIn } from "../../redux/auth/authOperations";
 import {loginSchema} from '../../helpers/ValidationSchemas'
@@ -17,7 +18,7 @@ import {
   Span,
   Btn,
 } from "./LoginForm.styled";
-import { RegisterForm } from "../RegisterForm/RegisterForm";
+
 
 interface LoginFormProps {
   closeModal: () => void;
