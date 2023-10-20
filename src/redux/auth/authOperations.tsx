@@ -24,6 +24,12 @@ export const register = createAsyncThunk(
     try {
       const res = await axios.post("/users/signup", credentials);
       setAuthHeader(res.data.token);
+            if (res.status === 201) {
+        notify({
+          message: `Congratulations ${credentials.name} you register`,
+          type: "success",
+        });
+      }
       return res.data;
     } catch (error: any) {
       console.log(error);
@@ -42,12 +48,25 @@ export const logIn = createAsyncThunk(
     try {
       const res = await axios.post("/users/login", values);
       setAuthHeader(res.data.token);
+      if (res.status === 201) {
+        notify({
+          message: `Welcome "${values.email}"`,
+          type: "success",
+        });
+      }
+
       return res.data;
     } catch (error: any) {
-      console.log(error);
-      if (error.message === "Request failed with status code 401") {
+      const { message } = error.response.data;
+      if (message === "Email don`t found") {
         notify({
           message: `User "${values.email}" is not found, please register and try again`,
+          type: "warning",
+        });
+      }
+      if (message === "Password is wrong") {
+        notify({
+          message: `Password is wrong try again`,
           type: "warning",
         });
       }
