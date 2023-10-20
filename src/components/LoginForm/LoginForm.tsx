@@ -1,13 +1,10 @@
 import { useState } from "react";
 import { Formik } from "formik";
-import { useDispatch } from "react-redux";
-import { ThunkDispatch } from "redux-thunk";
-import { AnyAction } from "redux";
-import { RootState } from "../../redux/store";
+import { useAppDispatch } from "../../hooks/reduxHook";
 import { RegisterForm } from "../RegisterForm/RegisterForm";
 import { Button } from "../Button/Button";
 import { logIn } from "../../redux/auth/authOperations";
-import {loginSchema} from '../../helpers/ValidationSchemas'
+import { loginSchema } from "../../helpers/ValidationSchemas";
 import {
   StyledForm,
   StyledField,
@@ -17,22 +14,27 @@ import {
   Text,
   Span,
   Btn,
+  StyledIcon,
 } from "./LoginForm.styled";
-
 
 interface LoginFormProps {
   closeModal: () => void;
 }
 
-
 export const LoginForm: React.FC<LoginFormProps> = ({ closeModal }) => {
   const [isRegisterForm, setIsRegisterForm] = useState(false);
-  const dispatch: ThunkDispatch<RootState, undefined, AnyAction> =
-    useDispatch();
+  const [showPass, setShowPass] = useState(false);
+
+  const toggleIcon = () => {
+    setShowPass(true);
+  };
+
+  const dispatch = useAppDispatch();
+
   return (
     <>
       {isRegisterForm ? (
-        <RegisterForm closeModal={closeModal } />
+        <RegisterForm closeModal={closeModal} />
       ) : (
         <Formik
           initialValues={{
@@ -40,30 +42,38 @@ export const LoginForm: React.FC<LoginFormProps> = ({ closeModal }) => {
             password: "",
           }}
           validationSchema={loginSchema}
-            onSubmit={({ email, password }, { resetForm }) => {
+          onSubmit={({ email, password }, { resetForm }) => {
             dispatch(logIn({ values: { email, password } }));
-              resetForm();
-              closeModal();
+            resetForm();
+            closeModal();
           }}
         >
           <StyledForm>
             <Title>Login</Title>
             <StyledLabel htmlFor="email">Email</StyledLabel>
-            <StyledField
-              type="text"
-              id="email"
-              name="email"
-              placeholder="Please enter your email"
-            />
+            <div style={{ position: "relative" }}>
+              <StyledField
+                type="text"
+                id="email"
+                name="email"
+                placeholder="Please enter your email"
+              />
+              <StyledIcon id={"icon-mail"} />
+            </div>
             <StyledMessage name="email" component="div" />
 
             <StyledLabel htmlFor="password">Password</StyledLabel>
-            <StyledField
-              type="password"
-              id="password"
-              name="password"
-              placeholder="Please enter your password"
-            />
+            <div style={{ position: "relative" }}>
+              <StyledField
+                type="password"
+                id="password"
+                name="password"
+                placeholder="Please enter your password"
+              />
+              <span onClick={toggleIcon}>
+                <StyledIcon id={"icon-hide"} />
+              </span>
+            </div>
             <StyledMessage name="password" component="div" />
 
             <Button

@@ -1,5 +1,6 @@
-import styled, {keyframes} from "styled-components";
+import styled, { keyframes } from "styled-components";
 import { Form, Field, ErrorMessage } from "formik";
+import { Icon } from "../Icon/Icon";
 
 const fadeIn = keyframes`
   from {
@@ -18,7 +19,16 @@ export const StyledForm = styled(Form)`
 export const Title = styled.h2`
   font-weight: 16px;
   margin: 0 auto;
-`
+`;
+
+export const StyledIcon = styled(Icon)`
+  position: absolute;
+  left: 15px;
+  top: 12px;
+  fill: rgba(33, 33, 33, 0.2);
+  stroke: rgba(33, 33, 33, 0.2);
+`;
+
 
 export const StyledField = styled(Field)`
   margin: 0;
@@ -33,6 +43,10 @@ export const StyledField = styled(Field)`
   margin-bottom: 3px;
   &:focus {
     outline-color: ${(props) => props.theme.colors.secondaryColor};
+        + ${StyledIcon} {
+      fill: ${(props) => props.theme.colors.secondaryColor};
+      stroke: ${(props) => props.theme.colors.secondaryColor};
+    }
   }
 `;
 
@@ -53,7 +67,7 @@ export const StyledMessage = styled(ErrorMessage)`
 
 export const Text = styled.p`
   margin-top: 15px;
-  font-family: ${p => p.theme.fonts.second};
+  font-family: ${(p) => p.theme.fonts.second};
   font-weight: 400px;
   font-size: 16px;
   text-align: center;
@@ -67,4 +81,4 @@ export const Btn = styled.button`
   background-color: transparent;
   cursor: pointer;
   color: blue;
-`
+`;
