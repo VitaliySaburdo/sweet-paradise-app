@@ -1,6 +1,7 @@
 import axios from "axios";
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import { RootState } from "../store";
+import { notify } from "../../helpers/Notification";
 
 axios.defaults.baseURL = "https://sweet-paradise-api.onrender.com";
 
@@ -43,8 +44,13 @@ export const logIn = createAsyncThunk(
       setAuthHeader(res.data.token);
       return res.data;
     } catch (error: any) {
-      const { message } = error;
-      alert(message);
+      console.log(error);
+      if (error.message === "Request failed with status code 401") {
+        notify({
+          message: `User "${values.email}" is not found, please register and try again`,
+          type: "warning",
+        });
+      }
       return thunkAPI.rejectWithValue(error.message);
     }
   }
