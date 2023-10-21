@@ -1,9 +1,7 @@
-import { useState } from "react";
-import { notify } from "../../helpers/Notification";
 import { Container } from "../../components/Container/Container";
 import User from "../../images/CustomOrder/user.png";
 import Phone from "../../images/CustomOrder/phone.png";
-
+import { notify } from "../../helpers/Notification";
 
 import {
   StyledSection,
@@ -17,7 +15,7 @@ import {
   StyledLabel,
   StyledButton,
 } from "./CustomOrder.styled";
-
+import { useState } from "react";
 
 export const CustomOrder = () => {
   const [name, setName] = useState("");
