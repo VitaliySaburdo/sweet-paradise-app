@@ -1,7 +1,11 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const SVG = styled.svg`
   display: block;
-  fill: inherit;
-  stroke: currentColor;
+  position: absolute;
+  left: 15px;
+  top: 12px;
+  fill: #555555;
+  stroke: #555555;
+  cursor: pointer;
 `;

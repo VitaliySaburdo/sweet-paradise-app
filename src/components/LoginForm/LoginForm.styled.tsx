@@ -1,6 +1,5 @@
 import styled, { keyframes } from "styled-components";
 import { Form, Field, ErrorMessage } from "formik";
-import { Icon } from "../Icon/Icon";
 
 const fadeIn = keyframes`
   from {
@@ -21,16 +20,6 @@ export const Title = styled.h2`
   margin: 0 auto;
 `;
 
-export const StyledIcon = styled(Icon)`
-  position: absolute;
-  left: 15px;
-  top: 12px;
-  fill: rgba(33, 33, 33, 0.2);
-  stroke: rgba(33, 33, 33, 0.2);
-  cursor: pointer;
-`;
-
-
 export const StyledField = styled(Field)`
   margin: 0;
   height: 40px;
@@ -44,10 +33,6 @@ export const StyledField = styled(Field)`
   margin-bottom: 3px;
   &:focus {
     outline-color: ${(props) => props.theme.colors.secondaryColor};
-        + ${StyledIcon} {
-      fill: ${(props) => props.theme.colors.secondaryColor};
-      stroke: ${(props) => props.theme.colors.secondaryColor};
-    }
   }
 `;
 

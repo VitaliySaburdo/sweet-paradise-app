@@ -1,6 +1,7 @@
 import styled, {keyframes} from "styled-components";
 import { Form, Field, ErrorMessage } from "formik";
 
+
 const fadeIn = keyframes`
   from {
     opacity: 0;
@@ -35,6 +36,7 @@ export const StyledField = styled(Field)`
     outline-color: ${(props) => props.theme.colors.secondaryColor};
   }
 `;
+
 
 export const StyledLabel = styled.label`
   font-size: 12px;

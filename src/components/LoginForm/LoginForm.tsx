@@ -14,8 +14,8 @@ import {
   Text,
   Span,
   Btn,
-  StyledIcon,
 } from "./LoginForm.styled";
+import { Icon } from "../Icon/Icon";
 
 interface LoginFormProps {
   closeModal: () => void;
@@ -64,7 +64,7 @@ export const LoginForm: React.FC<LoginFormProps> = ({ closeModal }) => {
                 name="email"
                 placeholder="Please enter your email"
               />
-              <StyledIcon id={"icon-mail"} />
+              <Icon id={"icon-mail"} />
             </div>
             <StyledMessage name="email" component="div" />
 
@@ -77,9 +77,9 @@ export const LoginForm: React.FC<LoginFormProps> = ({ closeModal }) => {
                 placeholder="Please enter your password"
               />
               {showPass ? (
-                <StyledIcon id="icon-hide" onClick={handleIconClick} />
+                <Icon id="icon-show" onClick={handleIconClick} />
               ) : (
-                <StyledIcon id="icon-show" onClick={handleIconClick} />
+                <Icon id="icon-hide" onClick={handleIconClick} />
               )}
             </div>
             <StyledMessage name="password" component="div" />
