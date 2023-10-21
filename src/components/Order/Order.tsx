@@ -14,6 +14,7 @@ import {
   StyledField,
   StyledButton,
   Text,
+  PhoneField,
 } from "./Order.styled";
 
 export const Order = () => {
@@ -52,10 +53,13 @@ export const Order = () => {
                   placeholder="Enter your name"
                   onChange={(e: React.ChangeEvent<HTMLInputElement>) => setName(e.target.value)}
                 />
-                <StyledField
+                <PhoneField
                   type="text"
+                  mask="+38(099) 999-99-99"
                   name="phone"
-                  placeholder="Please enter your phone"
+                  value={phone}
+                  placeholder="Enter your phone"
+                  onChange={(e: React.ChangeEvent<HTMLInputElement>) => setPhone(e.target.value)}
                 />
                 <StyledButton type="submit">Send</StyledButton>
                 <Text>

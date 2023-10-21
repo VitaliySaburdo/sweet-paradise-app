@@ -5,6 +5,7 @@ import { Container } from "../Container/Container";
 import chocolate_1 from "../../images/Order/chocolate_1.png";
 import chocolate_2 from "../../images/Order/chocolate_2.png";
 import cookies from "../../images/Order/cookies.png";
+import InputMask from 'react-input-mask'; 
 
 const fadeIn = keyframes`
   from {
@@ -131,6 +132,23 @@ export const StyledForm = styled(Form)`
   display: flex;
   flex-direction: column;
   align-items: center;
+`;
+export const PhoneField = styled(InputMask)`
+  background-color: transparent;
+  width: 255px;
+  height: 27px;
+  border-top: none;
+  border-right: none;
+  border-left: none;
+  border-bottom: solid 1px ${(props) => props.theme.colors.witeTextColor};
+
+  &:focus {
+    outline: none;
+  }
+  &::placeholder {
+    color: ${(props) => props.theme.colors.witeTextColor};
+  }
+  color: ${(props) => props.theme.colors.witeTextColor};
 `;
 
 export const StyledField = styled(Field)`
