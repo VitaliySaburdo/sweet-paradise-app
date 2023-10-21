@@ -8,9 +8,6 @@ import { Work } from "../layout/Work/Work";
 import { CustomOrder } from "../layout/CustomOrder/CustomOrder";
 import { selectIsLoading, selectProducts } from "../redux/product/productsSelectors";
 
-
-
-
 export const Home: React.FC = () => {
 
   const dispatch = useAppDispatch();
