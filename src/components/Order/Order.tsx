@@ -1,5 +1,7 @@
+import { useState } from "react";
+import { notify } from "../../helpers/Notification";
 import { Section } from "../Section/Section";
-import { Formik } from "formik";
+import { Icon } from "../Icon/Icon";
 import {
   Title,
   Wrapper,
@@ -16,6 +18,20 @@ import {
 } from "./Order.styled";
 
 export const Order = () => {
+  const [name, setName] = useState("");
+  const [phone, setPhone] = useState("");
+
+  const handleOnSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    if (!name || !phone) {
+      notify({ message: `Please fill all fields`, type: "warning" });
+      return;
+    }
+    setName("");
+    setPhone("");
+    notify({ message: `${name} your order has been submitted`, type: "info" });
+  };
+
   return (
     <>
       <Section>
@@ -24,45 +40,12 @@ export const Order = () => {
           <Wrapper>
             <StyledText>Sweet Paradise</StyledText>
             <FormWrapper>
-              <Formik
-                initialValues={{
-                  name: "",
-                  phone: "",
-                }}
-                onSubmit={({ name, phone }, { resetForm }) => {
-                  console.log(name, phone);
-                  resetForm();
-                }}
-              >
-                <StyledForm>
-                  <FormTitle>Ready to order?</FormTitle>
-                  <FormText>
-                    Enter your details and we will We'll definitely call you
-                    back
-                  </FormText>
-                  <StyledField
-                    type="text"
-                    id="name"
-                    name="name"
-                    placeholder="Please enter your name"
-                  />
-                  <StyledField
-                    type="text"
-                    name="phone"
-                    placeholder="Please enter your phone"
-                  />
-                  <StyledButton type="submit">Send</StyledButton>
-                  <Text>
-                    By clicking on the button, you consent to processing Your
-                    personal data
-                  </Text>
-                </StyledForm>
-              </Formik>
               <StyledForm onSubmit={handleOnSubmit}>
                 <FormTitle>Ready to order?</FormTitle>
                 <FormText>
                   Enter your details and we will We'll definitely call you back
                 </FormText>
+                <div style={{ position: "relative" }}>
                 <StyledField
                   autoComplete="off"
                   type="text"
@@ -70,7 +53,10 @@ export const Order = () => {
                   value={name}
                   placeholder="Enter your name"
                   onChange={(e: React.ChangeEvent<HTMLInputElement>) => setName(e.target.value)}
-                />
+                  />
+                  <Icon id={"icon-user"} />
+                </div>
+                <div style={{ position: "relative" }}>
                 <PhoneField
                   type="text"
                   mask="+38(099) 999-99-99"
@@ -78,7 +64,9 @@ export const Order = () => {
                   value={phone}
                   placeholder="Enter your phone"
                   onChange={(e: React.ChangeEvent<HTMLInputElement>) => setPhone(e.target.value)}
-                />
+                  />
+                  <Icon id={"icon-phone"} />
+                  </div>
                 <StyledButton type="submit">Send</StyledButton>
                 <Text>
                   By clicking on the button, you consent to processing Your

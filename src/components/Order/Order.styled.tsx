@@ -1,20 +1,11 @@
-import styled, { keyframes } from "styled-components";
-import { Form, Field, ErrorMessage } from "formik";
+import styled from "styled-components";
+import InputMask from 'react-input-mask'; 
 import { Button } from "../Button/Button";
 import { Container } from "../Container/Container";
 import chocolate_1 from "../../images/Order/chocolate_1.png";
 import chocolate_2 from "../../images/Order/chocolate_2.png";
 import cookies from "../../images/Order/cookies.png";
-import InputMask from 'react-input-mask'; 
 
-const fadeIn = keyframes`
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-`;
 
 export const Title = styled.h2`
   text-align: center;
@@ -128,30 +119,33 @@ export const FormText = styled.p`
   }
 `;
 
-export const StyledForm = styled(Form)`
+export const StyledForm = styled.form`
   display: flex;
   flex-direction: column;
   align-items: center;
 `;
-export const PhoneField = styled(InputMask)`
-  background-color: transparent;
-  width: 255px;
-  height: 27px;
-  border-top: none;
-  border-right: none;
-  border-left: none;
-  border-bottom: solid 1px ${(props) => props.theme.colors.witeTextColor};
 
+export const StyledField = styled.input`
+  margin: 0;
+  height: 60px;
+  padding: 12px 42px;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 30px;
+  cursor: pointer;
+  transition-property: border-color, outline-color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  margin-bottom: 25px;
   &:focus {
-    outline: none;
+    outline-color: ${(props) => props.theme.colors.secondaryColor};
   }
-  &::placeholder {
-    color: ${(props) => props.theme.colors.witeTextColor};
+  @media screen and (${(props) => props.theme.media.md}) {
+    height: 40px;
+    border-radius: 20px;
   }
-  color: ${(props) => props.theme.colors.witeTextColor};
 `;
 
-export const StyledField = styled(Field)`
+export const PhoneField = styled(InputMask)`
   margin: 0;
   height: 60px;
   padding: 12px 42px;
@@ -194,9 +188,4 @@ export const StyledLabel = styled.label`
   margin-left: 8px;
 `;
 
-export const StyledMessage = styled(ErrorMessage)`
-  font-size: 12px;
-  color: red;
-  animation: ${fadeIn} 0.5s ease-in-out;
-  margin: 0 auto;
-`;
+
