@@ -1,7 +1,9 @@
+import { useState } from "react";
+import { notify } from "../../helpers/Notification";
 import { Container } from "../../components/Container/Container";
 import User from "../../images/CustomOrder/user.png";
 import Phone from "../../images/CustomOrder/phone.png";
-import { notify } from "../../helpers/Notification";
+
 
 import {
   StyledSection,
@@ -14,8 +16,9 @@ import {
   Img,
   StyledLabel,
   StyledButton,
+  PhoneField,
 } from "./CustomOrder.styled";
-import { useState } from "react";
+
 
 export const CustomOrder = () => {
   const [name, setName] = useState("");
@@ -49,6 +52,7 @@ export const CustomOrder = () => {
             <StyledForm onSubmit={handleOnSubmit}>
               <StyledLabel htmlFor="name">
                 <StyledField
+                  autoComplete="off"
                   type="text"
                   name="name"
                   value={name}
@@ -58,12 +62,13 @@ export const CustomOrder = () => {
                 <Img src={User} alt="user" width={25} />
               </StyledLabel>
               <StyledLabel htmlFor="phone">
-                <StyledField
+                <PhoneField
                   type="text"
+                  mask="+38(099) 999-99-99"
                   name="phone"
                   value={phone}
                   placeholder="Enter your phone"
-                  onChange={(e) => setPhone(e.target.value)}
+                  onChange={(e: React.ChangeEvent<HTMLInputElement>) => setPhone(e.target.value)}
                 />
                 <Img src={Phone} alt="phone" width={25} />
               </StyledLabel>

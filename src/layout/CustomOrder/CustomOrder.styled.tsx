@@ -4,6 +4,7 @@ import box from "../../images/CustomOrder/box.png";
 import box_md from "../../images/CustomOrder/box_md.png";
 import box_sm from "../../images/CustomOrder/box_sm.png";
 import { Button } from "../../components/Button/Button";
+import InputMask from 'react-input-mask'; 
 
 export const StyledSection = styled(Section)`
   border: 1px solid #000;
@@ -97,6 +98,24 @@ export const StyledForm = styled.form`
 `;
 
 export const StyledField = styled.input`
+  background-color: transparent;
+  width: 255px;
+  height: 27px;
+  border-top: none;
+  border-right: none;
+  border-left: none;
+  border-bottom: solid 1px ${(props) => props.theme.colors.witeTextColor};
+
+  &:focus {
+    outline: none;
+  }
+  &::placeholder {
+    color: ${(props) => props.theme.colors.witeTextColor};
+  }
+  color: ${(props) => props.theme.colors.witeTextColor};
+`;
+
+export const PhoneField = styled(InputMask)`
   background-color: transparent;
   width: 255px;
   height: 27px;
