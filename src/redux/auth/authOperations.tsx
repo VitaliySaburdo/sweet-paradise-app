@@ -50,11 +50,10 @@ export const logIn = createAsyncThunk(
       setAuthHeader(res.data.token);
       if (res.status === 201) {
         notify({
-          message: `Welcome "${values.email}"`,
+          message: `Welcome "${res.data.user.name}"`,
           type: "success",
         });
       }
-
       return res.data;
     } catch (error: any) {
       const { message } = error.response.data;
