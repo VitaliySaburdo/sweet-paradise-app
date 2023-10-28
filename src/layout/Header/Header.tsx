@@ -5,6 +5,10 @@ import { selectOrders } from "../../redux/orders/ordersSelector";
 import { Container } from "../../components/Container/Container";
 import { NavBar } from "../../components/NavBar/NavBar";
 import { Tooltip } from "../../components/Tooltip/Tooltip";
+import { Modal } from "../../components/Modal/Modal";
+import { LoginForm } from "../../components/LoginForm/LoginForm";
+import { CartList } from "../../components/CartList/CartList";
+import { AddForm } from "../../components/AddForm/AddForm";
 import {
   Wrapper,
   HeaderWrapper,
@@ -26,10 +30,7 @@ import basket from "../../images/Header/basket.png";
 import cart from "../../images/Header/cart.png";
 import user from "../../images/Header/user.png";
 import admin from "../../images/Header/admin.png";
-import { Modal } from "../../components/Modal/Modal";
-import { LoginForm } from "../../components/LoginForm/LoginForm";
-import { CartList } from "../../components/CartList/CartList";
-import { AddForm } from "../../components/AddForm/AddForm";
+import ordersList from "../../images/Header/orders.png";
 
 interface HeaderProps {
   addProductByCategory: (id: string) => void;
@@ -118,19 +119,27 @@ export const Header: React.FC<HeaderProps> = ({ addProductByCategory }) => {
               </Modal>
             )}
             <li>
-            {(isLogin && currentUser.role === "ADMIN") ? (
-              <li>
+              {isLogin && currentUser.role === "ADMIN" ? (
+                <li>
+                  <Tooltip content={`${currentUser.name}`}>
+                    <Btn onClick={() => setIsAdminModalOpen(true)}>
+                      <Img src={admin} alt="admin" width="40px" />
+                    </Btn>
+                  </Tooltip>
+                </li>
+              ) : isLogin && currentUser.role === "USER" ? (
                 <Tooltip content={`${currentUser.name}`}>
-                  <Btn onClick={() => setIsAdminModalOpen(true)}>
-                    <Img src={admin} alt="admin" width="40px" />
+                  <Btn>
+                    <Img src={ordersList} alt="order list" width="40px" />
                   </Btn>
                 </Tooltip>
-              </li>
-            ) : (              <Tooltip content={"User menu"}>
-                <Btn onClick={() => setIsLoginModalOpen(true)}>
-                  <Img src={user} alt="user" width="40px" />
-                </Btn>
-              </Tooltip>)}
+              ) : (
+                <Tooltip content={"User menu"}>
+                  <Btn onClick={() => setIsLoginModalOpen(true)}>
+                    <Img src={user} alt="user" width="40px" />
+                  </Btn>
+                </Tooltip>
+              )}
             </li>
             {isLoginModalOpen && (
               <Modal onClick={() => setIsLoginModalOpen(false)}>

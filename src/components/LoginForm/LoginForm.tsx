@@ -48,7 +48,7 @@ export const LoginForm: React.FC<LoginFormProps> = ({ closeModal }) => {
             password: "",
           }}
           validationSchema={loginSchema}
-          onSubmit={({ email, password }, { resetForm }) => {
+            onSubmit={({ email, password }, { resetForm }) => {
             dispatch(logIn({ values: { email, password } }));
             resetForm();
             closeModal();
