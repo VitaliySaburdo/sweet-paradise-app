@@ -78,7 +78,9 @@ export const CatalogBtn = styled.button`
   border: none;
   background-color: transparent;
   cursor: pointer;
+  transition: transform 0.4s ease;
   &:hover {
+    transition: transform 0.4s ease;
     transform: scale(1.2);
   }
 `;
