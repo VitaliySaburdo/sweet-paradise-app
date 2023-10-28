@@ -1,11 +1,14 @@
 import { useEffect, useState } from "react";
 import { useAppDispatch, useAppSelector } from "../../hooks/reduxHook";
-import { selectIsLoggedIn } from "../../redux/auth/authSelectors";
-import {addOrder} from '../../redux/orders/ordersSlice';
-import Sceleton from 'react-loading-skeleton'
-import 'react-loading-skeleton/dist/skeleton.css'
+import { selectIsLoggedIn, selectUser } from "../../redux/auth/authSelectors";
+import { addOrder } from "../../redux/orders/ordersSlice";
+import Sceleton from "react-loading-skeleton";
+import "react-loading-skeleton/dist/skeleton.css";
 import { deleteProduct } from "../../services/apiService";
 import { Modal } from "../Modal/Modal";
+import { Button } from "../Button/Button";
+import { ProductProps } from "../../App/App.types";
+import { selectOrders } from "../../redux/orders/ordersSelector";
 import {
   Img,
   Wrapper,
@@ -18,10 +21,6 @@ import {
   CancelBtn,
   DeleteBtn,
 } from "../Product/Products.styled";
-import { Button } from "../Button/Button";
-import { ProductProps } from "../../App/App.types";
-import { selectOrders } from "../../redux/orders/ordersSelector";
-
 
 interface NoveltiesItem {
   product: ProductProps;
@@ -39,6 +38,7 @@ export const Product: React.FC<NoveltiesItem> = ({
 
   const isLogin = useAppSelector(selectIsLoggedIn);
   const orders = useAppSelector(selectOrders);
+  const currentUser = useAppSelector(selectUser);
 
   useEffect(() => {
     const currentOrder = orders.some((order) => order._id === product._id);
@@ -46,8 +46,8 @@ export const Product: React.FC<NoveltiesItem> = ({
   }, [orders, product]);
 
   const onAdd = (product: ProductProps) => {
-    dispatch(addOrder(product))
-  }
+    dispatch(addOrder(product));
+  };
 
   const handleOnDelete = () => {
     setIsDelete(true);
@@ -63,22 +63,26 @@ export const Product: React.FC<NoveltiesItem> = ({
     changedCategory(product.category);
   };
 
-
-
   return (
     <>
       <Wrapper>
-        {<Img
-          src={"https://sweet-paradise-api.onrender.com/static/" + product.img}
-          alt={product.name}
-        /> || <Sceleton/>}
-        <Title>{product.name || <Sceleton/>}</Title> 
-        <Text>{product.ingredients || <Sceleton/>}</Text> 
-        {<Params>
-          {product.price} uah / {product.weight} gr
-        </Params> || <Sceleton/>}
+        {(
+          <Img
+            src={
+              "https://sweet-paradise-api.onrender.com/static/" + product.img
+            }
+            alt={product.name}
+          />
+        ) || <Sceleton />}
+        <Title>{product.name || <Sceleton />}</Title>
+        <Text>{product.ingredients || <Sceleton />}</Text>
+        {(
+          <Params>
+            {product.price} uah / {product.weight} gr
+          </Params>
+        ) || <Sceleton />}
 
-        {isLogin ? (
+        {isLogin && currentUser.role === "ADMIN" ? (
           <DeleteBtn onClick={handleOnDelete}>Delete</DeleteBtn>
         ) : (
           <Button width="200px" onClick={() => onAdd(product)}>
@@ -97,7 +101,7 @@ export const Product: React.FC<NoveltiesItem> = ({
             </BtnWrapper>
           </Modal>
         )}
-        </Wrapper>
+      </Wrapper>
     </>
   );
 };

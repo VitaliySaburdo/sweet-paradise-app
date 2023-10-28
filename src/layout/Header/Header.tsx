@@ -31,6 +31,7 @@ import cart from "../../images/Header/cart.png";
 import user from "../../images/Header/user.png";
 import admin from "../../images/Header/admin.png";
 import ordersList from "../../images/Header/orders.png";
+import { NavLink } from "react-router-dom";
 
 interface HeaderProps {
   addProductByCategory: (id: string) => void;
@@ -129,9 +130,9 @@ export const Header: React.FC<HeaderProps> = ({ addProductByCategory }) => {
                 </li>
               ) : isLogin && currentUser.role === "USER" ? (
                 <Tooltip content={`${currentUser.name}`}>
-                  <Btn>
+                  <NavLink to={"/orders"}>
                     <Img src={ordersList} alt="order list" width="40px" />
-                  </Btn>
+                  </NavLink>
                 </Tooltip>
               ) : (
                 <Tooltip content={"User menu"}>

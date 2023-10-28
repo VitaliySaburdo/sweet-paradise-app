@@ -12,6 +12,7 @@ import { Goods } from "../pages/Goods";
 import { Feedback } from "../pages/Feedback";
 import { NotFound } from "../pages/NotFound";
 import { ContactsPage } from "../pages/ContactsPage";
+import { OrdersHistory } from "../pages/OrdersHistory";
 
 function App() {
   const [addProductCategory, setaAddProductCategory] = useState("");
@@ -44,6 +45,7 @@ function App() {
               />
               <Route path="/feedback" element={<Feedback />} />
               <Route path="/contacts" element={<ContactsPage />} />
+              <Route path="/orders" element={<OrdersHistory />} />
               <Route path="*" element={<NotFound />} />
             </Route>
           </Routes>
