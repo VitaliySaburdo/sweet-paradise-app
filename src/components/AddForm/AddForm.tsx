@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import { useDispatch } from "react-redux";
 import { Formik, FormikHelpers } from "formik";
 import { createProduct, getAllCategories } from "../../services/apiService";
 import { logOut } from "../../redux/auth/authOperations";
@@ -19,6 +18,7 @@ import {
   AddBtn,
   LogoutBtn,
 } from "./AddForm.styled";
+import { useAppDispatch } from "../../hooks/reduxHook";
 
 interface AddFormProps {
   closeModal: () => void;
@@ -52,7 +52,7 @@ export const AddForm: React.FC<AddFormProps> = ({ closeModal, addProductByCatego
   );
   const [selectCategory, setSelectCategory] = useState<string>("");
 
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
 
   useEffect(() => {
     if (categories.length > 0) {
@@ -283,7 +283,7 @@ export const AddForm: React.FC<AddFormProps> = ({ closeModal, addProductByCatego
       </Formik>
       <LogoutBtn
         onClick={() => {
-          dispatch(logOut() as any);
+          dispatch(logOut());
           closeModal();
         }}
       >
