@@ -17,7 +17,7 @@ export const OrdersHistory = () => {
         </Container>
         <Button
           onClick={() => {
-            dispatch(logOut);
+            dispatch(logOut());
             navigate("/");
           }}
         >
