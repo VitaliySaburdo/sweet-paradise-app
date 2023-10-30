@@ -3,6 +3,7 @@ import { notify } from "../../helpers/Notification";
 import { useAppDispatch, useAppSelector } from "../../hooks/reduxHook";
 import { selectUser } from "../../redux/auth/authSelectors";
 import { createOrder } from "../../redux/orders/ordersOperation";
+import { resetOrders } from "../../redux/orders/ordersSlice";
 import { Button } from "../Button/Button";
 import { CartItem } from "../CartItem/CartItem";
 import {
@@ -26,12 +27,13 @@ export const CartList: React.FC<{
 
   const handleOnClick = () => {
     closeCartModal();
-    if (currentUser) {
+    if (currentUser._id) {
       dispatch(createOrder({ owner: currentUser._id, items: orders }));
       notify({
         message: `Hello ${currentUser.name} your order success`,
         type: "success",
       });
+      dispatch(resetOrders());
     } else {
       notify({
         message: `Please register`,

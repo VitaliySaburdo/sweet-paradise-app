@@ -1,5 +1,5 @@
-import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import {OrderProps, ProductProps} from '../../App/App.types';
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { OrderProps, ProductProps } from "../../App/App.types";
 
 interface OrdersState {
   orders: OrderProps[];
@@ -10,7 +10,7 @@ const initialState: OrdersState = {
 };
 
 const ordersSlice = createSlice({
-  name: 'orders',
+  name: "orders",
   initialState,
   reducers: {
     addOrder: (state, action: PayloadAction<ProductProps>) => {
@@ -20,11 +20,17 @@ const ordersSlice = createSlice({
         existingOrder.quantity += 1;
         existingOrder.totalPrice = existingOrder.quantity * existingOrder.price;
       } else {
-        state.orders.push({ ...action.payload, quantity: 1, totalPrice: action.payload.price });
+        state.orders.push({
+          ...action.payload,
+          quantity: 1,
+          totalPrice: action.payload.price,
+        });
       }
     },
     deleteOrder: (state, action: PayloadAction<string>) => {
-      state.orders = state.orders.filter((order) => order._id !== action.payload);
+      state.orders = state.orders.filter(
+        (order) => order._id !== action.payload
+      );
     },
     increment: (state, action: PayloadAction<string>) => {
       const order = state.orders.find((order) => order._id === action.payload);
@@ -40,7 +46,10 @@ const ordersSlice = createSlice({
         order.totalPrice = order.quantity * order.price;
       }
     },
-    changeValue: (state, action: PayloadAction<{ id: string; value: number }>) => {
+    changeValue: (
+      state,
+      action: PayloadAction<{ id: string; value: number }>
+    ) => {
       const { id, value } = action.payload;
       const order = state.orders.find((order) => order._id === id);
       if (order) {
@@ -48,8 +57,18 @@ const ordersSlice = createSlice({
         order.totalPrice = value * order.price;
       }
     },
+    resetOrders: (state) => {
+      state.orders = [];
+    },
   },
 });
 
-export const { addOrder, deleteOrder, increment, decrement, changeValue } = ordersSlice.actions;
+export const {
+  addOrder,
+  deleteOrder,
+  increment,
+  decrement,
+  changeValue,
+  resetOrders,
+} = ordersSlice.actions;
 export const ordersReducer = ordersSlice.reducer;
