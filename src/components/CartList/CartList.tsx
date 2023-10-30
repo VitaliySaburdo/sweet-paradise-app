@@ -1,4 +1,5 @@
 import { OrderProps } from "../../App/App.types";
+import { notify } from "../../helpers/Notification";
 import { Button } from "../Button/Button";
 import { CartItem } from "../CartItem/CartItem";
 import {
@@ -22,6 +23,10 @@ export const CartList: React.FC<{
   const handleOnClick = () => {
     console.log(orders);
     closeCartModal();
+    notify({
+          message: `Please register`,
+          type: "warning",
+        });
   };
 
   return (
