@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { OrderProps } from "../../App/App.types";
 import { notify } from "../../helpers/Notification";
 import { useAppDispatch, useAppSelector } from "../../hooks/reduxHook";
@@ -12,11 +13,15 @@ import {
   StyledWrapper,
   TotalPrice,
 } from "./CartList.styled";
+import { Modal } from "../Modal/Modal";
+import { RegisterForm } from "../RegisterForm/RegisterForm";
 
 export const CartList: React.FC<{
   orders: OrderProps[];
   closeCartModal: () => void;
-}> = ({ orders, closeCartModal }) => {
+  openLoginModal: () => void;
+}> = ({ orders, closeCartModal, openLoginModal }) => {
+  const [isOpen, setIsOpen] = useState(false);
   const currentUser = useAppSelector(selectUser);
   const dispatch = useAppDispatch();
 
@@ -36,9 +41,10 @@ export const CartList: React.FC<{
       dispatch(resetOrders());
     } else {
       notify({
-        message: `Please register`,
+        message: `Please login to shop.`,
         type: "warning",
       });
+      openLoginModal();
     }
   };
 
@@ -58,6 +64,15 @@ export const CartList: React.FC<{
           </Button>
         </StyledWrapper>
       </CartListHeader>
+      {isOpen && (
+        <Modal
+          onClick={() => {
+            setIsOpen(false);
+          }}
+        >
+          <RegisterForm closeModal={() => setIsOpen(false)} />
+        </Modal>
+      )}
     </>
   );
 };
