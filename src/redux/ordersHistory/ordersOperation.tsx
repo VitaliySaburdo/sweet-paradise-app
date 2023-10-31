@@ -9,6 +9,7 @@ export const getAllOrders = createAsyncThunk(
   async (owner: object, thunkAPI) => {
     try {
       const res = await axios.get(`${BASE_URL}/orders`, owner);
+    console.log(res)
       return res.data;
     } catch (error: any) {
       return thunkAPI.rejectWithValue(error.message);

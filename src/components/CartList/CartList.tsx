@@ -3,7 +3,7 @@ import { OrderProps } from "../../App/App.types";
 import { notify } from "../../helpers/Notification";
 import { useAppDispatch, useAppSelector } from "../../hooks/reduxHook";
 import { selectUser } from "../../redux/auth/authSelectors";
-import { createOrder } from "../../redux/orders/ordersOperation";
+import { createOrder } from "../../redux/ordersHistory/ordersOperation";
 import { resetOrders } from "../../redux/orders/ordersSlice";
 import { Button } from "../Button/Button";
 import { CartItem } from "../CartItem/CartItem";
@@ -44,7 +44,9 @@ export const CartList: React.FC<{
         message: `Please login to shop.`,
         type: "warning",
       });
-      openLoginModal();
+      setTimeout(() => {
+        openLoginModal();
+      }, 1500)
     }
   };
 

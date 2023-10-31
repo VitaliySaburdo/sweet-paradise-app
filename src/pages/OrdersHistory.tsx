@@ -5,7 +5,7 @@ import { Container } from "../components/Container/Container";
 import { Section } from "../components/Section/Section";
 import { useAppDispatch, useAppSelector } from "../hooks/reduxHook";
 import { logOut } from "../redux/auth/authOperations";
-import { getAllOrders } from "../redux/orders/ordersOperation";
+import { getAllOrders } from "../redux/ordersHistory/ordersOperation";
 import { selectUser } from "../redux/auth/authSelectors";
 import { selectOrders } from "../redux/orders/ordersSelector";
 
