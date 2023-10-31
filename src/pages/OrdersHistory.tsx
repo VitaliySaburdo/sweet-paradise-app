@@ -7,15 +7,13 @@ import { useAppDispatch, useAppSelector } from "../hooks/reduxHook";
 import { logOut } from "../redux/auth/authOperations";
 import { getAllOrders } from "../redux/ordersHistory/ordersOperation";
 import { selectUser } from "../redux/auth/authSelectors";
-import { selectOrders } from "../redux/orders/ordersSelector";
+// import { selectorHistory } from "../redux/ordersHistory/ordersHistorySelectors";
 
 export const OrdersHistory = () => {
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
   const currentUser = useAppSelector(selectUser);
-  const orders = useAppSelector(selectOrders);
-
-  console.log(orders);
+  // const ordersHistory = useAppSelector(selectorHistory);
 
   useEffect(() => {
     dispatch(getAllOrders({ owner: currentUser._id }));

@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { getAllOrders as fetchAllOrders } from "./ordersOperation";
+import { getAllOrders } from "./ordersOperation";
 
 const ordersHistorySlice = createSlice({
   name: "ordersHistory",
@@ -11,14 +11,15 @@ const ordersHistorySlice = createSlice({
   reducers: {},
   extraReducers: (builder) => {
     builder
-      .addCase(fetchAllOrders.fulfilled, (state) => {
+      .addCase(getAllOrders.fulfilled, (state, action) => {
+        state.ordersHistory = action.payload;
         state.isLoading = false;
       })
-      .addCase(fetchAllOrders.pending, (state) => {
+      .addCase(getAllOrders.pending, (state) => {
         state.isLoading = true;
         state.error = null;
       })
-      .addCase(fetchAllOrders.rejected, (state, action: any) => {
+      .addCase(getAllOrders.rejected, (state, action: any) => {
         state.isLoading = false;
         state.error = action.payload;
       });
