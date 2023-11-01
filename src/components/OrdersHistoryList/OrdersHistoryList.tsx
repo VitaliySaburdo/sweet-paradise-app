@@ -7,6 +7,7 @@ interface orderHistoryProps {
     _id: string;
     items: OrderHistoryProps[];
     orderTime: string;
+    totalPrice: number;
   }[];
 }
 
@@ -20,7 +21,7 @@ export const OrdersHistoryList: React.FC<orderHistoryProps> = ({
         {ordersHistory.map((order, index) => (
           <Wrapper key={order._id}>
             <p>Order № {index + 1}</p>
-            <div style={{display: "flex"}}>
+            <div style={{ display: "flex" }}>
               {order.items.map((item) => (
                 <OrderHistoryItem item={item} />
               ))}
