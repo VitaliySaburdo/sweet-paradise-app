@@ -22,7 +22,12 @@ export const deleteProduct = async (id: string) => {
   return await axios.delete(`${BASE_URL}/products/${id}`);
 };
 
-export const getAllOrders = async(ownerId: string) => {
+export const getAllOrders = async (ownerId: string) => {
   const response = await axios.get(`${BASE_URL}/orders/${ownerId}`);
+  return response.data;
+};
+
+export const createOrder = async (values: object) => {
+  const response = await axios.post(`${BASE_URL}/orders`, values);
   return response.data;
 }
