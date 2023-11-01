@@ -21,15 +21,15 @@ export const OrdersHistoryList: React.FC<orderHistoryProps> = ({
   return (
     <>
       <MainTitle>User history</MainTitle>
-      <ul>
-        {ordersHistory.map((order) => (
-          <li key={order._id}>
+      <div>
+        {ordersHistory.map((order, index) => (
+          <ul key={order._id}>Order {index + 1}
             {order.items.map((item, index) => (
               <div key={index}>{item.name}</div>
             ))}
-          </li>
+          </ul>
         ))}
-      </ul>
+      </div>
 
       <Button
         onClick={() => {
