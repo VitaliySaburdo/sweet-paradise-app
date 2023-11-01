@@ -28,6 +28,7 @@ export const getAllOrders = async (ownerId: string) => {
 };
 
 export const createOrder = async (values: object) => {
+  console.log(values);
   const response = await axios.post(`${BASE_URL}/orders`, values);
   return response.data;
-}
+};

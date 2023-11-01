@@ -34,12 +34,11 @@ export const CartList: React.FC<{
     closeCartModal();
     if (currentUser._id) {
       try {
-        const ordersHistory = await createOrder({
+        await createOrder({
           owner: currentUser._id,
           items: orders,
           totalPrice: totalPriceAllOrders,
         });
-        console.log(ordersHistory);
       } catch (error) {}
       notify({
         message: `Hello ${currentUser.name} your order success`,

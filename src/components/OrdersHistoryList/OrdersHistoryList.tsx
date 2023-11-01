@@ -14,13 +14,26 @@ interface orderHistoryProps {
 export const OrdersHistoryList: React.FC<orderHistoryProps> = ({
   ordersHistory,
 }) => {
+  const ConvertTime = (dateString: string) => {
+    const date = new Date(dateString);
+    const day = date.getDate().toString().padStart(2, "0");
+    const month = (date.getMonth() + 1).toString().padStart(2, "0");
+    const year = date.getFullYear().toString().slice(-2);
+    return `${day}.${month}.${year}`;
+  };
+
   return (
     <>
       <MainTitle>User history</MainTitle>
       <MainWrapper>
         {ordersHistory.map((order, index) => (
           <Wrapper key={order._id}>
-            <p>Order № {index + 1}</p>
+            <p>
+              Order № {index + 1} <span>{ConvertTime(order.orderTime)}</span>
+            </p>
+            <p>
+              Total price order <span>{order.totalPrice}</span>
+            </p>
             <div style={{ display: "flex" }}>
               {order.items.map((item) => (
                 <OrderHistoryItem item={item} />
