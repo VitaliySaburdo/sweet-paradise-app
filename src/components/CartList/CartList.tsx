@@ -3,7 +3,7 @@ import { OrderProps } from "../../App/App.types";
 import { notify } from "../../helpers/Notification";
 import { useAppDispatch, useAppSelector } from "../../hooks/reduxHook";
 import { selectUser } from "../../redux/auth/authSelectors";
-import { createOrder } from "../../redux/orders/ordersOperation";
+import { createOrder } from "../../services/apiService";
 import { resetOrders } from "../../redux/orders/ordersSlice";
 import { Button } from "../Button/Button";
 import { CartItem } from "../CartItem/CartItem";
@@ -30,10 +30,16 @@ export const CartList: React.FC<{
     0
   );
 
-  const handleOnClick = () => {
+  const handleOnClick = async() => {
     closeCartModal();
     if (currentUser._id) {
-      dispatch(createOrder({ owner: currentUser._id, items: orders }));
+      // dispatch(createOrder({ owner: currentUser._id, items: orders }));
+      try {
+        const ordersHistory = await createOrder({ owner: currentUser._id, items: orders });
+        console.log(ordersHistory)
+      } catch (error) {
+        
+      }
       notify({
         message: `Hello ${currentUser.name} your order success`,
         type: "success",

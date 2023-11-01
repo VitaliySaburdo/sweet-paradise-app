@@ -1,42 +1,47 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Button } from "../components/Button/Button";
 import { Container } from "../components/Container/Container";
 import { Section } from "../components/Section/Section";
 import { useAppDispatch, useAppSelector } from "../hooks/reduxHook";
 import { logOut } from "../redux/auth/authOperations";
-import { getAllOrders } from "../redux/orders/ordersOperation";
+import { getAllOrders } from "../services/apiService";
 import { selectUserId } from "../redux/auth/authSelectors";
-import { selectOrdersHistory } from "../redux/orders/ordersSelector";
 
 export const OrdersHistory = () => {
+  const [ordersHistory, setOrdersHistory] = useState([]);
+
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
   const currentUser = useAppSelector(selectUserId);
-  const ordersHistory = useAppSelector(selectOrdersHistory);
 
-
-console.log(ordersHistory)
+  console.log(ordersHistory);
 
   useEffect(() => {
-    if (currentUser) {
-     dispatch(getAllOrders( currentUser)); 
-    }
-  }, [dispatch, currentUser]);
+    const getOrdersHistory = async () => {
+      try {
+        if (currentUser) {
+          const data = await getAllOrders(currentUser);
+          setOrdersHistory(data)
+        }
+      } catch (error) {}
+    };
+    getOrdersHistory();
+  }, [currentUser]);
 
   return (
     <>
       <Section>
         <Container>
           <h2>User history</h2>
-                  <Button
-          onClick={() => {
-            dispatch(logOut());
-            navigate("/");
-          }}
-        >
-          Logout
-        </Button>
+          <Button
+            onClick={() => {
+              dispatch(logOut());
+              navigate("/");
+            }}
+          >
+            Logout
+          </Button>
         </Container>
       </Section>
     </>
