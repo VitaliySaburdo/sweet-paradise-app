@@ -14,7 +14,6 @@ import {
   REGISTER,
 } from 'redux-persist';
 import persistReducer from 'redux-persist/es/persistReducer';
-import { ordersHistoryReducer } from './ordersHistory/ordersHistorySlice';
 
 const authPersistConfig = {
   key: 'auth',
@@ -26,7 +25,6 @@ const rootReducer = combineReducers({
   auth: persistReducer(authPersistConfig, authReducer),
   products: productsReducer,
   orders: ordersReducer,
-  orderHistory: ordersHistoryReducer,
   categories: categoriesReducer,
 });
 

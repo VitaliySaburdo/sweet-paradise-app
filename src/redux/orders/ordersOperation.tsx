@@ -6,10 +6,10 @@ const BASE_URL = "https://sweet-paradise-api.onrender.com";
 // GET @ / orderAll
 export const getAllOrders = createAsyncThunk(
   "orders/getAllOrders",
-  async (owner: object, thunkAPI) => {
-    console.log(owner)
+  async (ownerId: string, thunkAPI) => {
+    console.log(ownerId)
     try {
-      const res = await axios.get(`${BASE_URL}/orders`, owner);
+      const res = await axios.get(`${BASE_URL}/orders/${ownerId}`);
       console.log(res.data);
       return res.data;
     } catch (error: any) {

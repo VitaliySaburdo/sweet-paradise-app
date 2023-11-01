@@ -3,7 +3,7 @@ import { OrderProps } from "../../App/App.types";
 import { notify } from "../../helpers/Notification";
 import { useAppDispatch, useAppSelector } from "../../hooks/reduxHook";
 import { selectUser } from "../../redux/auth/authSelectors";
-import { createOrder } from "../../redux/ordersHistory/ordersOperation";
+import { createOrder } from "../../redux/orders/ordersOperation";
 import { resetOrders } from "../../redux/orders/ordersSlice";
 import { Button } from "../Button/Button";
 import { CartItem } from "../CartItem/CartItem";
