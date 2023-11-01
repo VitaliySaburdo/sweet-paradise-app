@@ -12,7 +12,7 @@ import { Goods } from "../pages/Goods";
 import { Feedback } from "../pages/Feedback";
 import { NotFound } from "../pages/NotFound";
 import { ContactsPage } from "../pages/ContactsPage";
-import { OrdersHistory } from "../pages/OrdersHistory";
+import { OrdersHistoryPage } from "../pages/OrdersHistoryPage";
 import { PrivateRoute } from "../helpers/PrivateRoute";
 
 function App() {
@@ -49,7 +49,7 @@ function App() {
               <Route
                 path="/orders"
                 element={
-                  <PrivateRoute redirectTo="/" component={OrdersHistory} />
+                  <PrivateRoute redirectTo="/" component={OrdersHistoryPage} />
                 }
               />
               <Route path="*" element={<NotFound />} />

@@ -114,6 +114,7 @@ export const Header: React.FC<HeaderProps> = ({ addProductByCategory }) => {
                     <CartList
                       orders={orders}
                       closeCartModal={() => setIsCartModalOpen(false)}
+                      openLoginModal={() => setIsLoginModalOpen(true)}
                     />
                   )}
                 </CartWrapper>
