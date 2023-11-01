@@ -1,7 +1,8 @@
 import axios from "axios";
 import { createAsyncThunk } from "@reduxjs/toolkit";
 
-const BASE_URL = "https://sweet-paradise-api.onrender.com";
+// const BASE_URL = "https://sweet-paradise-api.onrender.com";
+const BASE_URL = "http://localhost:8080";
 
 // GET @ / orderAll
 export const getAllOrders = createAsyncThunk(
@@ -10,7 +11,6 @@ export const getAllOrders = createAsyncThunk(
     console.log(ownerId)
     try {
       const res = await axios.get(`${BASE_URL}/orders/${ownerId}`);
-      console.log(res.data);
       return res.data;
     } catch (error: any) {
       return thunkAPI.rejectWithValue(error.message);

@@ -7,13 +7,16 @@ import { useAppDispatch, useAppSelector } from "../hooks/reduxHook";
 import { logOut } from "../redux/auth/authOperations";
 import { getAllOrders } from "../redux/orders/ordersOperation";
 import { selectUserId } from "../redux/auth/authSelectors";
-// import { selectorHistory } from "../redux/ordersHistory/ordersHistorySelectors";
+import { selectOrdersHistory } from "../redux/orders/ordersSelector";
 
 export const OrdersHistory = () => {
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
   const currentUser = useAppSelector(selectUserId);
-  // const ordersHistory = useAppSelector(selectorHistory);
+  const ordersHistory = useAppSelector(selectOrdersHistory);
+
+
+console.log(ordersHistory)
 
   useEffect(() => {
     if (currentUser) {
@@ -26,8 +29,7 @@ export const OrdersHistory = () => {
       <Section>
         <Container>
           <h2>User history</h2>
-        </Container>
-        <Button
+                  <Button
           onClick={() => {
             dispatch(logOut());
             navigate("/");
@@ -35,6 +37,7 @@ export const OrdersHistory = () => {
         >
           Logout
         </Button>
+        </Container>
       </Section>
     </>
   );

@@ -3,10 +3,12 @@ import { OrderProps, ProductProps } from "../../App/App.types";
 
 interface OrdersState {
   orders: OrderProps[];
+  ordersHistory: [];
 }
 
 const initialState: OrdersState = {
   orders: [],
+  ordersHistory: [],
 };
 
 const ordersSlice = createSlice({
