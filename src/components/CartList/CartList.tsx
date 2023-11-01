@@ -30,16 +30,17 @@ export const CartList: React.FC<{
     0
   );
 
-  const handleOnClick = async() => {
+  const handleOnClick = async () => {
     closeCartModal();
     if (currentUser._id) {
-      // dispatch(createOrder({ owner: currentUser._id, items: orders }));
       try {
-        const ordersHistory = await createOrder({ owner: currentUser._id, items: orders });
-        console.log(ordersHistory)
-      } catch (error) {
-        
-      }
+        const ordersHistory = await createOrder({
+          owner: currentUser._id,
+          items: orders,
+          totalPrice: totalPriceAllOrders,
+        });
+        console.log(ordersHistory);
+      } catch (error) {}
       notify({
         message: `Hello ${currentUser.name} your order success`,
         type: "success",
@@ -52,7 +53,7 @@ export const CartList: React.FC<{
       });
       setTimeout(() => {
         openLoginModal();
-      }, 1500)
+      }, 1500);
     }
   };
 
