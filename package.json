@@ -1,7 +1,7 @@
 {
   "name": "sweet-paradise-app",
   "version": "0.1.0",
-  "homepage": "https://VitaliySaburdo.github.io/sweet-paradise-app",
+  "homepage": "https://VitaliySaburdo.github.io/sweet-paradise-app/",
   "private": true,
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.5",
