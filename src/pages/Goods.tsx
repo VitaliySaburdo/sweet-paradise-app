@@ -25,20 +25,6 @@ const Goods: React.FC = () => {
     fetchData();
   }, [category]);
 
-  // useEffect(() => {
-  //   async function fetchData() {
-  //     try {
-  //       if (addProductCategory) {
-  //         const data = await getProductsByCategories(addProductCategory);
-  //         setProducts(data);
-  //       }
-  //     } catch (error) {
-  //       console.error("Error fetching data:", error);
-  //     }
-  //   }
-  //   fetchData();
-  // }, [addProductCategory]);
-
   const handleChangeCategory = (id: string) => {
     setCategory(id);
   };

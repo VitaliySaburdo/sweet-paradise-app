@@ -1,5 +1,5 @@
 import { useAppDispatch } from "../hooks/reduxHook";
-import { lazy, useEffect, useState } from "react";
+import { lazy, useEffect } from "react";
 import { Route, Routes } from "react-router-dom";
 import { SkeletonTheme } from "react-loading-skeleton";
 import { refreshUser } from "../redux/auth/authOperations";
