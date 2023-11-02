@@ -3,8 +3,14 @@ import { logOut } from "../../redux/auth/authOperations";
 import { useNavigate } from "react-router-dom";
 import { Container } from "../../components/Container/Container";
 import { OrdersHistoryList } from "../../components/OrdersHistoryList/OrdersHistoryList";
-import { StyledSection, StyledButton } from "./OrderHistory.styled";
 import { OrderHistoryProps } from "../../App/App.types";
+import {
+  StyledSection,
+  StyledButton,
+  StyledContainer,
+  MainTitle, 
+  Title,
+} from "./OrderHistory.styled";
 
 interface orderHistoryProps {
   ordersHistory: {
@@ -25,10 +31,13 @@ export const OrderHistory: React.FC<orderHistoryProps> = ({
     <>
       <StyledSection>
         <Container>
+          <MainTitle>User history</MainTitle>
           {ordersHistory.length ? (
             <OrdersHistoryList ordersHistory={ordersHistory} />
           ) : (
-            <p>You don`t have orders</p>
+            <StyledContainer>
+              <Title>You don`t have orders</Title>
+            </StyledContainer>
           )}
           <StyledButton
             onClick={() => {

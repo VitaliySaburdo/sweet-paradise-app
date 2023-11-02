@@ -31,7 +31,7 @@ function App() {
   return (
     <StyleSheetManager shouldForwardProp={(prop) => prop !== "index"}>
       <ThemeProvider theme={theme}>
-        <SkeletonTheme baseColor="#c2c1c1" highlightColor="#e0e0e0">
+        <SkeletonTheme baseColor="#fffefe" highlightColor="#e0e0e0">
           <Routes>
             <Route
               path="/"

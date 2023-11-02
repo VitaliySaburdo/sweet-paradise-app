@@ -1,6 +1,6 @@
 import { OrderHistoryProps } from "../../App/App.types";
 import { OrderHistoryItem } from "../OrdersHistoryItem/OrdersHistoryItem";
-import { MainTitle, MainWrapper, Wrapper } from "./OrdersHistoryList.styled";
+import { BlockWrapper, MainWrapper, Wrapper } from "./OrdersHistoryList.styled";
 
 interface orderHistoryProps {
   ordersHistory: {
@@ -24,12 +24,12 @@ export const OrdersHistoryList: React.FC<orderHistoryProps> = ({
 
   return (
     <>
-      <MainTitle>User history</MainTitle>
+      <BlockWrapper>
       <MainWrapper>
         {ordersHistory.map((order, index) => (
           <Wrapper key={order._id}>
             <p>
-              Order № {index + 1} <span>{ConvertTime(order.orderTime)}</span>
+              Order № {index + 1} dated <span>{ConvertTime(order.orderTime)}</span>
             </p>
             <p>
               Total price order <span>{order.totalPrice}</span>
@@ -41,7 +41,8 @@ export const OrdersHistoryList: React.FC<orderHistoryProps> = ({
             </div>
           </Wrapper>
         ))}
-      </MainWrapper>
+        </MainWrapper>
+        </BlockWrapper>
     </>
   );
 };
