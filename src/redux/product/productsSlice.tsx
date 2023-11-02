@@ -1,25 +1,26 @@
 import { createSlice, isAnyOf } from "@reduxjs/toolkit";
 import { logOut } from "../auth/authOperations";
-import { ProductProps } from "../../App/App.types";
+import { CategoriesProps, ProductProps } from "../../App/App.types";
 import {
   getProductsAll,
   getProductsByCategories,
   addProduct,
   deleteProduct,
+  getAllCategories,
 } from "./productsOperations";
 
 interface ProductsState {
   products: ProductProps[];
+  categories: CategoriesProps[];
   isLoading: boolean;
   error: string | null;
-  isAddedProduct: boolean;
 }
 
 const initialState: ProductsState = {
   products: [],
+  categories: [],
   isLoading: false,
   error: null,
-  isAddedProduct: false,
 };
 
 const extraActions = [
@@ -41,13 +42,17 @@ const productsSlice = createSlice({
       state.products = [];
       state.isLoading = false;
       state.error = null;
-      state.isAddedProduct = false;
     },
   },
   extraReducers: (builder) =>
     builder
       .addCase(getProductsAll.fulfilled, (state, action) => {
         state.products = action.payload;
+        state.isLoading = false;
+        state.error = null;
+      })
+      .addCase(getAllCategories.fulfilled, (state, action) => {
+        state.categories = action.payload;
         state.isLoading = false;
         state.error = null;
       })
@@ -60,7 +65,6 @@ const productsSlice = createSlice({
         state.products.push(action.payload);
         state.isLoading = false;
         state.error = null;
-        state.isAddedProduct = true;
       })
       .addCase(deleteProduct.fulfilled, (state, action) => {
         const index = state.products.findIndex(
@@ -81,12 +85,10 @@ const productsSlice = createSlice({
       .addMatcher(isAnyOf(...getActions("rejected")), (state, action) => {
         state.isLoading = false;
         state.error = action.payload;
-        state.isAddedProduct = false;
       })
       .addMatcher(isAnyOf(...getActions("fulfilled")), (state) => {
         state.isLoading = false;
         state.error = null;
-        state.isAddedProduct = false;
       }),
 });
 

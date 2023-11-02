@@ -8,6 +8,7 @@ import { ThemeProvider } from "styled-components";
 import { theme } from "../theme/theme";
 import { SharedLayout } from "../components/SharedLayout/SharedLayout";
 import { PrivateRoute } from "../helpers/PrivateRoute";
+import { getAllCategories } from "../redux/product/productsOperations";
 
 const Home = lazy(() => import("../pages/Home"));
 const ContactsPage = lazy(() => import("../pages/ContactsPage"));
@@ -21,6 +22,10 @@ function App() {
 
   useEffect(() => {
     dispatch(refreshUser());
+  }, [dispatch]);
+
+  useEffect(() => {
+    dispatch(getAllCategories());
   }, [dispatch]);
 
   return (

@@ -1,14 +1,27 @@
 import axios from "axios";
-import { createAsyncThunk } from '@reduxjs/toolkit';
+import { createAsyncThunk } from "@reduxjs/toolkit";
 
 const BASE_URL = "https://sweet-paradise-api.onrender.com";
 
 // GET @ / productsAll
 export const getProductsAll = createAsyncThunk(
-  'products/fetchAll',
+  "products/fetchAll",
   async (_, thunkAPI) => {
     try {
-      const res = await axios.get('/products');
+      const res = await axios.get("/products");
+      return res.data;
+    } catch (error: any) {
+      return thunkAPI.rejectWithValue(error.message);
+    }
+  }
+);
+
+// GET @ / categoriesAll
+export const getAllCategories = createAsyncThunk(
+  "products/fetchAllCategories",
+  async (_, thunkAPI) => {
+    try {
+      const res = await axios.get("/categories");
       return res.data;
     } catch (error: any) {
       return thunkAPI.rejectWithValue(error.message);
@@ -18,8 +31,8 @@ export const getProductsAll = createAsyncThunk(
 
 // GET @ /contactsByCategories
 export const getProductsByCategories = createAsyncThunk(
-  'products/fetchProductsByCategories',
-  async ( productId: string , thunkAPI) => {
+  "products/fetchProductsByCategories",
+  async (productId: string, thunkAPI) => {
     try {
       const res = await axios.get(`${BASE_URL}/products/category/${productId}`);
       return res.data;
@@ -31,7 +44,7 @@ export const getProductsByCategories = createAsyncThunk(
 
 // POST @ / addProduct
 export const addProduct = createAsyncThunk(
-  'products/addProduct',
+  "products/addProduct",
   async (productData: string, thunkAPI) => {
     try {
       const res = await axios.post(`${BASE_URL}/products`, productData);
@@ -44,10 +57,10 @@ export const addProduct = createAsyncThunk(
 
 // DELETE @ / deleteProduct
 export const deleteProduct = createAsyncThunk(
-  'products/deleteProduct',
+  "products/deleteProduct",
   async (productId: string, thunkAPI) => {
     try {
-      const res = await axios.delete(`${BASE_URL}/products/${productId}` );
+      const res = await axios.delete(`${BASE_URL}/products/${productId}`);
       return res.data;
     } catch (error: any) {
       return thunkAPI.rejectWithValue(error.message);

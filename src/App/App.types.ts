@@ -28,3 +28,9 @@ export interface OrderHistoryProps {
   quantity: number;
   totalPrice: number;
 }
+
+export interface CategoriesProps {
+  _id: string;
+  name: string;
+  img?: string;
+}

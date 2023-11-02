@@ -7,6 +7,7 @@ import { Novelties } from "../layout/Novelties/Novelties";
 import { Work } from "../layout/Work/Work";
 import { CustomOrder } from "../layout/CustomOrder/CustomOrder";
 import {
+  selectCategories,
   selectIsLoading,
   selectProducts,
 } from "../redux/product/productsSelectors";
@@ -16,10 +17,21 @@ const Home: React.FC = () => {
 
   const products = useAppSelector(selectProducts);
   const loading = useAppSelector(selectIsLoading);
+  const categories = useAppSelector(selectCategories);
+
+  let _id: string | undefined;
+
+  const novelties = categories.find((item) => item.name === "novelties");
+
+  if (novelties) {
+    _id = novelties._id;
+  }
 
   useEffect(() => {
-    dispatch(getProductsByCategories("64dcc4148efcb0f7600c8cd0"));
-  }, [dispatch]);
+    if (_id) {
+      dispatch(getProductsByCategories(_id));
+    }
+  }, [dispatch, _id]);
 
   return (
     <>
