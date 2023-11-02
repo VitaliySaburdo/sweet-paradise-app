@@ -20,10 +20,8 @@ import {
   LogoutBtn,
 } from "./AddForm.styled";
 
-
 interface AddFormProps {
   closeModal: () => void;
-  addProductByCategory: (id: string) => void; 
 }
 
 interface FormValues {
@@ -44,7 +42,7 @@ const initialValues: FormValues = {
   img: "",
 };
 
-export const AddForm: React.FC<AddFormProps> = ({ closeModal, addProductByCategory }) => {
+export const AddForm: React.FC<AddFormProps> = ({ closeModal }) => {
   const [stage, setStage] = useState<number>(1);
   const [selectedFile, setSelectedFile] = useState<File | null>(null);
   const [imageUrl, setImageUrl] = useState<string | null>(null);
@@ -96,7 +94,6 @@ export const AddForm: React.FC<AddFormProps> = ({ closeModal, addProductByCatego
     }
     resetForm();
     closeModal();
-    addProductByCategory(selectCategory);
   };
 
   const handleOnNexBtn = async (
@@ -148,12 +145,7 @@ export const AddForm: React.FC<AddFormProps> = ({ closeModal, addProductByCatego
         onSubmit={handleOnSubmit}
         validationSchema={addProductSchema}
       >
-        {({
-          validateForm,
-          values,
-          setFieldValue,
-          errors,
-        }) => (
+        {({ validateForm, values, setFieldValue, errors }) => (
           <StyledForm>
             <Title>Add goods</Title>
             {stage === 1 && (
@@ -188,11 +180,7 @@ export const AddForm: React.FC<AddFormProps> = ({ closeModal, addProductByCatego
                   <PrevBtn onClick={() => closeModal()}>Cancel</PrevBtn>
                   <NextBtn
                     onClick={() => {
-                      handleOnNexBtn(
-                        setFieldValue,
-                        validateForm,
-                        values,
-                      );
+                      handleOnNexBtn(setFieldValue, validateForm, values);
                     }}
                   >
                     Next
@@ -249,11 +237,7 @@ export const AddForm: React.FC<AddFormProps> = ({ closeModal, addProductByCatego
                 <PrevBtn onClick={handleOnPrevBtn}>Prev</PrevBtn>
                 <NextBtn
                   onClick={() => {
-                    handleOnNexBtn(
-                      setFieldValue,
-                      validateForm,
-                      values,
-                    );
+                    handleOnNexBtn(setFieldValue, validateForm, values);
                   }}
                 >
                   Next

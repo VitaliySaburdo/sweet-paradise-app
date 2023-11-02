@@ -4,11 +4,7 @@ import { getProductsByCategories } from "../services/apiService";
 import { Catalog } from "../layout/Catalog/Catalog";
 import { Order } from "../components/Order/Order";
 
-interface CatalogProps {
-  addProductCategory: string;
-}
-
-const Goods: React.FC<CatalogProps> = ({ addProductCategory }) => {
+const Goods: React.FC = () => {
   const [category, setCategory] = useState<string>("");
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -29,19 +25,19 @@ const Goods: React.FC<CatalogProps> = ({ addProductCategory }) => {
     fetchData();
   }, [category]);
 
-  useEffect(() => {
-    async function fetchData() {
-      try {
-        if (addProductCategory) {
-          const data = await getProductsByCategories(addProductCategory);
-          setProducts(data);
-        }
-      } catch (error) {
-        console.error("Error fetching data:", error);
-      }
-    }
-    fetchData();
-  }, [addProductCategory]);
+  // useEffect(() => {
+  //   async function fetchData() {
+  //     try {
+  //       if (addProductCategory) {
+  //         const data = await getProductsByCategories(addProductCategory);
+  //         setProducts(data);
+  //       }
+  //     } catch (error) {
+  //       console.error("Error fetching data:", error);
+  //     }
+  //   }
+  //   fetchData();
+  // }, [addProductCategory]);
 
   const handleChangeCategory = (id: string) => {
     setCategory(id);

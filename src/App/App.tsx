@@ -17,34 +17,20 @@ const OrdersHistoryPage = lazy(() => import("../pages/OrdersHistoryPage"));
 const NotFound = lazy(() => import("../pages/NotFound"));
 
 function App() {
-  const [addProductCategory, setaAddProductCategory] = useState("");
-
   const dispatch = useAppDispatch();
 
   useEffect(() => {
     dispatch(refreshUser());
   }, [dispatch]);
 
-  const addProductByCategory = (id: string) => {
-    setaAddProductCategory(id);
-  };
-
   return (
     <StyleSheetManager shouldForwardProp={(prop) => prop !== "index"}>
       <ThemeProvider theme={theme}>
         <SkeletonTheme baseColor="#fffefe" highlightColor="#e0e0e0">
           <Routes>
-            <Route
-              path="/"
-              element={
-                <SharedLayout addProductByCategory={addProductByCategory} />
-              }
-            >
+            <Route path="/" element={<SharedLayout />}>
               <Route index element={<Home />} />
-              <Route
-                path="/goods"
-                element={<Goods addProductCategory={addProductCategory} />}
-              />
+              <Route path="/goods" element={<Goods />} />
               <Route path="/feedback" element={<Feedback />} />
               <Route path="/contacts" element={<ContactsPage />} />
               <Route

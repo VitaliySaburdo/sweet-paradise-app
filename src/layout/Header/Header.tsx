@@ -33,11 +33,7 @@ import admin from "../../images/Header/admin.png";
 import ordersList from "../../images/Header/orders.png";
 import { NavLink } from "react-router-dom";
 
-interface HeaderProps {
-  addProductByCategory: (id: string) => void;
-}
-
-export const Header: React.FC<HeaderProps> = ({ addProductByCategory }) => {
+export const Header: React.FC = () => {
   const [scrolled, setScrolled] = useState(false);
   const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
   const [isCartModalOpen, setIsCartModalOpen] = useState(false);
@@ -86,10 +82,7 @@ export const Header: React.FC<HeaderProps> = ({ addProductByCategory }) => {
           <UserNav>
             {isAdminModalOpen && (
               <Modal onClick={() => setIsAdminModalOpen(false)}>
-                <AddForm
-                  addProductByCategory={addProductByCategory}
-                  closeModal={() => setIsAdminModalOpen(false)}
-                />
+                <AddForm closeModal={() => setIsAdminModalOpen(false)} />
               </Modal>
             )}
             <li>
