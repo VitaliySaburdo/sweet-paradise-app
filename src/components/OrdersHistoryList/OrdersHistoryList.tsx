@@ -1,6 +1,6 @@
 import { OrderHistoryProps } from "../../App/App.types";
 import { OrderHistoryItem } from "../OrdersHistoryItem/OrdersHistoryItem";
-import { MainTitle, MainWrapper, Wrapper } from "./OrdersHistoryList.styled";
+import { MainWrapper, Wrapper } from "./OrdersHistoryList.styled";
 
 interface orderHistoryProps {
   ordersHistory: {
@@ -24,7 +24,7 @@ export const OrdersHistoryList: React.FC<orderHistoryProps> = ({
 
   return (
     <>
-      <MainTitle>User history</MainTitle>
+      
       <MainWrapper>
         {ordersHistory.map((order, index) => (
           <Wrapper key={order._id}>

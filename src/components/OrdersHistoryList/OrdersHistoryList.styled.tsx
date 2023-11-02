@@ -1,10 +1,5 @@
 import styled from "styled-components";
 
-export const MainTitle = styled.h2`
-  text-align: center;
-  margin-bottom: 25px;
-`;
-
 export const MainWrapper = styled.li`
   display: flex;
   flex-direction: column;
