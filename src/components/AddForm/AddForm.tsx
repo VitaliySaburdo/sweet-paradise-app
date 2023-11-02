@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
-import { useAppDispatch } from "../../hooks/reduxHook";
+import { useAppDispatch, useAppSelector } from "../../hooks/reduxHook";
 import { Formik, FormikHelpers } from "formik";
-import { createProduct, getAllCategories } from "../../services/apiService";
+import { createProduct } from "../../services/apiService";
 import { logOut } from "../../redux/auth/authOperations";
 import { addProductSchema } from "../../helpers/ValidationSchemas";
 import {
@@ -19,6 +19,7 @@ import {
   AddBtn,
   LogoutBtn,
 } from "./AddForm.styled";
+import { selectCategories } from "../../redux/product/productsSelectors";
 
 interface AddFormProps {
   closeModal: () => void;
@@ -46,10 +47,11 @@ export const AddForm: React.FC<AddFormProps> = ({ closeModal }) => {
   const [stage, setStage] = useState<number>(1);
   const [selectedFile, setSelectedFile] = useState<File | null>(null);
   const [imageUrl, setImageUrl] = useState<string | null>(null);
-  const [categories, setCategories] = useState<{ _id: string; name: string }[]>(
-    []
-  );
   const [selectCategory, setSelectCategory] = useState<string>("");
+
+  const allCategories = useAppSelector(selectCategories);
+
+  const categories = allCategories.filter((item) => item.name !== "novelties");
 
   const dispatch = useAppDispatch();
 
@@ -58,19 +60,6 @@ export const AddForm: React.FC<AddFormProps> = ({ closeModal }) => {
       setSelectCategory(categories[0]._id);
     }
   }, [categories]);
-
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const data = await getAllCategories();
-        setCategories(data);
-      } catch (error) {
-        console.error(error);
-      }
-    };
-
-    fetchData();
-  }, []);
 
   const handleOnSubmit = async (
     values: FormValues,
