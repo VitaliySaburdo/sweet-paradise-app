@@ -13,7 +13,7 @@ const root = ReactDOM.createRoot(
 root.render(
   <React.StrictMode>
     <Provider store={store}>
-      <BrowserRouter basename="/sweet-paradise-app">
+      <BrowserRouter basename="sweet-paradise-app">
         <App />
         <ToastContainer />
       </BrowserRouter>
