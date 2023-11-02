@@ -42,13 +42,13 @@ function App() {
             >
               <Route index element={<Home />} />
               <Route
-                path="goods"
+                path="/goods"
                 element={<Goods addProductCategory={addProductCategory} />}
               />
-              <Route path="feedback" element={<Feedback />} />
-              <Route path="contacts" element={<ContactsPage />} />
+              <Route path="/feedback" element={<Feedback />} />
+              <Route path="/contacts" element={<ContactsPage />} />
               <Route
-                path="orders"
+                path="/orders"
                 element={
                   <PrivateRoute redirectTo="/" component={OrdersHistoryPage} />
                 }
