@@ -8,9 +8,7 @@ interface CatalogProps {
   addProductCategory: string;
 }
 
-export const Goods: React.FC<CatalogProps> = ({
-  addProductCategory,
-}) => {
+const Goods: React.FC<CatalogProps> = ({ addProductCategory }) => {
   const [category, setCategory] = useState<string>("");
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -67,3 +65,5 @@ export const Goods: React.FC<CatalogProps> = ({
     </>
   );
 };
+
+export default Goods;

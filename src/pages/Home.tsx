@@ -11,7 +11,7 @@ import {
   selectProducts,
 } from "../redux/product/productsSelectors";
 
-export const Home: React.FC = () => {
+const Home: React.FC = () => {
   const dispatch = useAppDispatch();
 
   const products = useAppSelector(selectProducts);
@@ -31,3 +31,5 @@ export const Home: React.FC = () => {
     </>
   );
 };
+
+export default Home;

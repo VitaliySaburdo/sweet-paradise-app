@@ -4,7 +4,7 @@ import { Section } from "../components/Section/Section";
 import { Link } from "react-router-dom";
 import fruit from "../images/Mobil/fruit.png";
 
-export const NotFound = () => {
+const NotFound = () => {
   return (
     <>
       <Section>
@@ -33,3 +33,5 @@ export const NotFound = () => {
     </>
   );
 };
+
+export default NotFound;

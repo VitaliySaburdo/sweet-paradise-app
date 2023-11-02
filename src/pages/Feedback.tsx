@@ -1,9 +1,11 @@
 import { Reviews } from "../layout/Reviews/Reviews";
 
-export const Feedback = () => {
+const Feedback = () => {
   return (
     <>
       <Reviews />
     </>
   );
 };
+
+export default Feedback;

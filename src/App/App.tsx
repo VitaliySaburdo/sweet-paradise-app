@@ -1,5 +1,5 @@
 import { useAppDispatch } from "../hooks/reduxHook";
-import { useEffect, useState } from "react";
+import { lazy, useEffect, useState } from "react";
 import { Route, Routes } from "react-router-dom";
 import { SkeletonTheme } from "react-loading-skeleton";
 import { refreshUser } from "../redux/auth/authOperations";
@@ -7,13 +7,14 @@ import { StyleSheetManager } from "styled-components";
 import { ThemeProvider } from "styled-components";
 import { theme } from "../theme/theme";
 import { SharedLayout } from "../components/SharedLayout/SharedLayout";
-import { Home } from "../pages/Home";
-import { Goods } from "../pages/Goods";
-import { Feedback } from "../pages/Feedback";
-import { NotFound } from "../pages/NotFound";
-import { ContactsPage } from "../pages/ContactsPage";
-import { OrdersHistoryPage } from "../pages/OrdersHistoryPage";
 import { PrivateRoute } from "../helpers/PrivateRoute";
+
+const Home = lazy(() => import("../pages/Home"));
+const ContactsPage = lazy(() => import("../pages/ContactsPage"));
+const Feedback = lazy(() => import("../pages/Feedback"));
+const Goods = lazy(() => import("../pages/Goods"));
+const OrdersHistoryPage = lazy(() => import("../pages/OrdersHistoryPage"));
+const NotFound = lazy(() => import("../pages/NotFound"));
 
 function App() {
   const [addProductCategory, setaAddProductCategory] = useState("");
@@ -41,13 +42,13 @@ function App() {
             >
               <Route index element={<Home />} />
               <Route
-                path="/goods"
+                path="goods"
                 element={<Goods addProductCategory={addProductCategory} />}
               />
-              <Route path="/feedback" element={<Feedback />} />
-              <Route path="/contacts" element={<ContactsPage />} />
+              <Route path="feedback" element={<Feedback />} />
+              <Route path="contacts" element={<ContactsPage />} />
               <Route
-                path="/orders"
+                path="orders"
                 element={
                   <PrivateRoute redirectTo="/" component={OrdersHistoryPage} />
                 }

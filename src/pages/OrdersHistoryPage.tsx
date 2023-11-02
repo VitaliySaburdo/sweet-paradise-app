@@ -4,7 +4,7 @@ import { getAllOrders } from "../services/apiService";
 import { selectUserId } from "../redux/auth/authSelectors";
 import { OrderHistory } from "../layout/OrderHistory/OrderHistory";
 
-export const OrdersHistoryPage = () => {
+const OrdersHistoryPage = () => {
   const [ordersHistory, setOrdersHistory] = useState<any>([]);
 
   const currentUser = useAppSelector(selectUserId);
@@ -21,11 +21,13 @@ export const OrdersHistoryPage = () => {
     getOrdersHistory();
   }, [currentUser]);
 
-  console.log(ordersHistory)
+  console.log(ordersHistory);
 
   return (
     <>
-      <OrderHistory ordersHistory={ ordersHistory } />
+      <OrderHistory ordersHistory={ordersHistory} />
     </>
   );
 };
+
+export default OrdersHistoryPage;

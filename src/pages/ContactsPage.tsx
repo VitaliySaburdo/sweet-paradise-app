@@ -1,9 +1,11 @@
 import { Contacts } from "../layout/Contacts/Contacts";
 
-export const ContactsPage = () => {
+const ContactsPage = () => {
   return (
     <>
       <Contacts />
     </>
   );
 };
+
+export default ContactsPage;
