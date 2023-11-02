@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/sweet-paradise-app/static/css/main.a5c83b8f.css",
-    "main.js": "/sweet-paradise-app/static/js/main.8a70852f.js",
-    "static/css/939.da97859e.chunk.css": "/sweet-paradise-app/static/css/939.da97859e.chunk.css",
+    "main.js": "/sweet-paradise-app/static/js/main.fb4d9fef.js",
+    "static/css/939.550fd7fc.chunk.css": "/sweet-paradise-app/static/css/939.550fd7fc.chunk.css",
     "static/js/939.fe3c4344.chunk.js": "/sweet-paradise-app/static/js/939.fe3c4344.chunk.js",
     "static/js/637.5b8191ce.chunk.js": "/sweet-paradise-app/static/js/637.5b8191ce.chunk.js",
     "static/js/180.60cfd537.chunk.js": "/sweet-paradise-app/static/js/180.60cfd537.chunk.js",
-    "static/css/241.da97859e.chunk.css": "/sweet-paradise-app/static/css/241.da97859e.chunk.css",
-    "static/js/241.02e88bb2.chunk.js": "/sweet-paradise-app/static/js/241.02e88bb2.chunk.js",
+    "static/css/425.550fd7fc.chunk.css": "/sweet-paradise-app/static/css/425.550fd7fc.chunk.css",
+    "static/js/425.039de2a7.chunk.js": "/sweet-paradise-app/static/js/425.039de2a7.chunk.js",
     "static/js/966.02f578b8.chunk.js": "/sweet-paradise-app/static/js/966.02f578b8.chunk.js",
     "static/js/949.05ac9170.chunk.js": "/sweet-paradise-app/static/js/949.05ac9170.chunk.js",
     "static/js/323.1552cb25.chunk.js": "/sweet-paradise-app/static/js/323.1552cb25.chunk.js",
@@ -28,30 +28,25 @@
     "static/media/raspberries.png": "/sweet-paradise-app/static/media/raspberries.940b6b1fd63fa14b4133.png",
     "static/media/leftBtn.png": "/sweet-paradise-app/static/media/leftBtn.a7c231ee465c24c22e90.png",
     "static/media/rightBtn.png": "/sweet-paradise-app/static/media/rightBtn.00d9eb11e1f50bd12ede.png",
-    "static/media/cupcake.png": "/sweet-paradise-app/static/media/cupcake.a795080760a70b1aee4c.png",
     "static/media/strawberry.png": "/sweet-paradise-app/static/media/strawberry.247de2207a82e8b54a05.png",
-    "static/media/donut.png": "/sweet-paradise-app/static/media/donut.a5dd019967e0f8301901.png",
-    "static/media/eclair.png": "/sweet-paradise-app/static/media/eclair.2f039a8f0214ea03c0f8.png",
-    "static/media/muffin.png": "/sweet-paradise-app/static/media/muffin.97f391b48e0b6a6d4031.png",
-    "static/media/macaron.png": "/sweet-paradise-app/static/media/macaron.95f3855f2b919784f86f.png",
     "static/media/Ellipse.png": "/sweet-paradise-app/static/media/Ellipse.6600977067dec86bf0a2.png",
     "static/media/leaf_sm.png": "/sweet-paradise-app/static/media/leaf_sm.96325f28bb6a68d78046.png",
     "static/media/sprite.svg": "/sweet-paradise-app/static/media/sprite.d4c52c6796b6f402185d98ca4793737e.svg",
     "index.html": "/sweet-paradise-app/index.html",
     "main.a5c83b8f.css.map": "/sweet-paradise-app/static/css/main.a5c83b8f.css.map",
-    "main.8a70852f.js.map": "/sweet-paradise-app/static/js/main.8a70852f.js.map",
-    "939.da97859e.chunk.css.map": "/sweet-paradise-app/static/css/939.da97859e.chunk.css.map",
+    "main.fb4d9fef.js.map": "/sweet-paradise-app/static/js/main.fb4d9fef.js.map",
+    "939.550fd7fc.chunk.css.map": "/sweet-paradise-app/static/css/939.550fd7fc.chunk.css.map",
     "939.fe3c4344.chunk.js.map": "/sweet-paradise-app/static/js/939.fe3c4344.chunk.js.map",
     "637.5b8191ce.chunk.js.map": "/sweet-paradise-app/static/js/637.5b8191ce.chunk.js.map",
     "180.60cfd537.chunk.js.map": "/sweet-paradise-app/static/js/180.60cfd537.chunk.js.map",
-    "241.da97859e.chunk.css.map": "/sweet-paradise-app/static/css/241.da97859e.chunk.css.map",
-    "241.02e88bb2.chunk.js.map": "/sweet-paradise-app/static/js/241.02e88bb2.chunk.js.map",
+    "425.550fd7fc.chunk.css.map": "/sweet-paradise-app/static/css/425.550fd7fc.chunk.css.map",
+    "425.039de2a7.chunk.js.map": "/sweet-paradise-app/static/js/425.039de2a7.chunk.js.map",
     "966.02f578b8.chunk.js.map": "/sweet-paradise-app/static/js/966.02f578b8.chunk.js.map",
     "949.05ac9170.chunk.js.map": "/sweet-paradise-app/static/js/949.05ac9170.chunk.js.map",
     "323.1552cb25.chunk.js.map": "/sweet-paradise-app/static/js/323.1552cb25.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.a5c83b8f.css",
-    "static/js/main.8a70852f.js"
+    "static/js/main.fb4d9fef.js"
   ]
 }
