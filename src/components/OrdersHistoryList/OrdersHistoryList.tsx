@@ -29,7 +29,7 @@ export const OrdersHistoryList: React.FC<orderHistoryProps> = ({
         {ordersHistory.map((order, index) => (
           <Wrapper key={order._id}>
             <p>
-              Order № {index + 1} <span>{ConvertTime(order.orderTime)}</span>
+              Order № {index + 1} dated <span>{ConvertTime(order.orderTime)}</span>
             </p>
             <p>
               Total price order <span>{order.totalPrice}</span>
