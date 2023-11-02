@@ -34,8 +34,12 @@ export const StyledLink = styled(NavLink)`
   font-weight: 600;
   line-height: normal;
   &.active {
-    color: ${(props) => props.theme.colors.blackBcgColor};
-    font-weight: 600;
+    color: #b44e79;
+    font-family: Montserrat;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
     transition-duration: 300ms;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   }

@@ -1,5 +1,9 @@
 import styled from "styled-components";
 
+export const BlockWrapper = styled.div`
+min-height: 245px;
+`
+
 export const MainWrapper = styled.li`
   display: flex;
   flex-direction: column;

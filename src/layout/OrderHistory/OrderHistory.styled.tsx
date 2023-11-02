@@ -28,7 +28,7 @@ export const StyledButton = styled(Button)`
 `;
 
 export const StyledContainer = styled.div`
-  min-height: 300px;
+  min-height: 250px;
   padding: 100px;
 `;
 export const Title = styled.p`
