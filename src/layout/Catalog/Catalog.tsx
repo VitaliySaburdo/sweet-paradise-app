@@ -33,7 +33,7 @@ export const Catalog: React.FC<CategoryProps> = ({
   changedCategory,
 }) => {
   const [selectedCategory, setSelectedCategory] = useState<string>(
-    "64dc5d6039fe49cdd5fb98ff"
+    "6544cf5810c5deaa725bcae1"
   );
   const [scrollposition, setScrollPosition] = useState(-200);
 
