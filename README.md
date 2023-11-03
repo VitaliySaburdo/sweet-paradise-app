@@ -10,7 +10,8 @@
 
 
 # Sweet Paradise App
-
+This is an online store selling sweets to the user. Each registered user can make a purchase in the store, but if the user is not registered, he will be asked to register and then make a purchase.
+Also, when making purchases, the user has access to the purchase history, which he can go to by clicking on the “Order List” menu.
 
 
 # Getting Started with Create React App
