@@ -79,10 +79,10 @@ export const CatalogBtn = styled.button<{ selectedCategory: boolean }>`
   background-color: transparent;
   cursor: pointer;
   transition: transform 0.4s ease;
-  transform: ${(props) => props.selectedCategory ? 'scale(1.2)' : 'scale(1)'};
+  transform: ${(props) => props.selectedCategory ? 'scale(1.3)' : 'scale(1)'};
   &:hover {
     transition: transform 0.4s ease;
-    transform: scale(1.2);
+    transform: scale(1.3);
   }
 `;
 
