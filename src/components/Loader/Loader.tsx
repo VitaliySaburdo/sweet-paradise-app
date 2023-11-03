@@ -1,9 +1,12 @@
+import { Wrapper, Text } from "./Loader.styled";
+
 export const Loader = () => {
+   
   return (
     <>
-      <div style={{ height: "1000px" }}>
-        <p>Loading...</p>
-      </div>
+      <Wrapper>
+        <Text>Loading...</Text>
+      </Wrapper>
     </>
   );
 };
