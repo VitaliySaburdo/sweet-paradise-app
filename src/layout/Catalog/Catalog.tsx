@@ -85,6 +85,7 @@ export const Catalog: React.FC<CategoryProps> = ({
                     <CatalogBtn
                       data-category={category._id}
                       onClick={handleCategoryClick}
+                      selectedCategory={selectedCategory === category._id}
                     >
                       <CatalogImg
                         src={

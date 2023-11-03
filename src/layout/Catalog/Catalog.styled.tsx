@@ -74,11 +74,12 @@ export const CatalogText = styled.p`
   line-height: normal;
 `;
 
-export const CatalogBtn = styled.button`
+export const CatalogBtn = styled.button<{ selectedCategory: boolean }>`
   border: none;
   background-color: transparent;
   cursor: pointer;
   transition: transform 0.4s ease;
+  transform: ${(props) => props.selectedCategory ? 'scale(1.2)' : 'scale(1)'};
   &:hover {
     transition: transform 0.4s ease;
     transform: scale(1.2);
