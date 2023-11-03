@@ -12,6 +12,8 @@
 # Sweet Paradise App
 This is an online store selling sweets to the user. Each registered user can make a purchase in the store, but if the user is not registered, he will be asked to register and then make a purchase.
 Also, when making purchases, the user has access to the purchase history, which he can go to by clicking on the “Order List” menu.
+The online store has a site administration function. A user registered as an administrator can add or delete products. When you click on the administrator menu, a modal window opens with a form in which you are asked to add a product.
+The form consists of three stages; when filling out each stage, you can click the next button; if you fill it out incorrectly, a hint will pop up.
 
 
 # Getting Started with Create React App
