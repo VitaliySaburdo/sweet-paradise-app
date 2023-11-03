@@ -21,8 +21,6 @@ const OrdersHistoryPage = () => {
     getOrdersHistory();
   }, [currentUser]);
 
-  console.log(ordersHistory);
-
   return (
     <>
       <OrderHistory ordersHistory={ordersHistory} />
