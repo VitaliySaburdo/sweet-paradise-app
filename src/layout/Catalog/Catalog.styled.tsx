@@ -50,7 +50,7 @@ export const CatalogList = styled.ul<{ scrollPosition: number }>`
   align-items: end;
   margin-bottom: 40px;
   transition: transform 0.3s ease;
-  @media screen and (${(props) => props.theme.media.lg}){
+  @media screen and (${(props) => props.theme.media.lg}) {
     transform: translateX(0);
   }
 `;
@@ -75,20 +75,36 @@ export const CatalogText = styled.p`
 `;
 
 export const CatalogBtn = styled.button<{ selectedCategory: boolean }>`
+  position: relative;
+  z-index: 10;
   border: none;
   background-color: transparent;
   cursor: pointer;
   transition: transform 0.4s ease;
-  transform: ${(props) => props.selectedCategory ? 'scale(1.4)' : 'scale(1)'};
+  transform: ${(props) => (props.selectedCategory ? "scale(1.4)" : "scale(1)")};
+
   &:hover {
     transition: transform 0.4s ease;
     transform: scale(1.4);
   }
+  &::before {
+    content: "";
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    width: 150px;
+    height: 150px;
+    background-color: #fde5ea;
+    filter: drop-shadow(0px 20px 90px rgba(0, 0, 0, 0.3));
+    border-radius: 50%;
+    z-index: -1;
+    display: ${(props) => (props.selectedCategory ? "block" : "none")};
+  }
 `;
 
 export const BtnLeft = styled.button`
-  background-color: #FFFFFF;
-  border: solid 3px #9C0746;
+  background-color: #ffffff;
+  border: solid 3px #9c0746;
   border-radius: 50%;
   display: flex;
   justify-content: center;
@@ -104,8 +120,8 @@ export const BtnLeft = styled.button`
   }
 `;
 export const BtnRight = styled.button`
-  background-color: #FFFFFF;
-  border: solid 3px #9C0746;
+  background-color: #ffffff;
+  border: solid 3px #9c0746;
   border-radius: 50%;
   display: flex;
   justify-content: center;

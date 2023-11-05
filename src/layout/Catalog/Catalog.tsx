@@ -93,6 +93,7 @@ export const Catalog: React.FC<CategoryProps> = ({
                           category.img
                         }
                         alt={category.name}
+                        width={120}
                       />
                       <CatalogText>{category.name}</CatalogText>
                     </CatalogBtn>
