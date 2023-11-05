@@ -78,7 +78,7 @@ export const Catalog: React.FC<CategoryProps> = ({
         <StyledContainer>
           <CatalogTitle>Yummy catalog</CatalogTitle>
           <CatalogList scrollPosition={scrollposition}>
-            {currentCategories.length &&
+            {currentCategories.length !== 0 &&
               currentCategories.map((category) => {
                 return (
                   <CatalogItem key={category._id}>
