@@ -39,7 +39,9 @@ export const CartList: React.FC<{
           items: orders,
           totalPrice: totalPriceAllOrders,
         });
-      } catch (error) {}
+      } catch (error) {
+        console.log(error);
+      }
       notify({
         message: `Hello ${currentUser.name} your order success`,
         type: "success",
