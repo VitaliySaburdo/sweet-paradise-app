@@ -19,9 +19,9 @@ export const ProductList: React.FC<ProductListProps> = ({
       {loading ? (
         <Wrapper>
           {Array.from({ length: 3 }, (_, index) => (
-            <ProductSkeleton key={index}/>
+            <ProductSkeleton key={index} />
           ))}
-          </Wrapper>
+        </Wrapper>
       ) : (
         <Wrapper>
           {products.map((product) => (
