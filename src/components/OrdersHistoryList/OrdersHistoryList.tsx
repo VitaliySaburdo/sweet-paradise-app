@@ -22,27 +22,32 @@ export const OrdersHistoryList: React.FC<orderHistoryProps> = ({
     return `${day}.${month}.${year}`;
   };
 
+  const ordersHistoryByDate = ordersHistory.sort(
+    (a, b) => new Date(b.orderTime).getTime() - new Date(a.orderTime).getTime()
+  );
+
   return (
     <>
       <BlockWrapper>
-      <MainWrapper>
-        {ordersHistory.map((order, index) => (
-          <Wrapper key={order._id}>
-            <p>
-              Order № {index + 1} dated <span>{ConvertTime(order.orderTime)}</span>
-            </p>
-            <p>
-              Total price order <span>{order.totalPrice}</span>
-            </p>
-            <div style={{ display: "flex" }}>
-              {order.items.map((item) => (
-                <OrderHistoryItem item={item} />
-              ))}
-            </div>
-          </Wrapper>
-        ))}
+        <MainWrapper>
+          {ordersHistoryByDate.map((order, index) => (
+            <Wrapper key={order._id}>
+              <p>
+                Order № {index + 1} dated{" "}
+                <span>{ConvertTime(order.orderTime)}</span>
+              </p>
+              <p>
+                Total price order <span>{order.totalPrice}</span>
+              </p>
+              <div style={{ display: "flex" }}>
+                {order.items.map((item, itemIndex) => (
+                  <OrderHistoryItem key={itemIndex} item={item} />
+                ))}
+              </div>
+            </Wrapper>
+          ))}
         </MainWrapper>
-        </BlockWrapper>
+      </BlockWrapper>
     </>
   );
 };

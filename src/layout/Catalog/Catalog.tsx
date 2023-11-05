@@ -81,7 +81,7 @@ export const Catalog: React.FC<CategoryProps> = ({
             {currentCategories.length &&
               currentCategories.map((category) => {
                 return (
-                  <CatalogItem>
+                  <CatalogItem key={category._id}>
                     <CatalogBtn
                       data-category={category._id}
                       onClick={handleCategoryClick}
