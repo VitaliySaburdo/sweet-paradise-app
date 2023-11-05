@@ -36,7 +36,7 @@ export const CatalogTitle = styled.h2`
 `;
 
 export const StyledContainer = styled(Container)`
-  overflow: hidden;
+  overflow: visible;
   position: relative;
 `;
 
@@ -91,14 +91,16 @@ export const CatalogBtn = styled.button<{ selectedCategory: boolean }>`
     content: "";
     position: absolute;
     top: -10px;
-    right: -10px;
+    right: -9px;
     width: 150px;
     height: 150px;
     background-color: #fde5ea;
     filter: drop-shadow(0px 20px 90px rgba(0, 0, 0, 0.3));
     border-radius: 50%;
     z-index: -1;
-    display: ${(props) => (props.selectedCategory ? "block" : "none")};
+    transform: ${(props) =>
+      props.selectedCategory ? "scale(1)" : "scale(0.6)"};
+    transition: transform 0.4s ease;
   }
 `;
 
