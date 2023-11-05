@@ -22,7 +22,9 @@ export const CartList: React.FC<{
   openLoginModal: () => void;
 }> = ({ orders, closeCartModal, openLoginModal }) => {
   const [isOpen, setIsOpen] = useState(false);
+
   const currentUser = useAppSelector(selectUser);
+
   const dispatch = useAppDispatch();
 
   const totalPriceAllOrders = orders.reduce(
