@@ -18,6 +18,7 @@ interface orderHistoryProps {
     items: OrderHistoryProps[];
     orderTime: string;
     totalPrice: number;
+    orderNumber: number;
   }[];
 }
 

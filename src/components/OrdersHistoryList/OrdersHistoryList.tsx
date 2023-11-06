@@ -8,6 +8,7 @@ interface orderHistoryProps {
     items: OrderHistoryProps[];
     orderTime: string;
     totalPrice: number;
+    orderNumber: number;
   }[];
 }
 
@@ -33,7 +34,7 @@ export const OrdersHistoryList: React.FC<orderHistoryProps> = ({
           {ordersHistoryByDate.map((order, index) => (
             <Wrapper key={order._id}>
               <p>
-                Order № {index + 1} dated{" "}
+                Order № {order.orderNumber} dated{" "}
                 <span>{ConvertTime(order.orderTime)}</span>
               </p>
               <p>
