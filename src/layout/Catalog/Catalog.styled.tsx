@@ -41,7 +41,7 @@ export const StyledContainer = styled(Container)`
 `;
 
 export const CatalogList = styled.ul<{ scrollPosition: number }>`
-min-height: 30px;
+  min-height: 30px;
   transform: ${(props) => `translateX(${props.scrollPosition}px)`};
   width: 929px;
   padding: 20px;
@@ -95,8 +95,8 @@ export const CatalogBtn = styled.button<{ selectedCategory: boolean }>`
     right: -9px;
     width: 150px;
     height: 150px;
-    background-color: #fde5ea;
-    filter: drop-shadow(0px 20px 90px rgba(0, 0, 0, 0.3));
+    background-color: rgb(253, 229, 234, 0.6);
+    filter: drop-shadow(0px 10px 10px rgba(0, 0, 0, 0.3));
     border-radius: 50%;
     z-index: -1;
     transform: ${(props) =>
