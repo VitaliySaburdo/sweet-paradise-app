@@ -19,7 +19,7 @@ const OrdersHistoryPage = () => {
       } catch (error) {}
     };
     getOrdersHistory();
-  }, [currentUser]);
+  }, [currentUser, ordersHistory]);
 
   return (
     <>
