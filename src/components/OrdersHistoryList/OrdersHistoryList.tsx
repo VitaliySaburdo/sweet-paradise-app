@@ -1,6 +1,16 @@
 import { OrderHistoryProps } from "../../App/App.types";
 import { OrderHistoryItem } from "../OrdersHistoryItem/OrdersHistoryItem";
-import { BlockWrapper, MainWrapper, Wrapper } from "./OrdersHistoryList.styled";
+import {
+  BlockWrapper,
+  MainWrapper,
+  Wrapper,
+  Box,
+  ImageWrapper,
+  Text,
+  StyledBox,
+  OrderText,
+  Dots,
+} from "./OrdersHistoryList.styled";
 
 interface orderHistoryProps {
   ordersHistory: {
@@ -23,25 +33,26 @@ export const OrdersHistoryList: React.FC<orderHistoryProps> = ({
     return `${day}.${month}.${year}`;
   };
 
-
   return (
     <>
       <BlockWrapper>
         <MainWrapper>
           {ordersHistory.map((order) => (
             <Wrapper key={order._id}>
-              <p>
-                Order № {order.orderNumber} dated{" "}
-                <span>{ConvertTime(order.orderTime)}</span>
-              </p>
-              <p>
-                Total price order <span>{order.totalPrice}</span>
-              </p>
-              <div style={{ display: "flex" }}>
-                {order.items.map((item, itemIndex) => (
-                  <OrderHistoryItem key={itemIndex} item={item} />
-                ))}
-              </div>
+              <Box>
+                <OrderText>Order № {order.orderNumber}</OrderText>
+                <p> dated {ConvertTime(order.orderTime)}</p>
+              </Box>
+              <StyledBox>
+                <Text>Total price order {order.totalPrice} uah</Text>
+                <ImageWrapper>
+                  {order.items.slice(0, 6).map((item, itemIndex) => (
+                    <OrderHistoryItem key={itemIndex} item={item} />
+                  ))}
+                  {order.items.length > 7 && <Dots>...</Dots>}
+                </ImageWrapper>
+              </StyledBox>
+              <button style={{display: "block", marginLeft: "auto"}}>details</button>
             </Wrapper>
           ))}
         </MainWrapper>

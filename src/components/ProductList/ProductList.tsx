@@ -1,7 +1,7 @@
 import { Product } from "../Product/Product";
 import { Wrapper } from "./ProductList.styled";
 import { ProductProps } from "../../App/App.types";
-import { ProductSkeleton } from "../ProductSkeleton/ProductSceleton";
+import { ProductSkeleton } from "../Skeletons/ProductSkeleton/ProductSceleton";
 
 interface ProductListProps {
   products: ProductProps[];
