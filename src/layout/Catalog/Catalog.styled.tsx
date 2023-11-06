@@ -63,7 +63,7 @@ export const CatalogItem = styled.li`
 `;
 
 export const CatalogImg = styled.img`
-  margin-bottom: 15px;
+  margin-bottom: 35px;
 `;
 
 export const CatalogText = styled.p`
@@ -95,12 +95,12 @@ export const CatalogBtn = styled.button<{ selectedCategory: boolean }>`
     right: -9px;
     width: 150px;
     height: 150px;
-    background-color: rgb(253, 229, 234, 0.6);
-    filter: drop-shadow(0px 10px 10px rgba(0, 0, 0, 0.3));
+    background-color: rgb(253, 229, 234, 0.7);
+    filter: drop-shadow(0px 10px 5px rgba(0, 0, 0, 0.3));
     border-radius: 50%;
     z-index: -1;
     transform: ${(props) =>
-      props.selectedCategory ? "scale(1)" : "scale(0.4)"};
+      props.selectedCategory ? "scale(1)" : "scale(0.3)"};
     transition: transform 0.4s ease;
   }
 `;
