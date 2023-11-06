@@ -99,7 +99,7 @@ export const CatalogBtn = styled.button<{ selectedCategory: boolean }>`
     border-radius: 50%;
     z-index: -1;
     transform: ${(props) =>
-      props.selectedCategory ? "scale(1)" : "scale(0.6)"};
+      props.selectedCategory ? "scale(1)" : "scale(0.4)"};
     transition: transform 0.4s ease;
   }
 `;
