@@ -31,7 +31,7 @@ const Home: React.FC = () => {
     if (_id) {
       dispatch(getProductsByCategories(_id));
     }
-  }, [dispatch, _id]);
+  }, [dispatch, _id, categories]);
 
   return (
     <>
