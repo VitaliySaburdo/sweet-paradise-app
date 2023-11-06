@@ -1,24 +1,21 @@
 import { createSlice, isAnyOf } from "@reduxjs/toolkit";
 import { logOut } from "../auth/authOperations";
-import { CategoriesProps, ProductProps } from "../../App/App.types";
+import { ProductProps } from "../../App/App.types";
 import {
   getProductsAll,
   getProductsByCategories,
   addProduct,
   deleteProduct,
-  getAllCategories,
 } from "./productsOperations";
 
 interface ProductsState {
   products: ProductProps[];
-  categories: CategoriesProps[];
   isLoading: boolean;
   error: string | null;
 }
 
 const initialState: ProductsState = {
   products: [],
-  categories: [],
   isLoading: false,
   error: null,
 };
@@ -48,11 +45,6 @@ const productsSlice = createSlice({
     builder
       .addCase(getProductsAll.fulfilled, (state, action) => {
         state.products = action.payload;
-        state.isLoading = false;
-        state.error = null;
-      })
-      .addCase(getAllCategories.fulfilled, (state, action) => {
-        state.categories = action.payload;
         state.isLoading = false;
         state.error = null;
       })

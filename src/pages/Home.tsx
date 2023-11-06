@@ -7,10 +7,10 @@ import { Novelties } from "../layout/Novelties/Novelties";
 import { Work } from "../layout/Work/Work";
 import { CustomOrder } from "../layout/CustomOrder/CustomOrder";
 import {
-  selectCategories,
   selectIsLoading,
   selectProducts,
 } from "../redux/product/productsSelectors";
+import { selectCategories } from "../redux/categories/categoriesSelectors";
 
 const Home: React.FC = () => {
   const dispatch = useAppDispatch();

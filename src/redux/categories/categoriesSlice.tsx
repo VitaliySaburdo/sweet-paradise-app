@@ -1,22 +1,40 @@
-import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { createSlice } from "@reduxjs/toolkit";
+import { CategoriesProps } from "../../App/App.types";
+import { getAllCategories } from "./categoriesOperation";
 
-interface CategoriesProps {
+interface CategoriesState {
+  categories: CategoriesProps[];
   currentCategory: string;
+  isLoading: boolean;
 }
 
-const initialState: CategoriesProps = {
+const initialState: CategoriesState = {
+  categories: [],
   currentCategory: "",
+  isLoading: false,
 };
 
 const categoriesSlice = createSlice({
   name: "categories",
   initialState,
   reducers: {
-    changedCategory: (state, action: PayloadAction<string>) => {
-      state.currentCategory = action.payload;
+    reset: (state) => {
+      state.categories = [];
+      state.isLoading = false;
     },
   },
+  extraReducers: (builder) =>
+    builder
+      .addCase(getAllCategories.fulfilled, (state, action) => {
+        state.categories = action.payload;
+        state.isLoading = false;
+      })
+      .addCase(getAllCategories.pending, (state) => {
+        state.isLoading = true;
+      })
+      .addCase(getAllCategories.rejected, (state) => {
+        state.isLoading = false;
+      }),
 });
 
-export const { changedCategory } = categoriesSlice.actions;
 export const categoriesReducer = categoriesSlice.reducer;

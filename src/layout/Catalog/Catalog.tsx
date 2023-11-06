@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { useAppSelector } from "../../hooks/reduxHook";
-import { selectCategories } from "../../redux/product/productsSelectors";
+import { selectCategories } from "../../redux/categories/categoriesSelectors";
 import { ProductProps } from "../../App/App.types";
 import { Section } from "../../components/Section/Section";
 import { ProductList } from "../../components/ProductList/ProductList";

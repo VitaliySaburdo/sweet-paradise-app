@@ -19,7 +19,7 @@ import {
   AddBtn,
   LogoutBtn,
 } from "./AddForm.styled";
-import { selectCategories } from "../../redux/product/productsSelectors";
+import { selectCategories } from "../../redux/categories/categoriesSelectors";
 
 interface AddFormProps {
   closeModal: () => void;
