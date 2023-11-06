@@ -23,15 +23,12 @@ export const OrdersHistoryList: React.FC<orderHistoryProps> = ({
     return `${day}.${month}.${year}`;
   };
 
-  const ordersHistoryByDate = ordersHistory.sort(
-    (a, b) => new Date(b.orderTime).getTime() - new Date(a.orderTime).getTime()
-  );
 
   return (
     <>
       <BlockWrapper>
         <MainWrapper>
-          {ordersHistoryByDate.map((order, index) => (
+          {ordersHistory.map((order) => (
             <Wrapper key={order._id}>
               <p>
                 Order № {order.orderNumber} dated{" "}

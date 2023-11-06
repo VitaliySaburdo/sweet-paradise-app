@@ -41,6 +41,7 @@ export const StyledContainer = styled(Container)`
 `;
 
 export const CatalogList = styled.ul<{ scrollPosition: number }>`
+min-height: 30px;
   transform: ${(props) => `translateX(${props.scrollPosition}px)`};
   width: 929px;
   padding: 20px;

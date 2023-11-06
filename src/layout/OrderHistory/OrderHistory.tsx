@@ -32,7 +32,7 @@ export const OrderHistory: React.FC<orderHistoryProps> = ({
     <>
       <StyledSection>
         <Container>
-          <MainTitle>User history</MainTitle>
+          <MainTitle>Purchase history</MainTitle>
           {ordersHistory.length ? (
             <OrdersHistoryList ordersHistory={ordersHistory} />
           ) : (
