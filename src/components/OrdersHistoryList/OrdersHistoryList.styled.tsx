@@ -70,6 +70,7 @@ export const Text = styled.p`
   line-height: normal;
   margin-right: 10px;
   @media screen and (${(props) => props.theme.media.md}) {
+    font-size: 20px;
     margin-right: 50px;
   }
   @media screen and (${(props) => props.theme.media.lg}) {
