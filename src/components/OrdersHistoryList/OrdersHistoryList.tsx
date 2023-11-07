@@ -8,6 +8,7 @@ import {
   ImageWrapper,
   Text,
   StyledBox,
+  DataText,
   OrderText,
   Dots,
 } from "./OrdersHistoryList.styled";
@@ -41,10 +42,10 @@ export const OrdersHistoryList: React.FC<orderHistoryProps> = ({
             <Wrapper key={order._id}>
               <Box>
                 <OrderText>Order № {order.orderNumber}</OrderText>
-                <p> dated {ConvertTime(order.orderTime)}</p>
+                <DataText> dated {ConvertTime(order.orderTime)}</DataText>
               </Box>
               <StyledBox>
-                <Text>Total price order {order.totalPrice} uah</Text>
+                <Text>Total price {order.totalPrice} uah</Text>
                 <ImageWrapper>
                   {order.items.slice(0, 6).map((item, itemIndex) => (
                     <OrderHistoryItem key={itemIndex} item={item} />
@@ -52,7 +53,6 @@ export const OrdersHistoryList: React.FC<orderHistoryProps> = ({
                   {order.items.length > 7 && <Dots>...</Dots>}
                 </ImageWrapper>
               </StyledBox>
-              <button style={{display: "block", marginLeft: "auto"}}>details</button>
             </Wrapper>
           ))}
         </MainWrapper>

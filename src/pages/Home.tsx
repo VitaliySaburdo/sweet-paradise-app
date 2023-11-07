@@ -19,6 +19,8 @@ const Home: React.FC = () => {
   const loading = useAppSelector(selectIsLoading);
   const categories = useAppSelector(selectCategories);
 
+  console.log("Home", loading)
+
   let _id: string | undefined;
 
   const novelties = categories.find((item) => item.name === "novelties");

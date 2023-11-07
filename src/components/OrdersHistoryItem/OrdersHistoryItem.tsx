@@ -1,4 +1,5 @@
 import { OrderHistoryProps } from "../../App/App.types";
+import {IMG} from './OrderHistoryItem.styled'
 
 interface OrderHistoryItemProps {
   item: OrderHistoryProps;
@@ -7,11 +8,11 @@ interface OrderHistoryItemProps {
 export const OrderHistoryItem: React.FC<OrderHistoryItemProps> = ({ item }) => {
   return (
     <>
-      <img
+      <IMG
         src={"https://sweet-paradise-api.onrender.com/static/" + item.img}
         alt={item.name}
         width={40}
-        height={10}
+        // height={10}
       />
     </>
   );

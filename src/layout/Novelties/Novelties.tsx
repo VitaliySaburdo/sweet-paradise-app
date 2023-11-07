@@ -13,6 +13,7 @@ export const Novelties: React.FC<NoveltiesProps> = ({
   products,
   loading,
 }) => {
+  console.log("Novelties", loading)
   const changedCategory = (id: string) => {
     console.log(id);
   };
