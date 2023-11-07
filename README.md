@@ -8,13 +8,16 @@
 ![Express.js](https://img.shields.io/badge/express.js-%23404d59.svg?style=for-the-badge&logo=express&logoColor=%2361DAFB)
 ![MongoDB](https://img.shields.io/badge/MongoDB-%234ea94b.svg?style=for-the-badge&logo=mongodb&logoColor=white)
 
-
 # Sweet Paradise App
+
 This is an online store selling sweets to the user. Each registered user can make a purchase in the store, but if the user is not registered, he will be asked to register and then make a purchase.
 Also, when making purchases, the user has access to the purchase history, which he can go to by clicking on the “Order List” menu.
 The online store has a site administration function. A user registered as an administrator can add or delete products. When you click on the administrator menu, a modal window opens with a form in which you are asked to add a product.
 The form consists of three stages; when filling out each stage, you can click the next button; if you fill it out incorrectly, a hint will pop up.
 
+## Sweet Paradise App is available on different devices
+
+![Use App on different devices](./assets/layers.png)
 
 # Getting Started with Create React App
 
