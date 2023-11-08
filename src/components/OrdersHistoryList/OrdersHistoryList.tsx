@@ -13,17 +13,19 @@ import {
   Dots,
 } from "./OrdersHistoryList.styled";
 
-interface orderHistoryProps {
-  ordersHistory: {
-    _id: string;
-    items: OrderHistoryProps[];
-    orderTime: string;
-    totalPrice: number;
-    orderNumber: number;
-  }[];
+interface orderHistoryItemProps {
+  _id: string;
+  items: OrderHistoryProps[];
+  orderNumber: number;
+  orderTime: string;
+  owner: string;
+  totalPrice: number;
+}
+interface OrderHistoryListProps {
+  ordersHistory: orderHistoryItemProps[];
 }
 
-export const OrdersHistoryList: React.FC<orderHistoryProps> = ({
+export const OrdersHistoryList: React.FC<OrderHistoryListProps> = ({
   ordersHistory,
 }) => {
   const ConvertTime = (dateString: string) => {

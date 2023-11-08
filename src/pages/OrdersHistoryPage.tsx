@@ -1,29 +1,21 @@
-import { useEffect, useState } from "react";
-import { useAppSelector } from "../hooks/reduxHook";
-import { getAllOrders } from "../services/apiService";
+import { useEffect } from "react";
+import { useAppDispatch, useAppSelector } from "../hooks/reduxHook";
 import { selectUserId } from "../redux/auth/authSelectors";
 import { OrderHistory } from "../layout/OrderHistory/OrderHistory";
+import { getAllOrders } from "../redux/orderHistory/orderHistoryOperation";
 
 const OrdersHistoryPage = () => {
-  const [ordersHistory, setOrdersHistory] = useState<any>([]);
+  const dispatch = useAppDispatch();
 
   const currentUser = useAppSelector(selectUserId);
 
   useEffect(() => {
-    const getOrdersHistory = async () => {
-      try {
-        if (currentUser) {
-          const data = await getAllOrders(currentUser);
-          setOrdersHistory(data);
-        }
-      } catch (error) {}
-    };
-    getOrdersHistory();
-  }, [currentUser, ordersHistory]);
+    if (currentUser) dispatch(getAllOrders(currentUser));
+  }, [dispatch, currentUser]);
 
   return (
     <>
-      <OrderHistory ordersHistory={ordersHistory} />
+      <OrderHistory />
     </>
   );
 };

@@ -1,32 +1,24 @@
-import { useAppDispatch } from "../../hooks/reduxHook";
+import { useAppDispatch, useAppSelector } from "../../hooks/reduxHook";
 import { logOut } from "../../redux/auth/authOperations";
 import { useNavigate } from "react-router-dom";
 import { Container } from "../../components/Container/Container";
 import { OrdersHistoryList } from "../../components/OrdersHistoryList/OrdersHistoryList";
-import { OrderHistoryProps } from "../../App/App.types";
 import {
   StyledSection,
   StyledButton,
   StyledContainer,
-  MainTitle, 
+  MainTitle,
   Title,
 } from "./OrderHistory.styled";
+import { selectOrderHistory } from "../../redux/orderHistory/orderHistorySelector";
 
-interface orderHistoryProps {
-  ordersHistory: {
-    _id: string;
-    items: OrderHistoryProps[];
-    orderTime: string;
-    totalPrice: number;
-    orderNumber: number;
-  }[];
-}
-
-export const OrderHistory: React.FC<orderHistoryProps> = ({
-  ordersHistory,
-}) => {
+export const OrderHistory: React.FC = () => {
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
+
+  const ordersHistory = useAppSelector(selectOrderHistory);
+
+  console.log(ordersHistory);
 
   return (
     <>
