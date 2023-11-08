@@ -10,30 +10,16 @@ import {
   selectIsLoading,
   selectProducts,
 } from "../redux/product/productsSelectors";
-import { selectCategories } from "../redux/categories/categoriesSelectors";
 
 const Home: React.FC = () => {
   const dispatch = useAppDispatch();
 
   const products = useAppSelector(selectProducts);
   const loading = useAppSelector(selectIsLoading);
-  const categories = useAppSelector(selectCategories);
-
-  console.log("Home", loading)
-
-  let _id: string | undefined;
-
-  const novelties = categories.find((item) => item.name === "novelties");
-
-  if (novelties) {
-    _id = novelties._id;
-  }
 
   useEffect(() => {
-    if (_id) {
-      dispatch(getProductsByCategories(_id));
-    }
-  }, [dispatch, _id, categories]);
+      dispatch(getProductsByCategories("6544d07010c5deaa725bcae4"));
+  }, [dispatch]);
 
   return (
     <>

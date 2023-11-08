@@ -19,6 +19,9 @@ export const Wrapper = styled.li`
   border: 1px solid #ffd4dd;
   box-shadow: 4px 4px 10px 1px rgba(226, 226, 226, 0.46);
   @media screen and (${(props) => props.theme.media.md}) {
+    padding: 10px;
+  }
+  @media screen and (${(props) => props.theme.media.md}) {
     padding: 20px;
   }
 `;
@@ -56,10 +59,14 @@ export const DataText = styled.p`
 `;
 
 export const ImageWrapper = styled.div`
+  width: 200px;
   display: flex;
+  justify-content: center;
   align-items: flex-end;
   gap: 5px;
-  margin-right: 10px;
+  @media screen and (${(props) => props.theme.media.md}) {
+    width: 300px;
+  }
 `;
 
 export const Text = styled.p`
@@ -74,7 +81,7 @@ export const Text = styled.p`
     margin-right: 50px;
   }
   @media screen and (${(props) => props.theme.media.lg}) {
-    margin-right: 200px;
+    margin-right: 275px;
   }
 `;
 export const StyledBox = styled.div`
