@@ -13,10 +13,7 @@ export const Novelties: React.FC<NoveltiesProps> = ({
   products,
   loading,
 }) => {
-  console.log("Novelties", loading)
-  const changedCategory = (id: string) => {
-    console.log(id);
-  };
+
   return (
     <>
       <Section>
@@ -25,7 +22,6 @@ export const Novelties: React.FC<NoveltiesProps> = ({
           <ProductList
             products={products}
             loading={loading}
-            changedCategory={changedCategory}
           />
         </Container>
       </Section>

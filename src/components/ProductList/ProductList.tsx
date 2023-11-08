@@ -6,7 +6,7 @@ import { ProductSkeleton } from "../Skeletons/ProductSkeleton/ProductSceleton";
 interface ProductListProps {
   products: ProductProps[];
   loading: boolean;
-  changedCategory: (id: string) => void;
+  changedCategory?: (id: string) => void;
 }
 
 export const ProductList: React.FC<ProductListProps> = ({

@@ -24,7 +24,7 @@ import {
 
 interface NoveltiesItem {
   product: ProductProps;
-  changedCategory: (id: string) => void;
+  changedCategory?: (id: string) => void;
 }
 
 export const Product: React.FC<NoveltiesItem> = ({
@@ -60,7 +60,9 @@ export const Product: React.FC<NoveltiesItem> = ({
     } catch (error) {
       console.error("Error deleting product:", error);
     }
+    if (changedCategory) {
     changedCategory(product.category);
+  }
   };
 
   return (
