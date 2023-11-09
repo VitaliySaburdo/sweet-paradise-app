@@ -18,8 +18,6 @@ export const OrderHistory: React.FC = () => {
 
   const ordersHistory = useAppSelector(selectOrderHistory);
 
-  console.log(ordersHistory);
-
   return (
     <>
       <StyledSection>
