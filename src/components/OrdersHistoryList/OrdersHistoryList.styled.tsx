@@ -101,3 +101,15 @@ export const Dots = styled.p`
   font-weight: 700;
   line-height: normal;
 `;
+
+export const StyledContainer = styled.div`
+  min-height: 250px;
+  padding: 100px;
+`;
+export const Title = styled.p`
+  font-family: "Montserrat", sans-serif;
+  color: #444251;
+  font-size: 20px;
+  font-weight: 600;
+  text-align: center;
+`

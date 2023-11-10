@@ -6,11 +6,13 @@ import { OrdersHistoryList } from "../../components/OrdersHistoryList/OrdersHist
 import {
   StyledSection,
   StyledButton,
-  StyledContainer,
   MainTitle,
-  Title,
 } from "./OrderHistory.styled";
-import { selectOrderHistory } from "../../redux/orderHistory/orderHistorySelector";
+import {
+  selectIsLoading,
+  selectOrderHistory,
+} from "../../redux/orderHistory/orderHistorySelector";
+import { Loader } from "../../components/Loader/Loader";
 
 export const OrderHistory: React.FC = () => {
   const dispatch = useAppDispatch();
@@ -18,17 +20,17 @@ export const OrderHistory: React.FC = () => {
 
   const ordersHistory = useAppSelector(selectOrderHistory);
 
+  const isLoading = useAppSelector(selectIsLoading);
+
   return (
     <>
       <StyledSection>
         <Container>
           <MainTitle>Purchase history</MainTitle>
-          {ordersHistory.length ? (
-            <OrdersHistoryList ordersHistory={ordersHistory} />
+          {isLoading ? (
+            <Loader/>
           ) : (
-            <StyledContainer>
-              <Title>You don`t have orders</Title>
-            </StyledContainer>
+            <OrdersHistoryList ordersHistory={ordersHistory} />
           )}
           <StyledButton
             onClick={() => {
@@ -43,3 +45,5 @@ export const OrderHistory: React.FC = () => {
     </>
   );
 };
+
+

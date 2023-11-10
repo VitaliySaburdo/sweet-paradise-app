@@ -11,6 +11,8 @@ import {
   DataText,
   OrderText,
   Dots,
+  StyledContainer,
+  Title,
 } from "./OrdersHistoryList.styled";
 
 interface orderHistoryItemProps {
@@ -39,25 +41,33 @@ export const OrdersHistoryList: React.FC<OrderHistoryListProps> = ({
   return (
     <>
       <BlockWrapper>
-        <MainWrapper>
-          {ordersHistory.map((order) => (
-            <Wrapper key={order._id}>
-              <Box>
-                <OrderText>Order № {order.orderNumber}</OrderText>
-                <DataText> dated {ConvertTime(order.orderTime)}</DataText>
-              </Box>
-              <StyledBox>
-                <Text>Total price {order.totalPrice} uah</Text>
-                <ImageWrapper>
-                  {order.items.slice(0, 6).map((item, itemIndex) => (
-                    <OrderHistoryItem key={itemIndex} item={item} />
-                  ))}
-                  {order.items.length > 7 && <Dots>...</Dots>}
-                </ImageWrapper>
-              </StyledBox>
-            </Wrapper>
-          ))}
-        </MainWrapper>
+        {ordersHistory.length ? (
+          <MainWrapper>
+            {ordersHistory.map((order) => (
+              <Wrapper key={order._id}>
+                <Box>
+                  <OrderText>Order № {order.orderNumber}</OrderText>
+                  <DataText> dated {ConvertTime(order.orderTime)}</DataText>
+                </Box>
+                <StyledBox>
+                  <Text>Total price {order.totalPrice} uah</Text>
+                  <ImageWrapper>
+                    {order.items.slice(0, 6).map((item, itemIndex) => (
+                      <OrderHistoryItem key={itemIndex} item={item} />
+                    ))}
+                    {order.items.length > 7 && <Dots>...</Dots>}
+                  </ImageWrapper>
+                </StyledBox>
+              </Wrapper>
+            ))}
+          </MainWrapper>
+        ) : (
+          <MainWrapper>
+            <StyledContainer>
+              <Title>You don`t have orders</Title>
+            </StyledContainer>
+          </MainWrapper>
+        )}
       </BlockWrapper>
     </>
   );

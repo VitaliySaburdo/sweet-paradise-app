@@ -27,14 +27,3 @@ export const StyledButton = styled(Button)`
   margin-left: auto;
 `;
 
-export const StyledContainer = styled.div`
-  min-height: 250px;
-  padding: 100px;
-`;
-export const Title = styled.p`
-  font-family: "Montserrat", sans-serif;
-  color: #444251;
-  font-size: 20px;
-  font-weight: 600;
-  text-align: center;
-`
