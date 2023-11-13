@@ -3,18 +3,18 @@ import { logOut } from "../../redux/auth/authOperations";
 import { useNavigate } from "react-router-dom";
 import { Container } from "../../components/Container/Container";
 import { OrdersHistoryList } from "../../components/OrdersHistoryList/OrdersHistoryList";
-import {
-  StyledSection,
-  StyledButton,
-  MainTitle,
-} from "./OrderHistory.styled";
+import { StyledSection, StyledButton, MainTitle } from "./OrderHistory.styled";
 import {
   selectIsLoading,
   selectOrderHistory,
 } from "../../redux/orderHistory/orderHistorySelector";
 import { Loader } from "../../components/Loader/Loader";
 
-export const OrderHistory: React.FC = () => {
+interface OrderHistoryProps {
+  nextPage: () => void;
+}
+
+export const OrderHistory: React.FC<OrderHistoryProps> = ({nextPage}) => {
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
 
@@ -28,9 +28,12 @@ export const OrderHistory: React.FC = () => {
         <Container>
           <MainTitle>Purchase history</MainTitle>
           {isLoading ? (
-            <Loader/>
+            <Loader />
           ) : (
-            <OrdersHistoryList ordersHistory={ordersHistory} />
+            <>
+              <OrdersHistoryList ordersHistory={ordersHistory} />
+              <button type="button" onClick={()=>nextPage()}>Load more</button>
+            </>
           )}
           <StyledButton
             onClick={() => {
@@ -45,5 +48,3 @@ export const OrderHistory: React.FC = () => {
     </>
   );
 };
-
-
