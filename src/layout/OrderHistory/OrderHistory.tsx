@@ -3,7 +3,12 @@ import { logOut } from "../../redux/auth/authOperations";
 import { useNavigate } from "react-router-dom";
 import { Container } from "../../components/Container/Container";
 import { OrdersHistoryList } from "../../components/OrdersHistoryList/OrdersHistoryList";
-import { StyledSection, StyledButton, MainTitle } from "./OrderHistory.styled";
+import {
+  StyledSection,
+  StyledButton,
+  MainTitle,
+  LoadMoreButton,
+} from "./OrderHistory.styled";
 import {
   selectIsLoading,
   selectOrderHistory,
@@ -36,14 +41,12 @@ export const OrderHistory: React.FC<OrderHistoryProps> = ({
           {isLoading ? (
             <Loader />
           ) : (
-            <>
-              <OrdersHistoryList ordersHistory={ordersHistory} />
-              {totalPages > page && (
-                <button type="button" onClick={() => nextPage()}>
-                  {isLoading ? "Downloading..." : "Load more"}
-                </button>
-              )}
-            </>
+            <OrdersHistoryList ordersHistory={ordersHistory} />
+          )}
+          {totalPages > page && (
+            <LoadMoreButton type="button" onClick={() => nextPage()}>
+              {isLoading ? "Downloading..." : "Load more"}
+            </LoadMoreButton>
           )}
           <StyledButton
             onClick={() => {
