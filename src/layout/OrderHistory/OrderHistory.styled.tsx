@@ -24,7 +24,7 @@ export const StyledButton = styled(Button)`
   display: block;
   margin-top: 25px;
   margin-right: auto;
-  margin-left: auto;
+  /* margin-left: auto; */
 `;
 
 export const LoadMoreButton = styled(Button)`
