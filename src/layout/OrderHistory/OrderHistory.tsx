@@ -7,20 +7,26 @@ import { StyledSection, StyledButton, MainTitle } from "./OrderHistory.styled";
 import {
   selectIsLoading,
   selectOrderHistory,
+  selectTotalPages,
 } from "../../redux/orderHistory/orderHistorySelector";
 import { Loader } from "../../components/Loader/Loader";
 
 interface OrderHistoryProps {
   nextPage: () => void;
+  page: number;
 }
 
-export const OrderHistory: React.FC<OrderHistoryProps> = ({nextPage}) => {
+export const OrderHistory: React.FC<OrderHistoryProps> = ({
+  nextPage,
+  page,
+}) => {
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
 
   const ordersHistory = useAppSelector(selectOrderHistory);
 
   const isLoading = useAppSelector(selectIsLoading);
+  const totalPages = useAppSelector(selectTotalPages);
 
   return (
     <>
@@ -32,7 +38,11 @@ export const OrderHistory: React.FC<OrderHistoryProps> = ({nextPage}) => {
           ) : (
             <>
               <OrdersHistoryList ordersHistory={ordersHistory} />
-              <button type="button" onClick={()=>nextPage()}>Load more</button>
+              {totalPages > page && (
+                <button type="button" onClick={() => nextPage()}>
+                  {isLoading ? "Downloading..." : "Load more"}
+                </button>
+              )}
             </>
           )}
           <StyledButton

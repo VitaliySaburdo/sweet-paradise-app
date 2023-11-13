@@ -13,11 +13,13 @@ interface orderHistoryItemProps {
 
 interface orderHistoryState {
   ordersHistory: orderHistoryItemProps[];
+  totalPages: number,
   isLoading: boolean;
 }
 
 const initialState: orderHistoryState = {
   ordersHistory: [],
+  totalPages: 0,
   isLoading: false,
 };
 
@@ -33,7 +35,8 @@ const orderHistorySlice = createSlice({
   extraReducers: (builder) =>
     builder
       .addCase(getAllOrders.fulfilled, (state, action) => {
-        state.ordersHistory = action.payload;
+        state.ordersHistory = action.payload.orders;
+        state.totalPages = action.payload.totalPages;
         state.isLoading = false;
       })
       .addCase(getAllOrders.pending, (state) => {

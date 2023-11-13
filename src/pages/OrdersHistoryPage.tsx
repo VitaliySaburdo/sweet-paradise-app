@@ -5,22 +5,22 @@ import { OrderHistory } from "../layout/OrderHistory/OrderHistory";
 import { getAllOrders } from "../redux/orderHistory/orderHistoryOperation";
 
 const OrdersHistoryPage = () => {
-  const [limit, setLimit] = useState(0);
+  const [page, setPage] = useState(1);
   const dispatch = useAppDispatch();
 
   const currentUser = useAppSelector(selectUserId);
 
   const nextPage = () => {
-    setLimit((prevState) => prevState + 6);
+    setPage((prevState) => prevState + 1);
   };
 
   useEffect(() => {
-    if (currentUser) dispatch(getAllOrders({ ownerId: currentUser, limit }));
-  }, [dispatch, currentUser, limit]);
+    if (currentUser) dispatch(getAllOrders({ ownerId: currentUser, page }));
+  }, [dispatch, currentUser, page]);
 
   return (
     <>
-      <OrderHistory nextPage={nextPage} />
+      <OrderHistory nextPage={nextPage} page={page} />
     </>
   );
 };
