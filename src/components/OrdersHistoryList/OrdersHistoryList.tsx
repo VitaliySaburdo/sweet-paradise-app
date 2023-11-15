@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { OrderHistoryProps } from "../../App/App.types";
 import { OrderHistoryItem } from "../OrdersHistoryItem/OrdersHistoryItem";
 import {
@@ -13,7 +14,10 @@ import {
   Dots,
   StyledContainer,
   Title,
+  ShowMoreBtn,
+  Icon,
 } from "./OrdersHistoryList.styled";
+import icons from "../../images/sprite.svg";
 
 interface orderHistoryItemProps {
   _id: string;
@@ -30,6 +34,8 @@ interface OrderHistoryListProps {
 export const OrdersHistoryList: React.FC<OrderHistoryListProps> = ({
   ordersHistory,
 }) => {
+  const [showDetails, setShowDetails] = useState(false);
+
   const ConvertTime = (dateString: string) => {
     const date = new Date(dateString);
     const day = date.getDate().toString().padStart(2, "0");
@@ -49,15 +55,27 @@ export const OrdersHistoryList: React.FC<OrderHistoryListProps> = ({
                   <OrderText>Order № {order.orderNumber}</OrderText>
                   <DataText> dated {ConvertTime(order.orderTime)}</DataText>
                 </Box>
-                <StyledBox>
-                  <Text>Total price {order.totalPrice} uah</Text>
-                  <ImageWrapper>
-                    {order.items.slice(0, 6).map((item, itemIndex) => (
-                      <OrderHistoryItem key={itemIndex} item={item} />
-                    ))}
-                    {order.items.length > 7 && <Dots>...</Dots>}
-                  </ImageWrapper>
-                </StyledBox>
+                {showDetails && (
+                  <>
+                    {" "}
+                    <StyledBox>
+                      <Text>Total price {order.totalPrice} uah</Text>
+                      <ImageWrapper>
+                        {order.items.slice(0, 6).map((item, itemIndex) => (
+                          <OrderHistoryItem key={itemIndex} item={item} />
+                        ))}
+                        {order.items.length > 7 && <Dots>...</Dots>}
+                      </ImageWrapper>
+                    </StyledBox>
+                  </>
+                )}
+                <ShowMoreBtn onClick={
+                  () => setShowDetails(!showDetails)
+                }>
+                  <Icon rotate={showDetails}  width={20} height={20}>
+                    <use href={icons + "#icon-circle-up"}></use>
+                  </Icon>
+                </ShowMoreBtn>
               </Wrapper>
             ))}
           </MainWrapper>

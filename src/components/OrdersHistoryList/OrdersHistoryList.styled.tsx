@@ -11,6 +11,7 @@ export const MainWrapper = styled.ul`
 `;
 
 export const Wrapper = styled.li`
+position: relative;
   min-height: 120px;
   display: flex;
   align-items: center;
@@ -112,4 +113,17 @@ export const Title = styled.p`
   font-size: 20px;
   font-weight: 600;
   text-align: center;
+`
+
+export const ShowMoreBtn = styled.button`
+position: absolute;
+display: flex;
+right: 10px; 
+top: 40%;
+padding: 0;
+border: none;
+cursor: pointer;
+`
+export const Icon = styled.svg<{rotate: boolean}>`
+  rotate: ${(props)=>props.rotate ? '0deg' : '180deg'}
 `

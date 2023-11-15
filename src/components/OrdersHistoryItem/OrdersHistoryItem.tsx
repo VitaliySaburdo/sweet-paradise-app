@@ -12,7 +12,6 @@ export const OrderHistoryItem: React.FC<OrderHistoryItemProps> = ({ item }) => {
         src={"https://sweet-paradise-api.onrender.com/static/" + item.img}
         alt={item.name}
         width={40}
-        // height={10}
       />
     </>
   );
