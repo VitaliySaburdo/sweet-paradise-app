@@ -93,8 +93,8 @@ export const OrdersHistoryList: React.FC<OrderHistoryListProps> = ({
                         />
                         <p>{item.name}</p>
                         <p>{item.quantity}</p>
-                        <p>{item.price}</p>
-                        <p>{item.totalPrice}</p>
+                        <p>{item.price} uah</p>
+                        <p>{item.totalPrice} uah</p>
                       </OrderItem>
                     ))}
                   </OrderWrapper>

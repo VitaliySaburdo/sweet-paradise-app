@@ -134,10 +134,12 @@ export const OrderWrapper = styled.ul`
   display: flex;
   flex-direction: column;
   gap: 10px;
+  margin-top: 20px;
   margin-right: 100px;
 `;
 
 export const OrderItem = styled.li`
   display: flex;
+  align-items: center;
   gap: 20px;
 `;
