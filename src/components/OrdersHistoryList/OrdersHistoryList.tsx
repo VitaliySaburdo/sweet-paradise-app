@@ -34,7 +34,9 @@ interface OrderHistoryListProps {
 export const OrdersHistoryList: React.FC<OrderHistoryListProps> = ({
   ordersHistory,
 }) => {
-  const [showDetails, setShowDetails] = useState(false);
+  const [expandedOrders, setExpandedOrders] = useState<{
+    [key: string]: boolean;
+  }>(ordersHistory.reduce((acc, order) => ({ ...acc, [order._id]: true }), {}));
 
   const ConvertTime = (dateString: string) => {
     const date = new Date(dateString);
@@ -42,6 +44,13 @@ export const OrdersHistoryList: React.FC<OrderHistoryListProps> = ({
     const month = (date.getMonth() + 1).toString().padStart(2, "0");
     const year = date.getFullYear().toString().slice(-2);
     return `${day}.${month}.${year}`;
+  };
+
+  const handleShowDetails = (id: string) => {
+    setExpandedOrders((prevExpandedOrders) => ({
+      ...prevExpandedOrders,
+      [id]: !prevExpandedOrders[id],
+    }));
   };
 
   return (
@@ -55,7 +64,7 @@ export const OrdersHistoryList: React.FC<OrderHistoryListProps> = ({
                   <OrderText>Order № {order.orderNumber}</OrderText>
                   <DataText> dated {ConvertTime(order.orderTime)}</DataText>
                 </Box>
-                {showDetails && (
+                {expandedOrders[order._id] && (
                   <>
                     {" "}
                     <StyledBox>
@@ -69,10 +78,16 @@ export const OrdersHistoryList: React.FC<OrderHistoryListProps> = ({
                     </StyledBox>
                   </>
                 )}
-                <ShowMoreBtn onClick={
-                  () => setShowDetails(!showDetails)
-                }>
-                  <Icon rotate={showDetails}  width={20} height={20}>
+                <ShowMoreBtn
+                  onClick={() => {
+                    handleShowDetails(order._id);
+                  }}
+                >
+                  <Icon
+                    rotate={expandedOrders[order._id]}
+                    width={20}
+                    height={20}
+                  >
                     <use href={icons + "#icon-circle-up"}></use>
                   </Icon>
                 </ShowMoreBtn>
