@@ -16,6 +16,8 @@ import {
   Title,
   ShowMoreBtn,
   Icon,
+  OrderWrapper,
+  OrderItem,
 } from "./OrdersHistoryList.styled";
 import icons from "../../images/sprite.svg";
 
@@ -64,7 +66,7 @@ export const OrdersHistoryList: React.FC<OrderHistoryListProps> = ({
                   <OrderText>Order № {order.orderNumber}</OrderText>
                   <DataText> dated {ConvertTime(order.orderTime)}</DataText>
                 </Box>
-                {expandedOrders[order._id] && (
+                {expandedOrders[order._id] ? (
                   <>
                     {" "}
                     <StyledBox>
@@ -77,6 +79,25 @@ export const OrdersHistoryList: React.FC<OrderHistoryListProps> = ({
                       </ImageWrapper>
                     </StyledBox>
                   </>
+                ) : (
+                  <OrderWrapper>
+                    {order.items.map((item) => (
+                      <OrderItem>
+                        <img
+                          src={
+                            "https://sweet-paradise-api.onrender.com/static/" +
+                            item.img
+                          }
+                          alt={item.name}
+                          width={40}
+                        />
+                        <p>{item.name}</p>
+                        <p>{item.quantity}</p>
+                        <p>{item.price}</p>
+                        <p>{item.totalPrice}</p>
+                      </OrderItem>
+                    ))}
+                  </OrderWrapper>
                 )}
                 <ShowMoreBtn
                   onClick={() => {

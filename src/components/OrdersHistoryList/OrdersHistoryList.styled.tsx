@@ -14,7 +14,8 @@ export const Wrapper = styled.li`
   position: relative;
   min-height: 120px;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
+  justify-content: space-between;
   padding: 5px;
   border-radius: 5px;
   border: 1px solid #ffd4dd;
@@ -119,7 +120,7 @@ export const ShowMoreBtn = styled.button`
   position: absolute;
   display: flex;
   right: 10px;
-  top: 40%;
+  top: 50px;
   padding: 0;
   border: none;
   cursor: pointer;
@@ -127,4 +128,16 @@ export const ShowMoreBtn = styled.button`
 export const Icon = styled.svg<{ rotate: boolean }>`
   rotate: ${(props) => (props.rotate ? "0deg" : "180deg")};
   transition: rotate 0.5s ease-in-out;
+`;
+
+export const OrderWrapper = styled.ul`
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-right: 100px;
+`;
+
+export const OrderItem = styled.li`
+  display: flex;
+  gap: 20px;
 `;

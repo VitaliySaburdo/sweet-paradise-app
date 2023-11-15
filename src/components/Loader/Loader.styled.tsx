@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Wrapper = styled.div`
-  min-height: 500px;
+  min-height: 400px;
 `;
 
 export const Text = styled.p`
