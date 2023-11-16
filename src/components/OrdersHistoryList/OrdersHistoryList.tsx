@@ -80,24 +80,32 @@ export const OrdersHistoryList: React.FC<OrderHistoryListProps> = ({
                     </StyledBox>
                   </>
                 ) : (
-                  <OrderWrapper>
-                    {order.items.map((item) => (
-                      <OrderItem>
-                        <img
-                          src={
-                            "https://sweet-paradise-api.onrender.com/static/" +
-                            item.img
-                          }
-                          alt={item.name}
-                          width={40}
-                        />
-                        <p>{item.name}</p>
-                        <p>{item.quantity}</p>
-                        <p>{item.price} uah</p>
-                        <p>{item.totalPrice} uah</p>
-                      </OrderItem>
-                    ))}
-                  </OrderWrapper>
+                    <>
+                      <div style={{display: "flex", flexDirection: "column", marginRight: "150px"}}>
+                    <OrderWrapper>
+                      {order.items.map((item) => (
+                        <OrderItem>
+                          <img
+                            src={
+                              "https://sweet-paradise-api.onrender.com/static/" +
+                              item.img
+                            }
+                            alt={item.name}
+                            width={40}
+                          />
+                          <p style={{ minWidth: "250px" }}>{item.name}</p>
+                          <p style={{ minWidth: "60px" }}>{item.quantity}</p>
+                          <p style={{ minWidth: "60px" }}>{item.price} uah</p>
+                          <p style={{ minWidth: "60px" }}>{item.totalPrice} uah</p>
+                        </OrderItem>
+                      ))}
+                    </OrderWrapper>
+                    <div style={{ display: "flex", flexDirection: "column", alignItems: "flex-end" }}>
+                      <p>-----------------------------------------------------------------------------------------</p>
+                      <p>Total prise {order.totalPrice} uah</p>
+                        </div>
+                        </div>
+                  </>
                 )}
                 <ShowMoreBtn
                   onClick={() => {

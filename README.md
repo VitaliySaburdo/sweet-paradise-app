@@ -19,6 +19,10 @@ The form consists of three stages; when filling out each stage, you can click th
 
 ![Use App on different devices](./assets/layers.png)
 
+## Demo App
+
+![Demo App](./assets/Sweet-Paradise.gif)
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
