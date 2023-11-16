@@ -20,6 +20,7 @@ The form consists of three stages; when filling out each stage, you can click th
 ![Use App on different devices](./assets/layers.png)
 
 ## Demo App
+![854_480](https://github.com/VitaliySaburdo/sweet-paradise-app/assets/107457394/fa2c667f-9aaa-46b1-bb46-25d8cf93576b)
 
 # Getting Started with Create React App
 
