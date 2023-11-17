@@ -44,6 +44,9 @@ export const OrderText = styled.p`
   font-weight: 700;
   line-height: normal;
   @media screen and (${(props) => props.theme.media.md}) {
+    font-size: 16px;
+  }
+    @media screen and (${(props) => props.theme.media.lg}) {
     font-size: 20px;
   }
 `;
@@ -55,7 +58,10 @@ export const DataText = styled.p`
   font-weight: 400;
   line-height: normal;
   text-align: center;
-  @media screen and (${(props) => props.theme.media.md}) {
+    @media screen and (${(props) => props.theme.media.md}) {
+    font-size: 16px;
+  }
+  @media screen and (${(props) => props.theme.media.lg}) {
     font-size: 20px;
   }
 `;
@@ -79,21 +85,20 @@ export const Text = styled.p`
   line-height: normal;
   margin-right: 10px;
   @media screen and (${(props) => props.theme.media.md}) {
-    font-size: 20px;
+    font-size: 16px;
     margin-right: 50px;
   }
   @media screen and (${(props) => props.theme.media.lg}) {
+    min-width: 200px;
+    font-size: 20px;
     margin-right: 275px;
   }
 `;
 export const StyledBox = styled.div`
-  margin-left: 20px;
   display: flex;
-  align-items: flex-end;
+  align-items: center;
   justify-content: space-between;
-  @media screen and (${(props) => props.theme.media.lg}) {
-    margin-left: 450px;
-  }
+
 `;
 export const Dots = styled.p`
   color: #9c0746;
@@ -142,3 +147,18 @@ export const OrderItem = styled.li`
   align-items: center;
   gap: 20px;
 `;
+
+export const NameTxt = styled.p`
+min-width: 150px;
+@media screen and (${(props) => props.theme.media.lg}){
+min-width: 250px;
+}
+
+`
+export const BoxDetails = styled.div`
+display: flex;
+flex-direction: column;
+@media screen and (${(props) => props.theme.media.lg}){
+  margin-right: 150px;
+}
+`

@@ -24,7 +24,10 @@ export const StyledButton = styled(Button)`
   display: block;
   margin-top: 25px;
   margin-right: auto;
-  /* margin-left: auto; */
+  width: 200px;
+  @media screen and (${(props) => props.theme.media.lg}) {
+    width: 260px;
+  }
 `;
 
 export const LoadMoreButton = styled(Button)`
@@ -32,4 +35,8 @@ export const LoadMoreButton = styled(Button)`
   margin-top: 25px;
   margin-right: auto;
   margin-left: auto;
+  width: 200px;
+  @media screen and (${(props) => props.theme.media.lg}) {
+    width: 260px;
+  }
 `;

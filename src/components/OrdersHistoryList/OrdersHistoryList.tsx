@@ -18,6 +18,8 @@ import {
   Icon,
   OrderWrapper,
   OrderItem,
+  NameTxt,
+  BoxDetails,
 } from "./OrdersHistoryList.styled";
 import icons from "../../images/sprite.svg";
 
@@ -81,7 +83,7 @@ export const OrdersHistoryList: React.FC<OrderHistoryListProps> = ({
                   </>
                 ) : (
                     <>
-                      <div style={{display: "flex", flexDirection: "column", marginRight: "150px"}}>
+                      <BoxDetails>
                     <OrderWrapper>
                       {order.items.map((item) => (
                         <OrderItem>
@@ -93,7 +95,7 @@ export const OrdersHistoryList: React.FC<OrderHistoryListProps> = ({
                             alt={item.name}
                             width={40}
                           />
-                          <p style={{ minWidth: "250px" }}>{item.name}</p>
+                          <NameTxt>{item.name}</NameTxt>
                           <p style={{ minWidth: "60px" }}>{item.quantity}</p>
                           <p style={{ minWidth: "60px" }}>{item.price} uah</p>
                           <p style={{ minWidth: "60px" }}>{item.totalPrice} uah</p>
@@ -104,7 +106,7 @@ export const OrdersHistoryList: React.FC<OrderHistoryListProps> = ({
                       <p>-----------------------------------------------------------------------------------------</p>
                       <p>Total prise {order.totalPrice} uah</p>
                         </div>
-                        </div>
+                        </BoxDetails>
                   </>
                 )}
                 <ShowMoreBtn
