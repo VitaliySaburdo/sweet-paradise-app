@@ -74,7 +74,7 @@ export const OrdersHistoryList: React.FC<OrderHistoryListProps> = ({
                     <StyledBox>
                       <Text>Total price {order.totalPrice} uah</Text>
                       <ImageWrapper>
-                        {order.items.slice(0, 6).map((item, itemIndex) => (
+                        {order.items.slice(0, 4).map((item, itemIndex) => (
                           <OrderHistoryItem key={itemIndex} item={item} />
                         ))}
                         {order.items.length > 7 && <Dots>...</Dots>}
@@ -103,7 +103,7 @@ export const OrdersHistoryList: React.FC<OrderHistoryListProps> = ({
                       ))}
                     </OrderWrapper>
                     <div style={{ display: "flex", flexDirection: "column", alignItems: "flex-end" }}>
-                      <p>-----------------------------------------------------------------------------------------</p>
+                      <p>--------------------------------------</p>
                       <p>Total prise {order.totalPrice} uah</p>
                         </div>
                         </BoxDetails>

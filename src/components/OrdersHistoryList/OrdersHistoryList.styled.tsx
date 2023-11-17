@@ -12,7 +12,7 @@ export const MainWrapper = styled.ul`
 
 export const Wrapper = styled.li`
   position: relative;
-  min-height: 120px;
+  min-height: 60px;
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
@@ -21,6 +21,7 @@ export const Wrapper = styled.li`
   border: 1px solid #ffd4dd;
   box-shadow: 4px 4px 10px 1px rgba(226, 226, 226, 0.46);
   @media screen and (${(props) => props.theme.media.md}) {
+    min-height: 120px;
     padding: 10px;
   }
   @media screen and (${(props) => props.theme.media.md}) {
@@ -33,11 +34,13 @@ export const Box = styled.div`
   flex-direction: column;
   align-items: center;
   gap: 15px;
-  margin-left: 10px;
+  @media screen and (${(props) => props.theme.media.md}) {
+    margin-left: 10px;
+  }
 `;
 
 export const OrderText = styled.p`
-  font-size: 12px;
+  font-size: 10px;
   color: #9c0746;
   font-family: Montserrat;
   font-style: normal;
@@ -46,19 +49,19 @@ export const OrderText = styled.p`
   @media screen and (${(props) => props.theme.media.md}) {
     font-size: 16px;
   }
-    @media screen and (${(props) => props.theme.media.lg}) {
+  @media screen and (${(props) => props.theme.media.lg}) {
     font-size: 20px;
   }
 `;
 
 export const DataText = styled.p`
-  font-size: 12px;
+  font-size: 10px;
   font-family: Montserrat;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
   text-align: center;
-    @media screen and (${(props) => props.theme.media.md}) {
+  @media screen and (${(props) => props.theme.media.md}) {
     font-size: 16px;
   }
   @media screen and (${(props) => props.theme.media.lg}) {
@@ -96,9 +99,12 @@ export const Text = styled.p`
 `;
 export const StyledBox = styled.div`
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: space-between;
-
+  @media screen and (${(props) => props.theme.media.md}) {
+    flex-direction: row;
+  }
 `;
 export const Dots = styled.p`
   color: #9c0746;
@@ -125,10 +131,14 @@ export const ShowMoreBtn = styled.button`
   position: absolute;
   display: flex;
   right: 10px;
-  top: 50px;
+  top: 20px;
   padding: 0;
   border: none;
   cursor: pointer;
+    @media screen and (${(props) => props.theme.media.md}){
+    top: 50px;  
+    }
+  
 `;
 export const Icon = styled.svg<{ rotate: boolean }>`
   rotate: ${(props) => (props.rotate ? "0deg" : "180deg")};
@@ -149,16 +159,18 @@ export const OrderItem = styled.li`
 `;
 
 export const NameTxt = styled.p`
-min-width: 150px;
-@media screen and (${(props) => props.theme.media.lg}){
-min-width: 250px;
-}
-
-`
+  min-width: 150px;
+  @media screen and (${(props) => props.theme.media.lg}) {
+    min-width: 250px;
+  }
+`;
 export const BoxDetails = styled.div`
-display: flex;
-flex-direction: column;
-@media screen and (${(props) => props.theme.media.lg}){
-  margin-right: 150px;
-}
-`
+  display: flex;
+  flex-direction: column;
+  @media screen and (${(props) => props.theme.media.md}) {
+    margin-right: 60px;
+  }
+  @media screen and (${(props) => props.theme.media.lg}) {
+    margin-right: 150px;
+  }
+`;
