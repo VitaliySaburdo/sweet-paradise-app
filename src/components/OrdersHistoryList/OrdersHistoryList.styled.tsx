@@ -14,6 +14,7 @@ export const Wrapper = styled.li`
   position: relative;
   min-height: 60px;
   display: flex;
+  flex-direction: column;
   align-items: flex-start;
   justify-content: space-between;
   padding: 5px;
@@ -21,6 +22,7 @@ export const Wrapper = styled.li`
   border: 1px solid #ffd4dd;
   box-shadow: 4px 4px 10px 1px rgba(226, 226, 226, 0.46);
   @media screen and (${(props) => props.theme.media.md}) {
+    flex-direction: row;
     min-height: 120px;
     padding: 10px;
   }
@@ -31,10 +33,11 @@ export const Wrapper = styled.li`
 
 export const Box = styled.div`
   display: flex;
-  flex-direction: column;
+
   align-items: center;
   gap: 15px;
   @media screen and (${(props) => props.theme.media.md}) {
+    flex-direction: column;
     margin-left: 10px;
   }
 `;
@@ -135,10 +138,9 @@ export const ShowMoreBtn = styled.button`
   padding: 0;
   border: none;
   cursor: pointer;
-    @media screen and (${(props) => props.theme.media.md}){
-    top: 50px;  
-    }
-  
+  @media screen and (${(props) => props.theme.media.md}) {
+    top: 50px;
+  }
 `;
 export const Icon = styled.svg<{ rotate: boolean }>`
   rotate: ${(props) => (props.rotate ? "0deg" : "180deg")};
@@ -155,15 +157,60 @@ export const OrderWrapper = styled.ul`
 export const OrderItem = styled.li`
   display: flex;
   align-items: center;
-  gap: 20px;
+  gap: 10px;
+  @media screen and (${(props) => props.theme.media.md}{
+    gap: 20px;
+  }
 `;
 
 export const NameTxt = styled.p`
-  min-width: 150px;
+  width: 80px;
+  font-size: 12px;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 400;
+  @media screen and (${(props) => props.theme.media.md}) {
+    width: 150px;
+    font-size: 16px;
+  }
   @media screen and (${(props) => props.theme.media.lg}) {
-    min-width: 250px;
+    width: 250px;
+    font-size: 20px;
   }
 `;
+
+export const QuantityTxt = styled.p`
+  min-width: 10px;
+  font-size: 12px;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 400;
+  text-align: center;
+  @media screen and (${(props) => props.theme.media.md}) {
+    min-width: 60px;
+    font-size: 20px;
+  }
+`;
+
+export const TotalTxt = styled.p`
+ font-size: 12px;
+  @media screen and (${(props) => props.theme.media.md}){
+    font-size: 20px;
+  }
+`
+
+export const Txt = styled.p`
+  min-width: 20px;
+  font-size: 12px;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 400;
+  @media screen and (${(props) => props.theme.media.md}) {
+    min-width: 60px;
+    font-size: 20px;
+  }
+`;
+
 export const BoxDetails = styled.div`
   display: flex;
   flex-direction: column;

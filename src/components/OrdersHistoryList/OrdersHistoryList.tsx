@@ -20,6 +20,9 @@ import {
   OrderItem,
   NameTxt,
   BoxDetails,
+  QuantityTxt,
+  Txt,
+  TotalTxt,
 } from "./OrdersHistoryList.styled";
 import icons from "../../images/sprite.svg";
 
@@ -96,15 +99,15 @@ export const OrdersHistoryList: React.FC<OrderHistoryListProps> = ({
                             width={40}
                           />
                           <NameTxt>{item.name}</NameTxt>
-                          <p style={{ minWidth: "60px" }}>{item.quantity}</p>
-                          <p style={{ minWidth: "60px" }}>{item.price} uah</p>
-                          <p style={{ minWidth: "60px" }}>{item.totalPrice} uah</p>
+                          <QuantityTxt>{item.quantity}</QuantityTxt>
+                          <Txt>{item.price} uah</Txt>
+                          <Txt>{item.totalPrice} uah</Txt>
                         </OrderItem>
                       ))}
                     </OrderWrapper>
                     <div style={{ display: "flex", flexDirection: "column", alignItems: "flex-end" }}>
                       <p>--------------------------------------</p>
-                      <p>Total prise {order.totalPrice} uah</p>
+                      <TotalTxt>Total prise {order.totalPrice} uah</TotalTxt>
                         </div>
                         </BoxDetails>
                   </>
