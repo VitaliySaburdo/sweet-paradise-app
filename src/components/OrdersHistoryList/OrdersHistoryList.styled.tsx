@@ -158,7 +158,7 @@ export const OrderItem = styled.li`
   display: flex;
   align-items: center;
   gap: 10px;
-  @media screen and (${(props) => props.theme.media.md}{
+  @media screen and (${(props) => props.theme.media.md}) {
     gap: 20px;
   }
 `;
@@ -193,11 +193,11 @@ export const QuantityTxt = styled.p`
 `;
 
 export const TotalTxt = styled.p`
- font-size: 12px;
-  @media screen and (${(props) => props.theme.media.md}){
+  font-size: 12px;
+  @media screen and (${(props) => props.theme.media.md}) {
     font-size: 20px;
   }
-`
+`;
 
 export const Txt = styled.p`
   min-width: 20px;
