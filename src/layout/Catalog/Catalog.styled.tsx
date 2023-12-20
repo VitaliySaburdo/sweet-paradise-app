@@ -36,8 +36,12 @@ export const CatalogTitle = styled.h2`
 `;
 
 export const StyledContainer = styled(Container)`
-  overflow: visible;
+  overflow: hidden;
   position: relative;
+  @media screen and (${(props) => props.theme.media.lg}) {
+    overflow: visible;
+  }
+
 `;
 
 export const CatalogList = styled.ul<{ scrollPosition: number }>`
